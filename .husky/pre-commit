@@ -1,0 +1,34 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Starting pre-commit style, test, and build checks..."
+
+# Check Prettier standards
+npm run check-format || (
+  echo "Prettier check failed."
+  echo "Format your files with `npm run format` and try again."
+  false;
+)
+
+# Check ESLint standards
+npm run lint || (
+  echo "ESLint check failed."
+  echo "Fix the issues above and try again."
+  false;
+)
+
+# Check tsconfig.json standards
+npm run check-types || (
+  echo "Type check failed."
+  echo "Fix the issues above and try again."
+  false;
+)
+
+# Check build
+npm run build || (
+  echo "Build failed."
+  echo "Fix the issues above and try again."
+  false;
+)
+
+echo "All checks passed."
