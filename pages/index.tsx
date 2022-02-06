@@ -21,7 +21,7 @@ const Campus = () => {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Campus.geometry}
+        geometry={(nodes.Campus as Mesh).geometry}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.06}
       >
