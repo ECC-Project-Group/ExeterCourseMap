@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../components/MapComponent.module.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';

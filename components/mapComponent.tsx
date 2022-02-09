@@ -1,6 +1,11 @@
 import ReactFlow from 'react-flow-renderer';
+import styles from './MapComponent.module.css';
+import useWindowDimensions from './useWindowDimensions';
+import { CSSProperties } from 'react';
 
 function MapComponent() {
+  const { height, width } = useWindowDimensions();
+
   const elements = [
     {
       id: '1',
@@ -26,9 +31,13 @@ function MapComponent() {
     { id: 'e2-3', source: '2', target: '3' },
   ];
 
+  const containerStyle: CSSProperties = {
+    height: useWindowDimensions().height,
+  };
+
   return (
-    <div style={{ height: 300 }}>
-      <ReactFlow elements={elements} />
+    <div style={containerStyle}>
+      <ReactFlow className={styles['react-flow']} elements={elements} />
     </div>
   );
 }
