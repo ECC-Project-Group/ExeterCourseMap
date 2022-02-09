@@ -1,11 +1,13 @@
 import type { NextPage } from 'next';
+import MapComponent from '../components/mapComponent';
 
-const Courses: NextPage = () => {
+const Map: NextPage = () => {
   return (
     <div>
-      <div className="bg-exeter px-8 py-7 lg:px-40"></div>
+      <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
+      <MapComponent />
     </div>
   );
 };
 
-export default Courses;
+export default Map;
