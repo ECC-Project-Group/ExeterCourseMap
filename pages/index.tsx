@@ -13,6 +13,12 @@ declare module 'three-stdlib' {
   }
 }
 
+const challengingThings = [
+  'landing a rover on Mars.',
+  'writing an eighty page essay.',
+  'finding prices at Grill.',
+];
+
 const Campus = () => {
   const group = useRef();
   const { nodes } = useGLTF('/models/campus.glb');
@@ -66,7 +72,13 @@ const Home: NextPage = () => {
             Course planning shouldn{"'"}t be like
             <br />
             <div className="flex h-full overflow-clip">
-              <span className="box-content py-2">landing a rover on Mars.</span>
+              <span className="box-content py-2">
+                {
+                  challengingThings[
+                    Math.floor(Math.random() * challengingThings.length)
+                  ]
+                }
+              </span>
             </div>
           </h1>
         </div>
