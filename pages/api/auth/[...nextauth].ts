@@ -2,10 +2,10 @@ import nextAuth from 'next-auth';
 import azureADProvider from 'next-auth/providers/azure-ad';
 import googleProvider from 'next-auth/providers/google';
 import emailProvider from 'next-auth/providers/email';
-import sequelizeAdapter from '@next-auth/sequelize-adapter';
-import { Sequelize } from 'sequelize';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { PrismaClient } from '@prisma/client';
 
-const sequelize = new Sequelize(process.env.DATABASE_URL ?? '');
+const prisma = new PrismaClient();
 
 export default nextAuth({
   providers: [
@@ -32,5 +32,5 @@ export default nextAuth({
       return token;
     },
   },
-  adapter: sequelizeAdapter(sequelize),
+  adapter: PrismaAdapter(prisma),
 });
