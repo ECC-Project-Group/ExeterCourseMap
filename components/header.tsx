@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
