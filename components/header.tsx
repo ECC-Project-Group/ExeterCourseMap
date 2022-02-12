@@ -16,6 +16,9 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
 const Header = () => {
   const { data: session } = useSession();
   const [accountVisible, setAccountVisibility] = useState(false);
+  const [signInVisible, setSignInVisibility] = useState(false);
+  const [email, setEmail] = useState('');
+  const [sent, setSent] = useState(false);
 
   return (
     <header className="absolute flex w-full flex-row justify-between bg-none py-4 px-8 lg:px-40">
@@ -30,12 +33,68 @@ const Header = () => {
         <HeaderNavItem name="Map" href="/map" />
         <div>
           {!session && (
-            <a
-              className="ml-4 cursor-pointer rounded-lg bg-red-400 px-4 py-2 font-bold text-white"
-              onClick={() => signIn('azure-ad')}
-            >
-              Sign in
-            </a>
+            <div className="relative mx-4">
+              <a
+                className="cursor-pointer text-right font-display font-bold"
+                onClick={() => setSignInVisibility(!signInVisible)}
+              >
+                Sign in
+              </a>
+              {signInVisible && (
+                <>
+                  <div
+                    className="fixed top-0 left-0 z-10 h-screen w-screen bg-none"
+                    onClick={() => setSignInVisibility(false)}
+                  />
+                  <motion.div
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ ease: 'circOut', duration: 0.2 }}
+                    className="absolute right-0 top-8 z-20 flex w-80 flex-col bg-gray-200 py-2 px-3 shadow-lg"
+                  >
+                    <p className="py-1 font-display text-gray-500">
+                      Sign in with...
+                    </p>
+                    <a
+                      onClick={() => signIn('azure-ad')}
+                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-exeter hover:text-white hover:shadow-md"
+                    >
+                      Exeter
+                    </a>
+                    <a
+                      onClick={() => signIn('google')}
+                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-blue-600 hover:text-white hover:shadow-md"
+                    >
+                      Google
+                    </a>
+                    <div className="my-4 h-px w-full bg-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="email@example.com"
+                      className="my-1 rounded-md p-2 font-display text-gray-800"
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                    />
+                    {(!sent && (
+                      <a
+                        onClick={async () => {
+                          setSent(true);
+                          signIn('email', { email, redirect: false });
+                        }}
+                        className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-gray-600 hover:text-white hover:shadow-md"
+                      >
+                        Email
+                      </a>
+                    )) || (
+                      <p className="my-2 text-center font-display text-sm text-gray-500">
+                        Check your email for a sign in link.
+                      </p>
+                    )}
+                  </motion.div>
+                </>
+              )}
+            </div>
           )}
           {session?.user && (
             <div className="relative mx-4">
@@ -43,7 +102,7 @@ const Header = () => {
                 className="text-right font-display font-bold"
                 onClick={() => setAccountVisibility(!accountVisible)}
               >
-                {session.user.name}
+                {session.user.name ?? session.user.email}
               </button>
               {accountVisible && (
                 <>
