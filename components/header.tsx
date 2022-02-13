@@ -87,16 +87,16 @@ const Header = () => {
                         Email
                       </a>
                     )) || (
-                      <p className="my-2 text-center font-display text-sm text-gray-500">
-                        Check your email for a sign in link.
+                        <p className="my-2 text-center font-display text-sm text-gray-500">
+                          Check your email for a sign in link.
                       </p>
-                    )}
+                      )}
                   </motion.div>
                 </>
               )}
             </div>
           )}
-          {session?.user && (
+          {session ?.user && (
             <div className="relative mx-4">
               <button
                 className="text-right font-display font-bold"
