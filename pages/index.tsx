@@ -17,6 +17,7 @@ const challengingThings = [
   'landing a rover on Mars.',
   'writing an eighty page essay.',
   'finding prices at Grill.',
+  'writing your 333',
 ];
 
 const Campus = () => {
