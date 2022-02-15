@@ -17,6 +17,8 @@ const challengingThings = [
   'landing a rover on Mars.',
   'writing an eighty page essay.',
   'finding prices at Grill.',
+  'writing your 333',
+  'getting instagram followers',
 ];
 
 const Campus = () => {
@@ -75,7 +77,7 @@ const Home: NextPage = () => {
               <span className="box-content py-2">
                 {
                   challengingThings[
-                    Math.floor(Math.random() * challengingThings.length)
+                  Math.floor(Math.random() * challengingThings.length)
                   ]
                 }
               </span>
