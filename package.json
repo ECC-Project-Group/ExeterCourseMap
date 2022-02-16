@@ -13,7 +13,8 @@
     "test-all": "npm run check-format && npm run lint && npm run check-types && npm run build"
   },
   "dependencies": {
-    "@next-auth/sequelize-adapter": "^1.0.2",
+    "@next-auth/prisma-adapter": "^1.0.1",
+    "@prisma/client": "^3.9.2",
     "@react-three/drei": "^8.8.1",
     "@react-three/fiber": "^7.0.26",
     "elkjs": "^0.7.1",
@@ -25,8 +26,6 @@
     "react-dom": "17.0.2",
     "react-flow-renderer": "^9.7.4",
     "react-icons": "^4.3.1",
-    "sequelize": "^6.16.1",
-    "sqlite3": "^5.0.2",
     "three": "^0.137.5"
   },
   "devDependencies": {
@@ -45,6 +44,7 @@
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
+    "prisma": "^3.9.2",
     "tailwindcss": "^3.0.18",
     "typescript": "4.5.5"
   }
