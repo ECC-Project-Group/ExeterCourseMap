@@ -12,8 +12,7 @@ declare module 'three-stdlib' {
     materials: Record<string, Material>;
   }
 }
-
-// dummy commit comment
+//hi
 const challengingThings = [
   'landing a rover on Mars.',
   'writing an eighty page essay.',
