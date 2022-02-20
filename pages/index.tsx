@@ -13,7 +13,6 @@ declare module 'three-stdlib' {
   }
 }
 
-// dummy commit comment
 const challengingThings = [
   'landing a rover on Mars.',
   'writing an eighty page essay.',
