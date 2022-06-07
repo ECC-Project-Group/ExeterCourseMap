@@ -14,11 +14,10 @@ declare module 'three-stdlib' {
 }
 //hi
 const challengingThings = [
-  'landing a rover on Mars.',
-  'writing an eighty page essay.',
-  'finding prices at Grill.',
-  'writing your 333.',
-  'getting Instagram followers.',
+  'landing a rover on Mars',
+  'writing an eighty page essay',
+  'solving a Millennium problem',
+  " solving a 10x10 Rubik's cube",
 ];
 
 const Campus = () => {
@@ -41,7 +40,8 @@ const Campus = () => {
 
 const Home: NextPage = () => {
   useGLTF.preload('/models/campus.glb');
-
+  const challengingThing =
+    challengingThings[Math.floor(Math.random() * challengingThings.length)];
   return (
     <div className="overflow-x-hidden">
       <div className="flex-column flex h-[70vh] min-h-[500px] justify-center">
@@ -71,17 +71,7 @@ const Home: NextPage = () => {
         </div>
         <div className="pointer-events-none my-auto w-full select-none px-8 lg:px-40">
           <h1 className="font-display text-4xl font-black text-white md:text-5xl">
-            Course planning shouldn{"'"}t be like
-            <br />
-            <div className="flex h-full overflow-clip">
-              <span className="box-content py-2">
-                {
-                  challengingThings[
-                    Math.floor(Math.random() * challengingThings.length)
-                  ]
-                }
-              </span>
-            </div>
+            Course planning shouldn{"'"}t be like {challengingThing}.
           </h1>
         </div>
       </div>
