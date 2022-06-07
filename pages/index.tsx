@@ -1,11 +1,17 @@
 import type { NextPage } from 'next';
 import { Suspense, useRef } from 'react';
 
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { Material, Mesh } from 'three';
-import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
 import CTAButton from '../components/callToActionButton';
+
+// React implementation of three.js
+import { Canvas } from '@react-three/fiber';
+// Helper functions and abstractions built using fiber
+import { OrbitControls, useGLTF } from '@react-three/drei';
+// Classes directly imported from the original three library
+import { Material, Mesh } from 'three';
+// Typedefs for the GLTF class are inconsistent across three and react-three-fiber
+// Mainly used to prevent the TypeScript compiler from complaining about nonexistent props
+import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
 declare module 'three-stdlib' {
   export interface GLTF extends GLTFThree {
     nodes: Record<string, Mesh>;
@@ -42,6 +48,7 @@ const Campus = () => {
 };
 
 const Home: NextPage = () => {
+  // Load the model immediately
   useGLTF.preload('/models/campus.glb');
 
   return (
@@ -58,6 +65,7 @@ const Home: NextPage = () => {
               castShadow={true}
               position={[0, 10, 0]}
             />
+            {/* Does not render the campus model until it is completely loaded */}
             <Suspense fallback={null}>
               <Campus />
               <OrbitControls

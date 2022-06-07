@@ -66,6 +66,8 @@ const Courses = ({ courses }: { courses: ICoursePartial[] }) => {
   );
 };
 
+// Grab all courses at build-time; this cuts down on
+// page load speeds
 export async function getStaticProps() {
   const courses = getAllCourses();
 

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 // This page isn't used anywhere
+// (There's already a login popup that shows underneath the login button)
 const Login: NextPage = () => {
   return (
     <div>
