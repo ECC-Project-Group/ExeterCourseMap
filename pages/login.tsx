@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 
+// This page isn't used anywhere
 const Login: NextPage = () => {
   return (
     <div>

@@ -14,6 +14,7 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
 };
 
 const Header = () => {
+  // Holds information for the login state
   const { data: session } = useSession();
   const [accountVisible, setAccountVisibility] = useState(false);
   const [signInVisible, setSignInVisibility] = useState(false);

@@ -10,6 +10,7 @@ import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
 
 const elk = new ELK();
 
+// Automatically finds the best layout for the prerequisite tree.
 const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   const graph: ElkNode = {
     id: 'root',
@@ -25,6 +26,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     ],
     edges: [],
   };
+
+  // .map() isn't really the best solution here
   Object.entries(prereqs).map(([base, prereqs]) => {
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
@@ -94,6 +97,7 @@ const CoursePage = ({
     main();
   }, [prereqs]);
 
+  // Advances to the next level of prerequisites.
   const getMorePrereqs = async () => {
     const prereqsToWrite = { ...prereqs };
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
@@ -157,6 +161,7 @@ const CoursePage = ({
   );
 };
 
+// Generate routes for each course at build-time
 export async function getStaticPaths() {
   const courses = getAllCourses();
 
@@ -167,6 +172,8 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
+// Grab all necessary information for each course page at build-time
+// (Eliminates the need for doing a database lookup on page load)
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const course = getCourse(params.id);
   const firstPrereqs = getCoursePrerequisites(params.id);

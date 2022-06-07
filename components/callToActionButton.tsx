@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { BsChevronRight } from 'react-icons/bs';
 
+// This button is used only in index.tsx
 const CTAButton = ({
   href,
   children,

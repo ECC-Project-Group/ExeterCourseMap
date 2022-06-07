@@ -13,6 +13,7 @@ declare module 'three-stdlib' {
   }
 }
 
+// One of these strings will be placed onto the homepage
 const challengingThings = [
   'landing a rover on Mars.',
   'writing an eighty page essay.',
@@ -21,6 +22,7 @@ const challengingThings = [
   'getting Instagram followers.',
 ];
 
+// The campus three.js element
 const Campus = () => {
   const group = useRef();
   const { nodes } = useGLTF('/models/campus.glb');
@@ -46,6 +48,7 @@ const Home: NextPage = () => {
     <div className="overflow-x-hidden">
       <div className="flex-column flex h-[70vh] min-h-[500px] justify-center">
         <div className="absolute -z-10 h-[70vh] min-h-[500px] w-full bg-exeter">
+          {/* Declarative representation of the campus model */}
           <Canvas
             camera={{ fov: 50, position: [0, 0, 10] }}
             className="opacity-20"
