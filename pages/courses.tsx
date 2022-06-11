@@ -4,8 +4,11 @@ import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
 
 const Courses = ({ courses }: { courses: ICoursePartial[] }) => {
+  // We don't need all information about any particular course,
+  // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
 
+  // Update the course list when the text input is changed
   const onChange = useCallback(
     (event) => {
       const query: string = event.target.value;
@@ -63,6 +66,8 @@ const Courses = ({ courses }: { courses: ICoursePartial[] }) => {
   );
 };
 
+// Grab all courses at build-time; this cuts down on
+// page load speeds
 export async function getStaticProps() {
   const courses = getAllCourses();
 
