@@ -632,7 +632,7 @@
         "fixed": true,
         "lt": "Intro to Statistical Thermodynamics *",
         "lvl": "500",
-        "pre": "CHE330/PHY230|PHY231|PHY330/MAT520",
+        "pre": "CHE330|PHY230|PHY231|PHY330|MAT520|MAT521",
         "st": "Intro to Thermodynamics *",
         "subj": "CHE"
     },
@@ -5221,7 +5221,7 @@
         "fixed": true,
         "lt": "Modern Physics *",
         "lvl": "400",
-        "pre": "PHY330|PHY230",
+        "pre": "PHY330|PHY230|PHY231",
         "st": "Modern Physics *",
         "subj": "PHY"
     },
@@ -5234,7 +5234,7 @@
         "fixed": true,
         "lt": "Applied Physics *",
         "lvl": "400",
-        "pre": "PHY330|PHY230/BIO230",
+        "pre": "PHY330|PHY230|PHY231|BIO230",
         "st": "Applied Physics *",
         "subj": "PHY"
     },
@@ -5260,7 +5260,7 @@
         "fixed": true,
         "lt": "Electronics *",
         "lvl": "400",
-        "pre": "PHY330|PHY230",
+        "pre": "PHY330|PHY230|PHY231",
         "st": "Electronics *",
         "subj": "PHY"
     },
@@ -5273,7 +5273,7 @@
         "fixed": true,
         "lt": "Introductory Astronomy *",
         "lvl": "400",
-        "pre": "PHY330|PHY230/CHE330",
+        "pre": "PHY330|PHY230|CHE330",
         "st": "Introductory Astronomy *",
         "subj": "PHY"
     },
@@ -5299,7 +5299,7 @@
         "fixed": true,
         "lt": "Advanced Physics *",
         "lvl": "500",
-        "pre": "PHY330|PHY230/MAT430",
+        "pre": "PHY330|PHY230|PHY231/MAT430",
         "st": "Advanced Physics *",
         "subj": "PHY"
     },
@@ -5351,7 +5351,7 @@
         "fixed": true,
         "lt": "Quantum Mechanics *",
         "lvl": "600",
-        "pre": "PHY400/PHY520/MAT520",
+        "pre": "PHY400|PHY520|MAT520|MAT521",
         "st": "Quantum Mechanics *",
         "subj": "PHY"
     },
