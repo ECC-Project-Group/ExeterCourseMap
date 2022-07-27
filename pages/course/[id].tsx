@@ -7,6 +7,7 @@ import {
 } from '../../lib/courses';
 import { ICourse } from '../../types';
 import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
+import { InferGetStaticPropsType } from "next";
 
 const elk = new ELK();
 
@@ -17,6 +18,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     layoutOptions: { 'elk.algorithm': 'layered' },
     children: [
       ...Object.entries(prereqs).map(([base]) => {
+        console.log("base: " + base);
         return {
           id: base,
           width: 172,
@@ -76,13 +78,17 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
 // to load + render all prerequisites for courses that have an
 // empty array as a prerequisite in the prereqs variable
 
-const CoursePage = ({
-  course,
-  initialPrereqs,
-}: {
-  course: ICourse;
-  initialPrereqs: Record<string, ICourse[]>;
-}) => {
+type coursePageParams = {
+  params: {
+    course: ICourse,
+    initialPrereqs: Record<string, ICourse[]>,
+    initialCoreqs: Record<string, ICourse[]>,
+  }
+};
+
+const CoursePage = ({ params }: coursePageParams ) => {
+  const { course, initialPrereqs, initialCoreqs } = params;
+  
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
 
@@ -178,15 +184,23 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const course = getCourse(params.id);
   const firstPrereqs = getCoursePrerequisites(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
-  initialPrereqs[params.id] = firstPrereqs;
-  for (const prereq of firstPrereqs) {
+  const initialCoreqs: Record<string, ICourse[]> = {};
+  initialPrereqs[params.id] = firstPrereqs[0];
+  initialCoreqs[params.id] = firstPrereqs[1];
+  for (const prereq of firstPrereqs[0]) {
     initialPrereqs[prereq.course_no] = [];
+  }
+  for (const coreq of firstPrereqs[1]) {
+    initialPrereqs[coreq.course_no] = [];
   }
 
   return {
     props: {
-      course: course,
-      initialPrereqs: initialPrereqs,
+      params : {
+        course: course,
+        initialPrereqs: initialPrereqs,
+        initialCoreqs: initialCoreqs,
+      }
     },
   };
 }
