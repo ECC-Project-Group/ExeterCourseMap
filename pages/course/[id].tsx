@@ -7,6 +7,7 @@ import {
 } from '../../lib/courses';
 import { ICourse } from '../../types';
 import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
+import { InferGetStaticPropsType } from "next";
 
 const elk = new ELK();
 
@@ -17,6 +18,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     layoutOptions: { 'elk.algorithm': 'layered' },
     children: [
       ...Object.entries(prereqs).map(([base]) => {
+        console.log("base: " + base);
         return {
           id: base,
           width: 172,
@@ -40,9 +42,11 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   });
 
   const parsedGraph = await elk.layout(graph);
+  console.log("elk.layout finished");
   const elements: Elements = [];
   if (parsedGraph.children) {
     parsedGraph.children.forEach((node) => {
+      console.log("Pushing node " + node.id);
       elements.push({
         id: node.id,
         type: 'default',
@@ -76,13 +80,9 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
 // to load + render all prerequisites for courses that have an
 // empty array as a prerequisite in the prereqs variable
 
-const CoursePage = ({
-  course,
-  initialPrereqs,
-}: {
-  course: ICourse;
-  initialPrereqs: Record<string, ICourse[]>;
-}) => {
+const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
+  const { course, initialPrereqs, initialCoreqs } = params;
+  
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
 
@@ -99,14 +99,18 @@ const CoursePage = ({
 
   // Advances to the next level of prerequisites.
   const getMorePrereqs = async () => {
+    console.log("Called getMorePrereqs");
     const prereqsToWrite = { ...prereqs };
+    console.log(prereqsToWrite);
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
       if (currPrereqs.length !== 0) continue;
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
-      const newPrereqs: ICourse[] = await res.json();
-      if (newPrereqs.length > 0) {
-        prereqsToWrite[base] = newPrereqs;
-        for (const newPrereq of newPrereqs) {
+      const newPrereqs: ICourse[][] = await res.json();
+      console.log("newPrereqs:");
+      console.log(newPrereqs);
+      if (newPrereqs[0].length > 0) {
+        prereqsToWrite[base] = newPrereqs[0];
+        for (const newPrereq of newPrereqs[0]) {
           prereqsToWrite[newPrereq.course_no] = [];
         }
       }
@@ -178,15 +182,23 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const course = getCourse(params.id);
   const firstPrereqs = getCoursePrerequisites(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
-  initialPrereqs[params.id] = firstPrereqs;
-  for (const prereq of firstPrereqs) {
+  const initialCoreqs: Record<string, ICourse[]> = {};
+  initialPrereqs[params.id] = firstPrereqs[0];
+  initialCoreqs[params.id] = firstPrereqs[1];
+  for (const prereq of firstPrereqs[0]) {
     initialPrereqs[prereq.course_no] = [];
+  }
+  for (const coreq of firstPrereqs[1]) {
+    initialPrereqs[coreq.course_no] = [];
   }
 
   return {
     props: {
-      course: course,
-      initialPrereqs: initialPrereqs,
+      params : {
+        course: course,
+        initialPrereqs: initialPrereqs,
+        initialCoreqs: initialCoreqs,
+      }
     },
   };
 }

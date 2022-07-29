@@ -34,12 +34,12 @@ export function getCoursePrerequisites(courseNo: string) {
   const str = course?.pre;
   let i = 0;
   // Get prerequisites
-  while (str[i] != "/") {
+  while (i < str.length && str[i] != "/") {
     const prereqCourse = getCourse(str.substring(i, i + 6));
     if (prereqCourse) prereqs[0].push(prereqCourse);
     i += 7;
   }
-  if (str[i] == "/") {
+  if (i < str.length && str[i] == "/") {
     i++;
     while (i < str.length) {
       const prereqCourse = getCourse(str.substring(i, i + 6));
