@@ -42,9 +42,11 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   });
 
   const parsedGraph = await elk.layout(graph);
+  console.log("elk.layout finished");
   const elements: Elements = [];
   if (parsedGraph.children) {
     parsedGraph.children.forEach((node) => {
+      console.log("Pushing node " + node.id);
       elements.push({
         id: node.id,
         type: 'default',
@@ -78,15 +80,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
 // to load + render all prerequisites for courses that have an
 // empty array as a prerequisite in the prereqs variable
 
-type coursePageParams = {
-  params: {
-    course: ICourse,
-    initialPrereqs: Record<string, ICourse[]>,
-    initialCoreqs: Record<string, ICourse[]>,
-  }
-};
-
-const CoursePage = ({ params }: coursePageParams ) => {
+const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
   const { course, initialPrereqs, initialCoreqs } = params;
   
   const [prereqs, setPrereqs] =
@@ -105,14 +99,18 @@ const CoursePage = ({ params }: coursePageParams ) => {
 
   // Advances to the next level of prerequisites.
   const getMorePrereqs = async () => {
+    console.log("Called getMorePrereqs");
     const prereqsToWrite = { ...prereqs };
+    console.log(prereqsToWrite);
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
       if (currPrereqs.length !== 0) continue;
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
-      const newPrereqs: ICourse[] = await res.json();
-      if (newPrereqs.length > 0) {
-        prereqsToWrite[base] = newPrereqs;
-        for (const newPrereq of newPrereqs) {
+      const newPrereqs: ICourse[][] = await res.json();
+      console.log("newPrereqs:");
+      console.log(newPrereqs);
+      if (newPrereqs[0].length > 0) {
+        prereqsToWrite[base] = newPrereqs[0];
+        for (const newPrereq of newPrereqs[0]) {
           prereqsToWrite[newPrereq.course_no] = [];
         }
       }
