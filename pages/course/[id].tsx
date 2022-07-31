@@ -8,6 +8,7 @@ import {
 import { ICourse } from '../../types';
 import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
 import { InferGetStaticPropsType } from "next";
+import { getCourseColor, getCourseImage } from '../../lib/course_colors';
 
 const elk = new ELK();
 
@@ -15,13 +16,15 @@ const elk = new ELK();
 const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   const graph: ElkNode = {
     id: 'root',
-    layoutOptions: { 'elk.algorithm': 'layered' },
+    layoutOptions: { 
+      'elk.algorithm': 'layered',
+    },
     children: [
       ...Object.entries(prereqs).map(([base]) => {
         console.log("base: " + base);
         return {
           id: base,
-          width: 172,
+          width: 130,
           height: 36,
         };
       }),
@@ -42,22 +45,35 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   });
 
   const parsedGraph = await elk.layout(graph);
-  console.log("elk.layout finished");
+
+  // Add everything to a React Flow graph
   const elements: Elements = [];
   if (parsedGraph.children) {
     parsedGraph.children.forEach((node) => {
-      console.log("Pushing node " + node.id);
+      console.log('url("' + getCourseImage(node.id).src + '") repeat 0 0');
       elements.push({
         id: node.id,
         type: 'default',
         data: {
           label: (
-            <h1 className="font-display font-black text-gray-700">{node.id}</h1>
+            <h1 className="font-display font-black text-white"
+            style={{textShadow: 
+              '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black'
+            }}>{node.id}</h1>
           ),
         },
         position: { x: node.x ?? 0, y: node.y ?? 0 },
         sourcePosition: Position.Left,
         targetPosition: Position.Right,
+        style: {
+          backgroundColor: getCourseColor(node.id),
+          backgroundImage: getCourseImage(node.id),
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          borderRadius: 10,
+          borderWidth: 2,
+          width: 90,
+        }
       });
     });
   }
@@ -70,6 +86,10 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
         target: edge.target,
         type: 'smoothstep',
         animated: false,
+        // style: {
+        //   strokeWidth: 2,
+        //   stroke: 'black'
+        // }
       });
     });
   }
@@ -118,6 +138,11 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     setPrereqs(prereqsToWrite);
   };
 
+  // Style for ReactFlow component
+  const reactFlowStyle = {
+    background: 'rgb(35, 35, 35)'
+  }
+
   return (
     <div>
       <div className="bg-exeter px-8 pt-28 pb-20 lg:px-40">
@@ -155,6 +180,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
               elementsSelectable={false}
               selectNodesOnDrag={false}
               elements={elements}
+              style={reactFlowStyle}
             >
               <Background color="#858585" />
             </ReactFlow>
