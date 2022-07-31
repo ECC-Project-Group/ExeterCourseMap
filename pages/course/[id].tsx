@@ -15,7 +15,9 @@ const elk = new ELK();
 const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   const graph: ElkNode = {
     id: 'root',
-    layoutOptions: { 'elk.algorithm': 'layered' },
+    layoutOptions: { 
+      'elk.algorithm': 'layered',
+    },
     children: [
       ...Object.entries(prereqs).map(([base]) => {
         console.log("base: " + base);
@@ -42,10 +44,16 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   });
 
   const parsedGraph = await elk.layout(graph);
-  console.log("elk.layout finished");
+
+  // Add everything to a React Flow graph
   const elements: Elements = [];
   if (parsedGraph.children) {
+    let color : string;
     parsedGraph.children.forEach((node) => {
+      // Color depending on subject
+      // if (node.id.substring(0, 3) == 'MAT') {
+      //   color = 'red';
+      // } else color = 'rgb(255, 0, 0)';
       console.log("Pushing node " + node.id);
       elements.push({
         id: node.id,
@@ -58,6 +66,11 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
         position: { x: node.x ?? 0, y: node.y ?? 0 },
         sourcePosition: Position.Left,
         targetPosition: Position.Right,
+        // style: {
+        //   borderColor: color,
+        //   borderRadius: 10,
+        //   borderWidth: 2
+        // }
       });
     });
   }
@@ -70,6 +83,10 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
         target: edge.target,
         type: 'smoothstep',
         animated: false,
+        // style: {
+        //   strokeWidth: 2,
+        //   stroke: 'black'
+        // }
       });
     });
   }
@@ -118,6 +135,11 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     setPrereqs(prereqsToWrite);
   };
 
+  // Style for ReactFlow component
+  const reactFlowStyle = {
+    // background: 'rgb(43, 43, 43)'
+  }
+
   return (
     <div>
       <div className="bg-exeter px-8 pt-28 pb-20 lg:px-40">
@@ -155,6 +177,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
               elementsSelectable={false}
               selectNodesOnDrag={false}
               elements={elements}
+              style={reactFlowStyle}
             >
               <Background color="#858585" />
             </ReactFlow>
