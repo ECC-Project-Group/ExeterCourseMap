@@ -27,12 +27,12 @@ export function getCourseColor(courseNo: string) {
         case 'CSC': return 'rgb(0, 40, 255)';
 
         // Misc.
-        case 'ECO': return 'rgb(0, 0, 255)';
-        case 'HHD': return 'rgb(0, 0, 255)';
-        case 'PEC': return 'rgb(0, 0, 255)';
-        case 'INT': return 'rgb(0, 0, 255)';
-        case 'EXI': return 'rgb(0, 0, 255)';
-        case 'PSY': return 'rgb(0, 0, 255)';
+        case 'ECO': return 'rgb(255, 255, 255)';
+        case 'HHD': return 'rgb(255, 255, 255)';
+        case 'PEC': return 'rgb(255, 255, 255)';
+        case 'INT': return 'rgb(255, 255, 255)';
+        case 'EXI': return 'rgb(255, 255, 255)';
+        case 'PSY': return 'rgb(255, 255, 255)';
 
         default: return 'rgba(0, 0, 0, 0)';
     }

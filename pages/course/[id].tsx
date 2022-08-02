@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import ReactFlow, { Background, Elements, Position } from 'react-flow-renderer';
+import React, { useEffect, useState } from 'react';
+import ReactFlow, { Background, Elements, FlowElement, Position } from 'react-flow-renderer';
 import {
   getAllCourses,
   getCourse,
@@ -11,7 +11,6 @@ import { InferGetStaticPropsType } from "next";
 import { getCourseColor, getCourseImage } from '../../lib/course_colors';
 
 const elk = new ELK();
-
 // Automatically finds the best layout for the prerequisite tree.
 const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   const graph: ElkNode = {
@@ -45,12 +44,11 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
   });
 
   const parsedGraph = await elk.layout(graph);
-
+  
   // Add everything to a React Flow graph
   const elements: Elements = [];
   if (parsedGraph.children) {
     parsedGraph.children.forEach((node) => {
-      console.log('url("' + getCourseImage(node.id).src + '") repeat 0 0');
       elements.push({
         id: node.id,
         type: 'default',
@@ -74,6 +72,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
           borderWidth: 2,
           width: 90,
         }
+        
       });
     });
   }
@@ -101,7 +100,10 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
 // empty array as a prerequisite in the prereqs variable
 
 const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
-  const { course, initialPrereqs, initialCoreqs } = params;
+  // initialPrereqs maps each course id to its prereqs
+  // initialDescriptions maps each course id to its description
+  // initialTitles maps each course id to its full title
+  const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
   
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
@@ -140,7 +142,23 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
 
   // Style for ReactFlow component
   const reactFlowStyle = {
-    background: 'rgb(35, 35, 35)'
+    // background: 'rgb(35, 35, 35)'
+  }
+
+  // Callbacks for when user moves cursors on/off nodes or clicks on nodes
+  interface flowNode { id: string; }
+  const nodeHoverCallback = 
+  (event: React.MouseEvent, node: flowNode) => {
+    console.log(initialDescriptions[node.id]);
+  };
+  const nodeUnhoverCallback =
+  (event: React.MouseEvent, node: flowNode) => {
+    console.log("Exited");
+  };
+  const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
+    // check if element is an edge
+    if (element.id.startsWith('e')) return;
+    window.open(`/course/${element.id}`, '_self');
   }
 
   return (
@@ -181,6 +199,9 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
               selectNodesOnDrag={false}
               elements={elements}
               style={reactFlowStyle}
+              onNodeMouseEnter={nodeHoverCallback}
+              onNodeMouseLeave={nodeUnhoverCallback}
+              onElementClick={nodeClickCallback}
             >
               <Background color="#858585" />
             </ReactFlow>
@@ -206,9 +227,12 @@ export async function getStaticPaths() {
 // (Eliminates the need for doing a database lookup on page load)
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const course = getCourse(params.id);
+
+  // Load prereqs/coreqs
   const firstPrereqs = getCoursePrerequisites(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
   const initialCoreqs: Record<string, ICourse[]> = {};
+  // Janky naming - firstPrereqs[0] is first prereqs, firstPrereqs[1] is first coreqs
   initialPrereqs[params.id] = firstPrereqs[0];
   initialCoreqs[params.id] = firstPrereqs[1];
   for (const prereq of firstPrereqs[0]) {
@@ -218,12 +242,28 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
     initialPrereqs[coreq.course_no] = [];
   }
 
+  // Load detailed course info
+  const initialTitles: Record<string, string | undefined> = {}; // Long titles
+  const initialDescriptions: Record<string, string | undefined> = {}; // Descriptions
+  initialDescriptions[params.id] = course?.desc;
+  initialTitles[params.id] = course?.lt;
+  for (const prereq of firstPrereqs[0]) { // Load this data for each prereq
+    initialDescriptions[prereq.st] = prereq.desc;
+    initialTitles[prereq.st] = prereq.lt;
+  }
+  for (const coreq of firstPrereqs[1]) { // Load this data for each coreq
+    initialDescriptions[coreq.st] = coreq.desc;
+    initialTitles[coreq.st] = coreq.lt;
+  }
+
   return {
     props: {
       params : {
         course: course,
         initialPrereqs: initialPrereqs,
         initialCoreqs: initialCoreqs,
+        initialDescriptions: initialDescriptions,
+        initialTitles: initialTitles,
       }
     },
   };
