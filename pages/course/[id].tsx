@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import ReactFlow, { Background, Elements, FlowElement, Position } from 'react-flow-renderer';
 import {
   getAllCourses,
@@ -36,7 +36,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
       (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `e-${base}`,
+        id: `e-${base}-${prereqs[index].course_no}`,
         source: prereqs[index].course_no,
         target: base,
       });
@@ -98,17 +98,36 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
 // TODO: Add a button inside the react-flow chart
 // to load + render all prerequisites for courses that have an
 // empty array as a prerequisite in the prereqs variable
-
 const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
   
+  interface CourseInfoPopupParams {
+    active: boolean; // whether the popup is currently active
+    longTitle: string;
+    desc: string;
+  }
+
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
-
   const [elements, setElements] = useState<Elements>([]);
+
+  // Mouse coordinates
+  const [coords, setCoords] = useState({x: 0, y:0});
+  
+  const initialPopupParams = {
+    active: false,
+    longTitle: "",
+    desc: ""
+  } as CourseInfoPopupParams;
+  const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
+
+  async function main() {
+    const elements = await layoutElements(prereqs);
+    setElements(elements);
+  }
 
   // Relayout the chart when prereqs changes
   useEffect(() => {
@@ -144,21 +163,56 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   const reactFlowStyle = {
     // background: 'rgb(35, 35, 35)'
   }
-
+  
+  // This doesn't work for some reason
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
   interface flowNode { id: string; }
-  const nodeHoverCallback = 
-  (event: React.MouseEvent, node: flowNode) => {
-    console.log(initialDescriptions[node.id]);
+  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+  const popupParams = {
+    active: true,
+    longTitle: initialTitles[node.id],
+    desc: initialDescriptions[node.id]
+  } as CourseInfoPopupParams;
+  setCourseInfoPopupParams(popupParams);
   };
-  const nodeUnhoverCallback =
-  (event: React.MouseEvent, node: flowNode) => {
-    console.log("Exited");
+  const nodeUnhoverCallback =(event: React.MouseEvent, node: flowNode) => {
+    const popupParams = {
+    active: false,
+    longTitle: "",
+    desc: ""
+  } as CourseInfoPopupParams;
+  setCourseInfoPopupParams(popupParams);
   };
+  
+  // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
     if (element.id.startsWith('e')) return;
     window.open(`/course/${element.id}`, '_self');
+  }
+
+  // Track mouse position
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent)  => {
+      setCoords({x: e.pageX, y: e.pageY});
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, [coords]);
+  function CourseInfoPopup() {
+    const cipp = courseInfoPopupParams;
+    return <div style = {{
+      display: cipp.active ? 'block' : 'none',
+      position: 'absolute',
+      left: coords.x + 10, // If there isn't enough offset, nodeUnhoverCallback will trigger once this opens
+      top: coords.y + 10,
+      zIndex: 100,
+    }}>
+      {cipp.longTitle}
+      {cipp.desc}
+    </div>
   }
 
   return (
@@ -206,6 +260,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
               <Background color="#858585" />
             </ReactFlow>
           </div>
+          <CourseInfoPopup/>
         </div>
       </div>
     </div>
