@@ -3,7 +3,7 @@ import ReactFlow, { Background, Elements, FlowElement, Position } from 'react-fl
 import {
   getAllCourses,
   getCourse,
-  getCoursePrerequisites,
+  getCourseRequirements,
 } from '../../lib/courses';
 import { ICourse } from '../../types';
 import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
@@ -12,7 +12,7 @@ import { getCourseColor, getCourseImage } from '../../lib/course_colors';
 
 const elk = new ELK();
 // Automatically finds the best layout for the prerequisite tree.
-const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
+const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record<string, ICourse[]>) => {
   const graph: ElkNode = {
     id: 'root',
     layoutOptions: { 
@@ -20,7 +20,13 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     },
     children: [
       ...Object.entries(prereqs).map(([base]) => {
-        console.log("base: " + base);
+        return {
+          id: base,
+          width: 130,
+          height: 36,
+        };
+      }),
+      ...Object.entries(coreqs).map(([base]) => {
         return {
           id: base,
           width: 130,
@@ -31,13 +37,24 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
     edges: [],
   };
 
+  // Add edges
   // .map() isn't really the best solution here
   Object.entries(prereqs).map(([base, prereqs]) => {
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
       (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `e-${base}-${prereqs[index].course_no}`,
+        id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
         source: prereqs[index].course_no,
+        target: base,
+      });
+    }
+  });
+  Object.entries(coreqs).map(([base, coreqs]) => {
+    if (coreqs.length === 0) return;
+    for (const index of coreqs.keys()) {
+      (graph.edges as ElkPrimitiveEdge[]).push({
+        id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
+        source: coreqs[index].course_no,
         target: base,
       });
     }
@@ -85,10 +102,10 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>) => {
         target: edge.target,
         type: 'smoothstep',
         animated: false,
-        // style: {
-        //   strokeWidth: 2,
-        //   stroke: 'black'
-        // }
+        style: {
+          strokeWidth: edge.id.startsWith("ce") ? 1 : 2.5,
+          stroke: edge.id.startsWith("ce") ? 'rgb(50, 50, 50)' : 'black',
+        }
       });
     });
   }
@@ -103,7 +120,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
-  
+  console.log(initialCoreqs);
+
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
@@ -112,11 +130,15 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
 
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
+  const [coreqs, setCoreqs] =
+    useState<Record<string, ICourse[]>>(initialCoreqs);
+  
   const [elements, setElements] = useState<Elements>([]);
 
   // Mouse coordinates
   const [coords, setCoords] = useState({x: 0, y:0});
   
+  // Parameters for course info popup (opened when mouse hovers over node)
   const initialPopupParams = {
     active: false,
     longTitle: "",
@@ -124,39 +146,59 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   } as CourseInfoPopupParams;
   const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
 
-  async function main() {
-    const elements = await layoutElements(prereqs);
-    setElements(elements);
-  }
-
   // Relayout the chart when prereqs changes
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs);
+      const elements = await layoutElements(prereqs, coreqs);
       setElements(elements);
     }
     main();
-  }, [prereqs]);
+  }, [prereqs, coreqs]);
 
-  // Advances to the next level of prerequisites.
-  const getMorePrereqs = async () => {
-    console.log("Called getMorePrereqs");
+  // Track mouse position
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent)  => {
+      setCoords({x: e.pageX, y: e.pageY});
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, [coords]);
+  function CourseInfoPopup() {
+    const cipp = courseInfoPopupParams;
+    return <div style = {{
+      display: cipp.active ? 'block' : 'none',
+      position: 'absolute',
+      left: coords.x + 10, // If there isn't enough offset, nodeUnhoverCallback will trigger once this opens
+      top: coords.y + 10,
+      zIndex: 100,
+    }}>
+      {cipp.longTitle}
+      {cipp.desc}
+    </div>
+  }
+
+  // Advances to the next level of requirements - called when "More Prereqs" is clicked
+  const getMoreReqs = async () => {
+    // Get the requirements for the last layer in prereqs (courses without set prereqs)
     const prereqsToWrite = { ...prereqs };
-    console.log(prereqsToWrite);
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
       if (currPrereqs.length !== 0) continue;
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
-      const newPrereqs: ICourse[][] = await res.json();
-      console.log("newPrereqs:");
-      console.log(newPrereqs);
-      if (newPrereqs[0].length > 0) {
-        prereqsToWrite[base] = newPrereqs[0];
-        for (const newPrereq of newPrereqs[0]) {
+      const newReqs: ICourse[][] = await res.json();
+      if (newReqs[0].length > 0) {
+        prereqsToWrite[base] = newReqs[0];
+        for (const newPrereq of newReqs[0]) {
           prereqsToWrite[newPrereq.course_no] = [];
         }
       }
     }
     setPrereqs(prereqsToWrite);
+    // Do the same for coreqs
+    const coreqsToWrite = { ...coreqs };
+
+    
   };
 
   // Style for ReactFlow component
@@ -191,30 +233,6 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     window.open(`/course/${element.id}`, '_self');
   }
 
-  // Track mouse position
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent)  => {
-      setCoords({x: e.pageX, y: e.pageY});
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    }
-  }, [coords]);
-  function CourseInfoPopup() {
-    const cipp = courseInfoPopupParams;
-    return <div style = {{
-      display: cipp.active ? 'block' : 'none',
-      position: 'absolute',
-      left: coords.x + 10, // If there isn't enough offset, nodeUnhoverCallback will trigger once this opens
-      top: coords.y + 10,
-      zIndex: 100,
-    }}>
-      {cipp.longTitle}
-      {cipp.desc}
-    </div>
-  }
-
   return (
     <div>
       <div className="bg-exeter px-8 pt-28 pb-20 lg:px-40">
@@ -241,7 +259,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
           <div className="h-full">
             <button
               className="absolute z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
-              onClick={getMorePrereqs}
+              onClick={getMoreReqs}
             >
               More Prereqs
             </button>
@@ -284,17 +302,17 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const course = getCourse(params.id);
 
   // Load prereqs/coreqs
-  const firstPrereqs = getCoursePrerequisites(params.id);
+  const firstReqs = getCourseRequirements(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
   const initialCoreqs: Record<string, ICourse[]> = {};
   // Janky naming - firstPrereqs[0] is first prereqs, firstPrereqs[1] is first coreqs
-  initialPrereqs[params.id] = firstPrereqs[0];
-  initialCoreqs[params.id] = firstPrereqs[1];
-  for (const prereq of firstPrereqs[0]) {
+  initialPrereqs[params.id] = firstReqs[0];
+  initialCoreqs[params.id] = firstReqs[1];
+  for (const prereq of firstReqs[0]) {
     initialPrereqs[prereq.course_no] = [];
   }
-  for (const coreq of firstPrereqs[1]) {
-    initialPrereqs[coreq.course_no] = [];
+  for (const coreq of firstReqs[1]) {
+    initialCoreqs[coreq.course_no] = [];
   }
 
   // Load detailed course info
@@ -302,13 +320,13 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const initialDescriptions: Record<string, string | undefined> = {}; // Descriptions
   initialDescriptions[params.id] = course?.desc;
   initialTitles[params.id] = course?.lt;
-  for (const prereq of firstPrereqs[0]) { // Load this data for each prereq
-    initialDescriptions[prereq.st] = prereq.desc;
-    initialTitles[prereq.st] = prereq.lt;
+  for (const prereq of firstReqs[0]) { // Load this data for each prereq
+    initialDescriptions[prereq.course_no] = prereq.desc;
+    initialTitles[prereq.course_no] = prereq.lt;
   }
-  for (const coreq of firstPrereqs[1]) { // Load this data for each coreq
-    initialDescriptions[coreq.st] = coreq.desc;
-    initialTitles[coreq.st] = coreq.lt;
+  for (const coreq of firstReqs[1]) { // Load this data for each coreq
+    initialDescriptions[coreq.course_no] = coreq.desc;
+    initialTitles[coreq.course_no] = coreq.lt;
   }
 
   return {
