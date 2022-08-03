@@ -18,24 +18,32 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     layoutOptions: { 
       'elk.algorithm': 'layered',
     },
-    children: [
-      ...Object.entries(prereqs).map(([base]) => {
-        return {
-          id: base,
-          width: 130,
-          height: 36,
-        };
-      }),
-      ...Object.entries(coreqs).map(([base]) => {
-        return {
-          id: base,
-          width: 130,
-          height: 36,
-        };
-      }),
-    ],
+    children: [],
     edges: [],
   };
+  // Add nodes
+  // Keep track of nodes that've already been added so we don't get duplicates
+  const nodeIds = new Set<string>();
+  for (const [base] of Object.entries(prereqs)) {
+    if (!nodeIds.has(base)) {
+      nodeIds.add(base);
+      (graph.children as ElkNode[]).push({
+        id: base,
+        width: 130,
+        height: 36,
+        });
+    }
+  }
+  for (const [base] of Object.entries(coreqs)) {
+    if (!nodeIds.has(base)) {
+      nodeIds.add(base);
+      (graph.children as ElkNode[]).push({
+        id: base,
+        width: 130,
+        height: 36,
+        });
+    }
+  }
 
   // Add edges
   // .map() isn't really the best solution here
@@ -120,6 +128,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
+  console.log(initialPrereqs);
   console.log(initialCoreqs);
 
   interface CourseInfoPopupParams {
