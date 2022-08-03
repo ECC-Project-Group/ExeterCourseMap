@@ -13,6 +13,7 @@ import { getCourseColor, getCourseImage } from '../../lib/course_colors';
 const elk = new ELK();
 // Automatically finds the best layout for the prerequisite tree.
 const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record<string, ICourse[]>) => {
+
   const graph: ElkNode = {
     id: 'root',
     layoutOptions: { 
@@ -21,6 +22,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     children: [],
     edges: [],
   };
+
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
@@ -128,9 +130,6 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
-  console.log(initialPrereqs);
-  console.log(initialCoreqs);
-
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
@@ -191,23 +190,45 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
   const getMoreReqs = async () => {
     // Get the requirements for the last layer in prereqs (courses without set prereqs)
-    const prereqsToWrite = { ...prereqs };
+    const prereqsToWrite : Record<string, ICourse[]> = { ...prereqs };
+    const coreqsToWrite : Record<string, ICourse[]> = { ...coreqs };
+
+    // Keep track of which courses we've updated, since we don't want to update a class in prereqs then update it again in coreqs
+    const updatedCourses : Set<string> = new Set<string>();
+
+    // Add both the prereqs and coreqs of the last layer of prereqs
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
-      if (currPrereqs.length !== 0) continue;
+      if (currPrereqs.length !== 0) continue; // That means base isn't in the last layer of prereqs
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
-      if (newReqs[0].length > 0) {
-        prereqsToWrite[base] = newReqs[0];
-        for (const newPrereq of newReqs[0]) {
-          prereqsToWrite[newPrereq.course_no] = [];
-        }
+      prereqsToWrite[base] = newReqs[0]; // Prereqs of prereqs
+      for (const newPrereq of newReqs[0]) {
+        prereqsToWrite[newPrereq.course_no] = [];
       }
+      coreqsToWrite[base] = newReqs[1]; // Coreqs of prereqs
+      for (const newCoreq of newReqs[1]) {
+        coreqsToWrite[newCoreq.course_no] = [];
+      }
+      updatedCourses.add(base);
     }
-    setPrereqs(prereqsToWrite);
-    // Do the same for coreqs
-    const coreqsToWrite = { ...coreqs };
-
     
+    // TODO: FIX THIS WITHOUT BREAKING THE PREREQ LINKS - TEST ON PHYSICS 530
+    // Do the same for the coreqs
+    // for (const [base, currCoreqs] of Object.entries(coreqs)) {
+    //   if (currCoreqs.length !== 0) continue; // That means base isn't in the last layer of prereqs
+    //   const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
+    //   const newReqs: ICourse[][] = await res.json();
+    //   prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
+    //   for (const newPrereq of newReqs[0]) {
+    //     prereqsToWrite[newPrereq.course_no] = [];
+    //   }
+    //   coreqsToWrite[base] = newReqs[1]; // Coreqs of coreqs
+    //   for (const newCoreq of newReqs[1]) {
+    //     coreqsToWrite[newCoreq.course_no] = [];
+    //   }
+    // }
+    // setPrereqs(prereqsToWrite);
+    // setCoreqs(coreqsToWrite);
   };
 
   // Style for ReactFlow component
@@ -319,8 +340,10 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   initialCoreqs[params.id] = firstReqs[1];
   for (const prereq of firstReqs[0]) {
     initialPrereqs[prereq.course_no] = [];
+    initialCoreqs[prereq.course_no] = [];
   }
   for (const coreq of firstReqs[1]) {
+    initialPrereqs[coreq.course_no] = [];
     initialCoreqs[coreq.course_no] = [];
   }
 
