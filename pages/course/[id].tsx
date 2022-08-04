@@ -17,7 +17,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   const graph: ElkNode = {
     id: 'root',
     layoutOptions: { 
-      'elk.algorithm': 'layered',
+      'elk.algorithm': 'mrtree',
     },
     children: [],
     edges: [],
@@ -31,8 +31,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
         id: base,
-        width: 130,
-        height: 36,
+        width: 100,
+        height: 80,
         });
     }
   }
@@ -41,8 +41,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
         id: base,
-        width: 130,
-        height: 36,
+        width: 100,
+        height: 80,
         });
     }
   }
@@ -54,8 +54,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     for (const index of prereqs.keys()) {
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        source: prereqs[index].course_no,
-        target: base,
+        target: prereqs[index].course_no,
+        source: base,
       });
     }
   });
@@ -64,8 +64,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     for (const index of coreqs.keys()) {
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        source: coreqs[index].course_no,
-        target: base,
+        target: coreqs[index].course_no,
+        source: base,
       });
     }
   });
@@ -88,8 +88,6 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
           ),
         },
         position: { x: node.x ?? 0, y: node.y ?? 0 },
-        sourcePosition: Position.Left,
-        targetPosition: Position.Right,
         style: {
           backgroundColor: getCourseColor(node.id),
           backgroundImage: getCourseImage(node.id),
@@ -98,8 +96,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
           borderRadius: 10,
           borderWidth: 2,
           width: 90,
-        }
-        
+        },
       });
     });
   }
@@ -110,6 +107,8 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         id: edge.id,
         source: edge.source,
         target: edge.target,
+        sourcePosition: Position.Bottom,
+        targetPosition: Position.Top,
         type: 'smoothstep',
         animated: false,
         style: {
