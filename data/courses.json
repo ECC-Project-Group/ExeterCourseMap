@@ -4506,7 +4506,7 @@
         "fixed": true,
         "lt": "Introduction to Calculus (enriched) *",
         "lvl": "400",
-        "pre": null,
+        "pre": "MAT400|MAT401",
         "st": "Intro Calculus (enriched) *",
         "subj": "MAT"
     },

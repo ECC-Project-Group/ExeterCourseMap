@@ -2,7 +2,7 @@
   "name": "exeter-course-map",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -26,6 +26,8 @@
     "react-dom": "17.0.2",
     "react-flow-renderer": "^9.7.4",
     "react-icons": "^4.3.1",
+    "react-tooltip": "^4.2.21",
+    "reactjs-popup": "^2.0.5",
     "three": "^0.137.5"
   },
   "devDependencies": {
