@@ -136,6 +136,11 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     desc: string;
   }
 
+  // Courses whose requirements have already been loaded
+  const initialReqsLoaded = new Set<string>();
+  initialReqsLoaded.add(course.course_no);
+  const [reqsLoaded, setReqsLoaded] = useState<Set<string>>(initialReqsLoaded);
+
   const [prereqs, setPrereqs] =
     useState<Record<string, ICourse[]>>(initialPrereqs);
   const [coreqs, setCoreqs] =
@@ -189,46 +194,54 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
   const getMoreReqs = async () => {
-    // Get the requirements for the last layer in prereqs (courses without set prereqs)
+    // Get the requirements for the last layers of prereqs and coreqs
     const prereqsToWrite : Record<string, ICourse[]> = { ...prereqs };
     const coreqsToWrite : Record<string, ICourse[]> = { ...coreqs };
 
-    // Keep track of which courses we've updated, since we don't want to update a class in prereqs then update it again in coreqs
-    const updatedCourses : Set<string> = new Set<string>();
+    // Don't load 
+    const currReqsLoaded = reqsLoaded;
 
     // Add both the prereqs and coreqs of the last layer of prereqs
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
-      if (currPrereqs.length !== 0) continue; // That means base isn't in the last layer of prereqs
+      if (currReqsLoaded.has(base)) continue; // That means base isn't in the last layer of prereqs
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
       prereqsToWrite[base] = newReqs[0]; // Prereqs of prereqs
+      
       for (const newPrereq of newReqs[0]) {
-        prereqsToWrite[newPrereq.course_no] = [];
+        // Avoids issues when two branches lead to the same requirements
+        if (!(newPrereq.course_no in prereqsToWrite)) 
+          prereqsToWrite[newPrereq.course_no] = [];
       }
       coreqsToWrite[base] = newReqs[1]; // Coreqs of prereqs
       for (const newCoreq of newReqs[1]) {
-        coreqsToWrite[newCoreq.course_no] = [];
+        if (!(newCoreq.course_no in coreqsToWrite))
+          coreqsToWrite[newCoreq.course_no] = [];
       }
-      updatedCourses.add(base);
+      currReqsLoaded.add(base);
     }
-    
+
     // TODO: FIX THIS WITHOUT BREAKING THE PREREQ LINKS - TEST ON PHYSICS 530
     // Do the same for the coreqs
-    // for (const [base, currCoreqs] of Object.entries(coreqs)) {
-    //   if (currCoreqs.length !== 0) continue; // That means base isn't in the last layer of prereqs
-    //   const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
-    //   const newReqs: ICourse[][] = await res.json();
-    //   prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
-    //   for (const newPrereq of newReqs[0]) {
-    //     prereqsToWrite[newPrereq.course_no] = [];
-    //   }
-    //   coreqsToWrite[base] = newReqs[1]; // Coreqs of coreqs
-    //   for (const newCoreq of newReqs[1]) {
-    //     coreqsToWrite[newCoreq.course_no] = [];
-    //   }
-    // }
-    // setPrereqs(prereqsToWrite);
-    // setCoreqs(coreqsToWrite);
+    for (const [base, currCoreqs] of Object.entries(coreqs)) {
+      if (currReqsLoaded.has(base)) continue;
+      const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
+      const newReqs: ICourse[][] = await res.json();
+      prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
+      for (const newPrereq of newReqs[0]) {
+        if (!(newPrereq.course_no in prereqsToWrite)) 
+          prereqsToWrite[newPrereq.course_no] = [];
+      }
+      coreqsToWrite[base] = newReqs[1]; // Coreqs of coreqs
+      for (const newCoreq of newReqs[1]) {
+        if (!(newCoreq.course_no in coreqsToWrite)) 
+          coreqsToWrite[newCoreq.course_no] = [];
+      }
+      currReqsLoaded.add(base);
+    }
+    setPrereqs(prereqsToWrite);
+    setCoreqs(coreqsToWrite);
+    setReqsLoaded(currReqsLoaded);
   };
 
   // Style for ReactFlow component
@@ -284,14 +297,14 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
         </div>
         <div className="md:col-span-3">
           <h1 className="font-display text-3xl font-black text-gray-700">
-            Prerequisites
+            Requirements
           </h1>
           <div className="h-full">
             <button
               className="absolute z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
               onClick={getMoreReqs}
             >
-              More Prereqs
+              More Requirements
             </button>
             <ReactFlow
               className="mt-4 shadow-md"
