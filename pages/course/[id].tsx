@@ -144,7 +144,9 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     useState<Record<string, ICourse[]>>(initialPrereqs);
   const [coreqs, setCoreqs] =
     useState<Record<string, ICourse[]>>(initialCoreqs);
-  
+  const [titles, setTitles] = useState<Record<string, string | undefined>>(initialTitles);
+  const [descriptions, setDescriptions] = useState<Record<string, string | undefined>>(initialDescriptions);
+
   const [elements, setElements] = useState<Elements>([]);
 
   // Mouse coordinates
@@ -197,8 +199,11 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     const prereqsToWrite : Record<string, ICourse[]> = { ...prereqs };
     const coreqsToWrite : Record<string, ICourse[]> = { ...coreqs };
 
-    // Don't load 
+    // Don't load requirements for courses whose requirements have already been loaded
     const currReqsLoaded = reqsLoaded;
+
+    // Keep track of newly-added courses
+    const newCourses : Set<string> = new Set<string>();
 
     // Add both the prereqs and coreqs of the last layer of prereqs
     for (const [base, currPrereqs] of Object.entries(prereqs)) {
@@ -209,18 +214,20 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
       
       for (const newPrereq of newReqs[0]) {
         // Avoids issues when two branches lead to the same requirements
-        if (!(newPrereq.course_no in prereqsToWrite)) 
+        if (!(newPrereq.course_no in prereqsToWrite)) {
           prereqsToWrite[newPrereq.course_no] = [];
+          newCourses.add(newPrereq.course_no);
+        }
       }
       coreqsToWrite[base] = newReqs[1]; // Coreqs of prereqs
       for (const newCoreq of newReqs[1]) {
-        if (!(newCoreq.course_no in coreqsToWrite))
+        if (!(newCoreq.course_no in coreqsToWrite)) {
           coreqsToWrite[newCoreq.course_no] = [];
+          newCourses.add(newCoreq.course_no);
+        }
       }
       currReqsLoaded.add(base);
     }
-
-    // TODO: FIX THIS WITHOUT BREAKING THE PREREQ LINKS - TEST ON PHYSICS 530
     // Do the same for the coreqs
     for (const [base, currCoreqs] of Object.entries(coreqs)) {
       if (currReqsLoaded.has(base)) continue;
@@ -228,19 +235,36 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
       const newReqs: ICourse[][] = await res.json();
       prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
       for (const newPrereq of newReqs[0]) {
-        if (!(newPrereq.course_no in prereqsToWrite)) 
+        if (!(newPrereq.course_no in prereqsToWrite)) {
           prereqsToWrite[newPrereq.course_no] = [];
+          newCourses.add(newPrereq.course_no);
+        }
       }
       coreqsToWrite[base] = newReqs[1]; // Coreqs of coreqs
       for (const newCoreq of newReqs[1]) {
-        if (!(newCoreq.course_no in coreqsToWrite)) 
+        if (!(newCoreq.course_no in coreqsToWrite)) {
           coreqsToWrite[newCoreq.course_no] = [];
+          newCourses.add(newCoreq.course_no);
+        }
       }
       currReqsLoaded.add(base);
-    }
+    }    
     setPrereqs(prereqsToWrite);
     setCoreqs(coreqsToWrite);
     setReqsLoaded(currReqsLoaded);
+
+    // Load course info for all new courses
+    const titlesToWrite : Record<string, string | undefined> = { ...titles };
+    const descriptionsToWrite : Record<string, string | undefined> = { ...descriptions };
+    for (const courseNo of newCourses) {
+      console.log("Adding info for " + courseNo);
+      const res = await fetch(`http://localhost:3000/api/course_info/${courseNo}`);
+      const course : ICourse = await res.json();
+      titlesToWrite[courseNo] = course.lt;
+      descriptionsToWrite[courseNo] = course.desc;
+    }
+    setTitles(titlesToWrite);
+    setDescriptions(descriptionsToWrite);
   };
 
   // Style for ReactFlow component
@@ -254,8 +278,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
   const popupParams = {
     active: true,
-    longTitle: initialTitles[node.id],
-    desc: initialDescriptions[node.id]
+    longTitle: titles[node.id],
+    desc: descriptions[node.id]
   } as CourseInfoPopupParams;
   setCourseInfoPopupParams(popupParams);
   };
