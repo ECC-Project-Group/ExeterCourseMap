@@ -32,7 +32,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
       (graph.children as ElkNode[]).push({
         id: base,
         width: 100,
-        height: 80,
+        height: 60,
         });
     }
   }
@@ -42,7 +42,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
       (graph.children as ElkNode[]).push({
         id: base,
         width: 100,
-        height: 80,
+        height: 60,
         });
     }
   }
@@ -181,15 +181,19 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   }, [coords]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
-    return <div style = {{
+    return <div className='text-white bg-gray-900/80 backdrop-blur rounded-lg m-5' style = {{
       display: cipp.active ? 'block' : 'none',
       position: 'absolute',
-      left: coords.x + 10, // If there isn't enough offset, nodeUnhoverCallback will trigger once this opens
-      top: coords.y + 10,
+      left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
+      top: coords.y,
       zIndex: 100,
     }}>
-      {cipp.longTitle}
-      {cipp.desc}
+      <p className='text-xl ml-2 mr-2 mt-2 font-bold'>
+        {cipp.longTitle}
+      </p>
+      <p className='ml-2 mr-2 mb-2 text-sm'>
+        {cipp.desc}
+      </p>
     </div>
   }
 
@@ -301,7 +305,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
 
   return (
     <div>
-      <div className="bg-exeter px-8 pt-28 pb-20 lg:px-40">
+      <div className="bg-exeter px-8 pt-20 pb-20 lg:px-40">
         <h1 className="font-display text-2xl text-gray-300 md:text-3xl">
           {course.course_no}
         </h1>
