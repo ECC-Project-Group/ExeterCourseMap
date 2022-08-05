@@ -18,7 +18,7 @@ interface ICourse {
   st: string;
   lt: string;
   desc: string;
-  eli: null | string;
+  eli: string;
   pre: null | string;
 }
 

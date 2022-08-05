@@ -128,11 +128,13 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
-  const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles } = params;
+  // initialEli maps each course id to its eligibility requirements
+  const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles, initialEli } = params;
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
     desc: string;
+    eli: string;
   }
 
   // Courses whose requirements have already been loaded
@@ -146,6 +148,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     useState<Record<string, ICourse[]>>(initialCoreqs);
   const [titles, setTitles] = useState<Record<string, string | undefined>>(initialTitles);
   const [descriptions, setDescriptions] = useState<Record<string, string | undefined>>(initialDescriptions);
+  const [eli, setEli] = useState<Record<string, string | undefined>>(initialEli);
+  
 
   const [elements, setElements] = useState<Elements>([]);
 
@@ -156,7 +160,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   const initialPopupParams = {
     active: false,
     longTitle: "",
-    desc: ""
+    desc: "",
+    eli: ""
   } as CourseInfoPopupParams;
   const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
 
@@ -191,8 +196,11 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
       <p className='text-xl ml-2 mr-2 mt-2 font-bold'>
         {cipp.longTitle}
       </p>
-      <p className='ml-2 mr-2 mb-2 text-sm'>
+      <p className='ml-2 mr-2 text-sm'>
         {cipp.desc}
+      </p>
+      <p className='ml-2 mr-2 mb-2 text-sm italic'>
+        {cipp.eli}
       </p>
     </div>
   }
@@ -260,15 +268,19 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     // Load course info for all new courses
     const titlesToWrite : Record<string, string | undefined> = { ...titles };
     const descriptionsToWrite : Record<string, string | undefined> = { ...descriptions };
+    const eliToWrite : Record<string, string | undefined> = { ...eli };
+    
     for (const courseNo of newCourses) {
       console.log("Adding info for " + courseNo);
       const res = await fetch(`http://localhost:3000/api/course_info/${courseNo}`);
       const course : ICourse = await res.json();
       titlesToWrite[courseNo] = course.lt;
       descriptionsToWrite[courseNo] = course.desc;
+      eliToWrite[courseNo] = course.eli;
     }
     setTitles(titlesToWrite);
     setDescriptions(descriptionsToWrite);
+    setEli(eliToWrite);
   };
 
   // Style for ReactFlow component
@@ -283,7 +295,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   const popupParams = {
     active: true,
     longTitle: titles[node.id],
-    desc: descriptions[node.id]
+    desc: descriptions[node.id],
+    eli: eli[node.id]
   } as CourseInfoPopupParams;
   setCourseInfoPopupParams(popupParams);
   };
@@ -291,7 +304,8 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     const popupParams = {
     active: false,
     longTitle: "",
-    desc: ""
+    desc: "",
+    eli: ""
   } as CourseInfoPopupParams;
   setCourseInfoPopupParams(popupParams);
   };
@@ -390,15 +404,19 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   // Load detailed course info
   const initialTitles: Record<string, string | undefined> = {}; // Long titles
   const initialDescriptions: Record<string, string | undefined> = {}; // Descriptions
+  const initialEli: Record<string, string | undefined> = {}; // Eligibility requirements
   initialDescriptions[params.id] = course?.desc;
   initialTitles[params.id] = course?.lt;
+  initialEli[params.id] = course?.eli;
   for (const prereq of firstReqs[0]) { // Load this data for each prereq
     initialDescriptions[prereq.course_no] = prereq.desc;
     initialTitles[prereq.course_no] = prereq.lt;
+    initialEli[prereq.course_no] = prereq.eli;
   }
   for (const coreq of firstReqs[1]) { // Load this data for each coreq
     initialDescriptions[coreq.course_no] = coreq.desc;
     initialTitles[coreq.course_no] = coreq.lt;
+    initialEli[coreq.course_no] = coreq.eli
   }
 
   return {
@@ -409,6 +427,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
         initialCoreqs: initialCoreqs,
         initialDescriptions: initialDescriptions,
         initialTitles: initialTitles,
+        initialEli: initialEli,
       }
     },
   };
