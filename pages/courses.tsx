@@ -2,8 +2,9 @@ import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
+import { InferGetStaticPropsType } from "next";
 
-const Courses = ({ courses }: { courses: ICoursePartial[] }) => {
+const Courses = ({ courses }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // We don't need all information about any particular course,
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
@@ -70,7 +71,7 @@ const Courses = ({ courses }: { courses: ICoursePartial[] }) => {
 // page load speeds
 export async function getStaticProps() {
   const courses = getAllCourses();
-
+  courses.shift(); // Don't include PEA000 (get into PEA)
   return {
     props: {
       courses: courses.map((course) => {

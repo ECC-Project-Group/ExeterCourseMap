@@ -27,6 +27,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
   for (const [base] of Object.entries(prereqs)) {
+    if (base == 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
@@ -37,6 +38,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     }
   }
   for (const [base] of Object.entries(coreqs)) {
+    if (base === 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
@@ -52,6 +54,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   Object.entries(prereqs).map(([base, prereqs]) => {
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
+      if (prereqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
         target: prereqs[index].course_no,
@@ -62,6 +65,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   Object.entries(coreqs).map(([base, coreqs]) => {
     if (coreqs.length === 0) return;
     for (const index of coreqs.keys()) {
+      if (coreqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
         target: coreqs[index].course_no,
@@ -121,21 +125,12 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   return elements;
 };
 
-// TODO: Add a button inside the react-flow chart
-// to load + render all prerequisites for courses that have an
-// empty array as a prerequisite in the prereqs variable
 const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   // initialEli maps each course id to its eligibility requirements
   const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles, initialEli } = params;
-  interface CourseInfoPopupParams {
-    active: boolean; // whether the popup is currently active
-    longTitle: string;
-    desc: string;
-    eli: string;
-  }
 
   // Courses whose requirements have already been loaded
   const initialReqsLoaded = new Set<string>();
@@ -153,18 +148,6 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
 
   const [elements, setElements] = useState<Elements>([]);
 
-  // Mouse coordinates
-  const [coords, setCoords] = useState({x: 0, y:0});
-  
-  // Parameters for course info popup (opened when mouse hovers over node)
-  const initialPopupParams = {
-    active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
-  } as CourseInfoPopupParams;
-  const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
-
   // Relayout the chart when prereqs changes
   useEffect(() => {
     async function main() {
@@ -174,6 +157,22 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     main();
   }, [prereqs, coreqs]);
 
+  interface CourseInfoPopupParams {
+    active: boolean; // whether the popup is currently active
+    longTitle: string;
+    desc: string;
+    eli: string;
+  }
+  // Mouse coordinates - determines where to display popup
+  const [coords, setCoords] = useState({x: 0, y:0});
+  // Parameters for course info popup (opened when mouse hovers over node)
+  const initialPopupParams = {
+    active: false,
+    longTitle: "",
+    desc: "",
+    eli: ""
+  } as CourseInfoPopupParams;
+  const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
   // Track mouse position
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent)  => {
@@ -204,6 +203,26 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
       </p>
     </div>
   }
+  // Callbacks for when user moves cursors on/off nodes or clicks on nodes
+  interface flowNode { id: string; }
+  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+  const popupParams = {
+    active: true,
+    longTitle: titles[node.id],
+    desc: descriptions[node.id],
+    eli: eli[node.id]
+  } as CourseInfoPopupParams;
+  setCourseInfoPopupParams(popupParams);
+  };
+  const nodeUnhoverCallback =(event: React.MouseEvent, node: flowNode) => {
+    const popupParams = {
+    active: false,
+    longTitle: "",
+    desc: "",
+    eli: ""
+  } as CourseInfoPopupParams;
+  setCourseInfoPopupParams(popupParams);
+  };
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
   const getMoreReqs = async () => {
@@ -288,28 +307,6 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     // background: 'rgb(35, 35, 35)'
   }
   
-  // This doesn't work for some reason
-  // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
-  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
-  const popupParams = {
-    active: true,
-    longTitle: titles[node.id],
-    desc: descriptions[node.id],
-    eli: eli[node.id]
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
-  };
-  const nodeUnhoverCallback =(event: React.MouseEvent, node: flowNode) => {
-    const popupParams = {
-    active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
-  };
-  
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
@@ -389,7 +386,6 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const firstReqs = getCourseRequirements(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
   const initialCoreqs: Record<string, ICourse[]> = {};
-  // Janky naming - firstPrereqs[0] is first prereqs, firstPrereqs[1] is first coreqs
   initialPrereqs[params.id] = firstReqs[0];
   initialCoreqs[params.id] = firstReqs[1];
   for (const prereq of firstReqs[0]) {
