@@ -27,6 +27,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
   for (const [base] of Object.entries(prereqs)) {
+    if (base == 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
@@ -37,6 +38,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
     }
   }
   for (const [base] of Object.entries(coreqs)) {
+    if (base === 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
@@ -52,6 +54,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   Object.entries(prereqs).map(([base, prereqs]) => {
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
+      if (prereqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
         target: prereqs[index].course_no,
@@ -62,6 +65,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   Object.entries(coreqs).map(([base, coreqs]) => {
     if (coreqs.length === 0) return;
     for (const index of coreqs.keys()) {
+      if (coreqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
         target: coreqs[index].course_no,
