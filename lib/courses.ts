@@ -10,6 +10,18 @@ export function getAllCourses() {
   return courses;
 }
 
+// Grabs all courses from these subjects - pass in a set of three-character subject strings
+export function getAllCoursesFrom(subjects: Set<string>) {
+  const allCourses = getAllCourses();
+  const subjCourses : ICourse[] = Array<ICourse>();
+  for (const course of allCourses) {
+    if (subjects.has(course.subj) || course.course_no == 'PEA000') {
+      subjCourses.push(course);
+    }
+  }
+  return subjCourses;
+}
+
 // Gets a course by its course number / id
 export function getCourse(courseNo: string) {
   const courses: ICourse[] = JSON.parse(

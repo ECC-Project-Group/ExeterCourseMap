@@ -31,7 +31,7 @@ const Header = () => {
 
       <ul className="flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
-        <HeaderNavItem name="Map" href="/map" />
+        <HeaderNavItem name="Maps" href="/maps" />
         <div>
           {!session && (
             <div className="relative mx-4">
