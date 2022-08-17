@@ -3752,7 +3752,7 @@
     "fixed": true,
     "lt": "Elementary Latin",
     "lvl": "100",
-    "pre": "LAT110",
+    "pre": "LAT110|LATTR1",
     "st": "Elementary Latin",
     "subj": "LAT"
   },
@@ -4025,7 +4025,7 @@
     "fixed": true,
     "lt": "Latin Elegy *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Latin Elegy *",
     "subj": "LAT"
   },
@@ -4038,7 +4038,7 @@
     "fixed": true,
     "lt": "Latin Prose Composition *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Latin Prose Composition *",
     "subj": "LAT"
   },
@@ -4051,7 +4051,7 @@
     "fixed": true,
     "lt": "Lucretius *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Lucretius *",
     "subj": "LAT"
   },
@@ -4064,7 +4064,7 @@
     "fixed": true,
     "lt": "Plautus *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Plautus *",
     "subj": "LAT"
   },
@@ -4077,7 +4077,7 @@
     "fixed": true,
     "lt": "Roman Satire *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Roman Satire *",
     "subj": "LAT"
   },
@@ -4090,7 +4090,7 @@
     "fixed": true,
     "lt": "Tacitus *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Tacitus *",
     "subj": "LAT"
   },
@@ -4103,7 +4103,7 @@
     "fixed": true,
     "lt": "Martial and Petronius *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Martial and Petronius *",
     "subj": "LAT"
   },
@@ -4116,7 +4116,7 @@
     "fixed": true,
     "lt": "Special Readings *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Special Readings *",
     "subj": "LAT"
   },
@@ -4142,7 +4142,7 @@
     "fixed": true,
     "lt": "Transition Latin 2",
     "lvl": "100",
-    "pre": "PEA000",
+    "pre": "LATTR1",
     "st": "Transition Latin 2",
     "subj": "LAT"
   },
