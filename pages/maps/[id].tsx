@@ -220,7 +220,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <div>
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
-      <div className="w-screen h-screen">
+      <div className="w-screen h-screen overflow-x-contain">
         <ReactFlow
         className="shadow-md"
         nodesDraggable={false}
@@ -255,6 +255,14 @@ export async function getStaticPaths() {
       {params: {id: 'classics'}},
       {params: {id: 'arabic'}},
       {params: {id: 'chinese'}},
+      {params: {id: 'french'}},
+      {params: {id: 'german'}},
+      {params: {id: 'italian'}},
+      {params: {id: 'japanese'}},
+      {params: {id: 'russian'}},
+      {params: {id: 'spanish'}},
+      {params: {id: 'religion'}},
+      {params: {id: 'english'}},
     ],
     fallback: false,
   }
@@ -269,6 +277,18 @@ export async function getStaticProps({ params } : { params: { id: string }}) {
     case 'music': subjects = new Set<string>(["MUS"]); break;
     case 'theater': subjects = new Set<string>(["THR"]); break;
     case 'history': subjects = new Set<string>(["HIS"]); break;
+    case 'classics': subjects = new Set<string>(["LAT", "GRK"]); break;
+    case 'english': subjects = new Set<string>(["ENG"]); break;
+    case 'religion': subjects = new Set<string>(["REL"]); break;
+    case 'arabic': subjects = new Set<string>(["ARA"]); break;
+    case 'chinese': subjects = new Set<string>(["CHI"]); break;
+    case 'french': subjects = new Set<string>(["FRE"]); break;
+    case 'german': subjects = new Set<string>(["GER"]); break;
+    case 'italian': subjects = new Set<string>(["ITA"]); break;
+    case 'japanese': subjects = new Set<string>(["JPN"]); break;
+    case 'russian': subjects = new Set<string>(["RUS"]); break;
+    case 'spanish': subjects = new Set<string>(["SPA"]); break;
+    
     default: subjects = new Set<string>();
   }
   const courses = getAllCoursesFrom(subjects);

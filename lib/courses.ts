@@ -18,6 +18,11 @@ export function getAllCoursesFrom(subjects: Set<string>) {
     if (subjects.has(course.subj) || course.course_no == 'PEA000') {
       subjCourses.push(course);
     }
+    // Exception - history 314 requires Latin 220, so we include all Latin courses 220 and under
+    else if (subjects.has('HIS')) {
+      if (["LAT110", "LAT120", "LAT130", "LATTR1", "LATTR2", "LAT210", "LAT220"].includes(course.course_no))
+        subjCourses.push(course);
+    }
   }
   return subjCourses;
 }
