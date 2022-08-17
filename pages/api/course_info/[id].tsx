@@ -6,5 +6,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const course = getCourse(id as string);
 
-    res.status(200).send(course);
+  res.status(200).send(course);
 }

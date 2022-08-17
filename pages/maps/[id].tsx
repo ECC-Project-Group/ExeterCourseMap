@@ -1,23 +1,20 @@
-import type { NextPage, InferGetStaticPropsType } from 'next';
-import React, { Children, useEffect, useState } from 'react';
-import ReactFlow, { Background, Elements, FlowElement, Position } from 'react-flow-renderer';
-import {
-  getAllCourses,
-  getAllCoursesFrom,
-  getCourse,
-  getCourseRequirements,
-} from '../../lib/courses';
-import { ICourse } from '../../types';
 import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
-  import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import type { InferGetStaticPropsType } from 'next';
+import React, { useEffect, useState } from 'react';
+import ReactFlow, { Elements, Position } from 'react-flow-renderer';
+import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
+import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import { ICourse } from '../../types';
 
 const elk = new ELK();
 // Automatically find the best layout for the map - copied from courses/[id].tsx
-const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record<string, ICourse[]>) => {
-
+const layoutElements = async (
+  prereqs: Record<string, ICourse[]>,
+  coreqs: Record<string, ICourse[]>
+) => {
   const graph: ElkNode = {
     id: 'root',
-    layoutOptions: { 
+    layoutOptions: {
       'elk.algorithm': 'mrtree',
     },
     children: [],
@@ -35,7 +32,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         id: base,
         width: 120,
         height: 60,
-        });
+      });
     }
   }
   for (const [base] of Object.entries(coreqs)) {
@@ -46,7 +43,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         id: base,
         width: 120,
         height: 60,
-        });
+      });
     }
   }
 
@@ -76,7 +73,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   });
 
   const parsedGraph = await elk.layout(graph);
-  
+
   // Add everything to a React Flow graph
   const elements: Elements = [];
   if (parsedGraph.children) {
@@ -86,10 +83,15 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         type: 'default',
         data: {
           label: (
-            <h1 className="font-display font-black text-white"
-            style={{textShadow: 
-              '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black'
-            }}>{node.id}</h1>
+            <h1
+              className="font-display font-black text-white"
+              style={{
+                textShadow:
+                  '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
+              }}
+            >
+              {node.id}
+            </h1>
           ),
         },
         position: { x: node.x ?? 0, y: node.y ?? 0 },
@@ -117,9 +119,9 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         type: 'smoothstep',
         animated: false,
         style: {
-          strokeWidth: edge.id.startsWith("ce") ? 1 : 2.5,
-          stroke: edge.id.startsWith("ce") ? 'rgb(50, 50, 50)' : 'black',
-        }
+          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
+          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
+        },
       });
     });
   }
@@ -127,12 +129,11 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
 };
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
-
-  const { courses, prereqs, coreqs, descriptions, titles, eli } = params;
+  const { prereqs, coreqs, descriptions, titles, eli } = params;
 
   // Remember courses whose requirements have already been loaded - avoid re-loading to be more efficient
   const initialReqsLoaded = new Set<string>();
-  const [reqsLoaded, setReqsLoaded] = useState<Set<string>>(initialReqsLoaded);  
+  useState<Set<string>>(initialReqsLoaded);
 
   const [elements, setElements] = useState<Elements>([]);
   // Compute layout of chart
@@ -140,9 +141,10 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     async function main() {
       const elements = await layoutElements(prereqs, coreqs);
       setElements(elements);
-    } main();
+    }
+    main();
   }, [prereqs, coreqs]);
- 
+
   // Parameters for course info popup (opened when mouse hovers over node)
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
@@ -152,94 +154,94 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   }
   const initialPopupParams = {
     active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
+    longTitle: '',
+    desc: '',
+    eli: '',
   } as CourseInfoPopupParams;
-  const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
+  const [courseInfoPopupParams, setCourseInfoPopupParams] =
+    useState<CourseInfoPopupParams>(initialPopupParams);
   // Mouse coordinates - used to determine where to open popup
-  const [coords, setCoords] = useState({x: 0, y: 0});
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   // Track mouse position
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent)  => {
-      setCoords({x: e.pageX, y: e.pageY});
+    const handleMouseMove = (e: MouseEvent) => {
+      setCoords({ x: e.pageX, y: e.pageY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-    }
+    };
   }, [coords]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
-    return <div className='text-white bg-gray-900/80 backdrop-blur rounded-lg m-5' style = {{
-      display: cipp.active ? 'block' : 'none',
-      position: 'absolute',
-      left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
-      top: coords.y,
-      zIndex: 100,
-    }}>
-      <p className='text-xl ml-2 mr-2 mt-2 font-bold'>
-        {cipp.longTitle}
-      </p>
-      <p className='ml-2 mr-2 text-sm'>
-        {cipp.desc}
-      </p>
-      <p className='ml-2 mr-2 mb-2 text-sm italic'>
-        {cipp.eli}
-      </p>
-    </div>
+    return (
+      <div
+        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur"
+        style={{
+          display: cipp.active ? 'block' : 'none',
+          position: 'absolute',
+          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
+          top: coords.y,
+          zIndex: 100,
+        }}
+      >
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle}</p>
+        <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
+      </div>
+    );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
+  interface flowNode {
+    id: string;
+  }
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
-  const popupParams = {
-    active: true,
-    longTitle: titles[node.id],
-    desc: descriptions[node.id],
-    eli: eli[node.id]
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
-  };
-  const nodeUnhoverCallback =(event: React.MouseEvent, node: flowNode) => {
     const popupParams = {
-    active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
+      active: true,
+      longTitle: titles[node.id],
+      desc: descriptions[node.id],
+      eli: eli[node.id],
+    } as CourseInfoPopupParams;
+    setCourseInfoPopupParams(popupParams);
   };
- 
+  const nodeUnhoverCallback = () => {
+    const popupParams = {
+      active: false,
+      longTitle: '',
+      desc: '',
+      eli: '',
+    } as CourseInfoPopupParams;
+    setCourseInfoPopupParams(popupParams);
+  };
+
   // Open the course page associated with this course when it's clicked
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
     if (element.id.startsWith('e')) return;
     window.open(`/course/${element.id}`, '_self');
-  }
+  };
 
   return (
     <div>
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
-      <div className="w-screen h-screen overflow-x-contain">
+      <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
-        className="shadow-md"
-        nodesDraggable={false}
-        nodesConnectable={false}
-        elementsSelectable={false}
-        selectNodesOnDrag={false}
-        elements={elements}
-        onNodeMouseEnter={nodeHoverCallback}
-        onNodeMouseLeave={nodeUnhoverCallback}
-        onElementClick={nodeClickCallback}
-        zoomOnPinch={true}
-        zoomOnDoubleClick={true}
-        zoomOnScroll={false}
-        panOnScroll={true}
-        
-      >
-      </ReactFlow>
+          className="shadow-md"
+          nodesDraggable={false}
+          nodesConnectable={false}
+          elementsSelectable={false}
+          selectNodesOnDrag={false}
+          elements={elements}
+          onNodeMouseEnter={nodeHoverCallback}
+          onNodeMouseLeave={nodeUnhoverCallback}
+          onElementClick={nodeClickCallback}
+          zoomOnPinch={true}
+          zoomOnDoubleClick={true}
+          zoomOnScroll={false}
+          panOnScroll={true}
+        ></ReactFlow>
       </div>
-      <CourseInfoPopup/>
+      <CourseInfoPopup />
     </div>
   );
 };
@@ -247,50 +249,85 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
 export async function getStaticPaths() {
   return {
     paths: [
-      {params: {id: 'stemwithoutcs'}},
-      {params: {id: 'cs'}},
-      {params: {id: 'art'}},
-      {params: {id: 'music'}},
-      {params: {id: 'theater'}},
-      {params: {id: 'history'}},
-      {params: {id: 'classics'}},
-      {params: {id: 'arabic'}},
-      {params: {id: 'chinese'}},
-      {params: {id: 'french'}},
-      {params: {id: 'german'}},
-      {params: {id: 'italian'}},
-      {params: {id: 'japanese'}},
-      {params: {id: 'russian'}},
-      {params: {id: 'spanish'}},
-      {params: {id: 'religion'}},
-      {params: {id: 'english'}},
+      { params: { id: 'stemwithoutcs' } },
+      { params: { id: 'cs' } },
+      { params: { id: 'art' } },
+      { params: { id: 'music' } },
+      { params: { id: 'theater' } },
+      { params: { id: 'history' } },
+      { params: { id: 'classics' } },
+      { params: { id: 'arabic' } },
+      { params: { id: 'chinese' } },
+      { params: { id: 'french' } },
+      { params: { id: 'german' } },
+      { params: { id: 'italian' } },
+      { params: { id: 'japanese' } },
+      { params: { id: 'russian' } },
+      { params: { id: 'spanish' } },
+      { params: { id: 'religion' } },
+      { params: { id: 'english' } },
     ],
     fallback: false,
-  }
+  };
 }
 
 // Grab all necessary information for every course
-export async function getStaticProps({ params } : { params: { id: string }}) {
-  let subjects : Set<string>;
+export async function getStaticProps({ params }: { params: { id: string } }) {
+  let subjects: Set<string>;
   switch (params.id) {
-    case 'art': subjects = new Set<string>(["ART"]); break;
-    case 'music': subjects = new Set<string>(["MUS"]); break;
-    case 'theater': subjects = new Set<string>(["THR"]); break;
-    case 'history': subjects = new Set<string>(["HIS"]); break;
-    case 'classics': subjects = new Set<string>(["LAT", "GRK"]); break;
-    case 'english': subjects = new Set<string>(["ENG"]); break;
-    case 'religion': subjects = new Set<string>(["REL"]); break;
-    case 'arabic': subjects = new Set<string>(["ARA"]); break;
-    case 'chinese': subjects = new Set<string>(["CHI"]); break;
-    case 'french': subjects = new Set<string>(["FRE"]); break;
-    case 'german': subjects = new Set<string>(["GER"]); break;
-    case 'italian': subjects = new Set<string>(["ITA"]); break;
-    case 'japanese': subjects = new Set<string>(["JPN"]); break;
-    case 'russian': subjects = new Set<string>(["RUS"]); break;
-    case 'spanish': subjects = new Set<string>(["SPA"]); break;
-    case 'stemwithoutcs': subjects = new Set<string>(["CHE", "BIO", "PHY", "MAT"]); break;
-    case 'cs': subjects = new Set<string>(["CSC"]); break;
-    default: subjects = new Set<string>();
+    case 'art':
+      subjects = new Set<string>(['ART']);
+      break;
+    case 'music':
+      subjects = new Set<string>(['MUS']);
+      break;
+    case 'theater':
+      subjects = new Set<string>(['THR']);
+      break;
+    case 'history':
+      subjects = new Set<string>(['HIS']);
+      break;
+    case 'classics':
+      subjects = new Set<string>(['LAT', 'GRK']);
+      break;
+    case 'english':
+      subjects = new Set<string>(['ENG']);
+      break;
+    case 'religion':
+      subjects = new Set<string>(['REL']);
+      break;
+    case 'arabic':
+      subjects = new Set<string>(['ARA']);
+      break;
+    case 'chinese':
+      subjects = new Set<string>(['CHI']);
+      break;
+    case 'french':
+      subjects = new Set<string>(['FRE']);
+      break;
+    case 'german':
+      subjects = new Set<string>(['GER']);
+      break;
+    case 'italian':
+      subjects = new Set<string>(['ITA']);
+      break;
+    case 'japanese':
+      subjects = new Set<string>(['JPN']);
+      break;
+    case 'russian':
+      subjects = new Set<string>(['RUS']);
+      break;
+    case 'spanish':
+      subjects = new Set<string>(['SPA']);
+      break;
+    case 'stemwithoutcs':
+      subjects = new Set<string>(['CHE', 'BIO', 'PHY', 'MAT']);
+      break;
+    case 'cs':
+      subjects = new Set<string>(['CSC']);
+      break;
+    default:
+      subjects = new Set<string>();
   }
   const courses = getAllCoursesFrom(subjects);
 
@@ -311,14 +348,14 @@ export async function getStaticProps({ params } : { params: { id: string }}) {
 
   return {
     props: {
-      params : {
+      params: {
         courses: courses,
         prereqs: prereqs,
         coreqs: coreqs,
         descriptions: descriptions,
         titles: titles,
         eli: eli,
-      }
+      },
     },
   };
 }

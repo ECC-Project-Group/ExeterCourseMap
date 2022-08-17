@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '../components/header';
 import { SessionProvider } from 'next-auth/react';
 
-function MyApp({ Component, pageProps, router }) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   // Providers allow any child component to gain access
   // to NextAuth-related variables anywhere in the hierarchy
 

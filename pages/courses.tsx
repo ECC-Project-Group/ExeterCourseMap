@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
-import { InferGetStaticPropsType } from "next";
+import { InferGetStaticPropsType } from 'next';
 
-const Courses = ({ courses }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Courses = ({
+  courses,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // We don't need all information about any particular course,
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
