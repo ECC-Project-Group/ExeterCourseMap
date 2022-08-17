@@ -85,7 +85,15 @@ const Maps = (props) => {
               <Maplink name='Religion' href='/religion'/>
             </Submap>
             <Submap>
-              <Maplink name='STEM' href='/stem'/>
+              STEM:
+              <ul className="pl-5">
+                <Submap>
+                  <Maplink name='Computer Science' href='/cs'/>
+                </Submap>
+                <Submap>
+                  <Maplink name='Bio/Chem/Physics/Math' href='/stemwithoutcs'/>
+                </Submap>
+              </ul>
             </Submap>
         </ul>
       </div>

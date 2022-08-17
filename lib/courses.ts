@@ -23,6 +23,10 @@ export function getAllCoursesFrom(subjects: Set<string>) {
       if (["LAT110", "LAT120", "LAT130", "LATTR1", "LATTR2", "LAT210", "LAT220"].includes(course.course_no))
         subjCourses.push(course);
     }
+    // Exception - CS 405 and 205 require math 12T
+    else if (subjects.has('CSC')) {
+      if (course.course_no == "MAT12T") subjCourses.push(course);
+    }
   }
   return subjCourses;
 }

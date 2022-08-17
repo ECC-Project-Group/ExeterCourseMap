@@ -247,7 +247,8 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
 export async function getStaticPaths() {
   return {
     paths: [
-      {params: {id: 'stem'}},
+      {params: {id: 'stemwithoutcs'}},
+      {params: {id: 'cs'}},
       {params: {id: 'art'}},
       {params: {id: 'music'}},
       {params: {id: 'theater'}},
@@ -272,7 +273,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params } : { params: { id: string }}) {
   let subjects : Set<string>;
   switch (params.id) {
-    case 'stem': subjects = new Set<string>(["CHE", "BIO", "PHY", "MAT", "CSC"]); break;
     case 'art': subjects = new Set<string>(["ART"]); break;
     case 'music': subjects = new Set<string>(["MUS"]); break;
     case 'theater': subjects = new Set<string>(["THR"]); break;
@@ -288,7 +288,8 @@ export async function getStaticProps({ params } : { params: { id: string }}) {
     case 'japanese': subjects = new Set<string>(["JPN"]); break;
     case 'russian': subjects = new Set<string>(["RUS"]); break;
     case 'spanish': subjects = new Set<string>(["SPA"]); break;
-    
+    case 'stemwithoutcs': subjects = new Set<string>(["CHE", "BIO", "PHY", "MAT"]); break;
+    case 'cs': subjects = new Set<string>(["CSC"]); break;
     default: subjects = new Set<string>();
   }
   const courses = getAllCoursesFrom(subjects);
