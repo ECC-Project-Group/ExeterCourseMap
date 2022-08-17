@@ -3752,7 +3752,7 @@
     "fixed": true,
     "lt": "Elementary Latin",
     "lvl": "100",
-    "pre": "LAT110",
+    "pre": "LAT110|LATTR1",
     "st": "Elementary Latin",
     "subj": "LAT"
   },
@@ -4025,7 +4025,7 @@
     "fixed": true,
     "lt": "Latin Elegy *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Latin Elegy *",
     "subj": "LAT"
   },
@@ -4038,7 +4038,7 @@
     "fixed": true,
     "lt": "Latin Prose Composition *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Latin Prose Composition *",
     "subj": "LAT"
   },
@@ -4051,7 +4051,7 @@
     "fixed": true,
     "lt": "Lucretius *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Lucretius *",
     "subj": "LAT"
   },
@@ -4064,7 +4064,7 @@
     "fixed": true,
     "lt": "Plautus *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Plautus *",
     "subj": "LAT"
   },
@@ -4077,7 +4077,7 @@
     "fixed": true,
     "lt": "Roman Satire *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Roman Satire *",
     "subj": "LAT"
   },
@@ -4090,7 +4090,7 @@
     "fixed": true,
     "lt": "Tacitus *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Tacitus *",
     "subj": "LAT"
   },
@@ -4103,7 +4103,7 @@
     "fixed": true,
     "lt": "Martial and Petronius *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Martial and Petronius *",
     "subj": "LAT"
   },
@@ -4116,7 +4116,7 @@
     "fixed": true,
     "lt": "Special Readings *",
     "lvl": "700",
-    "pre": "PEA000",
+    "pre": "LAT631",
     "st": "Special Readings *",
     "subj": "LAT"
   },
@@ -4142,7 +4142,7 @@
     "fixed": true,
     "lt": "Transition Latin 2",
     "lvl": "100",
-    "pre": "PEA000",
+    "pre": "LATTR1",
     "st": "Transition Latin 2",
     "subj": "LAT"
   },
@@ -5026,7 +5026,7 @@
     "fixed": true,
     "lt": "Accelerated Music Theory",
     "lvl": "200",
-    "pre": "DNE",
+    "pre": "PEA000",
     "st": "Intro to Music Theory Accel.",
     "subj": "MUS"
   },
@@ -6253,19 +6253,6 @@
     "subj": "THR"
   },
   {
-    "course_no": "THR204",
-    "dept": "TH",
-    "desc": "This course explores past and present techniques, of creating and manipulating scenery, properties, costumes, light, sound and makeup to enhance the, theatrical event. Lecture demonstrations and, hands-on laboratory experience are featured.",
-    "editor": "Eric",
-    "eli": "",
-    "fixed": true,
-    "lt": "Technical Theater and Design",
-    "lvl": "200",
-    "pre": "DNE",
-    "st": "Technical Theater and Design",
-    "subj": "THR"
-  },
-  {
     "course_no": "THR205",
     "dept": "TH",
     "desc": "This course centers on puppet construction and, animating inanimate objects to tell a story. , Looking as far back as the 5th century, students, study the history and evolution of this ancient, art form.  Working in a fully equipped stagecraft, classroom, each student learns the use of small, hand and power tools in order to bring their, imaginative ideas to life.",
@@ -6302,19 +6289,6 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "New Voices New Stories",
-    "subj": "THR"
-  },
-  {
-    "course_no": "THR300",
-    "dept": "TH",
-    "desc": "This is an explorative course focusing on finding, your vision as a designer and learning to, communicate your designs as an artist and, craftsperson.  In this course students will dive, into works from theater, dance, fashion design and, visual art to develop their personal design style., Through discovery and creative freedom, students, will create their own designs and gain tools to, communicate their ideas through visual renderings, paintings, and draping.  In addition to design, students will learn sewing techniques enabling, them to make a basic garment to culminate the, class.",
-    "editor": "Eric",
-    "eli": "",
-    "fixed": true,
-    "lt": "Costume Design and Construction",
-    "lvl": "300",
-    "pre": "DNE",
-    "st": "Costume Design and Const",
     "subj": "THR"
   },
   {
@@ -6365,7 +6339,7 @@
     "fixed": true,
     "lt": "Acting III - Advanced Acting Ensemble *",
     "lvl": "500",
-    "pre": "PEC10M",
+    "pre": "PEC10M|THR404|THR202",
     "st": "Acting III - Adv Ensemble *",
     "subj": "THR"
   }
