@@ -1,22 +1,24 @@
-import React, { Children, useEffect, useState } from 'react';
-import ReactFlow, { Background, Elements, FlowElement, Position } from 'react-flow-renderer';
+import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
+import { InferGetStaticPropsType } from 'next';
+import React, { useEffect, useState } from 'react';
+import ReactFlow, { Background, Elements, Position } from 'react-flow-renderer';
 import {
   getAllCourses,
   getCourse,
   getCourseRequirements,
 } from '../../lib/courses';
-import { ICourse } from '../../types';
-import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
-import { InferGetStaticPropsType } from "next";
 import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import { ICourse } from '../../types';
 
 const elk = new ELK();
 // Automatically finds the best layout for the prerequisite tree.
-const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record<string, ICourse[]>) => {
-
+const layoutElements = async (
+  prereqs: Record<string, ICourse[]>,
+  coreqs: Record<string, ICourse[]>
+) => {
   const graph: ElkNode = {
     id: 'root',
-    layoutOptions: { 
+    layoutOptions: {
       'elk.algorithm': 'mrtree',
     },
     children: [],
@@ -34,7 +36,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         id: base,
         width: 100,
         height: 60,
-        });
+      });
     }
   }
   for (const [base] of Object.entries(coreqs)) {
@@ -45,7 +47,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         id: base,
         width: 100,
         height: 60,
-        });
+      });
     }
   }
 
@@ -75,7 +77,7 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
   });
 
   const parsedGraph = await elk.layout(graph);
-  
+
   // Add everything to a React Flow graph
   const elements: Elements = [];
   if (parsedGraph.children) {
@@ -85,10 +87,15 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         type: 'default',
         data: {
           label: (
-            <h1 className="font-display font-black text-white"
-            style={{textShadow: 
-              '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black'
-            }}>{node.id}</h1>
+            <h1
+              className="font-display font-black text-white"
+              style={{
+                textShadow:
+                  '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
+              }}
+            >
+              {node.id}
+            </h1>
           ),
         },
         position: { x: node.x ?? 0, y: node.y ?? 0 },
@@ -116,21 +123,37 @@ const layoutElements = async (prereqs: Record<string, ICourse[]>, coreqs: Record
         type: 'smoothstep',
         animated: false,
         style: {
-          strokeWidth: edge.id.startsWith("ce") ? 1 : 2.5,
-          stroke: edge.id.startsWith("ce") ? 'rgb(50, 50, 50)' : 'black',
-        }
+          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
+          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
+        },
       });
     });
   }
   return elements;
 };
 
-const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> ) => {
+const CoursePage = ({
+  params,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   // initialEli maps each course id to its eligibility requirements
-  const { course, initialPrereqs, initialCoreqs, initialDescriptions, initialTitles, initialEli } = params;
+  const {
+    course,
+    initialPrereqs,
+    initialCoreqs,
+    initialDescriptions,
+    initialTitles,
+    initialEli,
+  }: {
+    course: ICourse;
+    initialPrereqs: any;
+    initialCoreqs: any;
+    initialDescriptions: any;
+    initialTitles: any;
+    initialEli: any;
+  } = params;
 
   // Courses whose requirements have already been loaded
   const initialReqsLoaded = new Set<string>();
@@ -141,10 +164,12 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     useState<Record<string, ICourse[]>>(initialPrereqs);
   const [coreqs, setCoreqs] =
     useState<Record<string, ICourse[]>>(initialCoreqs);
-  const [titles, setTitles] = useState<Record<string, string | undefined>>(initialTitles);
-  const [descriptions, setDescriptions] = useState<Record<string, string | undefined>>(initialDescriptions);
-  const [eli, setEli] = useState<Record<string, string | undefined>>(initialEli);
-  
+  const [titles, setTitles] =
+    useState<Record<string, string | undefined>>(initialTitles);
+  const [descriptions, setDescriptions] =
+    useState<Record<string, string | undefined>>(initialDescriptions);
+  const [eli, setEli] =
+    useState<Record<string, string | undefined>>(initialEli);
 
   const [elements, setElements] = useState<Elements>([]);
 
@@ -164,85 +189,87 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
     eli: string;
   }
   // Mouse coordinates - determines where to display popup
-  const [coords, setCoords] = useState({x: 0, y:0});
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   // Parameters for course info popup (opened when mouse hovers over node)
   const initialPopupParams = {
     active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
+    longTitle: '',
+    desc: '',
+    eli: '',
   } as CourseInfoPopupParams;
-  const [courseInfoPopupParams, setCourseInfoPopupParams] = useState<CourseInfoPopupParams>(initialPopupParams);
+  const [courseInfoPopupParams, setCourseInfoPopupParams] =
+    useState<CourseInfoPopupParams>(initialPopupParams);
   // Track mouse position
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent)  => {
-      setCoords({x: e.pageX, y: e.pageY});
+    const handleMouseMove = (e: MouseEvent) => {
+      setCoords({ x: e.pageX, y: e.pageY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-    }
+    };
   }, [coords]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
-    return <div className='text-white bg-gray-900/80 backdrop-blur rounded-lg m-5' style = {{
-      display: cipp.active ? 'block' : 'none',
-      position: 'absolute',
-      left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
-      top: coords.y,
-      zIndex: 100,
-    }}>
-      <p className='text-xl ml-2 mr-2 mt-2 font-bold'>
-        {cipp.longTitle}
-      </p>
-      <p className='ml-2 mr-2 text-sm'>
-        {cipp.desc}
-      </p>
-      <p className='ml-2 mr-2 mb-2 text-sm italic'>
-        {cipp.eli}
-      </p>
-    </div>
+    return (
+      <div
+        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur"
+        style={{
+          display: cipp.active ? 'block' : 'none',
+          position: 'absolute',
+          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
+          top: coords.y,
+          zIndex: 100,
+        }}
+      >
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle}</p>
+        <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
+      </div>
+    );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
+  interface flowNode {
+    id: string;
+  }
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
-  const popupParams = {
-    active: true,
-    longTitle: titles[node.id],
-    desc: descriptions[node.id],
-    eli: eli[node.id]
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
-  };
-  const nodeUnhoverCallback =(event: React.MouseEvent, node: flowNode) => {
     const popupParams = {
-    active: false,
-    longTitle: "",
-    desc: "",
-    eli: ""
-  } as CourseInfoPopupParams;
-  setCourseInfoPopupParams(popupParams);
+      active: true,
+      longTitle: titles[node.id],
+      desc: descriptions[node.id],
+      eli: eli[node.id],
+    } as CourseInfoPopupParams;
+    setCourseInfoPopupParams(popupParams);
+  };
+  const nodeUnhoverCallback = () => {
+    const popupParams = {
+      active: false,
+      longTitle: '',
+      desc: '',
+      eli: '',
+    } as CourseInfoPopupParams;
+    setCourseInfoPopupParams(popupParams);
   };
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
   const getMoreReqs = async () => {
     // Get the requirements for the last layers of prereqs and coreqs
-    const prereqsToWrite : Record<string, ICourse[]> = { ...prereqs };
-    const coreqsToWrite : Record<string, ICourse[]> = { ...coreqs };
+    const prereqsToWrite: Record<string, ICourse[]> = { ...prereqs };
+    const coreqsToWrite: Record<string, ICourse[]> = { ...coreqs };
 
     // Don't load requirements for courses whose requirements have already been loaded
     const currReqsLoaded = reqsLoaded;
 
     // Keep track of newly-added courses
-    const newCourses : Set<string> = new Set<string>();
+    const newCourses: Set<string> = new Set<string>();
 
     // Add both the prereqs and coreqs of the last layer of prereqs
-    for (const [base, currPrereqs] of Object.entries(prereqs)) {
+    for (const [base] of Object.entries(prereqs)) {
       if (currReqsLoaded.has(base)) continue; // That means base isn't in the last layer of prereqs
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
       prereqsToWrite[base] = newReqs[0]; // Prereqs of prereqs
-      
+
       for (const newPrereq of newReqs[0]) {
         // Avoids issues when two branches lead to the same requirements
         if (!(newPrereq.course_no in prereqsToWrite)) {
@@ -260,7 +287,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
       currReqsLoaded.add(base);
     }
     // Do the same for the coreqs
-    for (const [base, currCoreqs] of Object.entries(coreqs)) {
+    for (const [base] of Object.entries(coreqs)) {
       if (currReqsLoaded.has(base)) continue;
       const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
@@ -279,20 +306,24 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
         }
       }
       currReqsLoaded.add(base);
-    }    
+    }
     setPrereqs(prereqsToWrite);
     setCoreqs(coreqsToWrite);
     setReqsLoaded(currReqsLoaded);
 
     // Load course info for all new courses
-    const titlesToWrite : Record<string, string | undefined> = { ...titles };
-    const descriptionsToWrite : Record<string, string | undefined> = { ...descriptions };
-    const eliToWrite : Record<string, string | undefined> = { ...eli };
-    
+    const titlesToWrite: Record<string, string | undefined> = { ...titles };
+    const descriptionsToWrite: Record<string, string | undefined> = {
+      ...descriptions,
+    };
+    const eliToWrite: Record<string, string | undefined> = { ...eli };
+
     for (const courseNo of newCourses) {
-      console.log("Adding info for " + courseNo);
-      const res = await fetch(`http://localhost:3000/api/course_info/${courseNo}`);
-      const course : ICourse = await res.json();
+      console.log('Adding info for ' + courseNo);
+      const res = await fetch(
+        `http://localhost:3000/api/course_info/${courseNo}`
+      );
+      const course: ICourse = await res.json();
       titlesToWrite[courseNo] = course.lt;
       descriptionsToWrite[courseNo] = course.desc;
       eliToWrite[courseNo] = course.eli;
@@ -305,14 +336,14 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
   // Style for ReactFlow component
   const reactFlowStyle = {
     // background: 'rgb(35, 35, 35)'
-  }
-  
+  };
+
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
     if (element.id.startsWith('e')) return;
     window.open(`/course/${element.id}`, '_self');
-  }
+  };
 
   return (
     <div>
@@ -359,7 +390,7 @@ const CoursePage = ({ params }: InferGetStaticPropsType<typeof getStaticProps> )
               <Background color="#858585" />
             </ReactFlow>
           </div>
-          <CourseInfoPopup/>
+          <CourseInfoPopup />
         </div>
       </div>
     </div>
@@ -404,27 +435,29 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   initialDescriptions[params.id] = course?.desc;
   initialTitles[params.id] = course?.lt;
   initialEli[params.id] = course?.eli;
-  for (const prereq of firstReqs[0]) { // Load this data for each prereq
+  for (const prereq of firstReqs[0]) {
+    // Load this data for each prereq
     initialDescriptions[prereq.course_no] = prereq.desc;
     initialTitles[prereq.course_no] = prereq.lt;
     initialEli[prereq.course_no] = prereq.eli;
   }
-  for (const coreq of firstReqs[1]) { // Load this data for each coreq
+  for (const coreq of firstReqs[1]) {
+    // Load this data for each coreq
     initialDescriptions[coreq.course_no] = coreq.desc;
     initialTitles[coreq.course_no] = coreq.lt;
-    initialEli[coreq.course_no] = coreq.eli
+    initialEli[coreq.course_no] = coreq.eli;
   }
 
   return {
     props: {
-      params : {
+      params: {
         course: course,
         initialPrereqs: initialPrereqs,
         initialCoreqs: initialCoreqs,
         initialDescriptions: initialDescriptions,
         initialTitles: initialTitles,
         initialEli: initialEli,
-      }
+      },
     },
   };
 }
