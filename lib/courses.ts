@@ -10,6 +10,27 @@ export function getAllCourses() {
   return courses;
 }
 
+// Grabs all courses from these subjects - pass in a set of three-character subject strings
+export function getAllCoursesFrom(subjects: Set<string>) {
+  const allCourses = getAllCourses();
+  const subjCourses : ICourse[] = Array<ICourse>();
+  for (const course of allCourses) {
+    if (subjects.has(course.subj) || course.course_no == 'PEA000') {
+      subjCourses.push(course);
+    }
+    // Exception - history 314 requires Latin 220, so we include all Latin courses 220 and under
+    else if (subjects.has('HIS')) {
+      if (["LAT110", "LAT120", "LAT130", "LATTR1", "LATTR2", "LAT210", "LAT220"].includes(course.course_no))
+        subjCourses.push(course);
+    }
+    // Exception - CS 405 and 205 require math 12T
+    else if (subjects.has('CSC')) {
+      if (course.course_no == "MAT12T") subjCourses.push(course);
+    }
+  }
+  return subjCourses;
+}
+
 // Gets a course by its course number / id
 export function getCourse(courseNo: string) {
   const courses: ICourse[] = JSON.parse(

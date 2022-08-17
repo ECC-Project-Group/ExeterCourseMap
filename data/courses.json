@@ -242,7 +242,7 @@
     "fixed": true,
     "lt": "An Introduction to Biology",
     "lvl": "200",
-    "pre": "PEA000",
+    "pre": "BIO210",
     "st": "An Introduction to Biology",
     "subj": "BIO"
   },
@@ -296,6 +296,19 @@
     "lvl": "300",
     "pre": "BIO320",
     "st": "Principles of Biology",
+    "subj": "BIO"
+  },
+  {
+    "course_no": "BIO440",
+    "dept": "SC",
+    "desc": "This course will explore agricultural practices that aim to have positive environmental impacts, such as improving soil heath, increasing native species diversity and sequestering carbon. It will also explore agricultural practices that aim to have positive social impacts, such as reducing food insecurity, honoring ancestral farming practices and promoting economic wellbeing of local communities. Scientific topics such as conventional versus organic systems, seed banks, closed loop food production, permaculture, soil science, nitrogen cycles and plant physiology will be investigated. Emphasis will be placed on experiential learning on local farms and campus. The course includes a service learning component and potential for research projects.",
+    "editor": "Byran Huang",
+    "eli": "Open to uppers and seniors (lowers with departmental permission)",
+    "fixed": true,
+    "lt": "Regenerative Agriculture",
+    "lvl": "400",
+    "pre": "BIO330|BIO230",
+    "st": "Regenerative Agriculture",
     "subj": "BIO"
   },
   {
@@ -4181,7 +4194,7 @@
     "fixed": true,
     "lt": "Algebra",
     "lvl": "100",
-    "pre": "MAT12T",
+    "pre": "MAT12T|MAT120",
     "st": "Algebra",
     "subj": "MAT"
   },
@@ -4207,7 +4220,7 @@
     "fixed": true,
     "lt": "Integrated Mathematics",
     "lvl": "200",
-    "pre": "MAT130",
+    "pre": "MAT130|MAT13T",
     "st": "Integrated Mathematics",
     "subj": "MAT"
   },
@@ -4233,7 +4246,7 @@
     "fixed": true,
     "lt": "Integrated Mathematics",
     "lvl": "200",
-    "pre": "MAT210",
+    "pre": "MAT210|MAT21T",
     "st": "Integrated Mathematics",
     "subj": "MAT"
   },
@@ -4272,7 +4285,7 @@
     "fixed": true,
     "lt": "Transition 2 Mathematics",
     "lvl": "200",
-    "pre": "PEA000",
+    "pre": "MAT21T",
     "st": "Transition 2 Mathematics",
     "subj": "MAT"
   },
@@ -4285,7 +4298,7 @@
     "fixed": true,
     "lt": "Advanced Integrated Mathematics",
     "lvl": "300",
-    "pre": "MAT21T|MAT22T|MAT23X|MAT230",
+    "pre": "MAT22T|MAT23X|MAT230",
     "st": "Adv Integrated Mathematics",
     "subj": "MAT"
   },
@@ -4298,7 +4311,7 @@
     "fixed": true,
     "lt": "Adv Integrated Mathematics (enriched)",
     "lvl": "300",
-    "pre": "MAT230|MAT21T|MAT22T|MAT23X",
+    "pre": "MAT230|MAT22T|MAT23X",
     "st": "Adv Integrated Math (enriched)",
     "subj": "MAT"
   },
@@ -4441,7 +4454,7 @@
     "fixed": true,
     "lt": "Topics in Discrete Math *",
     "lvl": "400",
-    "pre": "MAT330",
+    "pre": "MAT330|MAT40X",
     "st": "Topics in Discrete Math *",
     "subj": "MAT"
   },
@@ -4454,7 +4467,7 @@
     "fixed": true,
     "lt": "History of Mathematics *",
     "lvl": "400",
-    "pre": "MAT330",
+    "pre": "MAT330|MAT40X",
     "st": "History of Mathematics *",
     "subj": "MAT"
   },
@@ -4467,7 +4480,7 @@
     "fixed": true,
     "lt": "Mathematics of Social Justice *",
     "lvl": "400",
-    "pre": "MAT330",
+    "pre": "MAT330|MAT40X",
     "st": "Mathematics Social Justice *",
     "subj": "MAT"
   },
@@ -4480,7 +4493,7 @@
     "fixed": true,
     "lt": "Introduction to Statistics *",
     "lvl": "400",
-    "pre": "MAT330",
+    "pre": "MAT330|MAT40X",
     "st": "Introduction to Statistics *",
     "subj": "MAT"
   },
@@ -4519,7 +4532,7 @@
     "fixed": true,
     "lt": "Introduction to Calculus (enriched) *",
     "lvl": "400",
-    "pre": "MAT400|MAT401",
+    "pre": "MAT400|MAT401|MAT40X",
     "st": "Intro Calculus (enriched) *",
     "subj": "MAT"
   },
@@ -4532,7 +4545,7 @@
     "fixed": true,
     "lt": "Calculus - A Lab Approach *",
     "lvl": "400",
-    "pre": "MAT330",
+    "pre": "MAT330|MAT40X",
     "st": "Calculus - A Lab Approach *",
     "subj": "MAT"
   },
@@ -4545,7 +4558,7 @@
     "fixed": true,
     "lt": "Statistics *",
     "lvl": "400",
-    "pre": "MAT330/MAT401",
+    "pre": "MAT330|MAT40X|MAT401",
     "st": "Statistics *",
     "subj": "MAT"
   },
@@ -4584,7 +4597,7 @@
     "fixed": true,
     "lt": "Calculus *",
     "lvl": "400",
-    "pre": "MAT410",
+    "pre": "MAT410|MAT41T|MAT41X",
     "st": "Calculus *",
     "subj": "MAT"
   },
@@ -4597,7 +4610,7 @@
     "fixed": true,
     "lt": "Calculus (enriched) *",
     "lvl": "400",
-    "pre": "MAT411",
+    "pre": "MAT411|MAT41T|MAT41X",
     "st": "Calculus (enriched) *",
     "subj": "MAT"
   },
@@ -5910,7 +5923,7 @@
     "fixed": true,
     "lt": "Elementary Spanish",
     "lvl": "100",
-    "pre": "SPA110",
+    "pre": "SPA110|SPA12T",
     "st": "Elementary Spanish",
     "subj": "SPA"
   },
@@ -5936,7 +5949,7 @@
     "fixed": true,
     "lt": "Elementary Spanish",
     "lvl": "100",
-    "pre": "SPA120",
+    "pre": "SPA120|SPA13T|SPA13X",
     "st": "Elementary Spanish",
     "subj": "SPA"
   },
@@ -5949,7 +5962,7 @@
     "fixed": true,
     "lt": "Transition Spanish 2",
     "lvl": "100",
-    "pre": "PEA000",
+    "pre": "SPA12T",
     "st": "Transition Spanish 2",
     "subj": "SPA"
   },
@@ -5962,7 +5975,7 @@
     "fixed": true,
     "lt": "Transition Spanish 1 - Accelerated",
     "lvl": "100",
-    "pre": "PEA000",
+    "pre": "SPA12T",
     "st": "Transition Spanish 1 - Accel",
     "subj": "SPA"
   },
@@ -5975,7 +5988,7 @@
     "fixed": true,
     "lt": "Intermediate Spanish",
     "lvl": "200",
-    "pre": "SPA130",
+    "pre": "SPA130|SPA13T|SPA13X",
     "st": "Intermediate Spanish",
     "subj": "SPA"
   },
@@ -5988,7 +6001,7 @@
     "fixed": true,
     "lt": "Transition Spanish 2 - Accelerated",
     "lvl": "200",
-    "pre": "PEA000",
+    "pre": "SPA13T|SPA13X",
     "st": "Transition Spanish 2 - Accel",
     "subj": "SPA"
   },
@@ -6001,7 +6014,7 @@
     "fixed": true,
     "lt": "Intermediate Spanish",
     "lvl": "200",
-    "pre": "SPA210",
+    "pre": "SPA210|SPA21X",
     "st": "Intermediate Spanish",
     "subj": "SPA"
   },
@@ -6066,7 +6079,7 @@
     "fixed": true,
     "lt": "Latin American and Spanish Readings II *",
     "lvl": "500",
-    "pre": "DNE",
+    "pre": "SPA400",
     "st": "Lat Am & Spanish Reading II *",
     "subj": "SPA"
   },
@@ -6079,7 +6092,7 @@
     "fixed": true,
     "lt": "21st Century Challenges Opportunity *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "21st C Challenges Opportunity*",
     "subj": "SPA"
   },
@@ -6118,7 +6131,7 @@
     "fixed": true,
     "lt": "Contemporary Hispanic Theater*",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Contemporary Hispanic Theater*",
     "subj": "SPA"
   },
@@ -6131,7 +6144,7 @@
     "fixed": true,
     "lt": "Realism Reality Lat Am Nar *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Realism Reality Lat Am Nar *",
     "subj": "SPA"
   },
@@ -6144,7 +6157,7 @@
     "fixed": true,
     "lt": "Supernovel *",
     "lvl": "500",
-    "pre": "DNE",
+    "pre": "SPA400",
     "st": "Supernovel *",
     "subj": "SPA"
   },
@@ -6157,7 +6170,7 @@
     "fixed": true,
     "lt": "Spanish Nonfiction *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Spanish Nonfiction *",
     "subj": "SPA"
   },
@@ -6170,7 +6183,7 @@
     "fixed": true,
     "lt": "Hispanic Cinema *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Hispanic Cinema *",
     "subj": "SPA"
   },
@@ -6183,7 +6196,7 @@
     "fixed": true,
     "lt": "Spanish Through Digital Media *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Span Through Digital Media *",
     "subj": "SPA"
   },
@@ -6196,7 +6209,7 @@
     "fixed": true,
     "lt": "Selected Topics in Spanish *",
     "lvl": "500",
-    "pre": "PEA000",
+    "pre": "SPA400",
     "st": "Selected Topics in Spanish *",
     "subj": "SPA"
   },
