@@ -134,8 +134,8 @@ const layoutElements = async (
 };
 
 const CoursePage = ({
-          params,
-        }: InferGetStaticPropsType<typeof getStaticProps>) => {
+                          params,
+                        }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -186,6 +186,7 @@ const CoursePage = ({
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
+    course_no: string,
     desc: string;
     eli: string;
     locked: boolean;
@@ -197,6 +198,7 @@ const CoursePage = ({
     return {
       active: false,
       longTitle: '',
+      course_no: '',
       desc: '',
       eli: '',
       locked: false,
@@ -229,7 +231,7 @@ const CoursePage = ({
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle} · {cipp.course_no}</p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
@@ -243,6 +245,7 @@ const CoursePage = ({
     const popupParams = {
       active: true,
       longTitle: titles[node.id],
+      course_no: node.id,
       desc: descriptions[node.id],
       eli: eli[node.id],
       locked: false,
@@ -265,6 +268,12 @@ const CoursePage = ({
     console.log("pane clicked");
     setCourseInfoPopupParams(getEmptyPopupParams());
   }
+  // Open the course page associated with this course
+  const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
+    // check if element is an edge
+    if (element.id.startsWith('e')) return;
+    window.open(`/course/${element.id}`, '_self');
+  };
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
   const getMoreReqs = async () => {
@@ -350,13 +359,6 @@ const CoursePage = ({
   // Style for ReactFlow component
   const reactFlowStyle = {
     // background: 'rgb(35, 35, 35)'
-  };
-
-  // Open the course page associated with this course
-  const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
-    // check if element is an edge
-    if (element.id.startsWith('e')) return;
-    window.open(`/course/${element.id}`, '_self');
   };
 
   return (

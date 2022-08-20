@@ -145,38 +145,46 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     main();
   }, [prereqs, coreqs]);
 
-  // Parameters for course info popup (opened when mouse hovers over node)
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
+    course_no: string;
     desc: string;
     eli: string;
+    locked: boolean;
   }
-  const initialPopupParams = {
-    active: false,
-    longTitle: '',
-    desc: '',
-    eli: '',
-  } as CourseInfoPopupParams;
+  // Mouse coordinates - determines where to display popup
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  // Parameters for course info popup (opened when mouse hovers over node)
+  const getEmptyPopupParams = () => {
+    return {
+      active: false,
+      longTitle: '',
+      course_no: '',
+      desc: '',
+      eli: '',
+      locked: false,
+    } as CourseInfoPopupParams;
+  }
+  const initialPopupParams = getEmptyPopupParams();
   const [courseInfoPopupParams, setCourseInfoPopupParams] =
     useState<CourseInfoPopupParams>(initialPopupParams);
-  // Mouse coordinates - used to determine where to open popup
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
   // Track mouse position
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      if (courseInfoPopupParams.locked) return;
       setCoords({ x: e.pageX, y: e.pageY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [coords]);
+  }, [coords, courseInfoPopupParams.locked]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
     return (
       <div
-        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur"
+        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur max-w-lg"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -185,36 +193,43 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle} · {cipp.course_no}</p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
     );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode {
-    id: string;
-  }
-  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+  interface flowNode { id: string; }
+  const nodeHoverCallback = (event: React.MouseEvent, node : flowNode) => {
+    if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
       longTitle: titles[node.id],
+      course_no: node.id,
       desc: descriptions[node.id],
       eli: eli[node.id],
+      locked: false,
     } as CourseInfoPopupParams;
     setCourseInfoPopupParams(popupParams);
   };
   const nodeUnhoverCallback = () => {
-    const popupParams = {
-      active: false,
-      longTitle: '',
-      desc: '',
-      eli: '',
-    } as CourseInfoPopupParams;
-    setCourseInfoPopupParams(popupParams);
+    if (courseInfoPopupParams.locked) return;
+    setCourseInfoPopupParams(getEmptyPopupParams());
   };
-
-  // Open the course page associated with this course when it's clicked
+  // Lock/unlock course info popup when right click on popup
+  const nodeRightClickCallback = (event: React.MouseEvent) => {
+    event.preventDefault();
+    const popupParams = courseInfoPopupParams;
+    popupParams.locked = !popupParams.locked;
+    setCourseInfoPopupParams(popupParams);
+  }
+  // Unlock course info popup when click on canvas
+  const paneClickCallback = () => {
+    console.log("pane clicked");
+    setCourseInfoPopupParams(getEmptyPopupParams());
+  }
+  // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
     if (element.id.startsWith('e')) return;
@@ -235,6 +250,8 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           onNodeMouseEnter={nodeHoverCallback}
           onNodeMouseLeave={nodeUnhoverCallback}
           onElementClick={nodeClickCallback}
+          onNodeContextMenu={nodeRightClickCallback}
+          onPaneClick={paneClickCallback}
           zoomOnPinch={true}
           zoomOnDoubleClick={true}
           zoomOnScroll={false}
