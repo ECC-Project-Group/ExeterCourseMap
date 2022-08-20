@@ -107,6 +107,7 @@ const layoutElements = async (
           borderRadius: 10,
           borderWidth: 2,
           width: 90,
+          cursor: 'pointer',
         },
       });
     });
@@ -133,8 +134,8 @@ const layoutElements = async (
 };
 
 const CoursePage = ({
-  params,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+          params,
+        }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -148,11 +149,11 @@ const CoursePage = ({
     initialEli,
   }: {
     course: ICourse;
-    initialPrereqs: any;
-    initialCoreqs: any;
-    initialDescriptions: any;
-    initialTitles: any;
-    initialEli: any;
+    initialPrereqs: Record<string, ICourse[]>;
+    initialCoreqs: Record<string, ICourse[]>;
+    initialDescriptions: Record<string, string | undefined>;
+    initialTitles: Record<string, string | undefined>;
+    initialEli: Record<string, string | undefined>;
   } = params;
 
   // Courses whose requirements have already been loaded
@@ -365,18 +366,19 @@ const CoursePage = ({
           </h1>
         </div>
         <div className="md:col-span-3">
-          <h1 className="font-display text-3xl font-black text-gray-700">
-            Requirements
-          </h1>
-          <div className="h-full">
+          <div className="flex justify-between">
+            <h1 className="font-display text-3xl font-black text-gray-700">
+              Requirements
+            </h1>
             <button
-              className="absolute z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
-              onClick={getMoreReqs}
-            >
-              More Requirements
+              className="z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
+              onClick={getMoreReqs}>
+                More Requirements
             </button>
+          </div>
+          <div className="h-full">
             <ReactFlow
-              className="mt-4 shadow-md"
+              className="mt-4 shadow-md cursor-move"
               nodesDraggable={false}
               nodesConnectable={false}
               elementsSelectable={false}
