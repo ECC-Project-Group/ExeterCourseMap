@@ -103,6 +103,7 @@ const layoutElements = async (
           borderRadius: 10,
           borderWidth: 2,
           width: 90,
+          cursor: 'pointer',
         },
       });
     });
@@ -241,7 +242,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
-          className="shadow-md"
+          className="shadow-md cursor-move"
           nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable={false}
