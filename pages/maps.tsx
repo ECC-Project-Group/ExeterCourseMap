@@ -13,7 +13,8 @@ const Maplink = ({ name, href }: { name: string; href: string }) => {
   );
 };
 
-const Maps = () => {
+const Maps = (props : any) => {
+  props; // linter gets triggered
   return (
     <div>
       <div className="bg-exeter px-8 pt-24 pb-14 lg:px-40">
@@ -86,6 +87,12 @@ const Maps = () => {
               </Submap>
               <Submap>
                 <Maplink name="Bio/Chem/Physics/Math" href="/stemwithoutcs" />
+              </Submap>
+              <Submap>
+                <Maplink name="Physics/Math" href="/mathphysics" />
+              </Submap>
+              <Submap>
+                <Maplink name="Math" href="/math" />
               </Submap>
             </ul>
           </Submap>

@@ -57,7 +57,7 @@ export function getCourseColor(courseNo: string) {
       return 'rgb(255, 255, 255)';
 
     default:
-      return 'rgba(0, 0, 0, 0)';
+      return 'rgba(255, 255, 255, 255)';
   }
 }
 

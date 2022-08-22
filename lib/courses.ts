@@ -37,6 +37,12 @@ export function getAllCoursesFrom(subjects: Set<string>) {
     else if (subjects.has('CSC')) {
       if (course.course_no == 'MAT12T') subjCourses.push(course);
     }
+    // Exception - PHY 440 requires BIO 230, PHY 470 requires one year of chem
+    else if (subjects.has('PHY')) {
+      if (['BIO230', 'BIO220', 'BIO210', 
+      'CHE310', 'CHE320', 'CHE330',
+      'CHE411', 'CHE421', 'CHE431'].includes(course.course_no)) subjCourses.push(course);
+    }
   }
   return subjCourses;
 }

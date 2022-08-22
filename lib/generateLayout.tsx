@@ -4,11 +4,11 @@ import { ICourse } from '../types';
 import { getCourseColor, getCourseImage } from './course_colors';
 
 const elk = new ELK();
-// Automatically finds the best layout for the prerequisite tree.
+// Automatically finds the best layout for the prerequisite tree - returns an ElkNode
 export const layoutElements = async (
   prereqs: Record<string, ICourse[]>,
   coreqs: Record<string, ICourse[]>,
-  hidePea000 = false
+  isMap: boolean
 ) => {
   const graph: ElkNode = {
     id: 'root',
@@ -19,6 +19,9 @@ export const layoutElements = async (
     edges: [],
   };
 
+  // Only show PEA000 on the map
+  const hidePea000 = isMap;
+
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
@@ -28,8 +31,8 @@ export const layoutElements = async (
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
         id: base,
-        width: 100,
-        height: 60,
+        width: 130,
+        height: 70,
       });
     }
   }
@@ -42,8 +45,8 @@ export const layoutElements = async (
       if (hidePea000 && prereqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: base,
-        source: prereqs[index].course_no,
+        target: isMap? base : prereqs[index].course_no,
+        source: isMap? prereqs[index].course_no : base,
       });
     }
   });
@@ -53,25 +56,80 @@ export const layoutElements = async (
       if (hidePea000 && coreqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: base,
-        source: coreqs[index].course_no,
+        target: isMap? base : coreqs[index].course_no,
+        source: isMap? coreqs[index].course_no : base,
       });
     }
   });
 
   const parsedGraph = await elk.layout(graph);
+  return parsedGraph;
+}
 
+// Render the elements laid out in an ElkNode on a ReactFlow graph
+// When the user hovers over the node with id currentlyHoveredId, all the node's prereq edges get highlighted in the node's color
+// Add edges before nodes - we learn which prereq nodes to highlight by running through each edge
+export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currentlyHoveredId? : string) => {
   // Add everything to a React Flow graph
   const elements: Elements = [];
+  const prereqs: Set<string> = new Set<string>();
+
+  // Add non-prereq edges first so they'll appear behind prereq edges
+  if (parsedGraph.edges) {
+    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
+      if (edge.id.substring(3, 9) != currentlyHoveredId) {
+        elements.push({
+        id: edge.id,
+        // Flip tree direction for courses page because for some reason bottom-up layout is worse than top-down layout when one course is at root (ex: PHY640)
+        source: edge.source,
+        target: edge.target,
+        sourcePosition: Position.Top,
+        targetPosition: Position.Bottom,
+        type: 'smoothstep',
+        animated: false,
+        style: {
+          strokeWidth: edge.id.startsWith('ce') ? 0.5 : 2,
+          stroke: 'white'
+        },
+      });
+      }
+    });
+    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
+      if (edge.id.substring(3, 9) == currentlyHoveredId) {
+        prereqs.add(edge.id.substring(10, 16));
+        elements.push({
+          id: edge.id,
+          source: edge.source,
+          target: edge.target,
+          sourcePosition: Position.Top,
+          targetPosition: Position.Bottom,
+          type: 'smoothstep',
+          animated: false,
+          style: {
+            strokeWidth: edge.id.startsWith('ce') ? 3 : 4.5,
+            stroke: getCourseColor(currentlyHoveredId),
+          },
+      });
+      }
+    });
+  }
+
+  // Add nodes
   if (parsedGraph.children) {
     parsedGraph.children.forEach((node) => {
+      let boxShadow = '';
+      let borderColor = '';
+      if (currentlyHoveredId != null && (prereqs.has(node.id) || currentlyHoveredId == node.id)) {
+        boxShadow = '0 0 25px ' + getCourseColor(currentlyHoveredId);
+        borderColor = 'white';
+      }
       elements.push({
         id: node.id,
         type: 'default',
         data: {
           label: (
             <h1
-              className="font-display font-black text-white"
+              className="font-display font-black text-white text-lg"
               style={{
                 textShadow:
                   '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
@@ -89,25 +147,9 @@ export const layoutElements = async (
           backgroundSize: 'cover',
           borderRadius: 10,
           borderWidth: 2,
-          width: 90,
-        },
-      });
-    });
-  }
-
-  if (parsedGraph.edges) {
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
-      elements.push({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        sourcePosition: Position.Top,
-        targetPosition: Position.Bottom,
-        type: 'smoothstep',
-        animated: false,
-        style: {
-          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
-          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
+          width: 100,
+          boxShadow: boxShadow,
+          borderColor: borderColor,
         },
       });
     });

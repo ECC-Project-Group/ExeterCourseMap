@@ -5286,7 +5286,7 @@
     "fixed": true,
     "lt": "Introductory Astronomy ",
     "lvl": "400",
-    "pre": "PHY330|PHY230|CHE330",
+    "pre": "PHY330|PHY230|CHE330|CHE431",
     "st": "Introductory Astronomy ",
     "subj": "PHY"
   },
