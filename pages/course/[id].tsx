@@ -1,128 +1,13 @@
-import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
 import { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Background, Elements, Position } from 'react-flow-renderer';
+import ReactFlow, { Background, Elements } from 'react-flow-renderer';
 import {
   getAllCourses,
   getCourse,
   getCourseRequirements,
 } from '../../lib/courses';
-import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import { layoutElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
-
-const elk = new ELK();
-// Automatically finds the best layout for the prerequisite tree.
-const layoutElements = async (
-  prereqs: Record<string, ICourse[]>,
-  coreqs: Record<string, ICourse[]>
-) => {
-  const graph: ElkNode = {
-    id: 'root',
-    layoutOptions: {
-      'elk.algorithm': 'mrtree',
-    },
-    children: [],
-    edges: [],
-  };
-
-  // Add nodes
-  // Keep track of nodes that've already been added so we don't get duplicates
-  const nodeIds = new Set<string>();
-  const allReqs = Object.entries(prereqs).concat(Object.entries(coreqs));
-
-  for (const [base] of allReqs) {
-    if (base == 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-
-  // Add edges
-  // .map() isn't really the best solution here
-  Object.entries(prereqs).map(([base, prereqs]) => {
-    if (prereqs.length === 0) return;
-    for (const index of prereqs.keys()) {
-      if (prereqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: prereqs[index].course_no,
-        source: base,
-      });
-    }
-  });
-  Object.entries(coreqs).map(([base, coreqs]) => {
-    if (coreqs.length === 0) return;
-    for (const index of coreqs.keys()) {
-      if (coreqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: coreqs[index].course_no,
-        source: base,
-      });
-    }
-  });
-
-  const parsedGraph = await elk.layout(graph);
-
-  // Add everything to a React Flow graph
-  const elements: Elements = [];
-  if (parsedGraph.children) {
-    parsedGraph.children.forEach((node) => {
-      elements.push({
-        id: node.id,
-        type: 'default',
-        data: {
-          label: (
-            <h1
-              className="font-display font-black text-white"
-              style={{
-                textShadow:
-                  '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
-              }}
-            >
-              {node.id}
-            </h1>
-          ),
-        },
-        position: { x: node.x ?? 0, y: node.y ?? 0 },
-        style: {
-          backgroundColor: getCourseColor(node.id),
-          backgroundImage: getCourseImage(node.id),
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          borderRadius: 10,
-          borderWidth: 2,
-          width: 90,
-          cursor: 'pointer',
-        },
-      });
-    });
-  }
-
-  if (parsedGraph.edges) {
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
-      elements.push({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        sourcePosition: Position.Bottom,
-        targetPosition: Position.Top,
-        type: 'smoothstep',
-        animated: false,
-        style: {
-          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
-          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
-        },
-      });
-    });
-  }
-  return elements;
-};
 
 const CoursePage = ({
   params,
@@ -168,7 +53,7 @@ const CoursePage = ({
   // Relayout the chart when prereqs changes
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs, coreqs);
+      const elements = await layoutElements(prereqs, coreqs, true);
       setElements(elements);
     }
     main();
