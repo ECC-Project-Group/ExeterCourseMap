@@ -1,133 +1,9 @@
-import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Elements, Position } from 'react-flow-renderer';
+import ReactFlow, { Elements } from 'react-flow-renderer';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
-import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import { layoutElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
-
-const elk = new ELK();
-// Automatically find the best layout for the map - copied from courses/[id].tsx
-const layoutElements = async (
-  prereqs: Record<string, ICourse[]>,
-  coreqs: Record<string, ICourse[]>
-) => {
-  const graph: ElkNode = {
-    id: 'root',
-    layoutOptions: {
-      'elk.algorithm': 'mrtree',
-    },
-    children: [],
-    edges: [],
-  };
-
-  // Add nodes
-  // Keep track of nodes that've already been added so we don't get duplicates
-  const nodeIds = new Set<string>();
-  for (const [base] of Object.entries(prereqs)) {
-    // if (base == 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-  for (const [base] of Object.entries(coreqs)) {
-    // if (base === 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-
-  // Add edges
-  // .map() isn't really the best solution here
-  Object.entries(prereqs).map(([base, prereqs]) => {
-    if (prereqs.length === 0) return;
-    for (const index of prereqs.keys()) {
-      // if (prereqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: base,
-        source: prereqs[index].course_no,
-      });
-    }
-  });
-  Object.entries(coreqs).map(([base, coreqs]) => {
-    if (coreqs.length === 0) return;
-    for (const index of coreqs.keys()) {
-      // if (coreqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: base,
-        source: coreqs[index].course_no,
-      });
-    }
-  });
-
-  const parsedGraph = await elk.layout(graph);
-
-  // Add everything to a React Flow graph
-  const elements: Elements = [];
-  if (parsedGraph.children) {
-    parsedGraph.children.forEach((node) => {
-      elements.push({
-        id: node.id,
-        type: 'default',
-        data: {
-          label: (
-            <h1
-              className="font-display font-black text-white"
-              style={{
-                textShadow:
-                  '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
-              }}
-            >
-              {node.id}
-            </h1>
-          ),
-        },
-        position: { x: node.x ?? 0, y: node.y ?? 0 },
-        style: {
-          backgroundColor: getCourseColor(node.id),
-          backgroundImage: getCourseImage(node.id),
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          borderRadius: 10,
-          borderWidth: 2,
-          width: 90,
-          cursor: 'pointer',
-        },
-      });
-    });
-  }
-
-  if (parsedGraph.edges) {
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
-      elements.push({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        sourcePosition: Position.Top,
-        targetPosition: Position.Bottom,
-        type: 'smoothstep',
-        animated: false,
-        style: {
-          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
-          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
-        },
-      });
-    });
-  }
-  return elements;
-};
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { prereqs, coreqs, descriptions, titles, eli } = params;
@@ -166,7 +42,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       eli: '',
       locked: false,
     } as CourseInfoPopupParams;
-  }
+  };
   const initialPopupParams = getEmptyPopupParams();
   const [courseInfoPopupParams, setCourseInfoPopupParams] =
     useState<CourseInfoPopupParams>(initialPopupParams);
@@ -185,7 +61,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const cipp = courseInfoPopupParams;
     return (
       <div
-        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur max-w-lg"
+        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -194,15 +70,19 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle} · {cipp.course_no}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
+          {cipp.longTitle} · {cipp.course_no}
+        </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
     );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
-  const nodeHoverCallback = (event: React.MouseEvent, node : flowNode) => {
+  interface flowNode {
+    id: string;
+  }
+  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
     if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
@@ -224,16 +104,15 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const popupParams = courseInfoPopupParams;
     popupParams.locked = !popupParams.locked;
     setCourseInfoPopupParams(popupParams);
-  }
+  };
   // Unlock course info popup when click on canvas
   const paneClickCallback = () => {
-    console.log("pane clicked");
     setCourseInfoPopupParams(getEmptyPopupParams());
-  }
+  };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
-    if (element.id.startsWith('e')) return;
+    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
     window.open(`/course/${element.id}`, '_self');
   };
 
@@ -242,7 +121,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
-          className="shadow-md cursor-move"
+          className="cursor-move shadow-md"
           nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable={false}
