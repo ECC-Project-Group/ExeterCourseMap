@@ -24,19 +24,11 @@ const layoutElements = async (
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
-  for (const [base] of Object.entries(prereqs)) {
+
+  const allReqs = Object.entries(prereqs).concat(Object.entries(coreqs));
+
+  for (const [base] of allReqs) {
     // if (base == 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-  for (const [base] of Object.entries(coreqs)) {
-    // if (base === 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
@@ -166,7 +158,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       eli: '',
       locked: false,
     } as CourseInfoPopupParams;
-  }
+  };
   const initialPopupParams = getEmptyPopupParams();
   const [courseInfoPopupParams, setCourseInfoPopupParams] =
     useState<CourseInfoPopupParams>(initialPopupParams);
@@ -185,7 +177,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const cipp = courseInfoPopupParams;
     return (
       <div
-        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur max-w-lg"
+        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -194,15 +186,19 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle} · {cipp.course_no}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
+          {cipp.longTitle} · {cipp.course_no}
+        </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
     );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
-  const nodeHoverCallback = (event: React.MouseEvent, node : flowNode) => {
+  interface flowNode {
+    id: string;
+  }
+  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
     if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
@@ -224,16 +220,15 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const popupParams = courseInfoPopupParams;
     popupParams.locked = !popupParams.locked;
     setCourseInfoPopupParams(popupParams);
-  }
+  };
   // Unlock course info popup when click on canvas
   const paneClickCallback = () => {
-    console.log("pane clicked");
     setCourseInfoPopupParams(getEmptyPopupParams());
-  }
+  };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
-    if (element.id.startsWith('e')) return;
+    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
     window.open(`/course/${element.id}`, '_self');
   };
 
@@ -242,7 +237,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
-          className="shadow-md cursor-move"
+          className="cursor-move shadow-md"
           nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable={false}

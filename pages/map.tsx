@@ -24,19 +24,8 @@ const layoutElements = async (
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
-  for (const [base] of Object.entries(prereqs)) {
+  for (const [base] of Object.entries(prereqs).concat(Object.entries(coreqs))) {
     // if (base == 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 100,
-        height: 60,
-      });
-    }
-  }
-  for (const [base] of Object.entries(coreqs)) {
-    // if (base === 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({

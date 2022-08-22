@@ -28,24 +28,15 @@ const layoutElements = async (
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
   const nodeIds = new Set<string>();
-  for (const [base] of Object.entries(prereqs)) {
+  const allReqs = Object.entries(prereqs).concat(Object.entries(coreqs));
+
+  for (const [base] of allReqs) {
     if (base == 'PEA000') continue;
     if (!nodeIds.has(base)) {
       nodeIds.add(base);
       (graph.children as ElkNode[]).push({
         id: base,
-        width: 100,
-        height: 60,
-      });
-    }
-  }
-  for (const [base] of Object.entries(coreqs)) {
-    if (base === 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 100,
+        width: 120,
         height: 60,
       });
     }
@@ -134,8 +125,8 @@ const layoutElements = async (
 };
 
 const CoursePage = ({
-                          params,
-                        }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  params,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -186,7 +177,7 @@ const CoursePage = ({
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
-    course_no: string,
+    course_no: string;
     desc: string;
     eli: string;
     locked: boolean;
@@ -203,7 +194,7 @@ const CoursePage = ({
       eli: '',
       locked: false,
     } as CourseInfoPopupParams;
-  }
+  };
   const initialPopupParams = getEmptyPopupParams();
   const [courseInfoPopupParams, setCourseInfoPopupParams] =
     useState<CourseInfoPopupParams>(initialPopupParams);
@@ -222,7 +213,7 @@ const CoursePage = ({
     const cipp = courseInfoPopupParams;
     return (
       <div
-        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur max-w-lg"
+        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -231,16 +222,20 @@ const CoursePage = ({
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle} · {cipp.course_no}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
+          {cipp.longTitle} · {cipp.course_no}
+        </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
     );
   }
   // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode { id: string; }
+  interface flowNode {
+    id: string;
+  }
 
-  const nodeHoverCallback = (event: React.MouseEvent, node : flowNode) => {
+  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
     if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
@@ -262,12 +257,12 @@ const CoursePage = ({
     const popupParams = courseInfoPopupParams;
     popupParams.locked = !popupParams.locked;
     setCourseInfoPopupParams(popupParams);
-  }
+  };
   // Unlock course info popup when click on canvas
   const paneClickCallback = () => {
-    console.log("pane clicked");
+    console.log('pane clicked');
     setCourseInfoPopupParams(getEmptyPopupParams());
-  }
+  };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
@@ -387,13 +382,14 @@ const CoursePage = ({
             </h1>
             <button
               className="z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
-              onClick={getMoreReqs}>
-                More Requirements
+              onClick={getMoreReqs}
+            >
+              More Requirements
             </button>
           </div>
           <div className="h-full">
             <ReactFlow
-              className="mt-4 shadow-md cursor-move"
+              className="mt-4 cursor-move shadow-md"
               nodesDraggable={false}
               nodesConnectable={false}
               elementsSelectable={false}
@@ -402,9 +398,9 @@ const CoursePage = ({
               style={reactFlowStyle}
               onNodeMouseEnter={nodeHoverCallback}
               onNodeMouseLeave={nodeUnhoverCallback}
-              onNodeContextMenu = {nodeRightClickCallback}
+              onNodeContextMenu={nodeRightClickCallback}
               onElementClick={nodeClickCallback}
-              onPaneClick = {paneClickCallback}
+              onPaneClick={paneClickCallback}
             >
               <Background color="#858585" />
             </ReactFlow>
