@@ -1,8 +1,9 @@
+import { ElkNode } from 'elkjs';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
 import ReactFlow, { Elements } from 'react-flow-renderer';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
-import { layoutElements } from '../../lib/generateLayout';
+import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -12,16 +13,28 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const initialReqsLoaded = new Set<string>();
   useState<Set<string>>(initialReqsLoaded);
 
+  const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
+
   // Compute layout of chart
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs, coreqs);
+      const parsedGraph = await layoutElements(prereqs, coreqs, true);
+      const elements = await renderElements(parsedGraph, true);
+      setGraph(parsedGraph);
       setElements(elements);
     }
     main();
   }, [prereqs, coreqs]);
 
+  const [currentlyHoveredId, setCurrentlyHoveredId] = useState<string>('');
+  // Re-render chart
+  useEffect(() => {
+    if (graph) {
+      const elements = renderElements(graph, true, currentlyHoveredId);
+      setElements(elements);
+    }
+  }, [graph, currentlyHoveredId]);
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
@@ -83,6 +96,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     id: string;
   }
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+    setCurrentlyHoveredId(node.id);
     if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
@@ -95,6 +109,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     setCourseInfoPopupParams(popupParams);
   };
   const nodeUnhoverCallback = () => {
+    setCurrentlyHoveredId('');
     if (courseInfoPopupParams.locked) return;
     setCourseInfoPopupParams(getEmptyPopupParams());
   };
@@ -114,6 +129,10 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
     window.open(`/course/${element.id}`, '_self');
+  };
+
+  const reactFlowStyle = {
+    background: `rgb(35, 35, 35)`
   };
 
   return (
@@ -136,6 +155,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zoomOnDoubleClick={true}
           zoomOnScroll={false}
           panOnScroll={true}
+          style={reactFlowStyle}
         ></ReactFlow>
       </div>
       <CourseInfoPopup />
@@ -148,6 +168,8 @@ export async function getStaticPaths() {
     paths: [
       { params: { id: 'stemwithoutcs' } },
       { params: { id: 'cs' } },
+      { params: { id: 'math' } },
+      { params: { id: 'mathphysics' } },
       { params: { id: 'art' } },
       { params: { id: 'music' } },
       { params: { id: 'theater' } },
@@ -222,6 +244,12 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
       break;
     case 'cs':
       subjects = new Set<string>(['CSC']);
+      break;
+    case 'math':
+      subjects = new Set<string>(['MAT']);
+      break;
+    case 'mathphysics':
+      subjects = new Set<string>(['MAT', 'PHY']);
       break;
     default:
       subjects = new Set<string>();
