@@ -20,7 +20,7 @@ export const layoutElements = async (
   };
 
   // Only show PEA000 on the map
-  const hidePea000 = isMap;
+  const hidePea000 = !isMap;
 
   // Add nodes
   // Keep track of nodes that've already been added so we don't get duplicates
@@ -88,7 +88,8 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
         type: 'smoothstep',
         animated: false,
         style: {
-          strokeWidth: edge.id.startsWith('ce') ? 0.5 : 2,
+          strokeWidth: edge.id.startsWith('ce') ? 1.5 : 2,
+          strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '', // Make coreq edges dashed - dash length 10, space between dashes 6
           stroke: 'white'
         },
       });
@@ -106,7 +107,8 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
           type: 'smoothstep',
           animated: false,
           style: {
-            strokeWidth: edge.id.startsWith('ce') ? 3 : 4.5,
+            strokeWidth: edge.id.startsWith('ce') ? 3.5 : 4.5,
+            strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '',
             stroke: getCourseColor(currentlyHoveredId),
           },
       });

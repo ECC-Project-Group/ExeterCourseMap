@@ -2,6 +2,7 @@ import { ElkNode } from 'elkjs';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
 import ReactFlow, { Elements } from 'react-flow-renderer';
+import internal from 'stream';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
@@ -20,9 +21,9 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
     async function main() {
       const parsedGraph = await layoutElements(prereqs, coreqs, true);
-      const elements = await renderElements(parsedGraph, true);
+      const newElements = await renderElements(parsedGraph, true);
       setGraph(parsedGraph);
-      setElements(elements);
+      setElements(newElements);
     }
     main();
   }, [prereqs, coreqs]);
@@ -31,8 +32,8 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // Re-render chart
   useEffect(() => {
     if (graph) {
-      const elements = renderElements(graph, true, currentlyHoveredId);
-      setElements(elements);
+      const newElements = renderElements(graph, true, currentlyHoveredId);
+      setElements(newElements);
     }
   }, [graph, currentlyHoveredId]);
   interface CourseInfoPopupParams {
@@ -156,6 +157,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zoomOnScroll={false}
           panOnScroll={true}
           style={reactFlowStyle}
+          defaultZoom={0.7}
         ></ReactFlow>
       </div>
       <CourseInfoPopup />
