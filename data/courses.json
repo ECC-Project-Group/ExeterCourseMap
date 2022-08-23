@@ -3128,7 +3128,7 @@
     "fixed": true,
     "lt": "Global Topics: Women, Gender & Society ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Women, Gender & Society ",
     "subj": "HIS"
   },
@@ -3141,7 +3141,7 @@
     "fixed": true,
     "lt": "World War & European Society 1890-1945 ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "WW & Europe Soc 1890-1945 ",
     "subj": "HIS"
   },
@@ -3154,7 +3154,7 @@
     "fixed": true,
     "lt": "Europe Since 1945 ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Europe Since 1945 ",
     "subj": "HIS"
   },
@@ -3167,7 +3167,7 @@
     "fixed": true,
     "lt": "Capitalism and its Critics ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Capitalism and its Critics ",
     "subj": "HIS"
   },
@@ -3180,7 +3180,7 @@
     "fixed": true,
     "lt": "Understanding Violence, War & Peace ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Violence, War & Peace ",
     "subj": "HIS"
   },
@@ -3193,7 +3193,7 @@
     "fixed": true,
     "lt": "LGBTQ+ History ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "LGBTQ+ History ",
     "subj": "HIS"
   },
@@ -3206,7 +3206,7 @@
     "fixed": true,
     "lt": "American Politics & Public Policy",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Amer Politics & Public Policy",
     "subj": "HIS"
   },
@@ -3219,7 +3219,7 @@
     "fixed": true,
     "lt": "Law and American Society ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Law and American Society ",
     "subj": "HIS"
   },
@@ -3232,7 +3232,7 @@
     "fixed": true,
     "lt": "Revolutionary Russia ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Revolutionary Russia ",
     "subj": "HIS"
   },
@@ -3245,7 +3245,7 @@
     "fixed": true,
     "lt": "Why Are Poor Nations Poor? ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Why Are Poor Nations Poor? ",
     "subj": "HIS"
   },
@@ -3258,7 +3258,7 @@
     "fixed": true,
     "lt": "Genocide in the Modern World ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Genocide in the Modern World ",
     "subj": "HIS"
   },
@@ -3271,7 +3271,7 @@
     "fixed": true,
     "lt": "Humans and the Environment ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Humans and the Environment ",
     "subj": "HIS"
   },
@@ -3284,7 +3284,7 @@
     "fixed": true,
     "lt": "Modern China ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Modern China ",
     "subj": "HIS"
   },
@@ -3297,7 +3297,7 @@
     "fixed": true,
     "lt": "Modern Latin America ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Modern Latin America ",
     "subj": "HIS"
   },
@@ -3310,7 +3310,7 @@
     "fixed": true,
     "lt": "Modern Asia: Contested Histories ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Modern Asia ",
     "subj": "HIS"
   },
@@ -3323,7 +3323,7 @@
     "fixed": true,
     "lt": "History of Modern Africa ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "History of Modern Africa ",
     "subj": "HIS"
   },
@@ -3336,7 +3336,7 @@
     "fixed": true,
     "lt": "Contemporary Middle East ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Contemporary Middle East ",
     "subj": "HIS"
   },
@@ -3349,7 +3349,7 @@
     "fixed": true,
     "lt": "A Global History of Witchcraft ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Global History of Witchcraft ",
     "subj": "HIS"
   },
@@ -3362,7 +3362,7 @@
     "fixed": true,
     "lt": "American Slavery, American Capitalism ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "American Slavery, Capitalism ",
     "subj": "HIS"
   },
@@ -3375,7 +3375,7 @@
     "fixed": true,
     "lt": "Senior Research Seminar ",
     "lvl": "600",
-    "pre": "HIS410|HIS420|HIS430",
+    "pre": "HIS410",
     "st": "Senior Research Seminar ",
     "subj": "HIS"
   },
@@ -4454,7 +4454,7 @@
     "fixed": true,
     "lt": "Topics in Discrete Math ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
+    "pre": "MAT330|MAT40X|MAT401",
     "st": "Topics in Discrete Math ",
     "subj": "MAT"
   },
@@ -4467,7 +4467,7 @@
     "fixed": true,
     "lt": "History of Mathematics ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
+    "pre": "MAT330|MAT40X|MAT401",
     "st": "History of Mathematics ",
     "subj": "MAT"
   },
@@ -4480,7 +4480,7 @@
     "fixed": true,
     "lt": "Mathematics of Social Justice ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
+    "pre": "MAT330|MAT40X|MAT401",
     "st": "Mathematics Social Justice ",
     "subj": "MAT"
   },
@@ -4493,7 +4493,7 @@
     "fixed": true,
     "lt": "Introduction to Statistics ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
+    "pre": "MAT330|MAT40X|MAT401",
     "st": "Introduction to Statistics ",
     "subj": "MAT"
   },
@@ -5260,7 +5260,7 @@
     "fixed": true,
     "lt": "Robotics ",
     "lvl": "400",
-    "pre": "PHY330|PHY230",
+    "pre": "PHY330|PHY230|PHY231",
     "st": "Robotics ",
     "subj": "PHY"
   },

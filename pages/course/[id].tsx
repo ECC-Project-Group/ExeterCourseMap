@@ -11,8 +11,8 @@ import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
 
 const CoursePage = ({
-                              params,
-                            }: InferGetStaticPropsType<typeof getStaticProps>) => {
+                                                          params,
+                                                        }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -254,7 +254,8 @@ const CoursePage = ({
 
   // Style for ReactFlow component
   const reactFlowStyle = {
-    background: 'rgb(35, 35, 35)'
+    background: 'rgb(35, 35, 35)',
+    minHeight: '400px',
   };
 
   return (
