@@ -7,6 +7,7 @@ import {
   getCourseRequirements,
 } from '../../lib/courses';
 import { layoutElements } from '../../lib/generateLayout';
+import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
 const CoursePage = ({
@@ -31,6 +32,16 @@ const CoursePage = ({
     initialTitles: Record<string, string | undefined>;
     initialEli: Record<string, string | undefined>;
   } = params;
+
+  // GA event for when a course is viewed
+  useEffect(() => {
+    event({
+      action: 'view_course',
+      category: 'general',
+      label: course.course_no,
+      value: 1,
+    });
+  }, []);
 
   // Courses whose requirements have already been loaded
   const initialReqsLoaded = new Set<string>();
