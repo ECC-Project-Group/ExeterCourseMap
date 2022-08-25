@@ -1,12 +1,13 @@
 import { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
 import ReactFlow, { Background, Elements } from 'react-flow-renderer';
+import { ElkNode } from 'elkjs';
 import {
   getAllCourses,
   getCourse,
   getCourseRequirements,
 } from '../../lib/courses';
-import { layoutElements } from '../../lib/generateLayout';
+import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
@@ -59,16 +60,28 @@ const CoursePage = ({
   const [eli, setEli] =
     useState<Record<string, string | undefined>>(initialEli);
 
+  const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
 
   // Relayout the chart when prereqs changes
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs, coreqs, true);
+      const parsedGraph = await layoutElements(prereqs, coreqs, false);
+      const elements = renderElements(parsedGraph, false);
+      setGraph(parsedGraph);
       setElements(elements);
     }
     main();
   }, [prereqs, coreqs]);
+
+  const [currentlyHoveredId, setCurrentlyHoveredId] = useState<string>('');
+  // Re-render chart
+  useEffect(() => {
+    if (graph) {
+      const elements = renderElements(graph, false, currentlyHoveredId);
+      setElements(elements);
+    }
+  }, [graph, currentlyHoveredId]);
 
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
@@ -113,13 +126,15 @@ const CoursePage = ({
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
-          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
-          top: coords.y,
+          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of the node
+          top: coords.y - 35,
+          transform: 'translate(0, -100%)',
           zIndex: 100,
         }}
       >
         <p className="ml-2 mr-2 mt-2 text-xl font-bold">
-          {cipp.longTitle} · {cipp.course_no}
+          {cipp.longTitle}{' '}
+          {cipp.course_no != 'PEA000' ? ' · ' + cipp.course_no : ''}
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
@@ -132,6 +147,7 @@ const CoursePage = ({
   }
 
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+    setCurrentlyHoveredId(node.id);
     if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
@@ -144,6 +160,7 @@ const CoursePage = ({
     setCourseInfoPopupParams(popupParams);
   };
   const nodeUnhoverCallback = () => {
+    setCurrentlyHoveredId('');
     if (courseInfoPopupParams.locked) return;
     setCourseInfoPopupParams(getEmptyPopupParams());
   };
@@ -249,7 +266,8 @@ const CoursePage = ({
 
   // Style for ReactFlow component
   const reactFlowStyle = {
-    // background: 'rgb(35, 35, 35)'
+    background: 'rgb(35, 35, 35)',
+    minHeight: '400px',
   };
 
   return (
@@ -297,6 +315,7 @@ const CoursePage = ({
               onNodeContextMenu={nodeRightClickCallback}
               onElementClick={nodeClickCallback}
               onPaneClick={paneClickCallback}
+              panOnScroll={true}
             >
               <Background color="#858585" />
             </ReactFlow>
