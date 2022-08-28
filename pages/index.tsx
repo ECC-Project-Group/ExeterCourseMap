@@ -46,7 +46,7 @@ const Campus = () => {
   );
 };
 
-const Home: NextPage = () => {
+const Home: NextPage = (props) => {
   // Load the model immediately
   useGLTF.preload('/models/campus.glb');
   const challengingThing =
@@ -95,7 +95,7 @@ const Home: NextPage = () => {
             <span className="text-gray-500">
               No more scrolling through the Courses of Instruction PDF.
             </span>{' '}
-            Find information about any Exeter course with close to no effort.
+            &nbsp;Easily find the information and requirements on any PEA course.
           </p>
           <CTAButton href="/courses">Find a course</CTAButton>
         </div>
@@ -106,12 +106,11 @@ const Home: NextPage = () => {
             Know your prereqs.
           </p>
           <p className="py-8 text-2xl font-semibold text-gray-700 md:text-3xl">
-            <span className="text-gray-500">Stop fiddling with LionLinks.</span>{' '}
-            View a map of all course prerequisites and see what classes you are
-            eligible for.
+            <span className="text-gray-500">Stop fiddling with LionLinks.</span>
+            &nbsp;View maps of all course prerequisites and see what classes you can take.
           </p>
         </div>
-        <CTAButton href="/map">See the course map</CTAButton>
+        <CTAButton href="/maps">See the course maps</CTAButton>
       </div>
     </div>
   );

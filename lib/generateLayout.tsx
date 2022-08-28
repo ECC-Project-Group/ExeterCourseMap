@@ -88,9 +88,9 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
         type: 'smoothstep',
         animated: false,
         style: {
-          strokeWidth: edge.id.startsWith('ce') ? 1.5 : 2,
+          strokeWidth: edge.id.startsWith('ce') ? 0.5 : 1,
           strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '', // Make coreq edges dashed - dash length 10, space between dashes 6
-          stroke: 'white'
+          stroke: 'white',
         },
       });
       }
@@ -107,7 +107,7 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
           type: 'smoothstep',
           animated: false,
           style: {
-            strokeWidth: edge.id.startsWith('ce') ? 3.5 : 4.5,
+            strokeWidth: edge.id.startsWith('ce') ? 4.5 : 5, // Increasing this number doesn't seem to thicken the line up to a certain point - not sure how to increase edge thickness
             strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '',
             stroke: getCourseColor(currentlyHoveredId),
           },

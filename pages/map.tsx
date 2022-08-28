@@ -16,8 +16,7 @@ const Map = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // Compute layout of chart
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs, coreqs);
-      setElements(elements);
+      const parsedGraph = await layoutElements(prereqs, coreqs, true);
     }
     main();
   }, [prereqs, coreqs]);

@@ -13,7 +13,7 @@ const Maplink = ({ name, href }: { name: string; href: string }) => {
   );
 };
 
-const Maps = (props : any) => {
+const Maps = (props) => {
   props; // linter gets triggered
   return (
     <div>

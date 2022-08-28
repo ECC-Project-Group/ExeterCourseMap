@@ -3,24 +3,18 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';
 import { SessionProvider } from 'next-auth/react';
-import Script from 'next/script';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { pageview } from '../lib/gtag';
+import TagManager from 'react-gtm-module';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
+
+function MyApp({ Component, pageProps, router }) {
+  // Google Tag Manager allows us to integrate with Google Analytics
+  const tagManagerArgs = {
+    gtmId: 'GTM-879S67FV90'
+  };
+  if (typeof window !== 'undefined') {
+    TagManager.initialize(tagManagerArgs);
+  }
+
   // Providers allow any child component to gain access
   // to NextAuth-related variables anywhere in the hierarchy
 
