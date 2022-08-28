@@ -1,3 +1,4 @@
+import { Props } from 'framer-motion/types/types';
 import Link from 'next/link';
 import React from 'react';
 
@@ -13,7 +14,7 @@ const Maplink = ({ name, href }: { name: string; href: string }) => {
   );
 };
 
-const Maps = (props) => {
+const Maps = (props: Props) => {
   props; // linter gets triggered
   return (
     <div>
