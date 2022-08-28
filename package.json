@@ -32,6 +32,7 @@
     "three": "^0.137.5"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.10",
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
     "@types/react-gtm-module": "^2.0.1",

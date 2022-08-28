@@ -8,11 +8,12 @@ import {
   getCourseRequirements,
 } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
+import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
 const CoursePage = ({
-                                                          params,
-                                                        }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  params,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -33,6 +34,16 @@ const CoursePage = ({
     initialEli: Record<string, string | undefined>;
   } = params;
 
+  // GA event for when a course is viewed
+  useEffect(() => {
+    event({
+      action: 'view_course',
+      category: 'general',
+      label: course.course_no,
+      value: 1,
+    });
+  }, []);
+
   // Courses whose requirements have already been loaded
   const initialReqsLoaded = new Set<string>();
   initialReqsLoaded.add(course.course_no);
@@ -49,7 +60,7 @@ const CoursePage = ({
   const [eli, setEli] =
     useState<Record<string, string | undefined>>(initialEli);
 
-  const [graph, setGraph] = useState<ElkNode>();  
+  const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
 
   // Relayout the chart when prereqs changes
@@ -122,7 +133,8 @@ const CoursePage = ({
         }}
       >
         <p className="ml-2 mr-2 mt-2 text-xl font-bold">
-          {cipp.longTitle} {(cipp.course_no != "PEA000") ? ' · ' + cipp.course_no: ''}
+          {cipp.longTitle}{' '}
+          {cipp.course_no != 'PEA000' ? ' · ' + cipp.course_no : ''}
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>

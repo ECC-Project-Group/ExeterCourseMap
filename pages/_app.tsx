@@ -24,6 +24,19 @@ function MyApp({ Component, pageProps, router }) {
   // <Component /> represents the actual page content
   return (
     <SessionProvider session={pageProps.session} refetchInterval={0}>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.GA_TRACKING_ID}');
+        `}
+      </Script>
       <Head>
         <title>Exeter Course Map</title>
         <meta title="description" content="The better way to pick courses" />
