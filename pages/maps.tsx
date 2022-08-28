@@ -14,8 +14,7 @@ const Maplink = ({ name, href }: { name: string; href: string }) => {
   );
 };
 
-const Maps = (props: Props) => {
-  props; // linter gets triggered
+const Maps = () => {
   return (
     <div>
       <div className="bg-exeter px-8 pt-24 pb-14 lg:px-40">
