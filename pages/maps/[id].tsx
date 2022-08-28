@@ -2,7 +2,6 @@ import { ElkNode } from 'elkjs';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
 import ReactFlow, { Elements } from 'react-flow-renderer';
-import internal from 'stream';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
@@ -133,7 +132,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   };
 
   const reactFlowStyle = {
-    background: `rgb(35, 35, 35)`
+    background: `rgb(35, 35, 35)`,
   };
 
   return (

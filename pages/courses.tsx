@@ -5,8 +5,8 @@ import { ICoursePartial } from '../types';
 import { InferGetStaticPropsType } from 'next';
 
 const Courses = ({
-          courses,
-        }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  courses,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // We don't need all information about any particular course,
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
@@ -46,16 +46,17 @@ const Courses = ({
       if (query.length) {
         setResults(
           courses.filter((course) => {
-            const subject = subjAbbreviations.get(course.course_no.substring(0, 3));
-            return (
-              subject != undefined ?
-              course.lt.toLowerCase().includes(query.toLowerCase()) ||
-                course.course_no.toLowerCase().includes(query.toLowerCase()) ||
-                query.toLowerCase().startsWith(subject) 
-              :
-              course.lt.toLowerCase().includes(query.toLowerCase()) ||
-                course.course_no.toLowerCase().includes(query.toLowerCase())
+            const subject = subjAbbreviations.get(
+              course.course_no.substring(0, 3)
             );
+            return subject != undefined
+              ? course.lt.toLowerCase().includes(query.toLowerCase()) ||
+                  course.course_no
+                    .toLowerCase()
+                    .includes(query.toLowerCase()) ||
+                  query.toLowerCase().startsWith(subject)
+              : course.lt.toLowerCase().includes(query.toLowerCase()) ||
+                  course.course_no.toLowerCase().includes(query.toLowerCase());
           })
         );
       } else {

@@ -45,8 +45,8 @@ export const layoutElements = async (
       if (hidePea000 && prereqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: isMap? base : prereqs[index].course_no,
-        source: isMap? prereqs[index].course_no : base,
+        target: isMap ? base : prereqs[index].course_no,
+        source: isMap ? prereqs[index].course_no : base,
       });
     }
   });
@@ -56,20 +56,24 @@ export const layoutElements = async (
       if (hidePea000 && coreqs[index].course_no == 'PEA000') continue;
       (graph.edges as ElkPrimitiveEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: isMap? base : coreqs[index].course_no,
-        source: isMap? coreqs[index].course_no : base,
+        target: isMap ? base : coreqs[index].course_no,
+        source: isMap ? coreqs[index].course_no : base,
       });
     }
   });
 
   const parsedGraph = await elk.layout(graph);
   return parsedGraph;
-}
+};
 
 // Render the elements laid out in an ElkNode on a ReactFlow graph
 // When the user hovers over the node with id currentlyHoveredId, all the node's prereq edges get highlighted in the node's color
 // Add edges before nodes - we learn which prereq nodes to highlight by running through each edge
-export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currentlyHoveredId? : string) => {
+export const renderElements = (
+  parsedGraph: ElkNode,
+  isMap: boolean,
+  currentlyHoveredId?: string
+) => {
   // Add everything to a React Flow graph
   const elements: Elements = [];
   const prereqs: Set<string> = new Set<string>();
@@ -79,20 +83,20 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
     (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
       if (edge.id.substring(3, 9) != currentlyHoveredId) {
         elements.push({
-        id: edge.id,
-        // Flip tree direction for courses page because for some reason bottom-up layout is worse than top-down layout when one course is at root (ex: PHY640)
-        source: edge.source,
-        target: edge.target,
-        sourcePosition: Position.Top,
-        targetPosition: Position.Bottom,
-        type: 'smoothstep',
-        animated: false,
-        style: {
-          strokeWidth: edge.id.startsWith('ce') ? 0.5 : 1,
-          strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '', // Make coreq edges dashed - dash length 10, space between dashes 6
-          stroke: 'white',
-        },
-      });
+          id: edge.id,
+          // Flip tree direction for courses page because for some reason bottom-up layout is worse than top-down layout when one course is at root (ex: PHY640)
+          source: edge.source,
+          target: edge.target,
+          sourcePosition: Position.Top,
+          targetPosition: Position.Bottom,
+          type: 'smoothstep',
+          animated: false,
+          style: {
+            strokeWidth: edge.id.startsWith('ce') ? 0.5 : 1,
+            strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '', // Make coreq edges dashed - dash length 10, space between dashes 6
+            stroke: 'white',
+          },
+        });
       }
     });
     (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
@@ -111,7 +115,7 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
             strokeDasharray: edge.id.startsWith('ce') ? '10, 6' : '',
             stroke: getCourseColor(currentlyHoveredId),
           },
-      });
+        });
       }
     });
   }
@@ -121,7 +125,10 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
     parsedGraph.children.forEach((node) => {
       let boxShadow = '';
       let borderColor = '';
-      if (currentlyHoveredId != null && (prereqs.has(node.id) || currentlyHoveredId == node.id)) {
+      if (
+        currentlyHoveredId != null &&
+        (prereqs.has(node.id) || currentlyHoveredId == node.id)
+      ) {
         boxShadow = '0 0 25px ' + getCourseColor(currentlyHoveredId);
         borderColor = 'white';
       }
@@ -131,7 +138,7 @@ export const renderElements = (parsedGraph : ElkNode, isMap : boolean, currently
         data: {
           label: (
             <h1
-              className="font-display font-black text-white text-lg"
+              className="font-display text-lg font-black text-white"
               style={{
                 textShadow:
                   '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',

@@ -1,4 +1,3 @@
-import { Props } from 'framer-motion/types/types';
 import Link from 'next/link';
 import React from 'react';
 
@@ -28,71 +27,71 @@ const Maps = () => {
             Arts:
             <ul className="pl-5">
               <Submap>
-                <Maplink name="Art" href="/art" />
+                <Maplink name="Art" href="art" />
               </Submap>
               <Submap>
-                <Maplink name="Music" href="/music" />
+                <Maplink name="Music" href="music" />
               </Submap>
               <Submap>
-                <Maplink name="Theater" href="/theater" />
+                <Maplink name="Theater" href="theater" />
               </Submap>
             </ul>
           </Submap>
           <Submap>
-            <Maplink name="Classical Languages" href="/classics" />
+            <Maplink name="Classical Languages" href="classics" />
           </Submap>
           <Submap>
-            <Maplink name="English" href="/english" />
+            <Maplink name="English" href="english" />
           </Submap>
           <Submap>
-            <Maplink name="History" href="/history" />
+            <Maplink name="History" href="history" />
           </Submap>
           <Submap>
             Modern Languages:
             <ul className="pl-5">
               <Submap>
-                <Maplink name="Arabic" href="/arabic" />
+                <Maplink name="Arabic" href="arabic" />
               </Submap>
               <Submap>
-                <Maplink name="Chinese" href="/chinese" />
+                <Maplink name="Chinese" href="chinese" />
               </Submap>
               <Submap>
-                <Maplink name="French" href="/french" />
+                <Maplink name="French" href="french" />
               </Submap>
               <Submap>
-                <Maplink name="German" href="/german" />
+                <Maplink name="German" href="german" />
               </Submap>
               <Submap>
-                <Maplink name="Italian" href="/italian" />
+                <Maplink name="Italian" href="italian" />
               </Submap>
               <Submap>
-                <Maplink name="Japanese" href="/japanese" />
+                <Maplink name="Japanese" href="japanese" />
               </Submap>
               <Submap>
-                <Maplink name="Russian" href="/russian" />
+                <Maplink name="Russian" href="russian" />
               </Submap>
               <Submap>
-                <Maplink name="Spanish" href="/spanish" />
+                <Maplink name="Spanish" href="spanish" />
               </Submap>
             </ul>
           </Submap>
           <Submap>
-            <Maplink name="Religion" href="/religion" />
+            <Maplink name="Religion" href="religion" />
           </Submap>
           <Submap>
             STEM:
             <ul className="pl-5">
               <Submap>
-                <Maplink name="Computer Science" href="/cs" />
+                <Maplink name="Computer Science" href="cs" />
               </Submap>
               <Submap>
-                <Maplink name="Bio/Chem/Physics/Math" href="/stemwithoutcs" />
+                <Maplink name="Bio/Chem/Physics/Math" href="stemwithoutcs" />
               </Submap>
               <Submap>
-                <Maplink name="Physics/Math" href="/mathphysics" />
+                <Maplink name="Physics/Math" href="mathphysics" />
               </Submap>
               <Submap>
-                <Maplink name="Math" href="/math" />
+                <Maplink name="Math" href="math" />
               </Submap>
             </ul>
           </Submap>
