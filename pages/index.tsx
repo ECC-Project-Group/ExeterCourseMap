@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 import { Suspense, useRef } from 'react';
 
 import CTAButton from '../components/callToActionButton';
-
+// Typing animation for tagline
+import Typewriter from 'typewriter-effect';
 // React implementation of three.js
 import { Canvas } from '@react-three/fiber';
 // Helper functions and abstractions built using fiber
@@ -82,7 +83,21 @@ const Home: NextPage = () => {
         </div>
         <div className="pointer-events-none my-auto w-full select-none px-8 lg:px-40">
           <h1 className="font-display text-4xl font-black text-white md:text-5xl">
-            Course planning shouldn{"'"}t be like {challengingThing}.
+            <Typewriter
+              options={{
+                autoStart: true,
+                delay: 70,
+              }}
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString(
+                    "Course planning shouldn't be like " +
+                      challengingThing +
+                      '.'
+                  )
+                  .start();
+              }}
+            />
           </h1>
         </div>
       </div>
