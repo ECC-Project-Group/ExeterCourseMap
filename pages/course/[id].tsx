@@ -42,7 +42,7 @@ const CoursePage = ({
       label: course.course_no,
       value: 1,
     });
-  }, []);
+  }, [course.course_no]);
 
   // Courses whose requirements have already been loaded
   const initialReqsLoaded = new Set<string>();

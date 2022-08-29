@@ -24,11 +24,11 @@ npm run check-types || (
   false;
 )
 
-# # Check build
-# npm run build || (
-#   echo "Build failed."
-#   echo "Fix the issues above and try again."
-#   false;
-# )
+# Check build
+npm run build || (
+  echo "Build failed."
+  echo "Fix the issues above and try again."
+  false;
+)
 
 echo "All checks passed."
