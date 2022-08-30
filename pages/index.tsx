@@ -102,7 +102,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
-        <div className="invisible absolute -left-[850px] top-[8vw] -z-20 h-[1000px] w-[1000px] rounded-full bg-gradient-to-tr from-red-500 to-exeter lg:visible" />
+        <div className="invisible absolute -left-[900px] top-[8vw] -z-20 h-[1000px] w-[1000px] rounded-full bg-gradient-to-tr from-red-500 to-exeter lg:visible" />
         <div className="w-full lg:w-3/5">
           <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent md:text-6xl">
             Find the perfect course.
