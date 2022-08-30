@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { pageview } from '../lib/gtag';
+import Footer from '../components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Google Tag Manager allows us to integrate with Google Analytics
@@ -50,6 +51,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Header />
       <Component {...pageProps} key={router.route} />
+      <Footer />
     </SessionProvider>
   );
 }
