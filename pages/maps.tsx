@@ -2,13 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 
 const Submap = (props: { children: React.ReactNode }) => {
-  return <li className="pb-1 text-2xl font-medium">{props.children}</li>;
+  return <li className="pb-1 text-4xl font-black">{props.children}</li>;
 };
 
 const Maplink = ({ name, href }: { name: string; href: string }) => {
   return (
     <Link href={`maps/${href}`}>
-      <a className="hover:bg-exeter hover:text-white">{name}</a>
+      <a className="px-2 text-2xl font-medium transition hover:bg-exeter hover:text-white">
+        {name}
+      </a>
     </Link>
   );
 };
@@ -16,6 +18,7 @@ const Maplink = ({ name, href }: { name: string; href: string }) => {
 const Maps = () => {
   return (
     <div>
+      <div className="invisible absolute -right-[200px] -z-20 h-[800px] w-[800px] rounded-full bg-gradient-to-bl from-red-500 to-exeter lg:visible" />
       <div className="bg-exeter px-8 pt-24 pb-14 lg:px-40">
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Maps

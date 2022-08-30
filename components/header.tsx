@@ -51,7 +51,7 @@ const Header = () => {
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ ease: 'circOut', duration: 0.2 }}
-                    className="absolute right-0 top-8 z-20 flex w-80 flex-col bg-gray-200 py-2 px-3 shadow-lg"
+                    className="absolute right-0 top-8 z-20 flex w-80 flex-col rounded-md bg-gray-200 py-2 px-3 shadow-lg"
                   >
                     <p className="py-1 font-display text-gray-500">
                       Sign in with...
