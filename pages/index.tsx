@@ -102,12 +102,11 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
-        <div className="invisible absolute -left-[900px] top-[8vw] -z-20 h-[1000px] w-[1000px] rounded-full bg-gradient-to-tr from-red-500 to-exeter lg:visible" />
         <div className="w-full lg:w-3/5">
           <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent md:text-6xl">
             Find the perfect course.
           </p>
-          <div className="invisible absolute -right-[600px] -z-20 h-[1000px] w-[1000px] rounded-full bg-gradient-to-bl from-red-500 to-exeter lg:visible" />
+          <div className="absolute -right-[600px] -z-20 hidden h-[1000px] w-[1000px] rounded-full bg-gradient-to-bl from-red-500 to-exeter lg:block" />
           <p className="py-8 text-2xl font-semibold text-gray-700 md:text-3xl">
             <span className="text-gray-500">
               No more scrolling through the Courses of Instruction PDF.
