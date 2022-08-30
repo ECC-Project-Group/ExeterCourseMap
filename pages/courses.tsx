@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
 import { InferGetStaticPropsType } from 'next';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 const Courses = ({
   courses,
@@ -11,37 +12,37 @@ const Courses = ({
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
 
-  const subjAbbreviations = new Map<string, string>([
-    ['ANT', 'anthropology'],
-    ['GRK', 'greek'],
-    ['LAT', 'latin'],
-    ['CSC', 'computer science'],
-    ['ECO', 'economics'],
-    ['ENG', 'english'],
-    ['HHD', 'health'],
-    ['HHD', 'health and human development'],
-    ['HIS', 'history'],
-    ['INT', 'integrated'],
-    ['EXI', 'exeter innovation'],
-    ['ARA', 'arabic'],
-    ['CHI', 'chinese'],
-    ['FRE', 'french'],
-    ['GER', 'german'],
-    ['ITA', 'italian'],
-    ['JPN', 'japanese'],
-    ['RUS', 'russian'],
-    ['SPA', 'spanish'],
-    ['MUS', 'music'],
-    ['REL', 'religion'],
-    ['PHY', 'physics'],
-    ['BIO', 'biology'],
-    ['CHE', 'chemistry'],
-    ['THR', 'theater'],
-  ]);
-
   // Update the course list when the text input is changed
   const onChange = useCallback(
     (event) => {
+      const subjAbbreviations = new Map<string, string>([
+        ['ANT', 'anthropology'],
+        ['GRK', 'greek'],
+        ['LAT', 'latin'],
+        ['CSC', 'computer science'],
+        ['ECO', 'economics'],
+        ['ENG', 'english'],
+        ['HHD', 'health'],
+        ['HHD', 'health and human development'],
+        ['HIS', 'history'],
+        ['INT', 'integrated'],
+        ['EXI', 'exeter innovation'],
+        ['ARA', 'arabic'],
+        ['CHI', 'chinese'],
+        ['FRE', 'french'],
+        ['GER', 'german'],
+        ['ITA', 'italian'],
+        ['JPN', 'japanese'],
+        ['RUS', 'russian'],
+        ['SPA', 'spanish'],
+        ['MUS', 'music'],
+        ['REL', 'religion'],
+        ['PHY', 'physics'],
+        ['BIO', 'biology'],
+        ['CHE', 'chemistry'],
+        ['THR', 'theater'],
+      ]);
+
       const query: string = event.target.value;
       if (query.length) {
         setResults(
@@ -74,12 +75,15 @@ const Courses = ({
         </h1>
       </div>
       <div className="px-8 pt-14 pb-20 lg:px-40">
-        <input
-          type="text"
-          placeholder="Find a course..."
-          onChange={onChange}
-          className="mx-auto mb-8 h-14 w-full rounded-lg bg-gray-100 p-4 font-display shadow-sm"
-        />
+        <div className="mx-auto mb-8 flex h-14 w-full flex-row items-center justify-start gap-2 rounded-xl bg-neutral-100 pl-5 font-display text-lg font-semibold outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-neutral-50 focus:bg-neutral-50">
+          <AiOutlineSearch className="text-neutral-600" />
+          <input
+            type="text"
+            placeholder="Search for a course..."
+            onChange={onChange}
+            className="h-full w-full bg-transparent outline-none"
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2">
           {results &&
             results.map((course) => {
@@ -89,11 +93,13 @@ const Courses = ({
                   href={`/course/${course.course_no}`}
                   key={course.course_no}
                 >
-                  <div className="m-0 my-3 cursor-pointer rounded-lg bg-gray-100 p-4 shadow-md transition-all hover:-translate-y-1 md:m-4">
-                    <h2 className="font-display font-bold text-gray-700">
+                  <div className="group m-0 my-3 cursor-pointer rounded-lg bg-gray-100 p-4 outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter md:m-4">
+                    <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
                       {course.course_no}
                     </h2>
-                    <h1 className="font-display text-lg">{course.lt}</h1>
+                    <h1 className="font-display text-lg group-hover:text-white">
+                      {course.lt}
+                    </h1>
                   </div>
                 </Link>
               );
