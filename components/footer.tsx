@@ -9,25 +9,33 @@ const Footer = () => {
           <h1 className="font-display text-2xl font-black text-white">
             EXETER COURSE MAP
           </h1>
-          <p className="flex flex-row items-center justify-start gap-2 font-display text-neutral-300">
-            Powered by{' '}
-            <Image
-              alt="Vercel"
-              src="/vercel-logotype-light.svg"
-              width={80}
-              height={20}
-            />
-          </p>
+          <a href="https://vercel.com/?utm_source=exeter-computing-club&utm_campaign=oss">
+            <p className="flex flex-row items-center justify-start gap-2 font-display text-neutral-300">
+              Powered by{' '}
+              <Image
+                alt="Vercel"
+                src="/vercel-logotype-light.svg"
+                width={80}
+                height={20}
+              />
+            </p>
+          </a>
         </div>
         <div className="flex flex-col justify-start gap-2 text-right">
           <Link href="/">
-            <a className="font-display text-xl text-neutral-300">Home</a>
+            <a className="font-display text-xl text-neutral-300 transition hover:text-neutral-100">
+              Home
+            </a>
           </Link>
           <Link href="/courses">
-            <a className="font-display text-xl text-neutral-300">Courses</a>
+            <a className="font-display text-xl text-neutral-300 transition hover:text-neutral-100">
+              Courses
+            </a>
           </Link>
           <Link href="/maps">
-            <a className="font-display text-xl text-neutral-300">Maps</a>
+            <a className="font-display text-xl text-neutral-300 transition hover:text-neutral-100">
+              Maps
+            </a>
           </Link>
         </div>
       </div>
@@ -37,7 +45,7 @@ const Footer = () => {
         </p>
         <div className="flex flex-row justify-start gap-2">
           <Link href="https://github.com/ECC-Project-Group">
-            <a>
+            <a className="transition hover:brightness-125">
               <Image
                 alt="GitHub"
                 src="/github-mark.svg"
