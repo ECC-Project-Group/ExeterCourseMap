@@ -4,10 +4,21 @@ import React, { useEffect, useState } from 'react';
 import ReactFlow, { Elements } from 'react-flow-renderer';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
+import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { prereqs, coreqs, descriptions, titles, eli } = params;
+  const { name, prereqs, coreqs, descriptions, titles, eli } = params;
+
+  // GA event for when a map is viewed
+  useEffect(() => {
+    event({
+      action: 'view_map',
+      category: 'general',
+      label: name,
+      value: 1,
+    });
+  }, [name]);
 
   // Remember courses whose requirements have already been loaded - avoid re-loading to be more efficient
   const initialReqsLoaded = new Set<string>();
@@ -194,7 +205,8 @@ export async function getStaticPaths() {
 // Grab all necessary information for every course
 export async function getStaticProps({ params }: { params: { id: string } }) {
   let subjects: Set<string>;
-  switch (params.id) {
+  const name = params.id;
+  switch (name) {
     case 'art':
       subjects = new Set<string>(['ART']);
       break;
@@ -275,6 +287,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   return {
     props: {
       params: {
+        name: name,
         courses: courses,
         prereqs: prereqs,
         coreqs: coreqs,
