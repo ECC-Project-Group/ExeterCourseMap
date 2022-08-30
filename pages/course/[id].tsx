@@ -118,6 +118,19 @@ const CoursePage = ({
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [coords, courseInfoPopupParams.locked]);
+
+  let initialPrereqString = '';
+
+  initialPrereqs[course.course_no].forEach((prereq) => {
+    initialPrereqString += prereq.course_no + ', ';
+  });
+
+  let initialCoreqString = '';
+
+  initialCoreqs[course.course_no].forEach((coreq) => {
+    initialCoreqString += coreq.course_no + ', ';
+  });
+
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
     return (
@@ -288,6 +301,35 @@ const CoursePage = ({
           <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
             {course.desc}
           </h1>
+          <h1 className="font-display text-3xl font-black text-gray-700">
+            Eligibility
+          </h1>
+          <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
+            {course.eli}
+          </h1>
+          <h1 className="font-display text-3xl font-black text-gray-700">
+            Pre-requisites and Co-requisites
+          </h1>
+          {initialPrereqString != '' && initialCoreqString != '' && (
+            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
+              You must have finished taking {initialPrereqString}and be finished
+              taking or is currently enrolled in{' '}
+              {initialCoreqString.slice(0, -2)}.
+            </p>
+          )}
+
+          {initialCoreqString == '' && (
+            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
+              You must have finished taking {initialPrereqString.slice(0, -2)}.
+            </p>
+          )}
+
+          {initialPrereqString == '' && (
+            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
+              You must have finished taking or is currently enrolled in{' '}
+              {initialCoreqString.slice(0, -2)}.
+            </p>
+          )}
         </div>
         <div className="md:col-span-3">
           <div className="flex justify-between">

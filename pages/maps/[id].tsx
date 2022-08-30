@@ -83,6 +83,20 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   }, [coords, courseInfoPopupParams.locked]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
+
+    let initialPrereqString = '';
+    let initialCoreqString = '';
+
+    if (cipp.active) {
+      (prereqs[cipp.course_no] as ICourse[]).forEach((prereq) => {
+        initialPrereqString += prereq.course_no + ', ';
+      });
+
+      (coreqs[cipp.course_no] as ICourse[]).forEach((coreq) => {
+        initialCoreqString += coreq.course_no + ', ';
+      });
+    }
+
     return (
       <div
         className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
@@ -99,6 +113,26 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
+        {initialPrereqString != '' && initialCoreqString != '' && (
+          <p className="ml-2 mr-2 text-sm">
+            You must have finished taking {initialPrereqString}and be finished
+            taking or is currently enrolled in {initialCoreqString.slice(0, -2)}
+            .
+          </p>
+        )}
+
+        {initialCoreqString == '' && (
+          <p className="ml-2 mr-2 text-sm">
+            You must have finished taking {initialPrereqString.slice(0, -2)}.
+          </p>
+        )}
+
+        {initialPrereqString == '' && (
+          <p className="ml-2 mr-2 text-sm">
+            You must have finished taking or is currently enrolled in{' '}
+            {initialCoreqString.slice(0, -2)}.
+          </p>
+        )}
       </div>
     );
   }
