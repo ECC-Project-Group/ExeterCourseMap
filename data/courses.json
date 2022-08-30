@@ -1,5 +1,5 @@
 [
-{
+  {
     "course_no": "PEA000",
     "dept": "",
     "desc": "",
@@ -11,7 +11,7 @@
     "pre": null,
     "st": "Get into PEA",
     "subj": "PEA"
-    },
+  },
   {
     "course_no": "ANT500",
     "dept": "HI",
@@ -19,10 +19,10 @@
     "editor": "Nathan",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "Cultural Anthropology *",
+    "lt": "Cultural Anthropology ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Cultural Anthropology *",
+    "st": "Cultural Anthropology ",
     "subj": "ANT"
   },
   {
@@ -32,10 +32,10 @@
     "editor": "Nathan",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Accelerated Arabic for Seniors *",
+    "lt": "Accelerated Arabic for Seniors ",
     "lvl": "100",
     "pre": "PEA000",
-    "st": "Accel Arabic for Seniors *",
+    "st": "Accel Arabic for Seniors ",
     "subj": "ARA"
   },
   {
@@ -45,10 +45,10 @@
     "editor": "Nathan",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Accelerated Arabic for Seniors *",
+    "lt": "Accelerated Arabic for Seniors ",
     "lvl": "100",
     "pre": "ARA111",
-    "st": "Accel Arabic for Seniors *",
+    "st": "Accel Arabic for Seniors ",
     "subj": "ARA"
   },
   {
@@ -58,10 +58,10 @@
     "editor": "Nathan",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Accelerated Arabic for Seniors *",
+    "lt": "Accelerated Arabic for Seniors ",
     "lvl": "100",
     "pre": "ARA121",
-    "st": "Accel Arabic for Seniors *",
+    "st": "Accel Arabic for Seniors ",
     "subj": "ARA"
   },
   {
@@ -136,10 +136,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Ceramics: Molding Meaning *",
+    "lt": "Advanced Ceramics: Molding Meaning ",
     "lvl": "400",
     "pre": "ART202",
-    "st": "Adv Ceramics: Molding Meaning*",
+    "st": "Adv Ceramics: Molding Meaning",
     "subj": "ART"
   },
   {
@@ -149,10 +149,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Projects in 3-D Design *",
+    "lt": "Advanced Projects in 3-D Design ",
     "lvl": "400",
     "pre": "ART203",
-    "st": "Adv Project 3-D Design *",
+    "st": "Adv Project 3-D Design ",
     "subj": "ART"
   },
   {
@@ -162,10 +162,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Adv Photography: Beyond the Camera *",
+    "lt": "Adv Photography: Beyond the Camera ",
     "lvl": "400",
     "pre": "ART205",
-    "st": "Adv Photo: Beyond the Camera *",
+    "st": "Adv Photo: Beyond the Camera ",
     "subj": "ART"
   },
   {
@@ -175,10 +175,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Printmakng: Limited Editions *",
+    "lt": "Advanced Printmakng: Limited Editions ",
     "lvl": "400",
     "pre": "ART206",
-    "st": "Adv Printmakng Limited Ed *",
+    "st": "Adv Printmakng Limited Ed ",
     "subj": "ART"
   },
   {
@@ -188,10 +188,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Projects: Painting Portraits *",
+    "lt": "Advanced Projects: Painting Portraits ",
     "lvl": "400",
     "pre": "ART208",
-    "st": "Adv Projects: Portraits *",
+    "st": "Adv Projects: Portraits ",
     "subj": "ART"
   },
   {
@@ -201,10 +201,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Portfolio Intensive *",
+    "lt": "Portfolio Intensive ",
     "lvl": "500",
     "pre": "ART402|ART403|ART405|ART406|ART408",
-    "st": "Portfolio Intensive *",
+    "st": "Portfolio Intensive ",
     "subj": "ART"
   },
   {
@@ -214,10 +214,10 @@
     "editor": "Nathan",
     "eli": "",
     "fixed": true,
-    "lt": "Capstone Intensive Studio *",
+    "lt": "Capstone Intensive Studio ",
     "lvl": "600",
     "pre": "ART500",
-    "st": "Capstone Intensive Studio *",
+    "st": "Capstone Intensive Studio ",
     "subj": "ART"
   },
   {
@@ -318,10 +318,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Human Physiology *",
+    "lt": "Human Physiology ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Human Physiology *",
+    "st": "Human Physiology ",
     "subj": "BIO"
   },
   {
@@ -331,10 +331,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Animal Behavior *",
+    "lt": "Animal Behavior ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Animal Behavior *",
+    "st": "Animal Behavior ",
     "subj": "BIO"
   },
   {
@@ -344,10 +344,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Ornithology *",
+    "lt": "Ornithology ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Ornithology *",
+    "st": "Ornithology ",
     "subj": "BIO"
   },
   {
@@ -357,10 +357,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Ecology *",
+    "lt": "Ecology ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Ecology *",
+    "st": "Ecology ",
     "subj": "BIO"
   },
   {
@@ -370,10 +370,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Human Populations & Resource Consumption *",
+    "lt": "Human Populations & Resource Consumption ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Hum Pop & Resource Consump *",
+    "st": "Hum Pop & Resource Consump ",
     "subj": "BIO"
   },
   {
@@ -383,10 +383,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Evolution *",
+    "lt": "Evolution ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Evolution *",
+    "st": "Evolution ",
     "subj": "BIO"
   },
   {
@@ -396,10 +396,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Biochemistry & Human Nutrition *",
+    "lt": "Biochemistry & Human Nutrition ",
     "lvl": "400",
     "pre": "BIO330|BIO230|CHE330|CHE431",
-    "st": "Biochemistry Human Nutrition *",
+    "st": "Biochemistry Human Nutrition ",
     "subj": "BIO"
   },
   {
@@ -409,10 +409,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Marine Biology *",
+    "lt": "Marine Biology ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Marine Biology *",
+    "st": "Marine Biology ",
     "subj": "BIO"
   },
   {
@@ -422,10 +422,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Introductory Genetics I *",
+    "lt": "Introductory Genetics I ",
     "lvl": "400",
     "pre": "BIO330|BIO230",
-    "st": "Introductory Genetics I *",
+    "st": "Introductory Genetics I ",
     "subj": "BIO"
   },
   {
@@ -435,10 +435,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Biology *",
+    "lt": "Advanced Biology ",
     "lvl": "500",
     "pre": "BIO330|BIO230|CHE330|CHE431",
-    "st": "Advanced Biology *",
+    "st": "Advanced Biology ",
     "subj": "BIO"
   },
   {
@@ -448,10 +448,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Biology *",
+    "lt": "Advanced Biology ",
     "lvl": "500",
     "pre": "BIO510",
-    "st": "Advanced Biology *",
+    "st": "Advanced Biology ",
     "subj": "BIO"
   },
   {
@@ -461,10 +461,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Biology *",
+    "lt": "Advanced Biology ",
     "lvl": "500",
     "pre": "BIO520",
-    "st": "Advanced Biology *",
+    "st": "Advanced Biology ",
     "subj": "BIO"
   },
   {
@@ -474,10 +474,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Molecular Genetics *",
+    "lt": "Molecular Genetics ",
     "lvl": "500",
     "pre": "BIO486|BIO510",
-    "st": "Molecular Genetics *",
+    "st": "Molecular Genetics ",
     "subj": "BIO"
   },
   {
@@ -487,10 +487,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Collaborative Research *",
+    "lt": "Collaborative Research ",
     "lvl": "500",
     "pre": "BIO230|BIO330/CHE330|CHE431",
-    "st": "Collaborative Research *",
+    "st": "Collaborative Research ",
     "subj": "BIO"
   },
   {
@@ -500,10 +500,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Biology Research *",
+    "lt": "Biology Research ",
     "lvl": "600",
     "pre": "BIO586",
-    "st": "Biology Research *",
+    "st": "Biology Research ",
     "subj": "BIO"
   },
   {
@@ -552,10 +552,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "Accelerated Chemistry *",
+    "lt": "Accelerated Chemistry ",
     "lvl": "400",
     "pre": "PHY230|PHY231|PHY330",
-    "st": "Accelerated Chemistry *",
+    "st": "Accelerated Chemistry ",
     "subj": "CHE"
   },
   {
@@ -565,10 +565,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "Accelerated Chemistry *",
+    "lt": "Accelerated Chemistry ",
     "lvl": "400",
     "pre": "CHE411",
-    "st": "Accelerated Chemistry *",
+    "st": "Accelerated Chemistry ",
     "subj": "CHE"
   },
   {
@@ -578,10 +578,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "Accelerated Chemistry *",
+    "lt": "Accelerated Chemistry ",
     "lvl": "400",
     "pre": "CHE421",
-    "st": "Accelerated Chemistry *",
+    "st": "Accelerated Chemistry ",
     "subj": "CHE"
   },
   {
@@ -591,10 +591,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Chemistry of the Environment*",
+    "lt": "Chemistry of the Environment",
     "lvl": "400",
     "pre": "CHE330|CHE431",
-    "st": "Chemistry of the Environment*",
+    "st": "Chemistry of the Environment",
     "subj": "CHE"
   },
   {
@@ -604,10 +604,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Organic Chemistry *",
+    "lt": "Organic Chemistry ",
     "lvl": "400",
     "pre": "CHE330|CHE431|CHE530",
-    "st": "Organic Chemistry *",
+    "st": "Organic Chemistry ",
     "subj": "CHE"
   },
   {
@@ -617,10 +617,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Chemistry *",
+    "lt": "Advanced Chemistry ",
     "lvl": "500",
     "pre": "CHE330",
-    "st": "Advanced Chemistry *",
+    "st": "Advanced Chemistry ",
     "subj": "CHE"
   },
   {
@@ -630,10 +630,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Chemistry *",
+    "lt": "Advanced Chemistry ",
     "lvl": "500",
     "pre": "CHE510",
-    "st": "Advanced Chemistry *",
+    "st": "Advanced Chemistry ",
     "subj": "CHE"
   },
   {
@@ -643,10 +643,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Chemistry *",
+    "lt": "Advanced Chemistry ",
     "lvl": "500",
     "pre": "CHE520",
-    "st": "Advanced Chemistry *",
+    "st": "Advanced Chemistry ",
     "subj": "CHE"
   },
   {
@@ -656,10 +656,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Intro to Statistical Thermodynamics *",
+    "lt": "Intro to Statistical Thermodynamics ",
     "lvl": "500",
     "pre": "CHE330|PHY230|PHY231|PHY330|MAT520|MAT521",
-    "st": "Intro to Thermodynamics *",
+    "st": "Intro to Thermodynamics ",
     "subj": "CHE"
   },
   {
@@ -838,10 +838,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Chinese *",
+    "lt": "Advanced Chinese ",
     "lvl": "400",
     "pre": "CHI320",
-    "st": "Advanced Chinese *",
+    "st": "Advanced Chinese ",
     "subj": "CHI"
   },
   {
@@ -851,10 +851,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Chinese - Accelerated *",
+    "lt": "Advanced Chinese - Accelerated ",
     "lvl": "400",
     "pre": "CHI321",
-    "st": "Adv Chinese Accelerated *",
+    "st": "Adv Chinese Accelerated ",
     "subj": "CHI"
   },
   {
@@ -864,10 +864,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Contemp Chinese Lang & Lit *",
+    "lt": "Contemp Chinese Lang & Lit ",
     "lvl": "500",
     "pre": "CHI400",
-    "st": "Contemp Chinese Lang & Lit *",
+    "st": "Contemp Chinese Lang & Lit ",
     "subj": "CHI"
   },
   {
@@ -877,10 +877,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Contemp Chinese Lang & Lit *",
+    "lt": "Contemp Chinese Lang & Lit ",
     "lvl": "500",
     "pre": "CHI502",
-    "st": "Contemp Chinese Lang & Lit *",
+    "st": "Contemp Chinese Lang & Lit ",
     "subj": "CHI"
   },
   {
@@ -890,10 +890,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Contemp Chinese Lang & Lit *",
+    "lt": "Contemp Chinese Lang & Lit ",
     "lvl": "500",
     "pre": "CHI503",
-    "st": "Contemp Chinese Lang & Lit *",
+    "st": "Contemp Chinese Lang & Lit ",
     "subj": "CHI"
   },
   {
@@ -903,10 +903,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Chinese Lang & Lit Accelerated *",
+    "lt": "Chinese Lang & Lit Accelerated ",
     "lvl": "500",
     "pre": "CHI411",
-    "st": "Chinese Lang & Lit Accel *",
+    "st": "Chinese Lang & Lit Accel ",
     "subj": "CHI"
   },
   {
@@ -916,10 +916,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Chinese Lang & Lit Accelerated *",
+    "lt": "Chinese Lang & Lit Accelerated ",
     "lvl": "500",
     "pre": "CHI521",
-    "st": "Chinese Lang & Lit Accel *",
+    "st": "Chinese Lang & Lit Accel ",
     "subj": "CHI"
   },
   {
@@ -929,10 +929,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Chinese Lang & Lit Accelerated *",
+    "lt": "Chinese Lang & Lit Accelerated ",
     "lvl": "500",
     "pre": "CHI531",
-    "st": "Chinese Lang & Lit Accel *",
+    "st": "Chinese Lang & Lit Accel ",
     "subj": "CHI"
   },
   {
@@ -942,10 +942,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Current Events in the Chinese World *",
+    "lt": "Current Events in the Chinese World ",
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541",
-    "st": "Current Events in Chinese Wld*",
+    "st": "Current Events in Chinese Wld",
     "subj": "CHI"
   },
   {
@@ -955,10 +955,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Contemporary Chinese Cinema *",
+    "lt": "Contemporary Chinese Cinema ",
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580",
-    "st": "Contemporary Chinese Cinema *",
+    "st": "Contemporary Chinese Cinema ",
     "subj": "CHI"
   },
   {
@@ -968,10 +968,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Chinese Through Digital Media *",
+    "lt": "Chinese Through Digital Media ",
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580",
-    "st": "Chinese Digital Media *",
+    "st": "Chinese Digital Media ",
     "subj": "CHI"
   },
   {
@@ -981,10 +981,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Chinese *",
+    "lt": "Selected Topics in Chinese ",
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580|CHI560",
-    "st": "Selected Topics in Chinese *",
+    "st": "Selected Topics in Chinese ",
     "subj": "CHI"
   },
   {
@@ -1033,10 +1033,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Algorithms and Software Creation *",
+    "lt": "Algorithms and Software Creation ",
     "lvl": "400",
     "pre": "/MAT12T",
-    "st": "Algorithms & Software *",
+    "st": "Algorithms & Software ",
     "subj": "CSC"
   },
   {
@@ -1046,10 +1046,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Data Structures & Algorithms *",
+    "lt": "Data Structures & Algorithms ",
     "lvl": "500",
     "pre": "CSC405",
-    "st": "Data Structures & Algorithms *",
+    "st": "Data Structures & Algorithms ",
     "subj": "CSC"
   },
   {
@@ -1059,10 +1059,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Mobile App Development *",
+    "lt": "Mobile App Development ",
     "lvl": "500",
     "pre": "CSC405",
-    "st": "Mobile App Development *",
+    "st": "Mobile App Development ",
     "subj": "CSC"
   },
   {
@@ -1072,10 +1072,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Computer Science *",
+    "lt": "Selected Topics in Computer Science ",
     "lvl": "500",
     "pre": "CSC308|CSC505|CSC506",
-    "st": "Selected Topics in Comp Sci *",
+    "st": "Selected Topics in Comp Sci ",
     "subj": "CSC"
   },
   {
@@ -1202,10 +1202,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Dance in Society *",
+    "lt": "Dance in Society ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Dance in Society *",
+    "st": "Dance in Society ",
     "subj": "DAN"
   },
   {
@@ -1215,10 +1215,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Principles of Economics & Business *",
+    "lt": "Principles of Economics & Business ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Principles of Econ & Business*",
+    "st": "Principles of Econ & Business",
     "subj": "ECO"
   },
   {
@@ -1228,10 +1228,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Macroeconomic Issues in the U.S. *",
+    "lt": "Macroeconomic Issues in the U.S. ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Macroeconomic Issues *",
+    "st": "Macroeconomic Issues ",
     "subj": "ECO"
   },
   {
@@ -1241,10 +1241,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Microeconomic Theory & Policy *",
+    "lt": "Microeconomic Theory & Policy ",
     "lvl": "500",
     "pre": "ECO510",
-    "st": "Microeconomic Theory & Policy*",
+    "st": "Microeconomic Theory & Policy",
     "subj": "ECO"
   },
   {
@@ -1332,10 +1332,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers only",
     "fixed": true,
-    "lt": "11th-Grade English *",
+    "lt": "11th-Grade English ",
     "lvl": "400",
     "pre": "ENG330",
-    "st": "11th-Grade English *",
+    "st": "11th-Grade English ",
     "subj": "ENG"
   },
   {
@@ -1345,10 +1345,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers only",
     "fixed": true,
-    "lt": "11th-Grade English *",
+    "lt": "11th-Grade English ",
     "lvl": "400",
     "pre": "ENG410",
-    "st": "11th-Grade English *",
+    "st": "11th-Grade English ",
     "subj": "ENG"
   },
   {
@@ -1358,10 +1358,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers only",
     "fixed": true,
-    "lt": "11th-Grade English *",
+    "lt": "11th-Grade English ",
     "lvl": "400",
     "pre": "ENG420",
-    "st": "11th-Grade English *",
+    "st": "11th-Grade English ",
     "subj": "ENG"
   },
   {
@@ -1371,10 +1371,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "12th-Grade English *",
+    "lt": "12th-Grade English ",
     "lvl": "500",
     "pre": "ENG430",
-    "st": "12th-Grade English *",
+    "st": "12th-Grade English ",
     "subj": "ENG"
   },
   {
@@ -1384,10 +1384,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Creative Writing: Short Fiction *",
+    "lt": "Creative Writing: Short Fiction ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Creative Writing: Fiction *",
+    "st": "Creative Writing: Fiction ",
     "subj": "ENG"
   },
   {
@@ -1397,10 +1397,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Creative Writing: Poetry *",
+    "lt": "Creative Writing: Poetry ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Creative Writing: Poetry *",
+    "st": "Creative Writing: Poetry ",
     "subj": "ENG"
   },
   {
@@ -1410,10 +1410,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Creative Writing: Creative Nonfiction *",
+    "lt": "Creative Writing: Creative Nonfiction ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Creative Writing: Nonfiction *",
+    "st": "Creative Writing: Nonfiction ",
     "subj": "ENG"
   },
   {
@@ -1423,10 +1423,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Creative Writing: Multi-Genre *",
+    "lt": "Creative Writing: Multi-Genre ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Creative Writing: Multigenre *",
+    "st": "Creative Writing: Multigenre ",
     "subj": "ENG"
   },
   {
@@ -1436,10 +1436,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Fences Tattoos Streetcars *",
+    "lt": "Fences Tattoos Streetcars ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Fences Tattoos Streetcars *",
+    "st": "Fences Tattoos Streetcars ",
     "subj": "ENG"
   },
   {
@@ -1449,10 +1449,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "American Political Literature *",
+    "lt": "American Political Literature ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "American Political Literature*",
+    "st": "American Political Literature",
     "subj": "ENG"
   },
   {
@@ -1462,10 +1462,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Her/His Stories Plath Hughes *",
+    "lt": "Her/His Stories Plath Hughes ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Her/His Stories Plath Hughes *",
+    "st": "Her/His Stories Plath Hughes ",
     "subj": "ENG"
   },
   {
@@ -1475,10 +1475,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Jane Austen *",
+    "lt": "Jane Austen ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Jane Austen *",
+    "st": "Jane Austen ",
     "subj": "ENG"
   },
   {
@@ -1488,10 +1488,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "James Baldwin *",
+    "lt": "James Baldwin ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "James Baldwin *",
+    "st": "James Baldwin ",
     "subj": "ENG"
   },
   {
@@ -1501,10 +1501,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Samuel Beckett *",
+    "lt": "Samuel Beckett ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Samuel Beckett *",
+    "st": "Samuel Beckett ",
     "subj": "ENG"
   },
   {
@@ -1514,10 +1514,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Junot Diaz *",
+    "lt": "Junot Diaz ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Junot Diaz *",
+    "st": "Junot Diaz ",
     "subj": "ENG"
   },
   {
@@ -1527,10 +1527,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Looking for Zora *",
+    "lt": "Looking for Zora ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Looking for Zora *",
+    "st": "Looking for Zora ",
     "subj": "ENG"
   },
   {
@@ -1540,10 +1540,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Faulkner and Woolf *",
+    "lt": "Faulkner and Woolf ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Faulkner and Woolf *",
+    "st": "Faulkner and Woolf ",
     "subj": "ENG"
   },
   {
@@ -1553,10 +1553,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Kazuo Ishiguro *",
+    "lt": "Kazuo Ishiguro ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Kazuo Ishiguro *",
+    "st": "Kazuo Ishiguro ",
     "subj": "ENG"
   },
   {
@@ -1566,10 +1566,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Cormac McCarthy *",
+    "lt": "Cormac McCarthy ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Cormac McCarthy *",
+    "st": "Cormac McCarthy ",
     "subj": "ENG"
   },
   {
@@ -1579,10 +1579,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Moby Dick *",
+    "lt": "Moby Dick ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Moby Dick *",
+    "st": "Moby Dick ",
     "subj": "ENG"
   },
   {
@@ -1592,10 +1592,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Toni Morrison *",
+    "lt": "Toni Morrison ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Toni Morrison *",
+    "st": "Toni Morrison ",
     "subj": "ENG"
   },
   {
@@ -1605,10 +1605,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Viet Thanh Nguyen *",
+    "lt": "Viet Thanh Nguyen ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Viet Thanh Nguyen *",
+    "st": "Viet Thanh Nguyen ",
     "subj": "ENG"
   },
   {
@@ -1618,10 +1618,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Salman Rushdie *",
+    "lt": "Salman Rushdie ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Salman Rushdie *",
+    "st": "Salman Rushdie ",
     "subj": "ENG"
   },
   {
@@ -1631,10 +1631,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Zadie Smith *",
+    "lt": "Zadie Smith ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Zadie Smith *",
+    "st": "Zadie Smith ",
     "subj": "ENG"
   },
   {
@@ -1644,10 +1644,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Fictions of Finance *",
+    "lt": "Fictions of Finance ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Fictions of Finance *",
+    "st": "Fictions of Finance ",
     "subj": "ENG"
   },
   {
@@ -1657,10 +1657,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "The Harlem Renaissance *",
+    "lt": "The Harlem Renaissance ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "The Harlem Renaissance *",
+    "st": "The Harlem Renaissance ",
     "subj": "ENG"
   },
   {
@@ -1670,10 +1670,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Page to Screen: Film Adaptations *",
+    "lt": "Page to Screen: Film Adaptations ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Page to Screen: Film Adapt *",
+    "st": "Page to Screen: Film Adapt ",
     "subj": "ENG"
   },
   {
@@ -1683,10 +1683,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Literature and the Land *",
+    "lt": "Literature and the Land ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Literature and the Land *",
+    "st": "Literature and the Land ",
     "subj": "ENG"
   },
   {
@@ -1696,10 +1696,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Beats, Rhymes and Narrative *",
+    "lt": "Beats, Rhymes and Narrative ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Beats, Rhymes and Narrative *",
+    "st": "Beats, Rhymes and Narrative ",
     "subj": "ENG"
   },
   {
@@ -1709,10 +1709,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Literature of California *",
+    "lt": "Literature of California ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Literature of California *",
+    "st": "Literature of California ",
     "subj": "ENG"
   },
   {
@@ -1722,10 +1722,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Art of Protest *",
+    "lt": "Art of Protest ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Art of Protest *",
+    "st": "Art of Protest ",
     "subj": "ENG"
   },
   {
@@ -1735,10 +1735,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Queer Lit *",
+    "lt": "Queer Lit ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Queer Lit *",
+    "st": "Queer Lit ",
     "subj": "ENG"
   },
   {
@@ -1748,10 +1748,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Children's Literature *",
+    "lt": "Children's Literature ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Children's Literature *",
+    "st": "Children's Literature ",
     "subj": "ENG"
   },
   {
@@ -1761,10 +1761,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Spring in Love *",
+    "lt": "Spring in Love ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Spring in Love *",
+    "st": "Spring in Love ",
     "subj": "ENG"
   },
   {
@@ -1774,10 +1774,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Poetry and Songwriting *",
+    "lt": "Poetry and Songwriting ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Poetry and Songwriting *",
+    "st": "Poetry and Songwriting ",
     "subj": "ENG"
   },
   {
@@ -1787,10 +1787,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Science Fiction and Fantasy *",
+    "lt": "Science Fiction and Fantasy ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Science Fiction and Fantasy *",
+    "st": "Science Fiction and Fantasy ",
     "subj": "ENG"
   },
   {
@@ -1800,10 +1800,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Strangers in a Strange Land *",
+    "lt": "Strangers in a Strange Land ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Strangers in a Strange Land *",
+    "st": "Strangers in a Strange Land ",
     "subj": "ENG"
   },
   {
@@ -1813,10 +1813,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Baseball: the American Narrative *",
+    "lt": "Baseball: the American Narrative ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Baseball: American Narrative *",
+    "st": "Baseball: American Narrative ",
     "subj": "ENG"
   },
   {
@@ -1826,10 +1826,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Utopias & Dystopias in Literature *",
+    "lt": "Utopias & Dystopias in Literature ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Utopias & Dystopias in Lit *",
+    "st": "Utopias & Dystopias in Lit ",
     "subj": "ENG"
   },
   {
@@ -1839,10 +1839,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Writing the Body *",
+    "lt": "Writing the Body ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Writing the Body *",
+    "st": "Writing the Body ",
     "subj": "ENG"
   },
   {
@@ -1852,10 +1852,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Beyond Korean Cool *",
+    "lt": "Beyond Korean Cool ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Beyond Korean Cool *",
+    "st": "Beyond Korean Cool ",
     "subj": "ENG"
   },
   {
@@ -1865,10 +1865,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Crime Fiction *",
+    "lt": "Crime Fiction ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Crime Fiction *",
+    "st": "Crime Fiction ",
     "subj": "ENG"
   },
   {
@@ -1878,10 +1878,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Homer's Odyssey *",
+    "lt": "Homer's Odyssey ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Homer's Odyssey *",
+    "st": "Homer's Odyssey ",
     "subj": "ENG"
   },
   {
@@ -1891,10 +1891,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Selected Topics in English *",
+    "lt": "Selected Topics in English ",
     "lvl": "500",
     "pre": "ENG500",
-    "st": "Selected Topics in English *",
+    "st": "Selected Topics in English ",
     "subj": "ENG"
   },
   {
@@ -1904,10 +1904,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Earth and the Climate Crisis *",
+    "lt": "Earth and the Climate Crisis ",
     "lvl": "400",
     "pre": "PHY330|PHY231|PHY230|CHE330|CHI431",
-    "st": "Earth Systems *",
+    "st": "Earth Systems ",
     "subj": "EPS"
   },
   {
@@ -1930,10 +1930,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "War, Identity Nationhood of the U.S. *",
+    "lt": "War, Identity Nationhood of the U.S. ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Nationhood of the U.S. *",
+    "st": "Nationhood of the U.S. ",
     "subj": "EXI"
   },
   {
@@ -1943,10 +1943,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Latinx History Culture in the U.S. *",
+    "lt": "Latinx History Culture in the U.S. ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Latinx Studies in the U.S. *",
+    "st": "Latinx Studies in the U.S. ",
     "subj": "EXI"
   },
   {
@@ -1956,10 +1956,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Asian American History & Literature *",
+    "lt": "Asian American History & Literature ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Asian Amer History & Lit *",
+    "st": "Asian Amer History & Lit ",
     "subj": "EXI"
   },
   {
@@ -1969,10 +1969,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Science Health and Race in America *",
+    "lt": "Science Health and Race in America ",
     "lvl": "500",
     "pre": "BIO330|BIO230|BIO530/HIS430",
-    "st": "Science Health Race in Amer *",
+    "st": "Science Health Race in Amer ",
     "subj": "EXI"
   },
   {
@@ -1982,10 +1982,10 @@
     "editor": "Byran Huang",
     "eli": "Open to lowers and uppers",
     "fixed": true,
-    "lt": "Research Methods: SPARC *",
+    "lt": "Research Methods: SPARC ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Research Methods: SPARC *",
+    "st": "Research Methods: SPARC ",
     "subj": "EXI"
   },
   {
@@ -2125,10 +2125,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Col/Post-col Francophone Literature *",
+    "lt": "Col/Post-col Francophone Literature ",
     "lvl": "300",
     "pre": "FRE320",
-    "st": "Col/Post-col Francophone Lit*",
+    "st": "Col/Post-col Francophone Lit",
     "subj": "FRE"
   },
   {
@@ -2138,10 +2138,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Individual, Community, Society: Aspect *",
+    "lt": "Individual, Community, Society: Aspect ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Individual, Community, Soc *",
+    "st": "Individual, Community, Soc ",
     "subj": "FRE"
   },
   {
@@ -2151,10 +2151,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Francophone World in the 21st Century *",
+    "lt": "Francophone World in the 21st Century ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "France and Francophone World *",
+    "st": "France and Francophone World ",
     "subj": "FRE"
   },
   {
@@ -2164,10 +2164,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Art, Music, and Literature *",
+    "lt": "Art, Music, and Literature ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Art, Music, and Literature *",
+    "st": "Art, Music, and Literature ",
     "subj": "FRE"
   },
   {
@@ -2177,10 +2177,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Francophone Theater *",
+    "lt": "Francophone Theater ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Francophone Theater *",
+    "st": "Francophone Theater ",
     "subj": "FRE"
   },
   {
@@ -2190,10 +2190,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "From Folly to Reason *",
+    "lt": "From Folly to Reason ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "From Folly to Reason *",
+    "st": "From Folly to Reason ",
     "subj": "FRE"
   },
   {
@@ -2203,10 +2203,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Great Novels *",
+    "lt": "Great Novels ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Great Novels *",
+    "st": "Great Novels ",
     "subj": "FRE"
   },
   {
@@ -2216,10 +2216,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "French Humanism *",
+    "lt": "French Humanism ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "French Humanism *",
+    "st": "French Humanism ",
     "subj": "FRE"
   },
   {
@@ -2229,10 +2229,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Change Makers *",
+    "lt": "Change Makers ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Change Makers *",
+    "st": "Change Makers ",
     "subj": "FRE"
   },
   {
@@ -2242,10 +2242,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Studies in French Cinema *",
+    "lt": "Studies in French Cinema ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Studies in French Cinema *",
+    "st": "Studies in French Cinema ",
     "subj": "FRE"
   },
   {
@@ -2255,10 +2255,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in French *",
+    "lt": "Selected Topics in French ",
     "lvl": "500",
     "pre": "FRE400",
-    "st": "Selected Topics in French *",
+    "st": "Selected Topics in French ",
     "subj": "FRE"
   },
   {
@@ -2411,10 +2411,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Other German Voices *",
+    "lt": "Other German Voices ",
     "lvl": "400",
     "pre": "GER320",
-    "st": "Other German Voices *",
+    "st": "Other German Voices ",
     "subj": "GER"
   },
   {
@@ -2424,10 +2424,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "German Bestsellers *",
+    "lt": "German Bestsellers ",
     "lvl": "500",
     "pre": "GER400",
-    "st": "German Bestsellers *",
+    "st": "German Bestsellers ",
     "subj": "GER"
   },
   {
@@ -2437,10 +2437,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Post-Holocaust Writing *",
+    "lt": "Post-Holocaust Writing ",
     "lvl": "500",
     "pre": "GER400",
-    "st": "Post-Holocaust Writing *",
+    "st": "Post-Holocaust Writing ",
     "subj": "GER"
   },
   {
@@ -2450,10 +2450,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Current Issues in German Countries *",
+    "lt": "Current Issues in German Countries ",
     "lvl": "500",
     "pre": "GER400",
-    "st": "Curr Issues German Countries *",
+    "st": "Curr Issues German Countries ",
     "subj": "GER"
   },
   {
@@ -2463,10 +2463,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in German *",
+    "lt": "Selected Topics in German ",
     "lvl": "500",
     "pre": "GER502|GER503|GER504",
-    "st": "Selected Topics in German *",
+    "st": "Selected Topics in German ",
     "subj": "GER"
   },
   {
@@ -2554,10 +2554,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Greek - Intensive *",
+    "lt": "Elementary Greek - Intensive ",
     "lvl": "400",
     "pre": "LAT220",
-    "st": "Elementary Greek - Intensive *",
+    "st": "Elementary Greek - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2567,10 +2567,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Greek - Intensive *",
+    "lt": "Elementary Greek - Intensive ",
     "lvl": "400",
     "pre": "GRK411",
-    "st": "Elementary Greek - Intensive *",
+    "st": "Elementary Greek - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2580,10 +2580,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Greek - Intensive *",
+    "lt": "Elementary Greek - Intensive ",
     "lvl": "400",
     "pre": "GRK421",
-    "st": "Elementary Greek - Intensive *",
+    "st": "Elementary Greek - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2593,10 +2593,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Plato's Crito - Intensive *",
+    "lt": "Plato's Crito - Intensive ",
     "lvl": "500",
     "pre": "GRK230|GRK431",
-    "st": "Plato's Crito - Intensive *",
+    "st": "Plato's Crito - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2606,10 +2606,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Plato's Apology - Intensive *",
+    "lt": "Plato's Apology - Intensive ",
     "lvl": "500",
     "pre": "GRK511",
-    "st": "Plato's Apology - Intensive *",
+    "st": "Plato's Apology - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2619,10 +2619,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Homer's Iliad - Intensive *",
+    "lt": "Homer's Iliad - Intensive ",
     "lvl": "500",
     "pre": "GRK521",
-    "st": "Homer's Iliad - Intensive *",
+    "st": "Homer's Iliad - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2632,10 +2632,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Greek Tragedy - Intensive *",
+    "lt": "Greek Tragedy - Intensive ",
     "lvl": "600",
     "pre": "GRK531",
-    "st": "Greek Tragedy - Intensive *",
+    "st": "Greek Tragedy - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2645,10 +2645,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Greek Old Comedy - Intensive *",
+    "lt": "Greek Old Comedy - Intensive ",
     "lvl": "600",
     "pre": "GRK611",
-    "st": "Greek Old Comedy - Intensive *",
+    "st": "Greek Old Comedy - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2658,10 +2658,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Greek Poetry - Intensive *",
+    "lt": "Greek Poetry - Intensive ",
     "lvl": "600",
     "pre": "GRK621",
-    "st": "Greek Poetry - Intensive *",
+    "st": "Greek Poetry - Intensive ",
     "subj": "GRK"
   },
   {
@@ -2671,10 +2671,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Plato's Republic *",
+    "lt": "Plato's Republic ",
     "lvl": "700",
     "pre": "GRK631",
-    "st": "Plato's Republic *",
+    "st": "Plato's Republic ",
     "subj": "GRK"
   },
   {
@@ -2684,10 +2684,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Special Readings *",
+    "lt": "Special Readings ",
     "lvl": "700",
     "pre": "GRK711",
-    "st": "Special Readings *",
+    "st": "Special Readings ",
     "subj": "GRK"
   },
   {
@@ -2814,10 +2814,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Teen Health Matters for Seniors *",
+    "lt": "Teen Health Matters for Seniors ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Teen Health for Seniors *",
+    "st": "Teen Health for Seniors ",
     "subj": "HHD"
   },
   {
@@ -2827,10 +2827,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Crossroads: Your Future, Your Health *",
+    "lt": "Crossroads: Your Future, Your Health ",
     "lvl": "400",
     "pre": "HHD340|HHD410",
-    "st": "Crossroads Health: Seniors *",
+    "st": "Crossroads Health: Seniors ",
     "subj": "HHD"
   },
   {
@@ -2840,10 +2840,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "A Study of Human Sexuality *",
+    "lt": "A Study of Human Sexuality ",
     "lvl": "500",
     "pre": "HHD490",
-    "st": "A Study of Human Sexuality *",
+    "st": "A Study of Human Sexuality ",
     "subj": "HHD"
   },
   {
@@ -2853,10 +2853,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "The Power Within: Optimal Health *",
+    "lt": "The Power Within: Optimal Health ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Power Within: Optimal Health *",
+    "st": "Power Within: Optimal Health ",
     "subj": "HHD"
   },
   {
@@ -2866,10 +2866,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "The Human Pursuit of Euphoria *",
+    "lt": "The Human Pursuit of Euphoria ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Human Pursuit of Euphoria *",
+    "st": "Human Pursuit of Euphoria ",
     "subj": "HHD"
   },
   {
@@ -3087,10 +3087,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "U.S. History Colonial Origins to 1861 *",
+    "lt": "U.S. History Colonial Origins to 1861 ",
     "lvl": "400",
     "pre": "HIS302|HIS303|HIS304|HIS305|HIS307|HIS308|HIS309|HIS314",
-    "st": "U.S. History Colonial - 1861 *",
+    "st": "U.S. History Colonial - 1861 ",
     "subj": "HIS"
   },
   {
@@ -3100,10 +3100,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "U.S. History 1861 - 1941 *",
+    "lt": "U.S. History 1861 - 1941 ",
     "lvl": "400",
     "pre": "HIS410",
-    "st": "U.S. History 1861 - 1941 *",
+    "st": "U.S. History 1861 - 1941 ",
     "subj": "HIS"
   },
   {
@@ -3113,10 +3113,10 @@
     "editor": "Byran Huang",
     "eli": "Not open to preps",
     "fixed": true,
-    "lt": "U.S. History 1941 - Present *",
+    "lt": "U.S. History 1941 - Present ",
     "lvl": "400",
     "pre": "HIS420",
-    "st": "U.S. History 1941 - Present *",
+    "st": "U.S. History 1941 - Present ",
     "subj": "HIS"
   },
   {
@@ -3126,10 +3126,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Global Topics: Women, Gender & Society *",
+    "lt": "Global Topics: Women, Gender & Society ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Women, Gender & Society *",
+    "pre": "HIS410",
+    "st": "Women, Gender & Society ",
     "subj": "HIS"
   },
   {
@@ -3139,10 +3139,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "World War & European Society 1890-1945 *",
+    "lt": "World War & European Society 1890-1945 ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "WW & Europe Soc 1890-1945 *",
+    "pre": "HIS410",
+    "st": "WW & Europe Soc 1890-1945 ",
     "subj": "HIS"
   },
   {
@@ -3152,10 +3152,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Europe Since 1945 *",
+    "lt": "Europe Since 1945 ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Europe Since 1945 *",
+    "pre": "HIS410",
+    "st": "Europe Since 1945 ",
     "subj": "HIS"
   },
   {
@@ -3165,10 +3165,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Capitalism and its Critics *",
+    "lt": "Capitalism and its Critics ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Capitalism and its Critics *",
+    "pre": "HIS410",
+    "st": "Capitalism and its Critics ",
     "subj": "HIS"
   },
   {
@@ -3178,10 +3178,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Understanding Violence, War & Peace *",
+    "lt": "Understanding Violence, War & Peace ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Violence, War & Peace *",
+    "pre": "HIS410",
+    "st": "Violence, War & Peace ",
     "subj": "HIS"
   },
   {
@@ -3191,10 +3191,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "LGBTQ+ History *",
+    "lt": "LGBTQ+ History ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "LGBTQ+ History *",
+    "pre": "HIS410",
+    "st": "LGBTQ+ History ",
     "subj": "HIS"
   },
   {
@@ -3204,10 +3204,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "American Politics & Public Policy*",
+    "lt": "American Politics & Public Policy",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Amer Politics & Public Policy*",
+    "pre": "HIS410",
+    "st": "Amer Politics & Public Policy",
     "subj": "HIS"
   },
   {
@@ -3217,10 +3217,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Law and American Society *",
+    "lt": "Law and American Society ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Law and American Society *",
+    "pre": "HIS410",
+    "st": "Law and American Society ",
     "subj": "HIS"
   },
   {
@@ -3230,10 +3230,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Revolutionary Russia *",
+    "lt": "Revolutionary Russia ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Revolutionary Russia *",
+    "pre": "HIS410",
+    "st": "Revolutionary Russia ",
     "subj": "HIS"
   },
   {
@@ -3243,10 +3243,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Why Are Poor Nations Poor? *",
+    "lt": "Why Are Poor Nations Poor? ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Why Are Poor Nations Poor? *",
+    "pre": "HIS410",
+    "st": "Why Are Poor Nations Poor? ",
     "subj": "HIS"
   },
   {
@@ -3256,10 +3256,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Genocide in the Modern World *",
+    "lt": "Genocide in the Modern World ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Genocide in the Modern World *",
+    "pre": "HIS410",
+    "st": "Genocide in the Modern World ",
     "subj": "HIS"
   },
   {
@@ -3269,10 +3269,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Humans and the Environment *",
+    "lt": "Humans and the Environment ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Humans and the Environment *",
+    "pre": "HIS410",
+    "st": "Humans and the Environment ",
     "subj": "HIS"
   },
   {
@@ -3282,10 +3282,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Modern China *",
+    "lt": "Modern China ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Modern China *",
+    "pre": "HIS410",
+    "st": "Modern China ",
     "subj": "HIS"
   },
   {
@@ -3295,10 +3295,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Modern Latin America *",
+    "lt": "Modern Latin America ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Modern Latin America *",
+    "pre": "HIS410",
+    "st": "Modern Latin America ",
     "subj": "HIS"
   },
   {
@@ -3308,10 +3308,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Modern Asia: Contested Histories *",
+    "lt": "Modern Asia: Contested Histories ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Modern Asia *",
+    "pre": "HIS410",
+    "st": "Modern Asia ",
     "subj": "HIS"
   },
   {
@@ -3321,10 +3321,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "History of Modern Africa *",
+    "lt": "History of Modern Africa ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "History of Modern Africa *",
+    "pre": "HIS410",
+    "st": "History of Modern Africa ",
     "subj": "HIS"
   },
   {
@@ -3334,10 +3334,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Contemporary Middle East *",
+    "lt": "Contemporary Middle East ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Contemporary Middle East *",
+    "pre": "HIS410",
+    "st": "Contemporary Middle East ",
     "subj": "HIS"
   },
   {
@@ -3347,10 +3347,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "A Global History of Witchcraft *",
+    "lt": "A Global History of Witchcraft ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Global History of Witchcraft *",
+    "pre": "HIS410",
+    "st": "Global History of Witchcraft ",
     "subj": "HIS"
   },
   {
@@ -3360,10 +3360,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "American Slavery, American Capitalism *",
+    "lt": "American Slavery, American Capitalism ",
     "lvl": "500",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "American Slavery, Capitalism *",
+    "pre": "HIS410",
+    "st": "American Slavery, Capitalism ",
     "subj": "HIS"
   },
   {
@@ -3373,10 +3373,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Senior Research Seminar *",
+    "lt": "Senior Research Seminar ",
     "lvl": "600",
-    "pre": "HIS410|HIS420|HIS430",
-    "st": "Senior Research Seminar *",
+    "pre": "HIS410",
+    "st": "Senior Research Seminar ",
     "subj": "HIS"
   },
   {
@@ -3386,10 +3386,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Bioethics *",
+    "lt": "Bioethics ",
     "lvl": "400",
     "pre": "BIO230|BIO330",
-    "st": "Bioethics *",
+    "st": "Bioethics ",
     "subj": "INT"
   },
   {
@@ -3399,10 +3399,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "World Seen Through a Daily Newspaper *",
+    "lt": "World Seen Through a Daily Newspaper ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "World Seen Thru a Newspaper *",
+    "st": "World Seen Thru a Newspaper ",
     "subj": "INT"
   },
   {
@@ -3412,10 +3412,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Human Rights *",
+    "lt": "Human Rights ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Human Rights *",
+    "st": "Human Rights ",
     "subj": "INT"
   },
   {
@@ -3425,10 +3425,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "A Study of Sport in Society *",
+    "lt": "A Study of Sport in Society ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "A Study of Sport in Society *",
+    "st": "A Study of Sport in Society ",
     "subj": "INT"
   },
   {
@@ -3438,10 +3438,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Green Umbrella Learning Lab (GULL) *",
+    "lt": "Green Umbrella Learning Lab (GULL) ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Green Umbrella Learning Lab *",
+    "st": "Green Umbrella Learning Lab ",
     "subj": "INT"
   },
   {
@@ -3451,10 +3451,10 @@
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "ID, Empathy, Cross-Cultural Undrstanding *",
+    "lt": "ID, Empathy, Cross-Cultural Undrstanding ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "ID, Empathy, Cross-Cultural *",
+    "st": "ID, Empathy, Cross-Cultural ",
     "subj": "INT"
   },
   {
@@ -3464,10 +3464,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Sports Science *",
+    "lt": "Sports Science ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Sports Science *",
+    "st": "Sports Science ",
     "subj": "INT"
   },
   {
@@ -3477,10 +3477,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Science Technology Profit in Societies *",
+    "lt": "Science Technology Profit in Societies ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Science, Technology & Profit *",
+    "st": "Science, Technology & Profit ",
     "subj": "INT"
   },
   {
@@ -3490,10 +3490,10 @@
     "editor": "Avaninder",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Social Innovation *",
+    "lt": "Social Innovation ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Social Innovation *",
+    "st": "Social Innovation ",
     "subj": "INT"
   },
   {
@@ -3503,10 +3503,10 @@
     "editor": "Byran Huang",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Design Thinking: Creative Workshop *",
+    "lt": "Design Thinking: Creative Workshop ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Design Thinking Workshop *",
+    "st": "Design Thinking Workshop ",
     "subj": "INT"
   },
   {
@@ -3672,10 +3672,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Japanese *",
+    "lt": "Advanced Japanese ",
     "lvl": "400",
     "pre": "JPN320",
-    "st": "Advanced Japanese *",
+    "st": "Advanced Japanese ",
     "subj": "JPN"
   },
   {
@@ -3685,10 +3685,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Japanese *",
+    "lt": "Advanced Readings in Japanese ",
     "lvl": "500",
     "pre": "JPN400",
-    "st": "Advanced Readings Japanese *",
+    "st": "Advanced Readings Japanese ",
     "subj": "JPN"
   },
   {
@@ -3698,10 +3698,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Japanese *",
+    "lt": "Advanced Readings in Japanese ",
     "lvl": "500",
     "pre": "JPN502",
-    "st": "Advanced Readings Japanese *",
+    "st": "Advanced Readings Japanese ",
     "subj": "JPN"
   },
   {
@@ -3711,10 +3711,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Japanese *",
+    "lt": "Advanced Readings in Japanese ",
     "lvl": "500",
     "pre": "JPN503",
-    "st": "Advanced Readings Japanese *",
+    "st": "Advanced Readings Japanese ",
     "subj": "JPN"
   },
   {
@@ -3724,10 +3724,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Japanese *",
+    "lt": "Selected Topics in Japanese ",
     "lvl": "500",
     "pre": "JPN504",
-    "st": "Selected Topics in Japanese *",
+    "st": "Selected Topics in Japanese ",
     "subj": "JPN"
   },
   {
@@ -3841,10 +3841,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Ovid *",
+    "lt": "Ovid ",
     "lvl": "400",
     "pre": "LAT320",
-    "st": "Ovid *",
+    "st": "Ovid ",
     "subj": "LAT"
   },
   {
@@ -3854,10 +3854,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Cicero and Latin Prose - Intensive *",
+    "lt": "Cicero and Latin Prose - Intensive ",
     "lvl": "400",
     "pre": "LAT220|LATTR2",
-    "st": "Cicero Latin Prose Intensive *",
+    "st": "Cicero Latin Prose Intensive ",
     "subj": "LAT"
   },
   {
@@ -3867,10 +3867,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Latin - Intensive *",
+    "lt": "Elementary Latin - Intensive ",
     "lvl": "400",
     "pre": "GRK220",
-    "st": "Elementary Latin - Intensive *",
+    "st": "Elementary Latin - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3880,10 +3880,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Latin - Intensive *",
+    "lt": "Elementary Latin - Intensive ",
     "lvl": "400",
     "pre": "LAT411",
-    "st": "Elementary Latin - Intensive *",
+    "st": "Elementary Latin - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3893,10 +3893,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Elementary Latin - Intensive *",
+    "lt": "Elementary Latin - Intensive ",
     "lvl": "400",
     "pre": "LAT421",
-    "st": "Elementary Latin - Intensive *",
+    "st": "Elementary Latin - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3906,10 +3906,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil *",
+    "lt": "Vergil ",
     "lvl": "500",
     "pre": "LAT400|LAT431",
-    "st": "Vergil *",
+    "st": "Vergil ",
     "subj": "LAT"
   },
   {
@@ -3919,10 +3919,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil - Intensive *",
+    "lt": "Vergil - Intensive ",
     "lvl": "500",
     "pre": "LAT401|LAT431",
-    "st": "Vergil - Intensive *",
+    "st": "Vergil - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3932,10 +3932,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil *",
+    "lt": "Vergil ",
     "lvl": "500",
     "pre": "LAT510",
-    "st": "Vergil *",
+    "st": "Vergil ",
     "subj": "LAT"
   },
   {
@@ -3945,10 +3945,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil - Intensive *",
+    "lt": "Vergil - Intensive ",
     "lvl": "500",
     "pre": "LAT511",
-    "st": "Vergil - Intensive *",
+    "st": "Vergil - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3958,10 +3958,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil *",
+    "lt": "Vergil ",
     "lvl": "500",
     "pre": "LAT520",
-    "st": "Vergil *",
+    "st": "Vergil ",
     "subj": "LAT"
   },
   {
@@ -3971,10 +3971,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Vergil - Intensive *",
+    "lt": "Vergil - Intensive ",
     "lvl": "500",
     "pre": "LAT521",
-    "st": "Vergil - Intensive *",
+    "st": "Vergil - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3984,10 +3984,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Catullus - Intensive *",
+    "lt": "Catullus - Intensive ",
     "lvl": "600",
     "pre": "LAT531|LAT530",
-    "st": "Catullus - Intensive *",
+    "st": "Catullus - Intensive ",
     "subj": "LAT"
   },
   {
@@ -3997,10 +3997,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Horace - Intensive *",
+    "lt": "Horace - Intensive ",
     "lvl": "600",
     "pre": "LAT611",
-    "st": "Horace - Intensive *",
+    "st": "Horace - Intensive ",
     "subj": "LAT"
   },
   {
@@ -4010,10 +4010,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Ovid - Intensive *",
+    "lt": "Ovid - Intensive ",
     "lvl": "600",
     "pre": "LAT621",
-    "st": "Ovid - Intensive *",
+    "st": "Ovid - Intensive ",
     "subj": "LAT"
   },
   {
@@ -4023,10 +4023,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Latin Elegy *",
+    "lt": "Latin Elegy ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Latin Elegy *",
+    "st": "Latin Elegy ",
     "subj": "LAT"
   },
   {
@@ -4036,10 +4036,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Latin Prose Composition *",
+    "lt": "Latin Prose Composition ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Latin Prose Composition *",
+    "st": "Latin Prose Composition ",
     "subj": "LAT"
   },
   {
@@ -4049,10 +4049,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Lucretius *",
+    "lt": "Lucretius ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Lucretius *",
+    "st": "Lucretius ",
     "subj": "LAT"
   },
   {
@@ -4062,10 +4062,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Plautus *",
+    "lt": "Plautus ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Plautus *",
+    "st": "Plautus ",
     "subj": "LAT"
   },
   {
@@ -4075,10 +4075,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Roman Satire *",
+    "lt": "Roman Satire ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Roman Satire *",
+    "st": "Roman Satire ",
     "subj": "LAT"
   },
   {
@@ -4088,10 +4088,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Tacitus *",
+    "lt": "Tacitus ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Tacitus *",
+    "st": "Tacitus ",
     "subj": "LAT"
   },
   {
@@ -4101,10 +4101,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Martial and Petronius *",
+    "lt": "Martial and Petronius ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Martial and Petronius *",
+    "st": "Martial and Petronius ",
     "subj": "LAT"
   },
   {
@@ -4114,10 +4114,10 @@
     "editor": "",
     "eli": "",
     "fixed": true,
-    "lt": "Special Readings *",
+    "lt": "Special Readings ",
     "lvl": "700",
     "pre": "LAT631",
-    "st": "Special Readings *",
+    "st": "Special Readings ",
     "subj": "LAT"
   },
   {
@@ -4426,10 +4426,10 @@
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Integrated Mathematics *",
+    "lt": "Advanced Integrated Mathematics ",
     "lvl": "400",
     "pre": "MAT330",
-    "st": "Adv Integrated Mathematics *",
+    "st": "Adv Integrated Mathematics ",
     "subj": "MAT"
   },
   {
@@ -4439,10 +4439,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Adv Integrated Mathematics (enriched) *",
+    "lt": "Adv Integrated Mathematics (enriched) ",
     "lvl": "400",
     "pre": "MAT321",
-    "st": "Adv Integrated Math (enrich) *",
+    "st": "Adv Integrated Math (enrich) ",
     "subj": "MAT"
   },
   {
@@ -4452,10 +4452,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Topics in Discrete Math *",
+    "lt": "Topics in Discrete Math ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
-    "st": "Topics in Discrete Math *",
+    "pre": "MAT330|MAT40X|MAT401",
+    "st": "Topics in Discrete Math ",
     "subj": "MAT"
   },
   {
@@ -4465,10 +4465,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "History of Mathematics *",
+    "lt": "History of Mathematics ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
-    "st": "History of Mathematics *",
+    "pre": "MAT330|MAT40X|MAT401",
+    "st": "History of Mathematics ",
     "subj": "MAT"
   },
   {
@@ -4478,10 +4478,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Mathematics of Social Justice *",
+    "lt": "Mathematics of Social Justice ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
-    "st": "Mathematics Social Justice *",
+    "pre": "MAT330|MAT40X|MAT401",
+    "st": "Mathematics Social Justice ",
     "subj": "MAT"
   },
   {
@@ -4491,10 +4491,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Introduction to Statistics *",
+    "lt": "Introduction to Statistics ",
     "lvl": "400",
-    "pre": "MAT330|MAT40X",
-    "st": "Introduction to Statistics *",
+    "pre": "MAT330|MAT40X|MAT401",
+    "st": "Introduction to Statistics ",
     "subj": "MAT"
   },
   {
@@ -4504,10 +4504,10 @@
     "editor": "Byran Huang",
     "eli": "Open to preps and lowers",
     "fixed": true,
-    "lt": "Transition 3 Mathematics *",
+    "lt": "Transition 3 Mathematics ",
     "lvl": "400",
     "pre": "MAT32X",
-    "st": "Transition 3 Mathematics *",
+    "st": "Transition 3 Mathematics ",
     "subj": "MAT"
   },
   {
@@ -4517,10 +4517,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Introduction to Calculus *",
+    "lt": "Introduction to Calculus ",
     "lvl": "400",
     "pre": "MAT400",
-    "st": "Intro Calculus *",
+    "st": "Intro Calculus ",
     "subj": "MAT"
   },
   {
@@ -4530,10 +4530,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Introduction to Calculus (enriched) *",
+    "lt": "Introduction to Calculus (enriched) ",
     "lvl": "400",
     "pre": "MAT400|MAT401|MAT40X",
-    "st": "Intro Calculus (enriched) *",
+    "st": "Intro Calculus (enriched) ",
     "subj": "MAT"
   },
   {
@@ -4543,10 +4543,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus - A Lab Approach *",
+    "lt": "Calculus - A Lab Approach ",
     "lvl": "400",
     "pre": "MAT330|MAT40X",
-    "st": "Calculus - A Lab Approach *",
+    "st": "Calculus - A Lab Approach ",
     "subj": "MAT"
   },
   {
@@ -4556,10 +4556,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Statistics *",
+    "lt": "Statistics ",
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
-    "st": "Statistics *",
+    "st": "Statistics ",
     "subj": "MAT"
   },
   {
@@ -4569,10 +4569,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Transition to Calculus *",
+    "lt": "Transition to Calculus ",
     "lvl": "400",
     "pre": "MAT34T",
-    "st": "Transition to Calculus *",
+    "st": "Transition to Calculus ",
     "subj": "MAT"
   },
   {
@@ -4582,10 +4582,10 @@
     "editor": "Byran Huang",
     "eli": "Open to preps and lowers",
     "fixed": true,
-    "lt": "Transition to Calculus *",
+    "lt": "Transition to Calculus ",
     "lvl": "400",
     "pre": "MAT40X",
-    "st": "Transition to Calculus *",
+    "st": "Transition to Calculus ",
     "subj": "MAT"
   },
   {
@@ -4595,10 +4595,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus *",
+    "lt": "Calculus ",
     "lvl": "400",
     "pre": "MAT410|MAT41T|MAT41X",
-    "st": "Calculus *",
+    "st": "Calculus ",
     "subj": "MAT"
   },
   {
@@ -4608,10 +4608,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus (enriched) *",
+    "lt": "Calculus (enriched) ",
     "lvl": "400",
     "pre": "MAT411|MAT41T|MAT41X",
-    "st": "Calculus (enriched) *",
+    "st": "Calculus (enriched) ",
     "subj": "MAT"
   },
   {
@@ -4621,10 +4621,10 @@
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus - A Lab Approach *",
+    "lt": "Calculus - A Lab Approach ",
     "lvl": "400",
     "pre": "MAT41C",
-    "st": "Calculus - A Lab Approach *",
+    "st": "Calculus - A Lab Approach ",
     "subj": "MAT"
   },
   {
@@ -4634,10 +4634,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Statistics *",
+    "lt": "Statistics ",
     "lvl": "400",
     "pre": "MAT41S",
-    "st": "Statistics *",
+    "st": "Statistics ",
     "subj": "MAT"
   },
   {
@@ -4647,10 +4647,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus *",
+    "lt": "Calculus ",
     "lvl": "400",
     "pre": "MAT420",
-    "st": "Calculus *",
+    "st": "Calculus ",
     "subj": "MAT"
   },
   {
@@ -4660,10 +4660,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus (enriched) *",
+    "lt": "Calculus (enriched) ",
     "lvl": "400",
     "pre": "MAT421",
-    "st": "Calculus (enriched) *",
+    "st": "Calculus (enriched) ",
     "subj": "MAT"
   },
   {
@@ -4673,10 +4673,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus - A Lab Approach *",
+    "lt": "Calculus - A Lab Approach ",
     "lvl": "400",
     "pre": "MAT42C",
-    "st": "Calculus - A Lab Approach *",
+    "st": "Calculus - A Lab Approach ",
     "subj": "MAT"
   },
   {
@@ -4686,10 +4686,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Statistics *",
+    "lt": "Statistics ",
     "lvl": "400",
     "pre": "MAT42S",
-    "st": "Statistics *",
+    "st": "Statistics ",
     "subj": "MAT"
   },
   {
@@ -4699,10 +4699,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus *",
+    "lt": "Calculus ",
     "lvl": "500",
     "pre": "MAT430",
-    "st": "Calculus *",
+    "st": "Calculus ",
     "subj": "MAT"
   },
   {
@@ -4712,10 +4712,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus (enriched) *",
+    "lt": "Calculus (enriched) ",
     "lvl": "500",
     "pre": "MAT431",
-    "st": "Calculus (enriched) *",
+    "st": "Calculus (enriched) ",
     "subj": "MAT"
   },
   {
@@ -4725,10 +4725,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus *",
+    "lt": "Calculus ",
     "lvl": "500",
     "pre": "MAT510",
-    "st": "Calculus *",
+    "st": "Calculus ",
     "subj": "MAT"
   },
   {
@@ -4738,10 +4738,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Calculus (enriched) *",
+    "lt": "Calculus (enriched) ",
     "lvl": "500",
     "pre": "MAT511",
-    "st": "Calculus (enriched) *",
+    "st": "Calculus (enriched) ",
     "subj": "MAT"
   },
   {
@@ -4751,10 +4751,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Multivariable Calculus *",
+    "lt": "Multivariable Calculus ",
     "lvl": "600",
     "pre": "MAT520|MAT521",
-    "st": "Multivariable Calculus *",
+    "st": "Multivariable Calculus ",
     "subj": "MAT"
   },
   {
@@ -4764,10 +4764,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Multivariable Calculus *",
+    "lt": "Multivariable Calculus ",
     "lvl": "600",
     "pre": "MAT610",
-    "st": "Multivariable Calculus *",
+    "st": "Multivariable Calculus ",
     "subj": "MAT"
   },
   {
@@ -4777,10 +4777,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Linear Algebra *",
+    "lt": "Linear Algebra ",
     "lvl": "600",
     "pre": "MAT520|MAT521",
-    "st": "Linear Algebra *",
+    "st": "Linear Algebra ",
     "subj": "MAT"
   },
   {
@@ -4790,10 +4790,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Math *",
+    "lt": "Selected Topics in Math ",
     "lvl": "600",
     "pre": "MAT520|MAT521",
-    "st": "Selected Topics in Math *",
+    "st": "Selected Topics in Math ",
     "subj": "MAT"
   },
   {
@@ -4803,10 +4803,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Foundations of Abstract Mathematics *",
+    "lt": "Foundations of Abstract Mathematics ",
     "lvl": "700",
     "pre": "MAT520|MAT521",
-    "st": "Foundations of Abstract Math *",
+    "st": "Foundations of Abstract Math ",
     "subj": "MAT"
   },
   {
@@ -4816,10 +4816,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Math *",
+    "lt": "Selected Topics in Math ",
     "lvl": "700",
     "pre": "MAT700",
-    "st": "Selected Topics in Math *",
+    "st": "Selected Topics in Math ",
     "subj": "MAT"
   },
   {
@@ -4829,10 +4829,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Transition 4 Mathematics *",
+    "lt": "Transition 4 Mathematics ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Transition 4 Mathematics *",
+    "st": "Transition 4 Mathematics ",
     "subj": "MAT"
   },
   {
@@ -5076,10 +5076,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Instrumental/Vocal Study I *",
+    "lt": "Advanced Instrumental/Vocal Study I ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Advanced Instrumental/Vocal I*",
+    "st": "Advanced Instrumental/Vocal I",
     "subj": "MUS"
   },
   {
@@ -5089,10 +5089,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Techniques of Composition & Analysis *",
+    "lt": "Techniques of Composition & Analysis ",
     "lvl": "400",
     "pre": "MUS200",
-    "st": "Techniques of Comp & Analysis*",
+    "st": "Techniques of Comp & Analysis",
     "subj": "MUS"
   },
   {
@@ -5102,10 +5102,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "The Compositional Process *",
+    "lt": "The Compositional Process ",
     "lvl": "400",
     "pre": "MUS410",
-    "st": "The Compositional Process *",
+    "st": "The Compositional Process ",
     "subj": "MUS"
   },
   {
@@ -5115,10 +5115,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Instrumental/Vocal Study II *",
+    "lt": "Advanced Instrumental/Vocal Study II ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Adv Instrumental/Vocal II *",
+    "st": "Adv Instrumental/Vocal II ",
     "subj": "MUS"
   },
   {
@@ -5232,10 +5232,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Modern Physics *",
+    "lt": "Modern Physics ",
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231",
-    "st": "Modern Physics *",
+    "st": "Modern Physics ",
     "subj": "PHY"
   },
   {
@@ -5245,10 +5245,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Applied Physics *",
+    "lt": "Applied Physics ",
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231|BIO230",
-    "st": "Applied Physics *",
+    "st": "Applied Physics ",
     "subj": "PHY"
   },
   {
@@ -5258,10 +5258,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Robotics *",
+    "lt": "Robotics ",
     "lvl": "400",
-    "pre": "PHY330|PHY230",
-    "st": "Robotics *",
+    "pre": "PHY330|PHY230|PHY231",
+    "st": "Robotics ",
     "subj": "PHY"
   },
   {
@@ -5271,10 +5271,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Electronics *",
+    "lt": "Electronics ",
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231",
-    "st": "Electronics *",
+    "st": "Electronics ",
     "subj": "PHY"
   },
   {
@@ -5284,10 +5284,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Introductory Astronomy *",
+    "lt": "Introductory Astronomy ",
     "lvl": "400",
-    "pre": "PHY330|PHY230|CHE330",
-    "st": "Introductory Astronomy *",
+    "pre": "PHY330|PHY230|CHE330|CHE431",
+    "st": "Introductory Astronomy ",
     "subj": "PHY"
   },
   {
@@ -5297,10 +5297,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Selected Topics in Astronomy *",
+    "lt": "Selected Topics in Astronomy ",
     "lvl": "400",
     "pre": "PHY470",
-    "st": "Selected Topics in Astronomy *",
+    "st": "Selected Topics in Astronomy ",
     "subj": "PHY"
   },
   {
@@ -5310,10 +5310,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Physics *",
+    "lt": "Advanced Physics ",
     "lvl": "500",
     "pre": "PHY330|PHY230|PHY231/MAT430",
-    "st": "Advanced Physics *",
+    "st": "Advanced Physics ",
     "subj": "PHY"
   },
   {
@@ -5323,10 +5323,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Physics *",
+    "lt": "Advanced Physics ",
     "lvl": "500",
     "pre": "PHY510",
-    "st": "Advanced Physics *",
+    "st": "Advanced Physics ",
     "subj": "PHY"
   },
   {
@@ -5336,10 +5336,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Physics *",
+    "lt": "Advanced Physics ",
     "lvl": "500",
     "pre": "PHY520",
-    "st": "Advanced Physics *",
+    "st": "Advanced Physics ",
     "subj": "PHY"
   },
   {
@@ -5349,10 +5349,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Advanced Astronomy Methods *",
+    "lt": "Advanced Astronomy Methods ",
     "lvl": "500",
     "pre": "PHY470",
-    "st": "Advanced Astronomy Methods *",
+    "st": "Advanced Astronomy Methods ",
     "subj": "PHY"
   },
   {
@@ -5362,10 +5362,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Quantum Mechanics *",
+    "lt": "Quantum Mechanics ",
     "lvl": "600",
     "pre": "PHY400|PHY520|MAT520|MAT521",
-    "st": "Quantum Mechanics *",
+    "st": "Quantum Mechanics ",
     "subj": "PHY"
   },
   {
@@ -5375,10 +5375,10 @@
     "editor": "Eric",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Introduction to Psychology *",
+    "lt": "Introduction to Psychology ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Introduction to Psychology *",
+    "st": "Introduction to Psychology ",
     "subj": "PSY"
   },
   {
@@ -5505,10 +5505,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Social Ethics: Values in America *",
+    "lt": "Social Ethics: Values in America ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Social Ethics *",
+    "st": "Social Ethics ",
     "subj": "REL"
   },
   {
@@ -5518,10 +5518,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Global Ethics *",
+    "lt": "Global Ethics ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Global Ethics *",
+    "st": "Global Ethics ",
     "subj": "REL"
   },
   {
@@ -5531,10 +5531,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Ethics of the Marketplace *",
+    "lt": "Ethics of the Marketplace ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Ethics of the Marketplace *",
+    "st": "Ethics of the Marketplace ",
     "subj": "REL"
   },
   {
@@ -5544,10 +5544,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "The Bible As Literature *",
+    "lt": "The Bible As Literature ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "The Bible As Literature *",
+    "st": "The Bible As Literature ",
     "subj": "REL"
   },
   {
@@ -5557,10 +5557,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Criticizing Religion *",
+    "lt": "Criticizing Religion ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Criticizing Religion *",
+    "st": "Criticizing Religion ",
     "subj": "REL"
   },
   {
@@ -5570,10 +5570,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Soul Searching: Self Identity & Meaning *",
+    "lt": "Soul Searching: Self Identity & Meaning ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Soul Searching *",
+    "st": "Soul Searching ",
     "subj": "REL"
   },
   {
@@ -5583,10 +5583,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Introduction to Philosophy *",
+    "lt": "Introduction to Philosophy ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Introduction to Philosophy *",
+    "st": "Introduction to Philosophy ",
     "subj": "REL"
   },
   {
@@ -5596,10 +5596,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Existentialism *",
+    "lt": "Existentialism ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Existentialism *",
+    "st": "Existentialism ",
     "subj": "REL"
   },
   {
@@ -5609,10 +5609,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Mysticism & Contemplative Traditions *",
+    "lt": "Mysticism & Contemplative Traditions ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Mysticism *",
+    "st": "Mysticism ",
     "subj": "REL"
   },
   {
@@ -5622,10 +5622,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "The Holocaust *",
+    "lt": "The Holocaust ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "The Holocaust *",
+    "st": "The Holocaust ",
     "subj": "REL"
   },
   {
@@ -5635,10 +5635,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "East Asian Ways *",
+    "lt": "East Asian Ways ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "East Asian Ways *",
+    "st": "East Asian Ways ",
     "subj": "REL"
   },
   {
@@ -5648,10 +5648,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Epistemology *",
+    "lt": "Epistemology ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Epistemology *",
+    "st": "Epistemology ",
     "subj": "REL"
   },
   {
@@ -5661,10 +5661,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Imagining Your Future*",
+    "lt": "Imagining Your Future",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Imagining Your Future*",
+    "st": "Imagining Your Future",
     "subj": "REL"
   },
   {
@@ -5674,10 +5674,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Silicon Valley Ethics: Case Studies *",
+    "lt": "Silicon Valley Ethics: Case Studies ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Silicon Valley Ethics *",
+    "st": "Silicon Valley Ethics ",
     "subj": "REL"
   },
   {
@@ -5687,10 +5687,10 @@
     "editor": "Eric",
     "eli": "Open to uppers and seniors",
     "fixed": true,
-    "lt": "Spring Book Club *",
+    "lt": "Spring Book Club ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Spring Book Club *",
+    "st": "Spring Book Club ",
     "subj": "REL"
   },
   {
@@ -5843,10 +5843,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Russian *",
+    "lt": "Advanced Russian ",
     "lvl": "400",
     "pre": "RUS320",
-    "st": "Advanced Russian *",
+    "st": "Advanced Russian ",
     "subj": "RUS"
   },
   {
@@ -5856,10 +5856,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Russian *",
+    "lt": "Advanced Readings in Russian ",
     "lvl": "500",
     "pre": "RUS400",
-    "st": "Advanced Readings in Russian *",
+    "st": "Advanced Readings in Russian ",
     "subj": "RUS"
   },
   {
@@ -5869,10 +5869,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Russian *",
+    "lt": "Advanced Readings in Russian ",
     "lvl": "500",
     "pre": "RUS502",
-    "st": "Advanced Readings in Russian *",
+    "st": "Advanced Readings in Russian ",
     "subj": "RUS"
   },
   {
@@ -5882,10 +5882,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Advanced Readings in Russian *",
+    "lt": "Advanced Readings in Russian ",
     "lvl": "500",
     "pre": "RUS503",
-    "st": "Advanced Readings in Russian *",
+    "st": "Advanced Readings in Russian ",
     "subj": "RUS"
   },
   {
@@ -5895,10 +5895,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Russian *",
+    "lt": "Selected Topics in Russian ",
     "lvl": "500",
     "pre": "PEA000",
-    "st": "Selected Topics in Russian *",
+    "st": "Selected Topics in Russian ",
     "subj": "RUS"
   },
   {
@@ -6064,10 +6064,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Latin American and Spanish Readings I *",
+    "lt": "Latin American and Spanish Readings I ",
     "lvl": "400",
     "pre": "SPA320",
-    "st": "Lat Am & Spanish Reading I *",
+    "st": "Lat Am & Spanish Reading I ",
     "subj": "SPA"
   },
   {
@@ -6077,10 +6077,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Latin American and Spanish Readings II *",
+    "lt": "Latin American and Spanish Readings II ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Lat Am & Spanish Reading II *",
+    "st": "Lat Am & Spanish Reading II ",
     "subj": "SPA"
   },
   {
@@ -6090,10 +6090,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "21st Century Challenges Opportunity *",
+    "lt": "21st Century Challenges Opportunity ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "21st C Challenges Opportunity*",
+    "st": "21st C Challenges Opportunity",
     "subj": "SPA"
   },
   {
@@ -6103,10 +6103,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Family Community Contemp Life*",
+    "lt": "Family Community Contemp Life",
     "lvl": "500",
     "pre": "SPA502",
-    "st": "Family Community Contemp Life*",
+    "st": "Family Community Contemp Life",
     "subj": "SPA"
   },
   {
@@ -6116,10 +6116,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Emerging Self: Art Identity *",
+    "lt": "Emerging Self: Art Identity ",
     "lvl": "500",
     "pre": "SPA503",
-    "st": "Emerging Self: Art Identity *",
+    "st": "Emerging Self: Art Identity ",
     "subj": "SPA"
   },
   {
@@ -6129,10 +6129,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Contemporary Hispanic Theater*",
+    "lt": "Contemporary Hispanic Theater",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Contemporary Hispanic Theater*",
+    "st": "Contemporary Hispanic Theater",
     "subj": "SPA"
   },
   {
@@ -6142,10 +6142,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Realism Reality Lat Am Nar *",
+    "lt": "Realism Reality Lat Am Nar ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Realism Reality Lat Am Nar *",
+    "st": "Realism Reality Lat Am Nar ",
     "subj": "SPA"
   },
   {
@@ -6155,10 +6155,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Supernovel *",
+    "lt": "Supernovel ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Supernovel *",
+    "st": "Supernovel ",
     "subj": "SPA"
   },
   {
@@ -6168,10 +6168,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Spanish Nonfiction *",
+    "lt": "Spanish Nonfiction ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Spanish Nonfiction *",
+    "st": "Spanish Nonfiction ",
     "subj": "SPA"
   },
   {
@@ -6181,10 +6181,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Hispanic Cinema *",
+    "lt": "Hispanic Cinema ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Hispanic Cinema *",
+    "st": "Hispanic Cinema ",
     "subj": "SPA"
   },
   {
@@ -6194,10 +6194,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Spanish Through Digital Media *",
+    "lt": "Spanish Through Digital Media ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Span Through Digital Media *",
+    "st": "Span Through Digital Media ",
     "subj": "SPA"
   },
   {
@@ -6207,10 +6207,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Selected Topics in Spanish *",
+    "lt": "Selected Topics in Spanish ",
     "lvl": "500",
     "pre": "SPA400",
-    "st": "Selected Topics in Spanish *",
+    "st": "Selected Topics in Spanish ",
     "subj": "SPA"
   },
   {
@@ -6311,10 +6311,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Acting II *",
+    "lt": "Acting II ",
     "lvl": "400",
     "pre": "THR202",
-    "st": "Acting II *",
+    "st": "Acting II ",
     "subj": "THR"
   },
   {
@@ -6324,10 +6324,10 @@
     "editor": "Eric",
     "eli": "",
     "fixed": true,
-    "lt": "Directing *",
+    "lt": "Directing ",
     "lvl": "400",
     "pre": "PEA000",
-    "st": "Directing *",
+    "st": "Directing ",
     "subj": "THR"
   },
   {
@@ -6337,10 +6337,10 @@
     "editor": "Eric",
     "eli": "Open to seniors only",
     "fixed": true,
-    "lt": "Acting III - Advanced Acting Ensemble *",
+    "lt": "Acting III - Advanced Acting Ensemble ",
     "lvl": "500",
     "pre": "PEC10M|THR404|THR202",
-    "st": "Acting III - Adv Ensemble *",
+    "st": "Acting III - Adv Ensemble ",
     "subj": "THR"
   }
 ]

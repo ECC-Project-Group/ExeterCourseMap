@@ -11,6 +11,34 @@ const Courses = ({
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
 
+  const subjAbbreviations = new Map<string, string>([
+    ['ANT', 'anthropology'],
+    ['GRK', 'greek'],
+    ['LAT', 'latin'],
+    ['CSC', 'computer science'],
+    ['ECO', 'economics'],
+    ['ENG', 'english'],
+    ['HHD', 'health'],
+    ['HHD', 'health and human development'],
+    ['HIS', 'history'],
+    ['INT', 'integrated'],
+    ['EXI', 'exeter innovation'],
+    ['ARA', 'arabic'],
+    ['CHI', 'chinese'],
+    ['FRE', 'french'],
+    ['GER', 'german'],
+    ['ITA', 'italian'],
+    ['JPN', 'japanese'],
+    ['RUS', 'russian'],
+    ['SPA', 'spanish'],
+    ['MUS', 'music'],
+    ['REL', 'religion'],
+    ['PHY', 'physics'],
+    ['BIO', 'biology'],
+    ['CHE', 'chemistry'],
+    ['THR', 'theater'],
+  ]);
+
   // Update the course list when the text input is changed
   const onChange = useCallback(
     (event) => {
@@ -18,10 +46,17 @@ const Courses = ({
       if (query.length) {
         setResults(
           courses.filter((course) => {
-            return (
-              course.lt.toLowerCase().includes(query.toLowerCase()) ||
-              course.course_no.toLowerCase().includes(query.toLowerCase())
+            const subject = subjAbbreviations.get(
+              course.course_no.substring(0, 3)
             );
+            return subject != undefined
+              ? course.lt.toLowerCase().includes(query.toLowerCase()) ||
+                  course.course_no
+                    .toLowerCase()
+                    .includes(query.toLowerCase()) ||
+                  query.toLowerCase().startsWith(subject)
+              : course.lt.toLowerCase().includes(query.toLowerCase()) ||
+                  course.course_no.toLowerCase().includes(query.toLowerCase());
           })
         );
       } else {

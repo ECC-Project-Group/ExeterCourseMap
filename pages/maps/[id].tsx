@@ -1,132 +1,10 @@
-import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
+import { ElkNode } from 'elkjs';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Elements, Position } from 'react-flow-renderer';
+import ReactFlow, { Elements } from 'react-flow-renderer';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
-import { getCourseColor, getCourseImage } from '../../lib/course_colors';
+import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { ICourse } from '../../types';
-
-const elk = new ELK();
-// Automatically find the best layout for the map - copied from courses/[id].tsx
-const layoutElements = async (
-  prereqs: Record<string, ICourse[]>,
-  coreqs: Record<string, ICourse[]>
-) => {
-  const graph: ElkNode = {
-    id: 'root',
-    layoutOptions: {
-      'elk.algorithm': 'mrtree',
-    },
-    children: [],
-    edges: [],
-  };
-
-  // Add nodes
-  // Keep track of nodes that've already been added so we don't get duplicates
-  const nodeIds = new Set<string>();
-  for (const [base] of Object.entries(prereqs)) {
-    // if (base == 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-  for (const [base] of Object.entries(coreqs)) {
-    // if (base === 'PEA000') continue;
-    if (!nodeIds.has(base)) {
-      nodeIds.add(base);
-      (graph.children as ElkNode[]).push({
-        id: base,
-        width: 120,
-        height: 60,
-      });
-    }
-  }
-
-  // Add edges
-  // .map() isn't really the best solution here
-  Object.entries(prereqs).map(([base, prereqs]) => {
-    if (prereqs.length === 0) return;
-    for (const index of prereqs.keys()) {
-      // if (prereqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: base,
-        source: prereqs[index].course_no,
-      });
-    }
-  });
-  Object.entries(coreqs).map(([base, coreqs]) => {
-    if (coreqs.length === 0) return;
-    for (const index of coreqs.keys()) {
-      // if (coreqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
-        id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: base,
-        source: coreqs[index].course_no,
-      });
-    }
-  });
-
-  const parsedGraph = await elk.layout(graph);
-
-  // Add everything to a React Flow graph
-  const elements: Elements = [];
-  if (parsedGraph.children) {
-    parsedGraph.children.forEach((node) => {
-      elements.push({
-        id: node.id,
-        type: 'default',
-        data: {
-          label: (
-            <h1
-              className="font-display font-black text-white"
-              style={{
-                textShadow:
-                  '0.5px 0.5px black, -0.5px -0.5px black, 0.5px -0.5px black, -0.5px 0.5px black',
-              }}
-            >
-              {node.id}
-            </h1>
-          ),
-        },
-        position: { x: node.x ?? 0, y: node.y ?? 0 },
-        style: {
-          backgroundColor: getCourseColor(node.id),
-          backgroundImage: getCourseImage(node.id),
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          borderRadius: 10,
-          borderWidth: 2,
-          width: 90,
-        },
-      });
-    });
-  }
-
-  if (parsedGraph.edges) {
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
-      elements.push({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        sourcePosition: Position.Top,
-        targetPosition: Position.Bottom,
-        type: 'smoothstep',
-        animated: false,
-        style: {
-          strokeWidth: edge.id.startsWith('ce') ? 1 : 2.5,
-          stroke: edge.id.startsWith('ce') ? 'rgb(50, 50, 50)' : 'black',
-        },
-      });
-    });
-  }
-  return elements;
-};
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { prereqs, coreqs, descriptions, titles, eli } = params;
@@ -135,48 +13,68 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const initialReqsLoaded = new Set<string>();
   useState<Set<string>>(initialReqsLoaded);
 
+  const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
+
   // Compute layout of chart
   useEffect(() => {
     async function main() {
-      const elements = await layoutElements(prereqs, coreqs);
-      setElements(elements);
+      const parsedGraph = await layoutElements(prereqs, coreqs, true);
+      const newElements = await renderElements(parsedGraph, true);
+      setGraph(parsedGraph);
+      setElements(newElements);
     }
     main();
   }, [prereqs, coreqs]);
 
-  // Parameters for course info popup (opened when mouse hovers over node)
+  const [currentlyHoveredId, setCurrentlyHoveredId] = useState<string>('');
+  // Re-render chart
+  useEffect(() => {
+    if (graph) {
+      const newElements = renderElements(graph, true, currentlyHoveredId);
+      setElements(newElements);
+    }
+  }, [graph, currentlyHoveredId]);
   interface CourseInfoPopupParams {
     active: boolean; // whether the popup is currently active
     longTitle: string;
+    course_no: string;
     desc: string;
     eli: string;
+    locked: boolean;
   }
-  const initialPopupParams = {
-    active: false,
-    longTitle: '',
-    desc: '',
-    eli: '',
-  } as CourseInfoPopupParams;
+  // Mouse coordinates - determines where to display popup
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  // Parameters for course info popup (opened when mouse hovers over node)
+  const getEmptyPopupParams = () => {
+    return {
+      active: false,
+      longTitle: '',
+      course_no: '',
+      desc: '',
+      eli: '',
+      locked: false,
+    } as CourseInfoPopupParams;
+  };
+  const initialPopupParams = getEmptyPopupParams();
   const [courseInfoPopupParams, setCourseInfoPopupParams] =
     useState<CourseInfoPopupParams>(initialPopupParams);
-  // Mouse coordinates - used to determine where to open popup
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
   // Track mouse position
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      if (courseInfoPopupParams.locked) return;
       setCoords({ x: e.pageX, y: e.pageY });
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, [coords]);
+  }, [coords, courseInfoPopupParams.locked]);
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
     return (
       <div
-        className="m-5 rounded-lg bg-gray-900/80 text-white backdrop-blur"
+        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -185,7 +83,9 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">{cipp.longTitle}</p>
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
+          {cipp.longTitle} · {cipp.course_no}
+        </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
       </div>
@@ -196,29 +96,43 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     id: string;
   }
   const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
+    setCurrentlyHoveredId(node.id);
+    if (courseInfoPopupParams.locked) return;
     const popupParams = {
       active: true,
       longTitle: titles[node.id],
+      course_no: node.id,
       desc: descriptions[node.id],
       eli: eli[node.id],
+      locked: false,
     } as CourseInfoPopupParams;
     setCourseInfoPopupParams(popupParams);
   };
   const nodeUnhoverCallback = () => {
-    const popupParams = {
-      active: false,
-      longTitle: '',
-      desc: '',
-      eli: '',
-    } as CourseInfoPopupParams;
+    setCurrentlyHoveredId('');
+    if (courseInfoPopupParams.locked) return;
+    setCourseInfoPopupParams(getEmptyPopupParams());
+  };
+  // Lock/unlock course info popup when right click on popup
+  const nodeRightClickCallback = (event: React.MouseEvent) => {
+    event.preventDefault();
+    const popupParams = courseInfoPopupParams;
+    popupParams.locked = !popupParams.locked;
     setCourseInfoPopupParams(popupParams);
   };
-
-  // Open the course page associated with this course when it's clicked
+  // Unlock course info popup when click on canvas
+  const paneClickCallback = () => {
+    setCourseInfoPopupParams(getEmptyPopupParams());
+  };
+  // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
     // check if element is an edge
-    if (element.id.startsWith('e')) return;
+    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
     window.open(`/course/${element.id}`, '_self');
+  };
+
+  const reactFlowStyle = {
+    background: `rgb(35, 35, 35)`,
   };
 
   return (
@@ -226,7 +140,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
-          className="shadow-md"
+          className="cursor-move shadow-md"
           nodesDraggable={false}
           nodesConnectable={false}
           elementsSelectable={false}
@@ -235,10 +149,14 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           onNodeMouseEnter={nodeHoverCallback}
           onNodeMouseLeave={nodeUnhoverCallback}
           onElementClick={nodeClickCallback}
+          onNodeContextMenu={nodeRightClickCallback}
+          onPaneClick={paneClickCallback}
           zoomOnPinch={true}
           zoomOnDoubleClick={true}
           zoomOnScroll={false}
           panOnScroll={true}
+          style={reactFlowStyle}
+          defaultZoom={0.7}
         ></ReactFlow>
       </div>
       <CourseInfoPopup />
@@ -251,6 +169,8 @@ export async function getStaticPaths() {
     paths: [
       { params: { id: 'stemwithoutcs' } },
       { params: { id: 'cs' } },
+      { params: { id: 'math' } },
+      { params: { id: 'mathphysics' } },
       { params: { id: 'art' } },
       { params: { id: 'music' } },
       { params: { id: 'theater' } },
@@ -325,6 +245,12 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
       break;
     case 'cs':
       subjects = new Set<string>(['CSC']);
+      break;
+    case 'math':
+      subjects = new Set<string>(['MAT']);
+      break;
+    case 'mathphysics':
+      subjects = new Set<string>(['MAT', 'PHY']);
       break;
     default:
       subjects = new Set<string>();
