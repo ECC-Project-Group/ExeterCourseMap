@@ -84,30 +84,30 @@ const Courses = ({
             onChange={onChange}
             className="h-full w-full bg-transparent outline-none"
           />
-          <div className="absolute top-24 -left-[200px] -z-20 -mt-12 hidden rotate-[190deg] opacity-20 lg:block">
-            <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {results &&
-              results.map((course) => {
-                return (
-                  <Link
-                    passHref={true}
-                    href={`/course/${course.course_no}`}
-                    key={course.course_no}
-                  >
-                    <div className="group m-0 my-3 cursor-pointer rounded-lg bg-gray-100 p-4 outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter md:m-4">
-                      <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
-                        {course.course_no}
-                      </h2>
-                      <h1 className="font-display text-lg group-hover:text-white">
-                        {course.lt}
-                      </h1>
-                    </div>
-                  </Link>
-                );
-              })}
-          </div>
+        </div>
+        <div className="absolute top-24 -left-[200px] -z-20 -mt-12 hidden rotate-[190deg] opacity-20 lg:block">
+          <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          {results &&
+            results.map((course) => {
+              return (
+                <Link
+                  passHref={true}
+                  href={`/course/${course.course_no}`}
+                  key={course.course_no}
+                >
+                  <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter md:m-4">
+                    <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
+                      {course.course_no}
+                    </h2>
+                    <h1 className="font-display text-lg group-hover:text-white">
+                      {course.lt}
+                    </h1>
+                  </div>
+                </Link>
+              );
+            })}
         </div>
       </div>
     </div>
