@@ -2,6 +2,10 @@
 
 Using LionLinks in today's age is absolute nuts.
 
+<p align="center">
+    <img src="./public/powered-by-vercel.svg" width="50%">
+</p>
+
 ## Setup
 
 To start contributing, do the following:
