@@ -2,9 +2,11 @@
 
 Using LionLinks in today's age is absolute nuts.
 
-<p align="center">
-    <img src="./public/powered-by-vercel.svg" width="50%">
-</p>
+<a href="https://vercel.com/?utm_source=[exeter-computing-club]&utm_campaign=oss">
+    <p align="center">
+        <img src="./public/powered-by-vercel.svg" width="50%">
+    </p>
+</a>
 
 ## Setup
 
