@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
 import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 
 const Courses = ({
   courses,
@@ -80,6 +81,9 @@ const Courses = ({
           onChange={onChange}
           className="mx-auto mb-8 h-14 w-full rounded-lg bg-gray-100 p-4 font-display shadow-sm"
         />
+        <div className="absolute top-24 -left-[200px] -z-20 -mt-12 hidden rotate-[190deg] opacity-20 lg:block">
+          <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2">
           {results &&
             results.map((course) => {

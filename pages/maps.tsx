@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
 
 const Submap = (props: { children: React.ReactNode }) => {
   return <li className="pb-1 text-2xl">{props.children}</li>;
@@ -20,6 +21,9 @@ const Maps = () => {
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Maps
         </h1>
+      </div>
+      <div className="absolute -right-[550px] -z-20 -mt-12 hidden rotate-1 opacity-20 lg:block">
+        <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
       </div>
       <div className="px-8 pt-8 pb-20 lg:px-40">
         <ul className="">
