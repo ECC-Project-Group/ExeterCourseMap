@@ -17,7 +17,7 @@ const Maps = () => {
   return (
     <div>
       <div className="bg-exeter px-8 pt-24 pb-14 lg:px-40">
-        <h1 className="font-displayfont-bold text-3xlnt-bold text-white md:text-5xl ">
+        <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Maps
         </h1>
       </div>

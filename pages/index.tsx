@@ -86,7 +86,7 @@ const Home: NextPage = () => {
             <Typewriter
               options={{
                 autoStart: true,
-                delay: 70,
+                delay: 60,
               }}
               onInit={(typewriter) => {
                 typewriter
