@@ -13,8 +13,8 @@ import { ICourse } from '../../types';
 import { server } from '../../lib/server';
 
 const CoursePage = ({
-  params,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+                              params,
+                            }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -146,8 +146,8 @@ const CoursePage = ({
           {cipp.course_no != 'PEA000' ? ' · ' + cipp.course_no : ''}
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull}</p>
+        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}</p>
       </div>
     );
   }
@@ -190,9 +190,13 @@ const CoursePage = ({
   };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
+    event.preventDefault();
     // check if element is an edge
-    if (element.id.startsWith('e')) return;
-    window.open(`/course/${element.id}`, '_self');
+    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
+    if (event.metaKey || event.ctrlKey){
+      window.open(`/course/${element.id}`);
+    } 
+    else window.open(`/course/${element.id}`, '_self');
   };
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked

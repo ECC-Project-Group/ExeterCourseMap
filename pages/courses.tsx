@@ -7,8 +7,8 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import Image from 'next/image';
 
 const Courses = ({
-  courses,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+          courses,
+        }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // We don't need all information about any particular course,
   // hence why we grab a partial representation
   const [results, setResults] = useState<ICoursePartial[]>(courses);
@@ -56,7 +56,8 @@ const Courses = ({
                   course.course_no
                     .toLowerCase()
                     .includes(query.toLowerCase()) ||
-                  query.toLowerCase().startsWith(subject)
+                  query.toLowerCase().startsWith(subject) ||
+                  subject.startsWith(query.toLowerCase())
               : course.lt.toLowerCase().includes(query.toLowerCase()) ||
                   course.course_no.toLowerCase().includes(query.toLowerCase());
           })
@@ -97,7 +98,8 @@ const Courses = ({
                   href={`/course/${course.course_no}`}
                   key={course.course_no}
                 >
-                  <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter md:m-4">
+                  <a>
+                    <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter md:m-4">
                     <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
                       {course.course_no}
                     </h2>
@@ -105,6 +107,8 @@ const Courses = ({
                       {course.lt}
                     </h1>
                   </div>
+                  </a>
+                  
                 </Link>
               );
             })}
