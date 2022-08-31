@@ -6,6 +6,7 @@ import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { name, prereqs, coreqs, descriptions, titles, eli, prereqFull } =
@@ -89,7 +90,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
       <div
-        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
+        className="m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -98,12 +99,14 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold text-black">
           {cipp.longTitle} · {cipp.course_no}
         </p>
-        <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull}</p>
+        <p className="ml-2 mr-2 text-sm text-neutral-800">{cipp.desc}</p>
+        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">
+          {cipp.prereqFull == '' || cipp.course_no == 'PEA000' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}
+        </p>
       </div>
     );
   }
@@ -143,9 +146,12 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
+    event.preventDefault();
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    window.open(`/course/${element.id}`, '_self');
+    if (event.metaKey || event.ctrlKey){
+      window.open(`/course/${element.id}`);
+    } else window.open(`/course/${element.id}`, '_self');
   };
 
   const reactFlowStyle = {
@@ -175,7 +181,22 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           defaultZoom={0.7}
         ></ReactFlow>
       </div>
-      <CourseInfoPopup />
+      <AnimatePresence>
+        {courseInfoPopupParams.active && (
+          <motion.div
+            className="pointer-events-none absolute top-0 left-0 z-50 h-screen w-screen bg-none"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            style={{
+              transformOrigin: `${coords.x - 100}px ${coords.y - 100}px`,
+            }}
+            transition={{ duration: 0.2, ease: 'circOut' }}
+          >
+            <CourseInfoPopup />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

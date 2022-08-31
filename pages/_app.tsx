@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   // <Component /> represents the actual page content
   return (
     <SessionProvider session={pageProps.session} refetchInterval={0}>
-      <div className="min-h-[calc(100vh-280px)]">
+      <div className="min-h-[calc(100vh-316px)]">
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           strategy="afterInteractive"

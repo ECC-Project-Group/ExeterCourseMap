@@ -159,6 +159,8 @@ export const renderElements = (
           width: 100,
           boxShadow: boxShadow,
           borderColor: borderColor,
+          transitionDuration: '0.2s',
+          transitionTimingFunction: 'ease-out',
         },
       });
     });
