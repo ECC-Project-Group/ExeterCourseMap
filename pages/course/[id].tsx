@@ -19,6 +19,7 @@ const CoursePage = ({
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
   // initialEli maps each course id to its eligibility requirements
+  // initialPrereqFull maps each course id to its COI description
   const {
     course,
     initialPrereqs,
@@ -26,6 +27,7 @@ const CoursePage = ({
     initialDescriptions,
     initialTitles,
     initialEli,
+    initialPrereqFull,
   }: {
     course: ICourse;
     initialPrereqs: Record<string, ICourse[]>;
@@ -33,6 +35,7 @@ const CoursePage = ({
     initialDescriptions: Record<string, string | undefined>;
     initialTitles: Record<string, string | undefined>;
     initialEli: Record<string, string | undefined>;
+    initialPrereqFull: Record<string, string | undefined>;
   } = params;
 
   // GA event for when a course is viewed
@@ -60,6 +63,8 @@ const CoursePage = ({
     useState<Record<string, string | undefined>>(initialDescriptions);
   const [eli, setEli] =
     useState<Record<string, string | undefined>>(initialEli);
+  const [prereqFull, setPrereqFull] =
+    useState<Record<string, string | undefined>>(initialPrereqFull);
 
   const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
@@ -90,6 +95,7 @@ const CoursePage = ({
     course_no: string;
     desc: string;
     eli: string;
+    prereqFull: string;
     locked: boolean;
   }
   // Mouse coordinates - determines where to display popup
@@ -102,6 +108,7 @@ const CoursePage = ({
       course_no: '',
       desc: '',
       eli: '',
+      prereqFull: '',
       locked: false,
     } as CourseInfoPopupParams;
   };
@@ -119,18 +126,6 @@ const CoursePage = ({
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [coords, courseInfoPopupParams.locked]);
-
-  let initialPrereqString = '';
-
-  initialPrereqs[course.course_no].forEach((prereq) => {
-    initialPrereqString += prereq.course_no + ', ';
-  });
-
-  let initialCoreqString = '';
-
-  initialCoreqs[course.course_no].forEach((coreq) => {
-    initialCoreqString += coreq.course_no + ', ';
-  });
 
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
@@ -152,6 +147,7 @@ const CoursePage = ({
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull}</p>
       </div>
     );
   }
@@ -169,8 +165,10 @@ const CoursePage = ({
       course_no: node.id,
       desc: descriptions[node.id],
       eli: eli[node.id],
+      prereqFull: prereqFull[node.id],
       locked: false,
     } as CourseInfoPopupParams;
+
     setCourseInfoPopupParams(popupParams);
   };
   const nodeUnhoverCallback = () => {
@@ -263,6 +261,9 @@ const CoursePage = ({
       ...descriptions,
     };
     const eliToWrite: Record<string, string | undefined> = { ...eli };
+    const prereqFullToWrite: Record<string, string | undefined> = {
+      ...prereqFull,
+    };
 
     for (const courseNo of newCourses) {
       const res = await fetch(`${server}/api/course_info/${courseNo}`);
@@ -270,10 +271,12 @@ const CoursePage = ({
       titlesToWrite[courseNo] = course.lt;
       descriptionsToWrite[courseNo] = course.desc;
       eliToWrite[courseNo] = course.eli;
+      prereqFullToWrite[courseNo] = course.prereq_full;
     }
     setTitles(titlesToWrite);
     setDescriptions(descriptionsToWrite);
     setEli(eliToWrite);
+    setPrereqFull(prereqFullToWrite);
   };
 
   // Style for ReactFlow component
@@ -309,26 +312,9 @@ const CoursePage = ({
           <h1 className="font-display text-3xl font-black text-gray-700">
             Pre-requisites and Co-requisites
           </h1>
-          {initialPrereqString != '' && initialCoreqString != '' && (
-            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
-              You must have finished taking {initialPrereqString}and be finished
-              taking or is currently enrolled in{' '}
-              {initialCoreqString.slice(0, -2)}.
-            </p>
-          )}
-
-          {initialCoreqString == '' && (
-            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
-              You must have finished taking {initialPrereqString.slice(0, -2)}.
-            </p>
-          )}
-
-          {initialPrereqString == '' && (
-            <p className="mt-4 font-display text-lg leading-8 text-gray-900">
-              You must have finished taking or is currently enrolled in{' '}
-              {initialCoreqString.slice(0, -2)}.
-            </p>
-          )}
+          <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
+            {course.prereq_full}
+          </h1>
         </div>
         <div className="md:col-span-3">
           <div className="flex justify-between">
@@ -392,8 +378,10 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const firstReqs = getCourseRequirements(params.id);
   const initialPrereqs: Record<string, ICourse[]> = {};
   const initialCoreqs: Record<string, ICourse[]> = {};
+
   initialPrereqs[params.id] = firstReqs[0];
   initialCoreqs[params.id] = firstReqs[1];
+
   for (const prereq of firstReqs[0]) {
     initialPrereqs[prereq.course_no] = [];
     initialCoreqs[prereq.course_no] = [];
@@ -407,20 +395,24 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const initialTitles: Record<string, string | undefined> = {}; // Long titles
   const initialDescriptions: Record<string, string | undefined> = {}; // Descriptions
   const initialEli: Record<string, string | undefined> = {}; // Eligibility requirements
+  const initialPrereqFull: Record<string, string | undefined> = {}; // COI description
   initialDescriptions[params.id] = course?.desc;
   initialTitles[params.id] = course?.lt;
   initialEli[params.id] = course?.eli;
+  initialPrereqFull[params.id] = course?.prereq_full;
   for (const prereq of firstReqs[0]) {
     // Load this data for each prereq
     initialDescriptions[prereq.course_no] = prereq.desc;
     initialTitles[prereq.course_no] = prereq.lt;
     initialEli[prereq.course_no] = prereq.eli;
+    initialPrereqFull[prereq.course_no] = prereq.prereq_full;
   }
   for (const coreq of firstReqs[1]) {
     // Load this data for each coreq
     initialDescriptions[coreq.course_no] = coreq.desc;
     initialTitles[coreq.course_no] = coreq.lt;
     initialEli[coreq.course_no] = coreq.eli;
+    initialPrereqFull[coreq.course_no] = coreq.prereq_full;
   }
 
   return {
@@ -432,6 +424,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
         initialDescriptions: initialDescriptions,
         initialTitles: initialTitles,
         initialEli: initialEli,
+        initialPrereqFull: initialPrereqFull,
       },
     },
   };

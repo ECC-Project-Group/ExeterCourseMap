@@ -20,6 +20,7 @@ interface ICourse {
   desc: string;
   eli: string;
   pre: null | string;
+  prereq_full: string;
 }
 
 // Used in the search page to free up memory

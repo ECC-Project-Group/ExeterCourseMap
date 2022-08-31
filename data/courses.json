@@ -10,7 +10,8 @@
     "lvl": "000",
     "pre": null,
     "st": "Get into PEA",
-    "subj": "PEA"
+    "subj": "PEA",
+    "prereq_full": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "course_no": "ANT500",
@@ -23,7 +24,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Cultural Anthropology ",
-    "subj": "ANT"
+    "subj": "ANT",
+    "prereq_full": ""
   },
   {
     "course_no": "ARA111",
@@ -36,7 +38,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Accel Arabic for Seniors ",
-    "subj": "ARA"
+    "subj": "ARA",
+    "prereq_full": ""
   },
   {
     "course_no": "ARA121",
@@ -49,7 +52,8 @@
     "lvl": "100",
     "pre": "ARA111",
     "st": "Accel Arabic for Seniors ",
-    "subj": "ARA"
+    "subj": "ARA",
+    "prereq_full": ""
   },
   {
     "course_no": "ARA131",
@@ -62,7 +66,8 @@
     "lvl": "100",
     "pre": "ARA121",
     "st": "Accel Arabic for Seniors ",
-    "subj": "ARA"
+    "subj": "ARA",
+    "prereq_full": ""
   },
   {
     "course_no": "ART202",
@@ -75,7 +80,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Ceramics I: Form + Function",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": ""
   },
   {
     "course_no": "ART203",
@@ -88,7 +94,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "3D Design: Tech Form Fashion",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": ""
   },
   {
     "course_no": "ART205",
@@ -101,7 +108,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Photography I: Composition",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": ""
   },
   {
     "course_no": "ART206",
@@ -114,7 +122,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Printmaking I: Pop Art Culture",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": ""
   },
   {
     "course_no": "ART208",
@@ -127,7 +136,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Drawing and Painting",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": ""
   },
   {
     "course_no": "ART402",
@@ -140,7 +150,8 @@
     "lvl": "400",
     "pre": "ART202",
     "st": "Adv Ceramics: Molding Meaning",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART202"
   },
   {
     "course_no": "ART403",
@@ -153,7 +164,8 @@
     "lvl": "400",
     "pre": "ART203",
     "st": "Adv Project 3-D Design ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART203"
   },
   {
     "course_no": "ART405",
@@ -166,7 +178,8 @@
     "lvl": "400",
     "pre": "ART205",
     "st": "Adv Photo: Beyond the Camera ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART205"
   },
   {
     "course_no": "ART406",
@@ -179,7 +192,8 @@
     "lvl": "400",
     "pre": "ART206",
     "st": "Adv Printmakng Limited Ed ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART206"
   },
   {
     "course_no": "ART408",
@@ -192,7 +206,8 @@
     "lvl": "400",
     "pre": "ART208",
     "st": "Adv Projects: Portraits ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART208"
   },
   {
     "course_no": "ART500",
@@ -205,7 +220,8 @@
     "lvl": "500",
     "pre": "ART402|ART403|ART405|ART406|ART408",
     "st": "Portfolio Intensive ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "Any 400-level art course"
   },
   {
     "course_no": "ART690",
@@ -218,7 +234,8 @@
     "lvl": "600",
     "pre": "ART500",
     "st": "Capstone Intensive Studio ",
-    "subj": "ART"
+    "subj": "ART",
+    "prereq_full": "ART500"
   },
   {
     "course_no": "BIO210",
@@ -231,7 +248,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "An Introduction to Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": ""
   },
   {
     "course_no": "BIO220",
@@ -244,7 +262,8 @@
     "lvl": "200",
     "pre": "BIO210",
     "st": "An Introduction to Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO210"
   },
   {
     "course_no": "BIO230",
@@ -257,7 +276,8 @@
     "lvl": "200",
     "pre": "BIO220",
     "st": "An Introduction to Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO220"
   },
   {
     "course_no": "BIO310",
@@ -270,7 +290,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Principles of Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": ""
   },
   {
     "course_no": "BIO320",
@@ -283,7 +304,8 @@
     "lvl": "300",
     "pre": "BIO310",
     "st": "Principles of Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO310"
   },
   {
     "course_no": "BIO330",
@@ -296,7 +318,8 @@
     "lvl": "300",
     "pre": "BIO320",
     "st": "Principles of Biology",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO320"
   },
   {
     "course_no": "BIO440",
@@ -309,7 +332,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Regenerative Agriculture",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "TAG:NO_COURSE"
   },
   {
     "course_no": "BIO450",
@@ -322,7 +346,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Human Physiology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO455",
@@ -335,7 +360,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Animal Behavior ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO460",
@@ -348,7 +374,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Ornithology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO465",
@@ -361,7 +388,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Ecology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO470",
@@ -374,7 +402,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Hum Pop & Resource Consump ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO475",
@@ -387,7 +416,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Evolution ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO480",
@@ -400,7 +430,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230|CHE330|CHE431",
     "st": "Biochemistry Human Nutrition ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology or chemistry"
   },
   {
     "course_no": "BIO485",
@@ -413,7 +444,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Marine Biology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO486",
@@ -426,7 +458,8 @@
     "lvl": "400",
     "pre": "BIO330|BIO230",
     "st": "Introductory Genetics I ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "BIO510",
@@ -439,7 +472,8 @@
     "lvl": "500",
     "pre": "BIO330|BIO230|CHE330|CHE431",
     "st": "Advanced Biology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology and chemistry"
   },
   {
     "course_no": "BIO520",
@@ -452,7 +486,8 @@
     "lvl": "500",
     "pre": "BIO510",
     "st": "Advanced Biology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO510"
   },
   {
     "course_no": "BIO530",
@@ -465,7 +500,8 @@
     "lvl": "500",
     "pre": "BIO520",
     "st": "Advanced Biology ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO520"
   },
   {
     "course_no": "BIO586",
@@ -478,7 +514,8 @@
     "lvl": "500",
     "pre": "BIO486|BIO510",
     "st": "Molecular Genetics ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "BIO486 or BIO510"
   },
   {
     "course_no": "BIO590",
@@ -491,7 +528,8 @@
     "lvl": "500",
     "pre": "BIO230|BIO330/CHE330|CHE431",
     "st": "Collaborative Research ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "One year of introductory biology and chemistry"
   },
   {
     "course_no": "BIO670",
@@ -504,7 +542,8 @@
     "lvl": "600",
     "pre": "BIO586",
     "st": "Biology Research ",
-    "subj": "BIO"
+    "subj": "BIO",
+    "prereq_full": "By application only"
   },
   {
     "course_no": "CHE310",
@@ -517,7 +556,8 @@
     "lvl": "300",
     "pre": "/MAT220|MAT22T",
     "st": "Principles of Chemistry",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "MAT220 (coreq)"
   },
   {
     "course_no": "CHE320",
@@ -530,7 +570,8 @@
     "lvl": "300",
     "pre": "CHE310",
     "st": "Principles of Chemistry",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE310"
   },
   {
     "course_no": "CHE330",
@@ -543,7 +584,8 @@
     "lvl": "300",
     "pre": "CHE320",
     "st": "Principles of Chemistry",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE320"
   },
   {
     "course_no": "CHE411",
@@ -556,7 +598,8 @@
     "lvl": "400",
     "pre": "PHY230|PHY231|PHY330",
     "st": "Accelerated Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "One year of laboratory physics"
   },
   {
     "course_no": "CHE421",
@@ -569,7 +612,8 @@
     "lvl": "400",
     "pre": "CHE411",
     "st": "Accelerated Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE411"
   },
   {
     "course_no": "CHE431",
@@ -582,7 +626,8 @@
     "lvl": "400",
     "pre": "CHE421",
     "st": "Accelerated Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE421"
   },
   {
     "course_no": "CHE450",
@@ -595,7 +640,8 @@
     "lvl": "400",
     "pre": "CHE330|CHE431",
     "st": "Chemistry of the Environment",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "One year of introductory chemistry"
   },
   {
     "course_no": "CHE460",
@@ -608,7 +654,8 @@
     "lvl": "400",
     "pre": "CHE330|CHE431|CHE530",
     "st": "Organic Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "One year of introductory chemistry"
   },
   {
     "course_no": "CHE510",
@@ -621,7 +668,8 @@
     "lvl": "500",
     "pre": "CHE330",
     "st": "Advanced Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "One year of introductory chemistry"
   },
   {
     "course_no": "CHE520",
@@ -634,7 +682,8 @@
     "lvl": "500",
     "pre": "CHE510",
     "st": "Advanced Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE510"
   },
   {
     "course_no": "CHE530",
@@ -647,7 +696,8 @@
     "lvl": "500",
     "pre": "CHE520",
     "st": "Advanced Chemistry ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "CHE520"
   },
   {
     "course_no": "CHE640",
@@ -660,7 +710,8 @@
     "lvl": "500",
     "pre": "CHE330|PHY230|PHY231|PHY330|MAT520|MAT521",
     "st": "Intro to Thermodynamics ",
-    "subj": "CHE"
+    "subj": "CHE",
+    "prereq_full": "One year of introductory chemistry and physics and MAT520"
   },
   {
     "course_no": "CHI110",
@@ -673,7 +724,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": ""
   },
   {
     "course_no": "CHI111",
@@ -686,7 +738,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Accelerated Chinese I",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": ""
   },
   {
     "course_no": "CHI120",
@@ -699,7 +752,8 @@
     "lvl": "100",
     "pre": "CHI110",
     "st": "Elementary Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI110"
   },
   {
     "course_no": "CHI130",
@@ -712,7 +766,8 @@
     "lvl": "100",
     "pre": "CHI120",
     "st": "Elementary Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI120"
   },
   {
     "course_no": "CHI210",
@@ -725,7 +780,8 @@
     "lvl": "200",
     "pre": "CHI130",
     "st": "Intermediate Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI130"
   },
   {
     "course_no": "CHI220",
@@ -738,7 +794,8 @@
     "lvl": "200",
     "pre": "CHI210",
     "st": "Intermediate Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI210"
   },
   {
     "course_no": "CHI221",
@@ -751,7 +808,8 @@
     "lvl": "200",
     "pre": "CHI111",
     "st": "Accelerated Chinese II",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI111"
   },
   {
     "course_no": "CHI230",
@@ -764,7 +822,8 @@
     "lvl": "200",
     "pre": "CHI220",
     "st": "Intermediate Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI220"
   },
   {
     "course_no": "CHI231",
@@ -777,7 +836,8 @@
     "lvl": "200",
     "pre": "CHI221",
     "st": "Accelerated Chinese III",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI221"
   },
   {
     "course_no": "CHI310",
@@ -790,7 +850,8 @@
     "lvl": "300",
     "pre": "CHI230|CHI231",
     "st": "Advanced Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI230"
   },
   {
     "course_no": "CHI311",
@@ -803,7 +864,8 @@
     "lvl": "300",
     "pre": "CHI231",
     "st": "Advanced Chinese - Accelerated",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI231"
   },
   {
     "course_no": "CHI320",
@@ -816,7 +878,8 @@
     "lvl": "300",
     "pre": "CHI310",
     "st": "Advanced Chinese",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI310"
   },
   {
     "course_no": "CHI321",
@@ -829,7 +892,8 @@
     "lvl": "300",
     "pre": "CHI311",
     "st": "Adv Chinese Accelerated",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI311"
   },
   {
     "course_no": "CHI400",
@@ -842,7 +906,8 @@
     "lvl": "400",
     "pre": "CHI320",
     "st": "Advanced Chinese ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI320"
   },
   {
     "course_no": "CHI411",
@@ -855,7 +920,8 @@
     "lvl": "400",
     "pre": "CHI321",
     "st": "Adv Chinese Accelerated ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI321"
   },
   {
     "course_no": "CHI502",
@@ -868,7 +934,8 @@
     "lvl": "500",
     "pre": "CHI400",
     "st": "Contemp Chinese Lang & Lit ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI400"
   },
   {
     "course_no": "CHI503",
@@ -881,7 +948,8 @@
     "lvl": "500",
     "pre": "CHI502",
     "st": "Contemp Chinese Lang & Lit ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI502"
   },
   {
     "course_no": "CHI504",
@@ -894,7 +962,8 @@
     "lvl": "500",
     "pre": "CHI503",
     "st": "Contemp Chinese Lang & Lit ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI503"
   },
   {
     "course_no": "CHI521",
@@ -907,7 +976,8 @@
     "lvl": "500",
     "pre": "CHI411",
     "st": "Chinese Lang & Lit Accel ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI400"
   },
   {
     "course_no": "CHI531",
@@ -920,7 +990,8 @@
     "lvl": "500",
     "pre": "CHI521",
     "st": "Chinese Lang & Lit Accel ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI521"
   },
   {
     "course_no": "CHI541",
@@ -933,7 +1004,8 @@
     "lvl": "500",
     "pre": "CHI531",
     "st": "Chinese Lang & Lit Accel ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI531"
   },
   {
     "course_no": "CHI550",
@@ -946,7 +1018,8 @@
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541",
     "st": "Current Events in Chinese Wld",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI400"
   },
   {
     "course_no": "CHI560",
@@ -959,7 +1032,8 @@
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580",
     "st": "Contemporary Chinese Cinema ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "CHI400"
   },
   {
     "course_no": "CHI580",
@@ -972,7 +1046,8 @@
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580",
     "st": "Chinese Digital Media ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "Any 500-level Chinese course"
   },
   {
     "course_no": "CHI590",
@@ -985,7 +1060,8 @@
     "lvl": "500",
     "pre": "CHI502|CHI503|CHI504|CHI521|CHI531|CHI541|CHI550|CHI580|CHI560",
     "st": "Selected Topics in Chinese ",
-    "subj": "CHI"
+    "subj": "CHI",
+    "prereq_full": "Any 500-level Chinese course"
   },
   {
     "course_no": "CSC205",
@@ -998,7 +1074,8 @@
     "lvl": "200",
     "pre": "/MAT12T",
     "st": "Computing and Society",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": ""
   },
   {
     "course_no": "CSC208",
@@ -1011,7 +1088,8 @@
     "lvl": "200",
     "pre": "/MAT12T",
     "st": "Building the Dynamic Web",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": ""
   },
   {
     "course_no": "CSC308",
@@ -1024,7 +1102,8 @@
     "lvl": "300",
     "pre": "CSC205|CSC208",
     "st": "Interactive Data-Driven Comp.",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": "CSC205 or CSC208"
   },
   {
     "course_no": "CSC405",
@@ -1037,7 +1116,8 @@
     "lvl": "400",
     "pre": "/MAT12T",
     "st": "Algorithms & Software ",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": "MAT12T (corequisite)"
   },
   {
     "course_no": "CSC505",
@@ -1050,7 +1130,8 @@
     "lvl": "500",
     "pre": "CSC405",
     "st": "Data Structures & Algorithms ",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": "CSC405"
   },
   {
     "course_no": "CSC506",
@@ -1063,7 +1144,8 @@
     "lvl": "500",
     "pre": "CSC405",
     "st": "Mobile App Development ",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": "CSC405"
   },
   {
     "course_no": "CSC590",
@@ -1076,7 +1158,8 @@
     "lvl": "500",
     "pre": "CSC308|CSC505|CSC506",
     "st": "Selected Topics in Comp Sci ",
-    "subj": "CSC"
+    "subj": "CSC",
+    "prereq_full": "CSC308 or CSC505 or CSC506"
   },
   {
     "course_no": "DAN010",
@@ -1089,7 +1172,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Pointe Instruction",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": ""
   },
   {
     "course_no": "DAN100",
@@ -1102,7 +1186,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Introduction to Dance",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": ""
   },
   {
     "course_no": "DAN200",
@@ -1115,7 +1200,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Intermediate Dance I",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "DAN100"
   },
   {
     "course_no": "DAN250",
@@ -1128,7 +1214,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Intermediate Dance II",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "DAN200"
   },
   {
     "course_no": "DAN280",
@@ -1141,7 +1228,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Hip Hop Dance",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "DAN100"
   },
   {
     "course_no": "DAN300",
@@ -1154,7 +1242,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Advanced Dance",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "DAN250"
   },
   {
     "course_no": "DAN390",
@@ -1167,7 +1256,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Dance Composition",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": ""
   },
   {
     "course_no": "DAN400",
@@ -1180,7 +1270,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Dance Company",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "DAN250 or DAN300 (corequisite)"
   },
   {
     "course_no": "DAN430",
@@ -1193,7 +1284,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Dance Concert Ensemble",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": "Any previous dance course"
   },
   {
     "course_no": "DAN590",
@@ -1206,7 +1298,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Dance in Society ",
-    "subj": "DAN"
+    "subj": "DAN",
+    "prereq_full": ""
   },
   {
     "course_no": "ECO502",
@@ -1219,7 +1312,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Principles of Econ & Business",
-    "subj": "ECO"
+    "subj": "ECO",
+    "prereq_full": ""
   },
   {
     "course_no": "ECO510",
@@ -1232,7 +1326,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Macroeconomic Issues ",
-    "subj": "ECO"
+    "subj": "ECO",
+    "prereq_full": ""
   },
   {
     "course_no": "ECO520",
@@ -1245,7 +1340,8 @@
     "lvl": "500",
     "pre": "ECO510",
     "st": "Microeconomic Theory & Policy",
-    "subj": "ECO"
+    "subj": "ECO",
+    "prereq_full": "ECO510"
   },
   {
     "course_no": "ENG100",
@@ -1258,7 +1354,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "9th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG210",
@@ -1271,7 +1368,8 @@
     "lvl": "200",
     "pre": "ENG100",
     "st": "9th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG220",
@@ -1284,7 +1382,8 @@
     "lvl": "200",
     "pre": "ENG210",
     "st": "9th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG310",
@@ -1297,7 +1396,8 @@
     "lvl": "300",
     "pre": "ENG220",
     "st": "10th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG320",
@@ -1310,7 +1410,8 @@
     "lvl": "300",
     "pre": "ENG310",
     "st": "10th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG330",
@@ -1323,7 +1424,8 @@
     "lvl": "300",
     "pre": "ENG320",
     "st": "10th-Grade English",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG410",
@@ -1336,7 +1438,8 @@
     "lvl": "400",
     "pre": "ENG330",
     "st": "11th-Grade English ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG420",
@@ -1349,7 +1452,8 @@
     "lvl": "400",
     "pre": "ENG410",
     "st": "11th-Grade English ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG430",
@@ -1362,7 +1466,8 @@
     "lvl": "400",
     "pre": "ENG420",
     "st": "11th-Grade English ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG500",
@@ -1375,7 +1480,8 @@
     "lvl": "500",
     "pre": "ENG430",
     "st": "12th-Grade English ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG502",
@@ -1388,7 +1494,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Creative Writing: Fiction ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG503",
@@ -1401,7 +1508,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Creative Writing: Poetry ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG505",
@@ -1414,7 +1522,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Creative Writing: Nonfiction ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG506",
@@ -1427,7 +1536,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Creative Writing: Multigenre ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG539",
@@ -1440,7 +1550,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Fences Tattoos Streetcars ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG53W",
@@ -1453,7 +1564,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "American Political Literature",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG540",
@@ -1466,7 +1578,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Her/His Stories Plath Hughes ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG542",
@@ -1479,7 +1592,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Jane Austen ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG543",
@@ -1492,7 +1606,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "James Baldwin ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG544",
@@ -1505,7 +1620,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Samuel Beckett ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG545",
@@ -1518,7 +1634,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Junot Diaz ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG548",
@@ -1531,7 +1648,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Looking for Zora ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG549",
@@ -1544,7 +1662,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Faulkner and Woolf ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG552",
@@ -1557,7 +1676,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Kazuo Ishiguro ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG555",
@@ -1570,7 +1690,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Cormac McCarthy ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG556",
@@ -1583,7 +1704,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Moby Dick ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG558",
@@ -1596,7 +1718,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Toni Morrison ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG559",
@@ -1609,7 +1732,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Viet Thanh Nguyen ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG560",
@@ -1622,7 +1746,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Salman Rushdie ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG562",
@@ -1635,7 +1760,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Zadie Smith ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG567",
@@ -1648,7 +1774,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Fictions of Finance ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG568",
@@ -1661,7 +1788,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "The Harlem Renaissance ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG570",
@@ -1674,7 +1802,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Page to Screen: Film Adapt ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG572",
@@ -1687,7 +1816,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Literature and the Land ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG573",
@@ -1700,7 +1830,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Beats, Rhymes and Narrative ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG574",
@@ -1713,7 +1844,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Literature of California ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG576",
@@ -1726,7 +1858,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Art of Protest ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG577",
@@ -1739,7 +1872,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Queer Lit ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG578",
@@ -1752,7 +1886,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Children's Literature ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG579",
@@ -1765,7 +1900,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Spring in Love ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG581",
@@ -1778,7 +1914,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Poetry and Songwriting ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG582",
@@ -1791,7 +1928,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Science Fiction and Fantasy ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG583",
@@ -1804,7 +1942,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Strangers in a Strange Land ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG584",
@@ -1817,7 +1956,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Baseball: American Narrative ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG585",
@@ -1830,7 +1970,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Utopias & Dystopias in Lit ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG586",
@@ -1843,7 +1984,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Writing the Body ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG587",
@@ -1856,7 +1998,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Beyond Korean Cool ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG588",
@@ -1869,7 +2012,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Crime Fiction ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG589",
@@ -1882,7 +2026,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Homer's Odyssey ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "ENG590",
@@ -1895,7 +2040,8 @@
     "lvl": "500",
     "pre": "ENG500",
     "st": "Selected Topics in English ",
-    "subj": "ENG"
+    "subj": "ENG",
+    "prereq_full": ""
   },
   {
     "course_no": "EPS450",
@@ -1908,7 +2054,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY231|PHY230|CHE330|CHI431",
     "st": "Earth Systems ",
-    "subj": "EPS"
+    "subj": "EPS",
+    "prereq_full": "One year of introductory chemistry or physics"
   },
   {
     "course_no": "EXI309",
@@ -1921,7 +2068,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Social Stratification",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": ""
   },
   {
     "course_no": "EXI515",
@@ -1934,7 +2082,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Nationhood of the U.S. ",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": ""
   },
   {
     "course_no": "EXI525",
@@ -1947,7 +2096,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Latinx Studies in the U.S. ",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": ""
   },
   {
     "course_no": "EXI535",
@@ -1960,7 +2110,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Asian Amer History & Lit ",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": ""
   },
   {
     "course_no": "EXI545",
@@ -1973,7 +2124,8 @@
     "lvl": "500",
     "pre": "BIO330|BIO230|BIO530/HIS430",
     "st": "Science Health Race in Amer ",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": "One year of biology and one year of U.S. history"
   },
   {
     "course_no": "EXI559",
@@ -1986,7 +2138,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Research Methods: SPARC ",
-    "subj": "EXI"
+    "subj": "EXI",
+    "prereq_full": ""
   },
   {
     "course_no": "FRE110",
@@ -1999,7 +2152,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": ""
   },
   {
     "course_no": "FRE120",
@@ -2012,7 +2166,8 @@
     "lvl": "100",
     "pre": "FRE110",
     "st": "Elementary French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE110"
   },
   {
     "course_no": "FRE12T",
@@ -2025,7 +2180,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition French 1",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": ""
   },
   {
     "course_no": "FRE130",
@@ -2038,7 +2194,8 @@
     "lvl": "100",
     "pre": "FRE120",
     "st": "Elementary French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE120"
   },
   {
     "course_no": "FRE13T",
@@ -2051,7 +2208,8 @@
     "lvl": "100",
     "pre": "FRE12T",
     "st": "Transition French 2",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": ""
   },
   {
     "course_no": "FRE210",
@@ -2064,7 +2222,8 @@
     "lvl": "200",
     "pre": "FRE13T|FRE130",
     "st": "Intermediate French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE130"
   },
   {
     "course_no": "FRE220",
@@ -2077,7 +2236,8 @@
     "lvl": "200",
     "pre": "FRE210",
     "st": "Intermediate French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE210"
   },
   {
     "course_no": "FRE230",
@@ -2090,7 +2250,8 @@
     "lvl": "200",
     "pre": "FRE220",
     "st": "Intermediate French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE220"
   },
   {
     "course_no": "FRE310",
@@ -2103,7 +2264,8 @@
     "lvl": "300",
     "pre": "FRE230",
     "st": "Advanced French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE230"
   },
   {
     "course_no": "FRE320",
@@ -2116,7 +2278,8 @@
     "lvl": "300",
     "pre": "FRE310",
     "st": "Advanced French",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE310"
   },
   {
     "course_no": "FRE400",
@@ -2129,7 +2292,8 @@
     "lvl": "300",
     "pre": "FRE320",
     "st": "Col/Post-col Francophone Lit",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE320"
   },
   {
     "course_no": "FRE502",
@@ -2142,7 +2306,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Individual, Community, Soc ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE503",
@@ -2155,7 +2320,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "France and Francophone World ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE504",
@@ -2168,7 +2334,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Art, Music, and Literature ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE550",
@@ -2181,7 +2348,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Francophone Theater ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE552",
@@ -2194,7 +2362,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "From Folly to Reason ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE553",
@@ -2207,7 +2376,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Great Novels ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE554",
@@ -2220,7 +2390,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "French Humanism ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE555",
@@ -2233,7 +2404,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Change Makers ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE556",
@@ -2246,7 +2418,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Studies in French Cinema ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "FRE400"
   },
   {
     "course_no": "FRE590",
@@ -2259,7 +2432,8 @@
     "lvl": "500",
     "pre": "FRE400",
     "st": "Selected Topics in French ",
-    "subj": "FRE"
+    "subj": "FRE",
+    "prereq_full": "Any 500-level French course"
   },
   {
     "course_no": "GER110",
@@ -2272,7 +2446,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": ""
   },
   {
     "course_no": "GER111",
@@ -2285,7 +2460,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "German Two Years in One",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": ""
   },
   {
     "course_no": "GER120",
@@ -2298,7 +2474,8 @@
     "lvl": "100",
     "pre": "GER110",
     "st": "Elementary German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER110"
   },
   {
     "course_no": "GER130",
@@ -2311,7 +2488,8 @@
     "lvl": "100",
     "pre": "GER120",
     "st": "Elementary German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER120"
   },
   {
     "course_no": "GER210",
@@ -2324,7 +2502,8 @@
     "lvl": "200",
     "pre": "GER130",
     "st": "Intermediate German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER130"
   },
   {
     "course_no": "GER220",
@@ -2337,7 +2516,8 @@
     "lvl": "200",
     "pre": "GER210",
     "st": "Intermediate German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER210"
   },
   {
     "course_no": "GER221",
@@ -2350,7 +2530,8 @@
     "lvl": "200",
     "pre": "GER111",
     "st": "German Two Years in One",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER111"
   },
   {
     "course_no": "GER230",
@@ -2363,7 +2544,8 @@
     "lvl": "200",
     "pre": "GER220",
     "st": "Intermediate German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER220"
   },
   {
     "course_no": "GER231",
@@ -2376,7 +2558,8 @@
     "lvl": "200",
     "pre": "GER221",
     "st": "German Two Years in One",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER221"
   },
   {
     "course_no": "GER310",
@@ -2389,7 +2572,8 @@
     "lvl": "300",
     "pre": "GER231|GER230",
     "st": "Advanced German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER230"
   },
   {
     "course_no": "GER320",
@@ -2402,7 +2586,8 @@
     "lvl": "300",
     "pre": "GER310",
     "st": "Advanced German",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER310"
   },
   {
     "course_no": "GER400",
@@ -2415,7 +2600,8 @@
     "lvl": "400",
     "pre": "GER320",
     "st": "Other German Voices ",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER320"
   },
   {
     "course_no": "GER502",
@@ -2428,7 +2614,8 @@
     "lvl": "500",
     "pre": "GER400",
     "st": "German Bestsellers ",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER400"
   },
   {
     "course_no": "GER503",
@@ -2441,7 +2628,8 @@
     "lvl": "500",
     "pre": "GER400",
     "st": "Post-Holocaust Writing ",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER502"
   },
   {
     "course_no": "GER504",
@@ -2454,7 +2642,8 @@
     "lvl": "500",
     "pre": "GER400",
     "st": "Curr Issues German Countries ",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "GER503"
   },
   {
     "course_no": "GER590",
@@ -2467,7 +2656,8 @@
     "lvl": "500",
     "pre": "GER502|GER503|GER504",
     "st": "Selected Topics in German ",
-    "subj": "GER"
+    "subj": "GER",
+    "prereq_full": "Any 500-level German course"
   },
   {
     "course_no": "GRK110",
@@ -2480,7 +2670,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": ""
   },
   {
     "course_no": "GRK120",
@@ -2493,7 +2684,8 @@
     "lvl": "100",
     "pre": "GRK110",
     "st": "Elementary Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK110"
   },
   {
     "course_no": "GRK130",
@@ -2506,7 +2698,8 @@
     "lvl": "100",
     "pre": "GRK120",
     "st": "Elementary Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK120"
   },
   {
     "course_no": "GRK210",
@@ -2519,7 +2712,8 @@
     "lvl": "200",
     "pre": "GRK130",
     "st": "Intermediate Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK130"
   },
   {
     "course_no": "GRK220",
@@ -2532,7 +2726,8 @@
     "lvl": "200",
     "pre": "GRK210",
     "st": "Intermediate Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK210"
   },
   {
     "course_no": "GRK230",
@@ -2545,7 +2740,8 @@
     "lvl": "200",
     "pre": "GRK220",
     "st": "Intermediate Greek",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK220"
   },
   {
     "course_no": "GRK411",
@@ -2558,7 +2754,8 @@
     "lvl": "400",
     "pre": "LAT220",
     "st": "Elementary Greek - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "LAT220"
   },
   {
     "course_no": "GRK421",
@@ -2571,7 +2768,8 @@
     "lvl": "400",
     "pre": "GRK411",
     "st": "Elementary Greek - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK411"
   },
   {
     "course_no": "GRK431",
@@ -2584,7 +2782,8 @@
     "lvl": "400",
     "pre": "GRK421",
     "st": "Elementary Greek - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK421"
   },
   {
     "course_no": "GRK511",
@@ -2597,7 +2796,8 @@
     "lvl": "500",
     "pre": "GRK230|GRK431",
     "st": "Plato's Crito - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK230 or GRK431"
   },
   {
     "course_no": "GRK521",
@@ -2610,7 +2810,8 @@
     "lvl": "500",
     "pre": "GRK511",
     "st": "Plato's Apology - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK511"
   },
   {
     "course_no": "GRK531",
@@ -2623,7 +2824,8 @@
     "lvl": "500",
     "pre": "GRK521",
     "st": "Homer's Iliad - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK521"
   },
   {
     "course_no": "GRK611",
@@ -2636,7 +2838,8 @@
     "lvl": "600",
     "pre": "GRK531",
     "st": "Greek Tragedy - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK531"
   },
   {
     "course_no": "GRK621",
@@ -2649,7 +2852,8 @@
     "lvl": "600",
     "pre": "GRK611",
     "st": "Greek Old Comedy - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK611"
   },
   {
     "course_no": "GRK631",
@@ -2662,7 +2866,8 @@
     "lvl": "600",
     "pre": "GRK621",
     "st": "Greek Poetry - Intensive ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK621"
   },
   {
     "course_no": "GRK711",
@@ -2675,7 +2880,8 @@
     "lvl": "700",
     "pre": "GRK631",
     "st": "Plato's Republic ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK631"
   },
   {
     "course_no": "GRK791",
@@ -2688,7 +2894,8 @@
     "lvl": "700",
     "pre": "GRK711",
     "st": "Special Readings ",
-    "subj": "GRK"
+    "subj": "GRK",
+    "prereq_full": "GRK631"
   },
   {
     "course_no": "HHD110",
@@ -2701,7 +2908,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Teen Health for 9th-Graders",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD120",
@@ -2714,7 +2922,8 @@
     "lvl": "100",
     "pre": "HHD110",
     "st": "Teen Health for 9th-Graders",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD130",
@@ -2727,7 +2936,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Teen Health Matters Juniors",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD210",
@@ -2740,7 +2950,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Teen Health Matters Lowers",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD220",
@@ -2753,7 +2964,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Teen Health Matters Lowers",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD230",
@@ -2766,7 +2978,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Teen Health Matters Lowers",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD240",
@@ -2779,7 +2992,8 @@
     "lvl": "200",
     "pre": "HHD210",
     "st": "Thriving in Community",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD310",
@@ -2792,7 +3006,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Teen Health for Uppers",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD340",
@@ -2805,7 +3020,8 @@
     "lvl": "300",
     "pre": "HHD240|HHD310",
     "st": "Navigating Healthy Choices",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD410",
@@ -2818,7 +3034,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Teen Health for Seniors ",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD490",
@@ -2831,7 +3048,8 @@
     "lvl": "400",
     "pre": "HHD340|HHD410",
     "st": "Crossroads Health: Seniors ",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD502",
@@ -2844,7 +3062,8 @@
     "lvl": "500",
     "pre": "HHD490",
     "st": "A Study of Human Sexuality ",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD503",
@@ -2857,7 +3076,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Power Within: Optimal Health ",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HHD504",
@@ -2870,7 +3090,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Human Pursuit of Euphoria ",
-    "subj": "HHD"
+    "subj": "HHD",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS200",
@@ -2883,7 +3104,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "The World in the 20th Century",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS202",
@@ -2896,7 +3118,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Peoples Cultures Modern World",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS203",
@@ -2909,7 +3132,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Classical Greece",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS204",
@@ -2922,7 +3146,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Classical Rome",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS205",
@@ -2935,7 +3160,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "The Medieval Worlds",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS206",
@@ -2948,7 +3174,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Native Peoples North America",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS207",
@@ -2961,7 +3188,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "History of China: Qing",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS208",
@@ -2974,7 +3202,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "History of Japan",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": ""
   },
   {
     "course_no": "HIS302",
@@ -2987,7 +3216,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "Early Modern Europe, 1350-1660",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS303",
@@ -3000,7 +3230,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "Absolutism & Revol'n,1660-1800",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS304",
@@ -3013,7 +3244,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "European Century, 1800-1914",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS305",
@@ -3026,7 +3258,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "The Transatlantic World",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS307",
@@ -3039,7 +3272,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "Modern India",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS308",
@@ -3052,7 +3286,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "Pre-Colonial Africa",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS309",
@@ -3065,7 +3300,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS204|HIS205|HIS206|HIS207|HIS208",
     "st": "Race: A Global History",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS314",
@@ -3078,7 +3314,8 @@
     "lvl": "300",
     "pre": "HIS200|HIS202|HIS203|HIS205|HIS206|HIS207|HIS208/LAT220",
     "st": "Roman History for Latin Stdnts",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS410",
@@ -3091,7 +3328,8 @@
     "lvl": "400",
     "pre": "HIS302|HIS303|HIS304|HIS305|HIS307|HIS308|HIS309|HIS314",
     "st": "U.S. History Colonial - 1861 ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 200-level history course"
   },
   {
     "course_no": "HIS420",
@@ -3104,7 +3342,8 @@
     "lvl": "400",
     "pre": "HIS410",
     "st": "U.S. History 1861 - 1941 ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "HIS410"
   },
   {
     "course_no": "HIS430",
@@ -3117,7 +3356,8 @@
     "lvl": "400",
     "pre": "HIS420",
     "st": "U.S. History 1941 - Present ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "HIS420"
   },
   {
     "course_no": "HIS502",
@@ -3130,7 +3370,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Women, Gender & Society ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS503",
@@ -3143,7 +3384,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "WW & Europe Soc 1890-1945 ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS504",
@@ -3156,7 +3398,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Europe Since 1945 ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS506",
@@ -3169,7 +3412,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Capitalism and its Critics ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS508",
@@ -3182,7 +3426,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Violence, War & Peace ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS515",
@@ -3195,7 +3440,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "LGBTQ+ History ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS550",
@@ -3208,7 +3454,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Amer Politics & Public Policy",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS553",
@@ -3221,7 +3468,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Law and American Society ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS554",
@@ -3234,7 +3482,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Revolutionary Russia ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS556",
@@ -3247,7 +3496,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Why Are Poor Nations Poor? ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS558",
@@ -3260,7 +3510,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Genocide in the Modern World ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS563",
@@ -3273,7 +3524,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Humans and the Environment ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS565",
@@ -3286,7 +3538,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Modern China ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS566",
@@ -3299,7 +3552,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Modern Latin America ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS567",
@@ -3312,7 +3566,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Modern Asia ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS577",
@@ -3325,7 +3580,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "History of Modern Africa ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS586",
@@ -3338,7 +3594,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Contemporary Middle East ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS587",
@@ -3351,7 +3608,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "Global History of Witchcraft ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS590",
@@ -3364,7 +3622,8 @@
     "lvl": "500",
     "pre": "HIS410",
     "st": "American Slavery, Capitalism ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "Any 400-level history course"
   },
   {
     "course_no": "HIS600",
@@ -3377,7 +3636,8 @@
     "lvl": "600",
     "pre": "HIS410",
     "st": "Senior Research Seminar ",
-    "subj": "HIS"
+    "subj": "HIS",
+    "prereq_full": "HIS430"
   },
   {
     "course_no": "INT419",
@@ -3390,7 +3650,8 @@
     "lvl": "400",
     "pre": "BIO230|BIO330",
     "st": "Bioethics ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": "One year of introductory biology"
   },
   {
     "course_no": "INT503",
@@ -3403,7 +3664,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "World Seen Thru a Newspaper ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT504",
@@ -3416,7 +3678,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Human Rights ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT508",
@@ -3429,7 +3692,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "A Study of Sport in Society ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT519",
@@ -3442,7 +3706,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Green Umbrella Learning Lab ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT529",
@@ -3455,7 +3720,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "ID, Empathy, Cross-Cultural ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT550",
@@ -3468,7 +3734,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Sports Science ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT552",
@@ -3481,7 +3748,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Science, Technology & Profit ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": "Two years of labratory science"
   },
   {
     "course_no": "INT553",
@@ -3494,7 +3762,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Social Innovation ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "INT554",
@@ -3507,7 +3776,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Design Thinking Workshop ",
-    "subj": "INT"
+    "subj": "INT",
+    "prereq_full": ""
   },
   {
     "course_no": "ITA121",
@@ -3520,7 +3790,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Accel Italian for Seniors",
-    "subj": "ITA"
+    "subj": "ITA",
+    "prereq_full": ""
   },
   {
     "course_no": "ITA131",
@@ -3533,7 +3804,8 @@
     "lvl": "100",
     "pre": "ITA121",
     "st": "Accel Italian for Seniors",
-    "subj": "ITA"
+    "subj": "ITA",
+    "prereq_full": ""
   },
   {
     "course_no": "JPN110",
@@ -3546,7 +3818,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": ""
   },
   {
     "course_no": "JPN120",
@@ -3559,7 +3832,8 @@
     "lvl": "100",
     "pre": "JPN110",
     "st": "Elementary Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN110"
   },
   {
     "course_no": "JPN121",
@@ -3572,7 +3846,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Accel Elementary Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN111"
   },
   {
     "course_no": "JPN130",
@@ -3585,7 +3860,8 @@
     "lvl": "100",
     "pre": "JPN120",
     "st": "Elementary Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN120"
   },
   {
     "course_no": "JPN131",
@@ -3598,7 +3874,8 @@
     "lvl": "100",
     "pre": "JPN121",
     "st": "Accel Elementary Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN121"
   },
   {
     "course_no": "JPN210",
@@ -3611,7 +3888,8 @@
     "lvl": "200",
     "pre": "JPN131|JPN130",
     "st": "Intermediate Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN130"
   },
   {
     "course_no": "JPN220",
@@ -3624,7 +3902,8 @@
     "lvl": "200",
     "pre": "JPN210",
     "st": "Intermediate Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN210"
   },
   {
     "course_no": "JPN230",
@@ -3637,7 +3916,8 @@
     "lvl": "200",
     "pre": "JPN220",
     "st": "Intermediate Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN220"
   },
   {
     "course_no": "JPN310",
@@ -3650,7 +3930,8 @@
     "lvl": "300",
     "pre": "JPN230",
     "st": "Advanced Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN230"
   },
   {
     "course_no": "JPN320",
@@ -3663,7 +3944,8 @@
     "lvl": "300",
     "pre": "JPN310",
     "st": "Advanced Japanese",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN310"
   },
   {
     "course_no": "JPN400",
@@ -3676,7 +3958,8 @@
     "lvl": "400",
     "pre": "JPN320",
     "st": "Advanced Japanese ",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN320"
   },
   {
     "course_no": "JPN502",
@@ -3689,7 +3972,8 @@
     "lvl": "500",
     "pre": "JPN400",
     "st": "Advanced Readings Japanese ",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN400"
   },
   {
     "course_no": "JPN503",
@@ -3702,7 +3986,8 @@
     "lvl": "500",
     "pre": "JPN502",
     "st": "Advanced Readings Japanese ",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN502"
   },
   {
     "course_no": "JPN504",
@@ -3715,7 +4000,8 @@
     "lvl": "500",
     "pre": "JPN503",
     "st": "Advanced Readings Japanese ",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "JPN503"
   },
   {
     "course_no": "JPN590",
@@ -3728,7 +4014,8 @@
     "lvl": "500",
     "pre": "JPN504",
     "st": "Selected Topics in Japanese ",
-    "subj": "JPN"
+    "subj": "JPN",
+    "prereq_full": "Any 500-level Japanese course"
   },
   {
     "course_no": "LAT110",
@@ -3741,7 +4028,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": ""
   },
   {
     "course_no": "LAT120",
@@ -3754,7 +4042,8 @@
     "lvl": "100",
     "pre": "LAT110|LATTR1",
     "st": "Elementary Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT110"
   },
   {
     "course_no": "LAT130",
@@ -3767,7 +4056,8 @@
     "lvl": "100",
     "pre": "LAT120",
     "st": "Elementary Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT120"
   },
   {
     "course_no": "LAT210",
@@ -3780,7 +4070,8 @@
     "lvl": "200",
     "pre": "LAT130",
     "st": "Intermediate Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT130"
   },
   {
     "course_no": "LAT220",
@@ -3793,7 +4084,8 @@
     "lvl": "200",
     "pre": "LAT210",
     "st": "Intermediate Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT210"
   },
   {
     "course_no": "LAT230",
@@ -3806,7 +4098,8 @@
     "lvl": "200",
     "pre": "LAT220",
     "st": "Intermediate Latin",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT220"
   },
   {
     "course_no": "LAT310",
@@ -3819,7 +4112,8 @@
     "lvl": "300",
     "pre": "LAT230",
     "st": "Cicero",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT230"
   },
   {
     "course_no": "LAT320",
@@ -3832,7 +4126,8 @@
     "lvl": "300",
     "pre": "LAT310",
     "st": "Latin Prose",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT310"
   },
   {
     "course_no": "LAT400",
@@ -3845,7 +4140,8 @@
     "lvl": "400",
     "pre": "LAT320",
     "st": "Ovid ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT320"
   },
   {
     "course_no": "LAT401",
@@ -3858,7 +4154,8 @@
     "lvl": "400",
     "pre": "LAT220|LATTR2",
     "st": "Cicero Latin Prose Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT220 or LATTR2"
   },
   {
     "course_no": "LAT411",
@@ -3871,7 +4168,8 @@
     "lvl": "400",
     "pre": "GRK220",
     "st": "Elementary Latin - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "GRK220"
   },
   {
     "course_no": "LAT421",
@@ -3884,7 +4182,8 @@
     "lvl": "400",
     "pre": "LAT411",
     "st": "Elementary Latin - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT411"
   },
   {
     "course_no": "LAT431",
@@ -3897,7 +4196,8 @@
     "lvl": "400",
     "pre": "LAT421",
     "st": "Elementary Latin - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT421"
   },
   {
     "course_no": "LAT510",
@@ -3910,7 +4210,8 @@
     "lvl": "500",
     "pre": "LAT400|LAT431",
     "st": "Vergil ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT400 or LAT431"
   },
   {
     "course_no": "LAT511",
@@ -3923,7 +4224,8 @@
     "lvl": "500",
     "pre": "LAT401|LAT431",
     "st": "Vergil - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT401 or LAT431"
   },
   {
     "course_no": "LAT520",
@@ -3936,7 +4238,8 @@
     "lvl": "500",
     "pre": "LAT510",
     "st": "Vergil ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT510"
   },
   {
     "course_no": "LAT521",
@@ -3949,7 +4252,8 @@
     "lvl": "500",
     "pre": "LAT511",
     "st": "Vergil - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT511"
   },
   {
     "course_no": "LAT530",
@@ -3962,7 +4266,8 @@
     "lvl": "500",
     "pre": "LAT520",
     "st": "Vergil ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT520"
   },
   {
     "course_no": "LAT531",
@@ -3975,7 +4280,8 @@
     "lvl": "500",
     "pre": "LAT521",
     "st": "Vergil - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT521"
   },
   {
     "course_no": "LAT611",
@@ -3988,7 +4294,8 @@
     "lvl": "600",
     "pre": "LAT531|LAT530",
     "st": "Catullus - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT531"
   },
   {
     "course_no": "LAT621",
@@ -4001,7 +4308,8 @@
     "lvl": "600",
     "pre": "LAT611",
     "st": "Horace - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT611"
   },
   {
     "course_no": "LAT631",
@@ -4014,7 +4322,8 @@
     "lvl": "600",
     "pre": "LAT621",
     "st": "Ovid - Intensive ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT621"
   },
   {
     "course_no": "LAT711",
@@ -4027,7 +4336,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Latin Elegy ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT721",
@@ -4040,7 +4350,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Latin Prose Composition ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT731",
@@ -4053,7 +4364,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Lucretius ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT741",
@@ -4066,7 +4378,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Plautus ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT751",
@@ -4079,7 +4392,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Roman Satire ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT761",
@@ -4092,7 +4406,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Tacitus ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT771",
@@ -4105,7 +4420,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Martial and Petronius ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LAT791",
@@ -4118,7 +4434,8 @@
     "lvl": "700",
     "pre": "LAT631",
     "st": "Special Readings ",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LATTR1",
@@ -4131,7 +4448,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition Latin 1",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": ""
   },
   {
     "course_no": "LATTR2",
@@ -4144,7 +4462,8 @@
     "lvl": "100",
     "pre": "LATTR1",
     "st": "Transition Latin 2",
-    "subj": "LAT"
+    "subj": "LAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT11T",
@@ -4157,7 +4476,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition 1 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT120",
@@ -4170,7 +4490,8 @@
     "lvl": "100",
     "pre": "MAT11T",
     "st": "Algebra",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT12T",
@@ -4183,7 +4504,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition 1 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT130",
@@ -4196,7 +4518,8 @@
     "lvl": "100",
     "pre": "MAT12T|MAT120",
     "st": "Algebra",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT13T",
@@ -4209,7 +4532,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition 1 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT210",
@@ -4222,7 +4546,8 @@
     "lvl": "200",
     "pre": "MAT130|MAT13T",
     "st": "Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT21T",
@@ -4235,7 +4560,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Transition 2 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT220",
@@ -4248,7 +4574,8 @@
     "lvl": "200",
     "pre": "MAT210|MAT21T",
     "st": "Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT22T",
@@ -4261,7 +4588,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Transition 2 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT230",
@@ -4274,7 +4602,8 @@
     "lvl": "200",
     "pre": "MAT220|MAT22T",
     "st": "Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT23X",
@@ -4287,7 +4616,8 @@
     "lvl": "200",
     "pre": "MAT21T",
     "st": "Transition 2 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT310",
@@ -4300,7 +4630,8 @@
     "lvl": "300",
     "pre": "MAT22T|MAT23X|MAT230",
     "st": "Adv Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT311",
@@ -4313,7 +4644,8 @@
     "lvl": "300",
     "pre": "MAT230|MAT22T|MAT23X",
     "st": "Adv Integrated Math (enriched)",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT31T",
@@ -4326,7 +4658,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT31X",
@@ -4339,7 +4672,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT320",
@@ -4352,7 +4686,8 @@
     "lvl": "300",
     "pre": "MAT310",
     "st": "Adv Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT321",
@@ -4365,7 +4700,8 @@
     "lvl": "300",
     "pre": "MAT311",
     "st": "Adv Integrated Math (enriched)",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT311"
   },
   {
     "course_no": "MAT32T",
@@ -4378,7 +4714,8 @@
     "lvl": "300",
     "pre": "MAT31T",
     "st": "Transition 3 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT31T"
   },
   {
     "course_no": "MAT32X",
@@ -4391,7 +4728,8 @@
     "lvl": "300",
     "pre": "MAT31X",
     "st": "Transition 3 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT31X"
   },
   {
     "course_no": "MAT330",
@@ -4404,7 +4742,8 @@
     "lvl": "300",
     "pre": "MAT32T|MAT320",
     "st": "Adv Integrated Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT34T",
@@ -4417,7 +4756,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MAT400",
@@ -4430,7 +4770,8 @@
     "lvl": "400",
     "pre": "MAT330",
     "st": "Adv Integrated Mathematics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330"
   },
   {
     "course_no": "MAT401",
@@ -4443,7 +4784,8 @@
     "lvl": "400",
     "pre": "MAT321",
     "st": "Adv Integrated Math (enrich) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT321"
   },
   {
     "course_no": "MAT40D",
@@ -4456,7 +4798,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
     "st": "Topics in Discrete Math ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330 or equivalent"
   },
   {
     "course_no": "MAT40H",
@@ -4469,7 +4812,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
     "st": "History of Mathematics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330 or equivalent"
   },
   {
     "course_no": "MAT40J",
@@ -4482,7 +4826,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
     "st": "Mathematics Social Justice ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330 or equivalent"
   },
   {
     "course_no": "MAT40S",
@@ -4495,7 +4840,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
     "st": "Introduction to Statistics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330 or equivalent"
   },
   {
     "course_no": "MAT40X",
@@ -4508,7 +4854,8 @@
     "lvl": "400",
     "pre": "MAT32X",
     "st": "Transition 3 Mathematics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT31X or MAT32X"
   },
   {
     "course_no": "MAT410",
@@ -4521,7 +4868,8 @@
     "lvl": "400",
     "pre": "MAT400",
     "st": "Intro Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT400"
   },
   {
     "course_no": "MAT411",
@@ -4534,7 +4882,8 @@
     "lvl": "400",
     "pre": "MAT400|MAT401|MAT40X",
     "st": "Intro Calculus (enriched) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT401"
   },
   {
     "course_no": "MAT41C",
@@ -4547,7 +4896,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X",
     "st": "Calculus - A Lab Approach ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT400"
   },
   {
     "course_no": "MAT41S",
@@ -4560,7 +4910,8 @@
     "lvl": "400",
     "pre": "MAT330|MAT40X|MAT401",
     "st": "Statistics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT330 or equivalent"
   },
   {
     "course_no": "MAT41T",
@@ -4573,7 +4924,8 @@
     "lvl": "400",
     "pre": "MAT34T",
     "st": "Transition to Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT34T"
   },
   {
     "course_no": "MAT41X",
@@ -4586,7 +4938,8 @@
     "lvl": "400",
     "pre": "MAT40X",
     "st": "Transition to Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT40X"
   },
   {
     "course_no": "MAT420",
@@ -4599,7 +4952,8 @@
     "lvl": "400",
     "pre": "MAT410|MAT41T|MAT41X",
     "st": "Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT410"
   },
   {
     "course_no": "MAT421",
@@ -4612,7 +4966,8 @@
     "lvl": "400",
     "pre": "MAT411|MAT41T|MAT41X",
     "st": "Calculus (enriched) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT411"
   },
   {
     "course_no": "MAT42C",
@@ -4625,7 +4980,8 @@
     "lvl": "400",
     "pre": "MAT41C",
     "st": "Calculus - A Lab Approach ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT41C"
   },
   {
     "course_no": "MAT42S",
@@ -4638,7 +4994,8 @@
     "lvl": "400",
     "pre": "MAT41S",
     "st": "Statistics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT41S"
   },
   {
     "course_no": "MAT430",
@@ -4651,7 +5008,8 @@
     "lvl": "400",
     "pre": "MAT420",
     "st": "Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT420"
   },
   {
     "course_no": "MAT431",
@@ -4664,7 +5022,8 @@
     "lvl": "400",
     "pre": "MAT421",
     "st": "Calculus (enriched) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT421"
   },
   {
     "course_no": "MAT43C",
@@ -4677,7 +5036,8 @@
     "lvl": "400",
     "pre": "MAT42C",
     "st": "Calculus - A Lab Approach ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT42C"
   },
   {
     "course_no": "MAT43S",
@@ -4690,7 +5050,8 @@
     "lvl": "400",
     "pre": "MAT42S",
     "st": "Statistics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT42S"
   },
   {
     "course_no": "MAT510",
@@ -4703,7 +5064,8 @@
     "lvl": "500",
     "pre": "MAT430",
     "st": "Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT430"
   },
   {
     "course_no": "MAT511",
@@ -4716,7 +5078,8 @@
     "lvl": "500",
     "pre": "MAT431",
     "st": "Calculus (enriched) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT431"
   },
   {
     "course_no": "MAT520",
@@ -4729,7 +5092,8 @@
     "lvl": "500",
     "pre": "MAT510",
     "st": "Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT510"
   },
   {
     "course_no": "MAT521",
@@ -4742,7 +5106,8 @@
     "lvl": "500",
     "pre": "MAT511",
     "st": "Calculus (enriched) ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT511"
   },
   {
     "course_no": "MAT610",
@@ -4755,7 +5120,8 @@
     "lvl": "600",
     "pre": "MAT520|MAT521",
     "st": "Multivariable Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT520 or MAT521"
   },
   {
     "course_no": "MAT620",
@@ -4768,7 +5134,8 @@
     "lvl": "600",
     "pre": "MAT610",
     "st": "Multivariable Calculus ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT610"
   },
   {
     "course_no": "MAT640",
@@ -4781,7 +5148,8 @@
     "lvl": "600",
     "pre": "MAT520|MAT521",
     "st": "Linear Algebra ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT520 or MAT521"
   },
   {
     "course_no": "MAT690",
@@ -4794,7 +5162,8 @@
     "lvl": "600",
     "pre": "MAT520|MAT521",
     "st": "Selected Topics in Math ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT520 or MAT522"
   },
   {
     "course_no": "MAT700",
@@ -4807,7 +5176,8 @@
     "lvl": "700",
     "pre": "MAT520|MAT521",
     "st": "Foundations of Abstract Math ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT520 or MAT521"
   },
   {
     "course_no": "MAT790",
@@ -4820,7 +5190,8 @@
     "lvl": "700",
     "pre": "MAT700",
     "st": "Selected Topics in Math ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": "MAT700"
   },
   {
     "course_no": "MATTR4",
@@ -4833,7 +5204,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Transition 4 Mathematics ",
-    "subj": "MAT"
+    "subj": "MAT",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS010",
@@ -4846,7 +5218,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Private Lessons",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS011",
@@ -4859,7 +5232,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "African Drumming World Percuss",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS050",
@@ -4872,7 +5246,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Modern Music Making",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS060",
@@ -4885,7 +5260,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Instrumental Chamber Music",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS070",
@@ -4898,7 +5274,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Vocal Chamber Music",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS075",
@@ -4911,7 +5288,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Exeter Choral Union",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS077",
@@ -4924,7 +5302,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Concert Choir",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS083",
@@ -4937,7 +5316,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Exeter Symphonia",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS085",
@@ -4950,7 +5330,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Symphony Orchestra",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS087",
@@ -4963,7 +5344,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Chamber Orchestra",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS093",
@@ -4976,7 +5358,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Concert Band",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS095",
@@ -4989,7 +5372,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Jazz & Contemporary Ensembles",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS097",
@@ -5002,7 +5386,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "PEA Jazz Ensemble",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS200",
@@ -5015,7 +5400,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Becoming Musical",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS201",
@@ -5028,7 +5414,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Intro to Music Theory Accel.",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS202",
@@ -5041,7 +5428,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Popular Music in America",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS203",
@@ -5054,7 +5442,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Listening to Music",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS206",
@@ -5067,7 +5456,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Musical Structure Songwriting",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS400",
@@ -5080,7 +5470,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Advanced Instrumental/Vocal I",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "MUS410",
@@ -5093,7 +5484,8 @@
     "lvl": "400",
     "pre": "MUS200",
     "st": "Techniques of Comp & Analysis",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": "MUS200 or MUS201"
   },
   {
     "course_no": "MUS420",
@@ -5106,7 +5498,8 @@
     "lvl": "400",
     "pre": "MUS410",
     "st": "The Compositional Process ",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": "MUS410"
   },
   {
     "course_no": "MUS500",
@@ -5119,7 +5512,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Adv Instrumental/Vocal II ",
-    "subj": "MUS"
+    "subj": "MUS",
+    "prereq_full": ""
   },
   {
     "course_no": "PHY210",
@@ -5132,7 +5526,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "An Introduction to Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": ""
   },
   {
     "course_no": "PHY220",
@@ -5145,7 +5540,8 @@
     "lvl": "200",
     "pre": "PHY210",
     "st": "An Introduction to Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY210"
   },
   {
     "course_no": "PHY221",
@@ -5158,7 +5554,8 @@
     "lvl": "200",
     "pre": "PHY210",
     "st": "Intro to Physics (enriched)",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": ""
   },
   {
     "course_no": "PHY230",
@@ -5171,7 +5568,8 @@
     "lvl": "200",
     "pre": "PHY220",
     "st": "An Introduction to Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY220"
   },
   {
     "course_no": "PHY231",
@@ -5184,7 +5582,8 @@
     "lvl": "200",
     "pre": "PHY221",
     "st": "Intro to Physics (enriched)",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY221"
   },
   {
     "course_no": "PHY310",
@@ -5197,7 +5596,8 @@
     "lvl": "300",
     "pre": "MAT230",
     "st": "Principles of Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "MAT230"
   },
   {
     "course_no": "PHY320",
@@ -5210,7 +5610,8 @@
     "lvl": "300",
     "pre": "PHY310",
     "st": "Principles of Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY310"
   },
   {
     "course_no": "PHY330",
@@ -5223,7 +5624,8 @@
     "lvl": "300",
     "pre": "PHY320",
     "st": "Principles of Physics",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY320"
   },
   {
     "course_no": "PHY400",
@@ -5236,7 +5638,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231",
     "st": "Modern Physics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory physics"
   },
   {
     "course_no": "PHY440",
@@ -5249,7 +5652,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231|BIO230",
     "st": "Applied Physics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory biology and physics"
   },
   {
     "course_no": "PHY450",
@@ -5262,7 +5666,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231",
     "st": "Robotics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory physics"
   },
   {
     "course_no": "PHY460",
@@ -5275,7 +5680,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY230|PHY231",
     "st": "Electronics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory physics"
   },
   {
     "course_no": "PHY470",
@@ -5288,7 +5694,8 @@
     "lvl": "400",
     "pre": "PHY330|PHY230|CHE330|CHE431",
     "st": "Introductory Astronomy ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory physics or chemistry"
   },
   {
     "course_no": "PHY480",
@@ -5301,7 +5708,8 @@
     "lvl": "400",
     "pre": "PHY470",
     "st": "Selected Topics in Astronomy ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY470"
   },
   {
     "course_no": "PHY510",
@@ -5314,7 +5722,8 @@
     "lvl": "500",
     "pre": "PHY330|PHY230|PHY231/MAT430",
     "st": "Advanced Physics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "One year of introductory physics and MAT430 (corequisite)"
   },
   {
     "course_no": "PHY520",
@@ -5327,7 +5736,8 @@
     "lvl": "500",
     "pre": "PHY510",
     "st": "Advanced Physics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY510"
   },
   {
     "course_no": "PHY530",
@@ -5340,7 +5750,8 @@
     "lvl": "500",
     "pre": "PHY520",
     "st": "Advanced Physics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY520"
   },
   {
     "course_no": "PHY570",
@@ -5353,7 +5764,8 @@
     "lvl": "500",
     "pre": "PHY470",
     "st": "Advanced Astronomy Methods ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY470"
   },
   {
     "course_no": "PHY640",
@@ -5366,7 +5778,8 @@
     "lvl": "600",
     "pre": "PHY400|PHY520|MAT520|MAT521",
     "st": "Quantum Mechanics ",
-    "subj": "PHY"
+    "subj": "PHY",
+    "prereq_full": "PHY400 and PHY520 and MAT520"
   },
   {
     "course_no": "PSY550",
@@ -5379,7 +5792,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Introduction to Psychology ",
-    "subj": "PSY"
+    "subj": "PSY",
+    "prereq_full": ""
   },
   {
     "course_no": "REL250",
@@ -5392,7 +5806,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Hebrew Bible / Old Testament",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL255",
@@ -5405,7 +5820,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "The New Testament",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL260",
@@ -5418,7 +5834,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Religious Traditions America",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL265",
@@ -5431,7 +5848,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Religion and Popular Culture",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL270",
@@ -5444,7 +5862,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Faith and Doubt",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL350",
@@ -5457,7 +5876,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Islam",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL355",
@@ -5470,7 +5890,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Judaism",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL360",
@@ -5483,7 +5904,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Christianities",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL365",
@@ -5496,7 +5918,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Hinduism and Buddhism",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL450",
@@ -5509,7 +5932,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Social Ethics ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL455",
@@ -5522,7 +5946,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Global Ethics ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL460",
@@ -5535,7 +5960,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Ethics of the Marketplace ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL470",
@@ -5548,7 +5974,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "The Bible As Literature ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL475",
@@ -5561,7 +5988,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Criticizing Religion ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL550",
@@ -5574,7 +6002,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Soul Searching ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL555",
@@ -5587,7 +6016,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Introduction to Philosophy ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL560",
@@ -5600,7 +6030,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Existentialism ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL565",
@@ -5613,7 +6044,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Mysticism ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL570",
@@ -5626,7 +6058,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "The Holocaust ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL575",
@@ -5639,7 +6072,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "East Asian Ways ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL592",
@@ -5652,7 +6086,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Epistemology ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL594",
@@ -5665,7 +6100,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Imagining Your Future",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL597",
@@ -5678,7 +6114,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Silicon Valley Ethics ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "REL598",
@@ -5691,7 +6128,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Spring Book Club ",
-    "subj": "REL"
+    "subj": "REL",
+    "prereq_full": ""
   },
   {
     "course_no": "RUS110",
@@ -5704,7 +6142,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": ""
   },
   {
     "course_no": "RUS111",
@@ -5717,7 +6156,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Basic Russian - Accelerated",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": ""
   },
   {
     "course_no": "RUS120",
@@ -5730,7 +6170,8 @@
     "lvl": "100",
     "pre": "RUS110",
     "st": "Elementary Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS110"
   },
   {
     "course_no": "RUS130",
@@ -5743,7 +6184,8 @@
     "lvl": "100",
     "pre": "RUS120",
     "st": "Elementary Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS120"
   },
   {
     "course_no": "RUS210",
@@ -5756,7 +6198,8 @@
     "lvl": "200",
     "pre": "RUS130",
     "st": "Intermediate Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS130"
   },
   {
     "course_no": "RUS220",
@@ -5769,7 +6212,8 @@
     "lvl": "200",
     "pre": "RUS210",
     "st": "Intermediate Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS210"
   },
   {
     "course_no": "RUS221",
@@ -5782,7 +6226,8 @@
     "lvl": "200",
     "pre": "RUS111",
     "st": "Basic Russian - Accelerated",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS111"
   },
   {
     "course_no": "RUS230",
@@ -5795,7 +6240,8 @@
     "lvl": "200",
     "pre": "RUS220",
     "st": "Intermediate Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS220"
   },
   {
     "course_no": "RUS231",
@@ -5808,7 +6254,8 @@
     "lvl": "200",
     "pre": "RUS221",
     "st": "Basic Russian - Accelerated",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS221"
   },
   {
     "course_no": "RUS310",
@@ -5821,7 +6268,8 @@
     "lvl": "300",
     "pre": "RUS230|RUS231",
     "st": "Advanced Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS230"
   },
   {
     "course_no": "RUS320",
@@ -5834,7 +6282,8 @@
     "lvl": "300",
     "pre": "RUS310",
     "st": "Advanced Russian",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS310"
   },
   {
     "course_no": "RUS400",
@@ -5847,7 +6296,8 @@
     "lvl": "400",
     "pre": "RUS320",
     "st": "Advanced Russian ",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS320"
   },
   {
     "course_no": "RUS502",
@@ -5860,7 +6310,8 @@
     "lvl": "500",
     "pre": "RUS400",
     "st": "Advanced Readings in Russian ",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS400"
   },
   {
     "course_no": "RUS503",
@@ -5873,7 +6324,8 @@
     "lvl": "500",
     "pre": "RUS502",
     "st": "Advanced Readings in Russian ",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS502"
   },
   {
     "course_no": "RUS504",
@@ -5886,7 +6338,8 @@
     "lvl": "500",
     "pre": "RUS503",
     "st": "Advanced Readings in Russian ",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "RUS503"
   },
   {
     "course_no": "RUS590",
@@ -5899,7 +6352,8 @@
     "lvl": "500",
     "pre": "PEA000",
     "st": "Selected Topics in Russian ",
-    "subj": "RUS"
+    "subj": "RUS",
+    "prereq_full": "Any 500-level Russian course"
   },
   {
     "course_no": "SPA110",
@@ -5912,7 +6366,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Elementary Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": ""
   },
   {
     "course_no": "SPA120",
@@ -5925,7 +6380,8 @@
     "lvl": "100",
     "pre": "SPA110|SPA12T",
     "st": "Elementary Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA110"
   },
   {
     "course_no": "SPA12T",
@@ -5938,7 +6394,8 @@
     "lvl": "100",
     "pre": "PEA000",
     "st": "Transition Spanish 1",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": ""
   },
   {
     "course_no": "SPA130",
@@ -5951,7 +6408,8 @@
     "lvl": "100",
     "pre": "SPA120|SPA13T|SPA13X",
     "st": "Elementary Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA120"
   },
   {
     "course_no": "SPA13T",
@@ -5964,7 +6422,8 @@
     "lvl": "100",
     "pre": "SPA12T",
     "st": "Transition Spanish 2",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": ""
   },
   {
     "course_no": "SPA13X",
@@ -5977,7 +6436,8 @@
     "lvl": "100",
     "pre": "SPA12T",
     "st": "Transition Spanish 1 - Accel",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": ""
   },
   {
     "course_no": "SPA210",
@@ -5990,7 +6450,8 @@
     "lvl": "200",
     "pre": "SPA130|SPA13T|SPA13X",
     "st": "Intermediate Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA130"
   },
   {
     "course_no": "SPA21X",
@@ -6003,7 +6464,8 @@
     "lvl": "200",
     "pre": "SPA13T|SPA13X",
     "st": "Transition Spanish 2 - Accel",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA13X"
   },
   {
     "course_no": "SPA220",
@@ -6016,7 +6478,8 @@
     "lvl": "200",
     "pre": "SPA210|SPA21X",
     "st": "Intermediate Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA210"
   },
   {
     "course_no": "SPA230",
@@ -6029,7 +6492,8 @@
     "lvl": "200",
     "pre": "SPA220",
     "st": "Intermediate Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA220"
   },
   {
     "course_no": "SPA310",
@@ -6042,7 +6506,8 @@
     "lvl": "300",
     "pre": "SPA230",
     "st": "Advanced Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA230"
   },
   {
     "course_no": "SPA320",
@@ -6055,7 +6520,8 @@
     "lvl": "300",
     "pre": "SPA310",
     "st": "Advanced Spanish",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA310"
   },
   {
     "course_no": "SPA400",
@@ -6068,7 +6534,8 @@
     "lvl": "400",
     "pre": "SPA320",
     "st": "Lat Am & Spanish Reading I ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA320"
   },
   {
     "course_no": "SPA500",
@@ -6081,7 +6548,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Lat Am & Spanish Reading II ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA502",
@@ -6094,7 +6562,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "21st C Challenges Opportunity",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA503",
@@ -6107,7 +6576,8 @@
     "lvl": "500",
     "pre": "SPA502",
     "st": "Family Community Contemp Life",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA504",
@@ -6120,7 +6590,8 @@
     "lvl": "500",
     "pre": "SPA503",
     "st": "Emerging Self: Art Identity ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA550",
@@ -6133,7 +6604,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Contemporary Hispanic Theater",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA552",
@@ -6146,7 +6618,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Realism Reality Lat Am Nar ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA553",
@@ -6159,7 +6632,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Supernovel ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA556",
@@ -6172,7 +6646,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Spanish Nonfiction ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA557",
@@ -6185,7 +6660,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Hispanic Cinema ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA558",
@@ -6198,7 +6674,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Span Through Digital Media ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "SPA400"
   },
   {
     "course_no": "SPA590",
@@ -6211,7 +6688,8 @@
     "lvl": "500",
     "pre": "SPA400",
     "st": "Selected Topics in Spanish ",
-    "subj": "SPA"
+    "subj": "SPA",
+    "prereq_full": "Any 500-level Spanish course"
   },
   {
     "course_no": "THR201",
@@ -6224,7 +6702,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Performance and Stage Presence",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR202",
@@ -6237,7 +6716,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Acting I",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR203",
@@ -6250,7 +6730,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Speechmaking",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR205",
@@ -6263,7 +6744,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Puppetry and Props",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR206",
@@ -6276,7 +6758,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "Filmmaking",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR207",
@@ -6289,7 +6772,8 @@
     "lvl": "200",
     "pre": "PEA000",
     "st": "New Voices New Stories",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR303",
@@ -6302,7 +6786,8 @@
     "lvl": "300",
     "pre": "PEA000",
     "st": "Screenwriting",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR404",
@@ -6315,7 +6800,8 @@
     "lvl": "400",
     "pre": "THR202",
     "st": "Acting II ",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": "THR202"
   },
   {
     "course_no": "THR405",
@@ -6328,7 +6814,8 @@
     "lvl": "400",
     "pre": "PEA000",
     "st": "Directing ",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": ""
   },
   {
     "course_no": "THR502",
@@ -6341,6 +6828,7 @@
     "lvl": "500",
     "pre": "PEC10M|THR404|THR202",
     "st": "Acting III - Adv Ensemble ",
-    "subj": "THR"
+    "subj": "THR",
+    "prereq_full": "Any previous acting course"
   }
 ]
