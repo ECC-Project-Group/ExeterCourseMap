@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import { pageview } from '../lib/gtag';
 import Footer from '../components/footer';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   // Google Tag Manager allows us to integrate with Google Analytics
   const router = useRouter();
   useEffect(() => {
