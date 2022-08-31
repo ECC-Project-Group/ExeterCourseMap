@@ -105,7 +105,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
         <p className="ml-2 mr-2 text-sm text-neutral-800">{cipp.desc}</p>
         <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">
-          {cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}
+          {cipp.prereqFull == '' || cipp.course_no == 'PEA000' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}
         </p>
       </div>
     );
@@ -149,8 +149,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     event.preventDefault();
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    if (element.id.startsWith('e')) return;
-    if (event.metaKey || event.ctrlKey) {
+    if (event.metaKey || event.ctrlKey){
       window.open(`/course/${element.id}`);
     } else window.open(`/course/${element.id}`, '_self');
   };
