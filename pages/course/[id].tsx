@@ -11,7 +11,6 @@ import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 import { server } from '../../lib/server';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { MdChecklist } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import ExpandableText from '../../components/expandableText';
