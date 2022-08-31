@@ -146,7 +146,6 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     event.preventDefault();
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    if (element.id.startsWith('e')) return;
     if (event.metaKey || event.ctrlKey){
       window.open(`/course/${element.id}`);
     } 
