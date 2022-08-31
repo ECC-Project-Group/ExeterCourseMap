@@ -10,6 +10,7 @@ import {
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
+import { server } from '../../lib/server';
 
 const CoursePage = ({
   params,
@@ -211,7 +212,7 @@ const CoursePage = ({
     // Add both the prereqs and coreqs of the last layer of prereqs
     for (const [base] of Object.entries(prereqs)) {
       if (currReqsLoaded.has(base)) continue; // That means base isn't in the last layer of prereqs
-      const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
+      const res = await fetch(`${server}/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
       prereqsToWrite[base] = newReqs[0]; // Prereqs of prereqs
 
@@ -234,7 +235,7 @@ const CoursePage = ({
     // Do the same for the coreqs
     for (const [base] of Object.entries(coreqs)) {
       if (currReqsLoaded.has(base)) continue;
-      const res = await fetch(`http://localhost:3000/api/prereqs/${base}`);
+      const res = await fetch(`${server}/api/prereqs/${base}`);
       const newReqs: ICourse[][] = await res.json();
       prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
       for (const newPrereq of newReqs[0]) {
@@ -264,9 +265,7 @@ const CoursePage = ({
     const eliToWrite: Record<string, string | undefined> = { ...eli };
 
     for (const courseNo of newCourses) {
-      const res = await fetch(
-        `http://localhost:3000/api/course_info/${courseNo}`
-      );
+      const res = await fetch(`${server}/api/course_info/${courseNo}`);
       const course: ICourse = await res.json();
       titlesToWrite[courseNo] = course.lt;
       descriptionsToWrite[courseNo] = course.desc;
