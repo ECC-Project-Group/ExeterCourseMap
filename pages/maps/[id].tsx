@@ -8,7 +8,8 @@ import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { name, prereqs, coreqs, descriptions, titles, eli } = params;
+  const { name, prereqs, coreqs, descriptions, titles, eli, prereqFull } =
+    params;
 
   // GA event for when a map is viewed
   useEffect(() => {
@@ -53,6 +54,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     desc: string;
     eli: string;
     locked: boolean;
+    prereqFull: string;
   }
   // Mouse coordinates - determines where to display popup
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -65,6 +67,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       desc: '',
       eli: '',
       locked: false,
+      prereqFull: '',
     } as CourseInfoPopupParams;
   };
   const initialPopupParams = getEmptyPopupParams();
@@ -84,19 +87,6 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   function CourseInfoPopup() {
     const cipp = courseInfoPopupParams;
 
-    let initialPrereqString = '';
-    let initialCoreqString = '';
-
-    if (cipp.active) {
-      (prereqs[cipp.course_no] as ICourse[]).forEach((prereq) => {
-        initialPrereqString += prereq.course_no + ', ';
-      });
-
-      (coreqs[cipp.course_no] as ICourse[]).forEach((coreq) => {
-        initialCoreqString += coreq.course_no + ', ';
-      });
-    }
-
     return (
       <div
         className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
@@ -113,26 +103,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
-        {initialPrereqString != '' && initialCoreqString != '' && (
-          <p className="ml-2 mr-2 text-sm">
-            You must have finished taking {initialPrereqString}and be finished
-            taking or is currently enrolled in {initialCoreqString.slice(0, -2)}
-            .
-          </p>
-        )}
-
-        {initialCoreqString == '' && (
-          <p className="ml-2 mr-2 text-sm">
-            You must have finished taking {initialPrereqString.slice(0, -2)}.
-          </p>
-        )}
-
-        {initialPrereqString == '' && (
-          <p className="ml-2 mr-2 text-sm">
-            You must have finished taking or is currently enrolled in{' '}
-            {initialCoreqString.slice(0, -2)}.
-          </p>
-        )}
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull}</p>
       </div>
     );
   }
@@ -150,6 +121,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       desc: descriptions[node.id],
       eli: eli[node.id],
       locked: false,
+      prereqFull: prereqFull[node.id],
     } as CourseInfoPopupParams;
     setCourseInfoPopupParams(popupParams);
   };
@@ -308,6 +280,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const titles: Record<string, string | undefined> = {}; // Long titles
   const descriptions: Record<string, string | undefined> = {}; // Descriptions
   const eli: Record<string, string | undefined> = {}; // Eligibility requirements
+  const prereqFull: Record<string, string> = {}; // COI course string
   for (const course of courses) {
     const reqs = getCourseRequirements(course.course_no);
     prereqs[course.course_no] = reqs[0];
@@ -315,6 +288,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
     descriptions[course.course_no] = course.desc;
     titles[course.course_no] = course.lt;
     eli[course.course_no] = course.eli;
+    prereqFull[course.course_no] = course.prereq_full;
   }
 
   return {
@@ -327,6 +301,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
         descriptions: descriptions,
         titles: titles,
         eli: eli,
+        prereqFull: prereqFull,
       },
     },
   };
