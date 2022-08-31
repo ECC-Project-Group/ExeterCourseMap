@@ -22,7 +22,7 @@ const Header = () => {
   const [sent, setSent] = useState(false);
 
   return (
-    <header className="absolute flex w-full flex-row justify-between bg-none py-4 px-8 lg:px-40">
+    <header className="flex w-full flex-row justify-between bg-exeter bg-none py-4 px-8 lg:px-40">
       <Link href="/" passHref={true}>
         <a className="font-display text-lg font-black text-white">
           EXETER COURSE MAP

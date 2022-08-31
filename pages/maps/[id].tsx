@@ -182,7 +182,6 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <div>
-      <div className="bg-exeter px-8 pt-16 pb-0 lg:px-40"></div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
           className="cursor-move shadow-md"

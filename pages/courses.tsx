@@ -70,7 +70,7 @@ const Courses = ({
 
   return (
     <div>
-      <div className="bg-exeter px-8 pt-24 pb-14 lg:px-40">
+      <div className="bg-exeter py-16 px-8 lg:px-40">
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Courses
         </h1>
