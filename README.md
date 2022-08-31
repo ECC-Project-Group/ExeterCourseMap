@@ -26,9 +26,3 @@ You can test this application using two methods:
 - Run `npm run build` and `npm run start` to mimic an optimized Next.js application.
 
 Ensure the application works in both stages before committing to the main branch.
-
-## Husky
-
-Exeter Course Map uses Husky to ensure all files are correctly linted and formatted before committing.
-Please pay close attention to any warnings it may output; this is vital to ensuring clean,
-consistent code.
