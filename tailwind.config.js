@@ -22,6 +22,7 @@ module.exports = {
       },
       fontFamily: {
         display: ['Inter'],
+        mono: ['JetBrains Mono'],
       },
     },
   },
