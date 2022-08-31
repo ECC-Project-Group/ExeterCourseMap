@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import useDarkMode from '../hooks/toggleDarkMode';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -10,6 +12,20 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
         <a>{name}</a>
       </Link>
     </li>
+  );
+};
+
+const DarkThemeToggleIcon = () => {
+  const [darkTheme, setDarkTheme] = useDarkMode();
+  const handleMode = () => setDarkTheme(!darkTheme);
+  return (
+    <span onClick={handleMode}>
+      {darkTheme ? (
+        <FaSun size="24" className="top-navigation-icon" />
+      ) : (
+        <FaMoon size="24" className="top-navigation-icon" />
+      )}
+    </span>
   );
 };
 
@@ -24,10 +40,11 @@ const Header = () => {
   return (
     <header className="flex w-full flex-row justify-between bg-exeter bg-none py-4 px-8 lg:px-40">
       <Link href="/" passHref={true}>
-        <a className="font-display text-lg font-black text-white">
+        <a className="font-display text-lg font-black text-white dark:text-black">
           EXETER COURSE MAP
         </a>
       </Link>
+      <DarkThemeToggleIcon></DarkThemeToggleIcon>
 
       <ul className="flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
