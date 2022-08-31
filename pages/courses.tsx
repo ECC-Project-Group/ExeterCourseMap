@@ -56,7 +56,8 @@ const Courses = ({
                   course.course_no
                     .toLowerCase()
                     .includes(query.toLowerCase()) ||
-                  query.toLowerCase().startsWith(subject)
+                  query.toLowerCase().startsWith(subject) ||
+                  subject.startsWith(query.toLowerCase())
               : course.lt.toLowerCase().includes(query.toLowerCase()) ||
                   course.course_no.toLowerCase().includes(query.toLowerCase());
           })
@@ -98,14 +99,16 @@ const Courses = ({
                   href={`/course/${course.course_no}`}
                   key={course.course_no}
                 >
-                  <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 shadow-md outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter hover:shadow-none md:m-4">
-                    <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
-                      {course.course_no}
-                    </h2>
-                    <h1 className="font-display text-lg group-hover:text-white">
-                      {course.lt}
-                    </h1>
-                  </div>
+                  <a>
+                    <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 shadow-md outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter hover:shadow-none md:m-4">
+                      <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
+                        {course.course_no}
+                      </h2>
+                      <h1 className="font-display text-lg group-hover:text-white">
+                        {course.lt}
+                      </h1>
+                    </div>
+                  </a>
                 </Link>
               );
             })}

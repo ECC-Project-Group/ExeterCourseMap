@@ -102,8 +102,8 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           {cipp.longTitle} · {cipp.course_no}
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull}</p>
+        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}</p>
       </div>
     );
   }
@@ -143,9 +143,14 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   };
   // Open the course page associated with this course
   const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
+    event.preventDefault();
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    window.open(`/course/${element.id}`, '_self');
+    if (element.id.startsWith('e')) return;
+    if (event.metaKey || event.ctrlKey){
+      window.open(`/course/${element.id}`);
+    } 
+    else window.open(`/course/${element.id}`, '_self');
   };
 
   const reactFlowStyle = {
