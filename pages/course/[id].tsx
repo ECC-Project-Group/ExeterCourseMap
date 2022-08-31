@@ -372,9 +372,13 @@ const CoursePage = ({
 export async function getStaticPaths() {
   const courses = getAllCourses();
 
-  const paths = courses.map((course) => ({
-    params: { id: course.course_no },
-  }));
+  const paths = courses
+    .filter((course) => course.course_no !== 'PEA000')
+    .map((course) => {
+      return {
+        params: { id: course.course_no },
+      };
+    });
 
   return { paths, fallback: false };
 }
