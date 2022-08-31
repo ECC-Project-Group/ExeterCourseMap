@@ -11,10 +11,14 @@ import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 import { server } from '../../lib/server';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { MdChecklist } from 'react-icons/md';
+import { BsPerson } from 'react-icons/bs';
+import ExpandableText from '../../components/expandableText';
 
 const CoursePage = ({
-                              params,
-                            }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  params,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   // initialPrereqs maps each course id to its prereqs
   // initialDescriptions maps each course id to its description
   // initialTitles maps each course id to its full title
@@ -147,7 +151,9 @@ const CoursePage = ({
         </p>
         <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
         <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">{cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}</p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic">
+          {cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}
+        </p>
       </div>
     );
   }
@@ -193,10 +199,9 @@ const CoursePage = ({
     event.preventDefault();
     // check if element is an edge
     if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    if (event.metaKey || event.ctrlKey){
+    if (event.metaKey || event.ctrlKey) {
       window.open(`/course/${element.id}`);
-    } 
-    else window.open(`/course/${element.id}`, '_self');
+    } else window.open(`/course/${element.id}`, '_self');
   };
 
   // Advances to the next level of requirements - called when "More Prereqs" is clicked
@@ -300,25 +305,37 @@ const CoursePage = ({
         </h1>
       </div>
       <div className="grid grid-cols-1 gap-16 px-8 pt-14 pb-20 md:grid-cols-5 lg:px-40">
-        <div className="md:col-span-2">
-          <h1 className="font-display text-3xl font-black text-gray-700">
-            Description
-          </h1>
-          <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
-            {course.desc}
-          </h1>
-          <h1 className="font-display text-3xl font-black text-gray-700">
-            Eligibility
-          </h1>
-          <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
-            {course.eli}
-          </h1>
-          <h1 className="font-display text-3xl font-black text-gray-700">
-            Pre-requisites and Co-requisites
-          </h1>
-          <h1 className="mt-4 font-display text-lg leading-8 text-gray-900">
-            {course.prereq_full}
-          </h1>
+        <div className="flex flex-col gap-8 md:col-span-2">
+          <div className="flex flex-col gap-2">
+            <h1 className="font-display text-3xl font-black text-gray-700">
+              Information
+            </h1>
+            <div className="[&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 text-md grid grid-cols-2">
+              <div className="col-span-2 grid grid-cols-2">
+                <p className="flex flex-row items-center gap-2 font-mono">
+                  <BsPerson />
+                  ELIGIBILITY
+                </p>
+                <p>{course.eli || 'All students'}</p>
+              </div>
+              <div className="col-span-2 grid grid-cols-2">
+                <p className="flex flex-row items-center gap-2 font-mono">
+                  <MdChecklist />
+                  PRE/CO-REQUISITES
+                </p>
+                <p>{course.prereq_full || 'None'}</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <h1 className="font-display text-3xl font-black text-gray-700">
+              Description
+            </h1>
+            <ExpandableText
+              className="font-display text-lg leading-8 text-gray-900"
+              text={course.desc}
+            />
+          </div>
         </div>
         <div className="md:col-span-3">
           <div className="flex justify-between">
