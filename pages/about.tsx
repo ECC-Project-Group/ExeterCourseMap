@@ -10,7 +10,7 @@ const About : NextPage = (props) => {
             About
             </h1>
         </div>
-            <p className={questionStyle}>
+            <p className="text-3xl ml-40 mt-8 font-medium">
                 What&rsquo;s the point of this website?
             </p>
             <p className={answerStyle}>
@@ -58,6 +58,27 @@ const About : NextPage = (props) => {
             <p className={answerStyle}>
                 The Exeter Course Map was designed and built by Michael Chen, Byran Huang, Nathan Khuu, and Eric Li from the Exeter Computing Club Project Group. We also want to thank Avaninder Bhaghayath for helping us fix our database.
             </p>
+            <p className={questionStyle}>
+                I&rsquo;m a PEA student interesting in contributing to the Course Map. Who do I contact?
+            </p>
+            <p className="text-xl ml-44 mr-44 mt-3 mb-8">
+                <span>Reach out to either Michael Chen </span>
+                <a 
+                    href="mailto: mqchen@exeter.edu"
+                    className="underline text-blue-600 "
+                >
+                   (mqchen@exeter.edu)
+                </a>
+                <span> or Nathan Khuu </span>
+                <a 
+                    href="mailto: nkhuu@exeter.edu"
+                    className="underline text-blue-600 "
+                >
+                    (nkhuu@exeter.edu)
+                </a>
+                <span>. We&rsquo;re open to beginners, so don&rsquo;t be shy! Our only requirements are that you care about the project and can learn new things.</span>
+            </p>
+            
     </div>
     );
 };
