@@ -26,7 +26,7 @@ const challengingThings = [
   'landing a rover on Mars',
   'writing an eighty page essay',
   'solving a Millennium problem',
-  " solving a 10x10 Rubik's cube",
+  "solving a 10x10 Rubik's cube",
 ];
 
 // The campus three.js element
