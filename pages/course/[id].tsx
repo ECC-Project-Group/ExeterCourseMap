@@ -11,7 +11,6 @@ import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 import { server } from '../../lib/server';
-import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { MdChecklist } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import ExpandableText from '../../components/expandableText';
@@ -310,7 +309,7 @@ const CoursePage = ({
             <h1 className="font-display text-3xl font-black text-gray-700">
               Information
             </h1>
-            <div className="[&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 text-md grid grid-cols-2">
+            <div className="text-md grid grid-cols-2 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100">
               <div className="col-span-2 grid grid-cols-2">
                 <p className="flex flex-row items-center gap-2 font-mono">
                   <BsPerson />
