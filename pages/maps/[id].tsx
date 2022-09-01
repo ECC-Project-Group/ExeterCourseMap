@@ -6,7 +6,10 @@ import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
-import { AnimatePresence, motion } from 'framer-motion';
+import {
+  CourseInfoPopupObject,
+  TransitionWrapper,
+} from '../../components/courseInfoPopup';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { name, prereqs, coreqs, descriptions, titles, eli, prereqFull } =
@@ -48,117 +51,27 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
       setElements(newElements);
     }
   }, [graph, currentlyHoveredId]);
-  interface CourseInfoPopupParams {
-    active: boolean; // whether the popup is currently active
-    longTitle: string;
-    course_no: string;
-    desc: string;
-    eli: string;
-    locked: boolean;
-    prereqFull: string;
-  }
-  // Mouse coordinates - determines where to display popup
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  // Parameters for course info popup (opened when mouse hovers over node)
-  const getEmptyPopupParams = () => {
-    return {
-      active: false,
-      longTitle: '',
-      course_no: '',
-      desc: '',
-      eli: '',
-      locked: false,
-      prereqFull: '',
-    } as CourseInfoPopupParams;
-  };
-  const initialPopupParams = getEmptyPopupParams();
-  const [courseInfoPopupParams, setCourseInfoPopupParams] =
-    useState<CourseInfoPopupParams>(initialPopupParams);
-  // Track mouse position
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (courseInfoPopupParams.locked) return;
-      setCoords({ x: e.pageX, y: e.pageY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [coords, courseInfoPopupParams.locked]);
-  function CourseInfoPopup() {
-    const cipp = courseInfoPopupParams;
-
-    return (
-      <div
-        className="m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200"
-        style={{
-          display: cipp.active ? 'block' : 'none',
-          position: 'absolute',
-          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of  the node
-          top: coords.y,
-          zIndex: 100,
-        }}
-      >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold text-black">
-          {cipp.longTitle} · {cipp.course_no}
-        </p>
-        <p className="ml-2 mr-2 text-sm text-neutral-800">{cipp.desc}</p>
-        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">
-          {cipp.prereqFull == '' || cipp.course_no == 'PEA000'
-            ? ''
-            : `Prerequisite(s): ${cipp.prereqFull}`}
-        </p>
-      </div>
-    );
-  }
-  // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode {
-    id: string;
-  }
-  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
-    setCurrentlyHoveredId(node.id);
-    if (courseInfoPopupParams.locked) return;
-    const popupParams = {
-      active: true,
-      longTitle: titles[node.id],
-      course_no: node.id,
-      desc: descriptions[node.id],
-      eli: eli[node.id],
-      locked: false,
-      prereqFull: prereqFull[node.id],
-    } as CourseInfoPopupParams;
-    setCourseInfoPopupParams(popupParams);
-  };
-  const nodeUnhoverCallback = () => {
-    setCurrentlyHoveredId('');
-    if (courseInfoPopupParams.locked) return;
-    setCourseInfoPopupParams(getEmptyPopupParams());
-  };
-  // Lock/unlock course info popup when right click on popup
-  const nodeRightClickCallback = (event: React.MouseEvent) => {
-    event.preventDefault();
-    const popupParams = courseInfoPopupParams;
-    popupParams.locked = !popupParams.locked;
-    setCourseInfoPopupParams(popupParams);
-  };
-  // Unlock course info popup when click on canvas
-  const paneClickCallback = () => {
-    setCourseInfoPopupParams(getEmptyPopupParams());
-  };
-  // Open the course page associated with this course
-  const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
-    event.preventDefault();
-    // check if element is an edge
-    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    if (event.metaKey || event.ctrlKey) {
-      window.open(`/course/${element.id}`);
-    } else window.open(`/course/${element.id}`, '_self');
-  };
 
   const reactFlowStyle = {
     background: `rgb(35, 35, 35)`,
   };
+
+  const {
+    nodeHoverCallback,
+    nodeUnhoverCallback,
+    nodeRightClickCallback,
+    paneClickCallback,
+    nodeClickCallback,
+    courseInfoPopupParams,
+    coords,
+    CourseInfoPopup,
+  } = CourseInfoPopupObject({
+    setCurrentlyHoveredId,
+    titles,
+    descriptions,
+    eli,
+    prereqFull,
+  });
 
   return (
     <div>
@@ -183,22 +96,12 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           defaultZoom={0.7}
         ></ReactFlow>
       </div>
-      <AnimatePresence>
-        {courseInfoPopupParams.active && (
-          <motion.div
-            className="pointer-events-none absolute top-0 left-0 z-50 h-screen w-screen bg-none"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            style={{
-              transformOrigin: `${coords.x - 100}px ${coords.y - 100}px`,
-            }}
-            transition={{ duration: 0.2, ease: 'circOut' }}
-          >
-            <CourseInfoPopup />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <TransitionWrapper
+        courseInfoPopupParams={courseInfoPopupParams}
+        coords={coords}
+      >
+        <CourseInfoPopup />
+      </TransitionWrapper>
     </div>
   );
 };
