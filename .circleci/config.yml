@@ -5,7 +5,7 @@ jobs:
   test-all:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:16
+      - image: cimg/node:16.17.0
     steps:
       - checkout
       - run:
