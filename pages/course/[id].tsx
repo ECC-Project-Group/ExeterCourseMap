@@ -205,7 +205,7 @@ const CoursePage = ({
 
   return (
     <div>
-      <div className="bg-exeter px-8 pt-20 pb-20 lg:px-40">
+      <div className="bg-exeter px-8 pt-20 pb-20 dark:bg-neutral-800 lg:px-40">
         <h1 className="font-display text-2xl text-gray-300 md:text-3xl">
           {course.course_no}
         </h1>
@@ -216,10 +216,10 @@ const CoursePage = ({
       <div className="grid grid-cols-1 gap-16 px-8 pt-14 pb-20 md:grid-cols-5 lg:px-40">
         <div className="flex flex-col gap-8 md:col-span-2">
           <div className="flex flex-col gap-2">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Information
             </h1>
-            <div className="text-md grid grid-cols-2 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100">
+            <div className="text-md grid grid-cols-2 outline outline-1 outline-neutral-300 dark:bg-exeter dark:text-neutral-100 dark:outline-exeter-400 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 dark:[&>*:nth-child(even)]:bg-exeter-600">
               <div className="col-span-2 grid grid-cols-2">
                 <p className="flex flex-row items-center gap-2 font-mono">
                   <BsPerson />
@@ -237,22 +237,22 @@ const CoursePage = ({
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Description
             </h1>
             <ExpandableText
-              className="font-display text-lg leading-8 text-gray-900"
+              className="font-display text-lg leading-8 text-gray-900 dark:text-neutral-100"
               text={course.desc}
             />
           </div>
         </div>
         <div className="md:col-span-3">
           <div className="flex justify-between">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Requirements
             </h1>
             <button
-              className="z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
+              className="z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out hover:bg-gray-600 active:translate-y-1 dark:bg-exeter-500 dark:outline dark:outline-1 dark:outline-exeter-300 dark:hover:bg-exeter-400"
               onClick={getMoreReqs}
             >
               More Requirements
@@ -260,7 +260,7 @@ const CoursePage = ({
           </div>
           <div className="h-full">
             <ReactFlow
-              className="mt-4 cursor-move shadow-md"
+              className="mt-4 cursor-move rounded-lg shadow-md"
               nodesDraggable={false}
               nodesConnectable={false}
               elementsSelectable={false}

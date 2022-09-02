@@ -114,7 +114,7 @@ const CourseInfoPopupObject = ({
     coords,
     CourseInfoPopup: () => (
       <div
-        className="m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200"
+        className="m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200 dark:bg-neutral-700/80 dark:outline dark:outline-1 dark:outline-neutral-400"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
@@ -123,12 +123,16 @@ const CourseInfoPopupObject = ({
           zIndex: 100,
         }}
       >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold text-black">
+        <p className="ml-2 mr-2 mt-2 text-xl font-bold text-black dark:text-white">
           {cipp.longTitle} · {cipp.course_no}
         </p>
-        <p className="ml-2 mr-2 text-sm text-neutral-800">{cipp.desc}</p>
-        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">
+        <p className="ml-2 mr-2 text-sm text-neutral-800 dark:text-neutral-300">
+          {cipp.desc}
+        </p>
+        <p className="ml-2 mr-2 text-sm italic dark:text-neutral-300">
+          {cipp.eli}
+        </p>
+        <p className="ml-2 mr-2 mb-2 text-sm italic dark:text-neutral-300">
           {cipp.prereqFull == '' || cipp.course_no == 'PEA000'
             ? ''
             : `Prerequisite(s): ${cipp.prereqFull}`}

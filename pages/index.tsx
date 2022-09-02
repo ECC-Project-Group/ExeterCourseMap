@@ -56,7 +56,7 @@ const Home: NextPage = () => {
   return (
     <div className="overflow-x-hidden">
       <div className="flex-column flex h-[70vh] min-h-[500px] justify-center">
-        <div className="absolute -z-10 h-[70vh] min-h-[500px] w-full bg-exeter">
+        <div className="absolute -z-10 h-[70vh] min-h-[500px] w-full bg-exeter dark:bg-neutral-800">
           {/* Declarative representation of the campus model */}
           <Canvas
             camera={{ fov: 50, position: [0, 0, 10] }}
@@ -107,12 +107,12 @@ const Home: NextPage = () => {
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
         <div className="w-full lg:w-3/5">
-          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent md:text-6xl">
+          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent dark:from-red-200 dark:to-exeter-100 md:text-6xl">
             Find the perfect course.
           </p>
           {/* <div className="absolute -right-[600px] -z-20 hidden h-[1000px] w-[1000px] rounded-full bg-gradient-to-bl from-red-500 to-exeter lg:block" /> */}
-          <p className="py-8 text-2xl font-semibold text-gray-700 md:text-3xl">
-            <span className="text-gray-500">
+          <p className="py-8 text-2xl font-semibold text-gray-700 dark:text-white md:text-3xl">
+            <span className="text-gray-500 dark:text-neutral-200">
               No more scrolling through the Courses of Instruction PDF.
             </span>{' '}
             &nbsp;Easily find the information and requirements on any PEA
@@ -123,11 +123,13 @@ const Home: NextPage = () => {
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
         <div className="w-full lg:w-3/5">
-          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text pb-1 font-display text-4xl font-black text-transparent md:text-6xl">
+          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent dark:from-red-200 dark:to-exeter-100 md:text-6xl">
             Know your prereqs.
           </p>
-          <p className="py-8 text-2xl font-semibold text-gray-700 md:text-3xl">
-            <span className="text-gray-500">Stop fiddling with LionLinks.</span>
+          <p className="py-8 text-2xl font-semibold text-gray-700 dark:text-white md:text-3xl">
+            <span className="text-gray-500 dark:text-neutral-200">
+              Stop fiddling with LionLinks.
+            </span>
             &nbsp;View maps of all course prerequisites and see what classes you
             can take.
           </p>
