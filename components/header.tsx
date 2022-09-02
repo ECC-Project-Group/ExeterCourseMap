@@ -30,7 +30,7 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="group relative w-14 rounded-full bg-white outline outline-2 outline-black transition-all duration-500 ease-out dark:bg-neutral-600 dark:outline-white"
+      className="group relative h-6 w-12 rounded-full border-2 border-white bg-white transition-all duration-500 ease-out dark:bg-neutral-600"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all duration-500 ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
@@ -38,7 +38,9 @@ const ThemeSwitch = () => {
           {
             {
               dark: <HiMoon className="text-lg group-active:scale-x-[0.769]" />,
-              light: <HiSun className="text-xl group-active:scale-x-[0.769]" />,
+              light: (
+                <HiSun className="text-xl text-neutral-600 group-active:scale-x-[0.769]" />
+              ),
             }[(theme === 'system' ? systemTheme : theme) ?? 'light']
           }
         </div>
@@ -63,7 +65,6 @@ const Header = () => {
         </a>
       </Link>
 
-      <ThemeSwitch />
       <ul className="flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
         <HeaderNavItem name="Maps" href="/maps" />
@@ -191,6 +192,7 @@ const Header = () => {
             </div>
           )}
         </div>
+        <ThemeSwitch />
       </ul>
     </header>
   );
