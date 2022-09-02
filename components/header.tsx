@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -10,6 +12,30 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
         <a>{name}</a>
       </Link>
     </li>
+  );
+};
+
+const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, systemTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <button className="transition-all ease-out bg-white" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+      {
+        {
+          dark: <FaMoon />,
+          light: <FaSun />,
+        }[(theme === 'system' ? systemTheme : theme) ?? 'light']
+      }
+    </button>
   );
 };
 
@@ -24,11 +50,12 @@ const Header = () => {
   return (
     <header className="flex w-full flex-row justify-between bg-exeter bg-none py-4 px-8 lg:px-40">
       <Link href="/" passHref={true}>
-        <a className="font-display text-lg font-black text-white dark:text-black">
+        <a className="font-display text-lg font-black text-white">
           EXETER COURSE MAP
         </a>
       </Link>
 
+      <ThemeSwitch />
       <ul className="flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
         <HeaderNavItem name="Maps" href="/maps" />
