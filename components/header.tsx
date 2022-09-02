@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import useDarkMode from '../hooks/toggleDarkMode';
-import { FaMoon, FaSun } from 'react-icons/fa';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -12,20 +10,6 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
         <a>{name}</a>
       </Link>
     </li>
-  );
-};
-
-const DarkThemeToggleIcon = () => {
-  const [darkTheme, setDarkTheme] = useDarkMode();
-  const handleMode = () => setDarkTheme(!darkTheme);
-  return (
-    <span onClick={handleMode}>
-      {darkTheme ? (
-        <FaSun size="24" className="top-navigation-icon" />
-      ) : (
-        <FaMoon size="24" className="top-navigation-icon" />
-      )}
-    </span>
   );
 };
 
@@ -44,7 +28,6 @@ const Header = () => {
           EXETER COURSE MAP
         </a>
       </Link>
-      <DarkThemeToggleIcon></DarkThemeToggleIcon>
 
       <ul className="flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
