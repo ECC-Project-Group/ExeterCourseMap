@@ -28,13 +28,20 @@ const ThemeSwitch = () => {
   }
 
   return (
-    <button className="transition-all ease-out bg-white" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      {
-        {
-          dark: <FaMoon />,
-          light: <FaSun />,
-        }[(theme === 'system' ? systemTheme : theme) ?? 'light']
-      }
+    <button
+      className="group relative w-14 rounded-full bg-white outline outline-2 outline-black transition-all ease-out dark:bg-neutral-600 dark:outline-white"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
+        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black dark:bg-neutral-800/40 dark:text-white">
+          {
+            {
+              dark: <FaMoon className="group-active:scale-x-[0.769]" />,
+              light: <FaSun className="group-active:scale-x-[0.769]" />,
+            }[(theme === 'system' ? systemTheme : theme) ?? 'light']
+          }
+        </div>
+      </div>
     </button>
   );
 };
