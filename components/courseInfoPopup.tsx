@@ -22,14 +22,14 @@ const CourseInfoPopupObject = ({
   setCurrentlyHoveredId,
   titles,
   descriptions,
-  eli,
-  prereqFull,
+  eliReqs,
+  prereqsFull,
 }: {
   setCurrentlyHoveredId: Dispatch<SetStateAction<string>>;
   titles: Record<string, string | undefined>;
   descriptions: Record<string, string | undefined>;
-  eli: Record<string, string | undefined>;
-  prereqFull: Record<string, string | undefined>;
+  eliReqs: Record<string, string | undefined>;
+  prereqsFull: Record<string, string | undefined>;
 }) => {
   // Mouse coordinates - determines where to display popup
   const [coords, setCoords] = useState({ x: 0, y: 0 });
@@ -67,9 +67,9 @@ const CourseInfoPopupObject = ({
       longTitle: titles[node.id],
       course_no: node.id,
       desc: descriptions[node.id],
-      eli: eli[node.id],
+      eli: eliReqs[node.id],
       locked: false,
-      prereqFull: prereqFull[node.id],
+      prereqFull: prereqsFull[node.id],
     } as CourseInfoPopupParams;
     setCourseInfoPopupParams(popupParams);
   };
