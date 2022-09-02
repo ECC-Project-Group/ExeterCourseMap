@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { HiSun, HiMoon } from 'react-icons/hi';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -29,15 +30,15 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="group relative w-14 rounded-full bg-white outline outline-2 outline-black transition-all ease-out dark:bg-neutral-600 dark:outline-white"
+      className="group relative w-14 rounded-full bg-white outline outline-2 outline-black transition-all duration-500 ease-out dark:bg-neutral-600 dark:outline-white"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
-        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black dark:bg-neutral-800/40 dark:text-white">
+      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all duration-500 ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
+        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black duration-500 dark:bg-neutral-800/40 dark:text-white">
           {
             {
-              dark: <FaMoon className="group-active:scale-x-[0.769]" />,
-              light: <FaSun className="group-active:scale-x-[0.769]" />,
+              dark: <HiMoon className="text-lg group-active:scale-x-[0.769]" />,
+              light: <HiSun className="text-xl group-active:scale-x-[0.769]" />,
             }[(theme === 'system' ? systemTheme : theme) ?? 'light']
           }
         </div>
