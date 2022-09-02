@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { HiSun, HiMoon } from 'react-icons/hi';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (
@@ -10,6 +13,39 @@ const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
         <a>{name}</a>
       </Link>
     </li>
+  );
+};
+
+const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme, systemTheme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <button
+      className="group relative h-6 w-12 rounded-full border-2 border-white bg-white transition-all duration-500 ease-out dark:bg-neutral-600"
+      onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+    >
+      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all duration-500 ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
+        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black duration-500 dark:bg-neutral-800/40 dark:text-white">
+          {
+            {
+              dark: <HiMoon className="text-lg group-active:scale-x-[0.769]" />,
+              light: (
+                <HiSun className="text-xl text-neutral-600 group-active:scale-x-[0.769]" />
+              ),
+            }[(theme === 'system' ? systemTheme : theme) ?? 'light']
+          }
+        </div>
+      </div>
+    </button>
   );
 };
 
@@ -156,6 +192,7 @@ const Header = () => {
             </div>
           )}
         </div>
+        <ThemeSwitch />
       </ul>
     </header>
   );
