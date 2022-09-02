@@ -58,14 +58,15 @@ const Header = () => {
   const [sent, setSent] = useState(false);
 
   return (
-    <header className="flex w-full flex-row justify-between bg-exeter bg-none py-4 px-8 lg:px-40">
+    <header className="relative flex w-full flex-row justify-between overflow-visible bg-gradient-to-b from-exeter-400 to-exeter py-4 px-8 dark:from-transparent dark:to-transparent lg:px-40">
+      <div className="absolute top-0 bottom-0 left-0 right-0 hidden origin-top scale-y-150 bg-gradient-to-b from-exeter to-neutral-800 dark:block"></div>
       <Link href="/" passHref={true}>
-        <a className="font-display text-lg font-black text-white">
+        <a className="z-10 font-display text-lg font-black text-white">
           EXETER COURSE MAP
         </a>
       </Link>
 
-      <ul className="flex flex-row justify-start font-display text-white">
+      <ul className="z-10 flex flex-row justify-start font-display text-white">
         <HeaderNavItem name="Courses" href="/courses" />
         <HeaderNavItem name="Maps" href="/maps" />
         <HeaderNavItem name="About" href="/about" />
@@ -88,20 +89,20 @@ const Header = () => {
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ ease: 'circOut', duration: 0.2 }}
-                    className="absolute right-0 top-8 z-20 flex w-80 flex-col rounded-md bg-gray-200 py-2 px-3 shadow-lg"
+                    className="absolute right-0 top-8 z-20 flex w-80 flex-col rounded-md bg-gray-200 py-2 px-3 shadow-lg dark:bg-neutral-600"
                   >
-                    <p className="py-1 font-display text-gray-500">
+                    <p className="py-1 font-display text-gray-500 dark:text-neutral-300">
                       Sign in with...
                     </p>
                     <a
                       onClick={() => signIn('azure-ad')}
-                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-exeter hover:text-white hover:shadow-md"
+                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-exeter hover:text-white hover:shadow-md dark:bg-neutral-500 dark:text-white dark:hover:bg-exeter"
                     >
                       Exeter
                     </a>
                     <a
                       onClick={() => signIn('google')}
-                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-blue-600 hover:text-white hover:shadow-md"
+                      className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-blue-600 hover:text-white hover:shadow-md dark:bg-neutral-500 dark:text-white dark:hover:bg-blue-600"
                     >
                       Google
                     </a>
@@ -120,7 +121,7 @@ const Header = () => {
                           setSent(true);
                           signIn('email', { email, redirect: false });
                         }}
-                        className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-gray-600 hover:text-white hover:shadow-md"
+                        className="my-1 cursor-pointer rounded-md bg-slate-100 p-2 text-center font-display font-bold text-gray-600 shadow-sm transition-all hover:bg-gray-600 hover:text-white hover:shadow-md dark:bg-neutral-500 dark:text-white dark:hover:bg-neutral-700"
                       >
                         Email
                       </a>
@@ -152,15 +153,15 @@ const Header = () => {
                     initial={{ y: -10, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ ease: 'circOut', duration: 0.2 }}
-                    className="absolute right-0 top-8 z-20 flex h-32 w-80 flex-col bg-gray-200 p-4 shadow-lg"
+                    className="absolute right-0 top-8 z-20 flex h-32 w-80 flex-col rounded-md bg-gray-200 p-4 shadow-lg dark:bg-neutral-600"
                   >
                     <div className="mb-3 flex flex-row justify-between">
-                      <a className="font-display text-sm font-black text-gray-700">
+                      <a className="font-display text-sm font-black text-gray-700 dark:text-neutral-300">
                         EXETER COURSE MAP
                       </a>
                       <Link href="/api/auth/signout">
                         <a
-                          className="rounded-lg font-display text-sm text-slate-600"
+                          className="rounded-lg font-display text-sm text-gray-600 dark:text-neutral-200"
                           onClick={(e) => {
                             e.preventDefault();
                             signOut();
@@ -172,16 +173,16 @@ const Header = () => {
                     </div>
                     <div className="flex flex-row items-center">
                       <div
-                        className="aspect-square w-16 text-gray-700"
+                        className="aspect-square w-16 text-gray-700 dark:brightness-150"
                         style={{
                           backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' stroke='%23707070'%3E%3Cg class='mectrl_stroke' fill='none'%3E%3Ccircle cx='32' cy='32' r='30.25' stroke-width='1.5'/%3E%3Cg transform='matrix(.9 0 0 .9 10.431 10.431)' stroke-width='2'%3E%3Ccircle cx='24.25' cy='18' r='9'/%3E%3Cpath d='M11.2 40a1 1 0 1126.1 0'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                         }}
                       />
                       <div className="ml-3">
-                        <h1 className="font-display font-bold text-gray-700">
+                        <h1 className="font-display font-bold text-gray-700 dark:text-white">
                           {session.user.name}
                         </h1>
-                        <h2 className="font-display text-sm text-gray-500">
+                        <h2 className="font-display text-sm text-gray-500 dark:text-neutral-300">
                           {session.user.email}
                         </h2>
                       </div>

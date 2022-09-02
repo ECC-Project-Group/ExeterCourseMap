@@ -13,6 +13,10 @@ import { ICourse } from '../../types';
 import { MdChecklist } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import ExpandableText from '../../components/expandableText';
+import {
+  CourseInfoPopupObject,
+  TransitionWrapper,
+} from '../../components/courseInfoPopup';
 
 const CoursePage = ({
   params,
@@ -73,116 +77,22 @@ const CoursePage = ({
     }
   }, [graph, currentlyHoveredId]);
 
-  interface CourseInfoPopupParams {
-    active: boolean; // whether the popup is currently active
-    longTitle: string;
-    course_no: string;
-    desc: string;
-    eli: string;
-    prereqFull: string;
-    locked: boolean;
-  }
-  // Mouse coordinates - determines where to display popup
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  // Parameters for course info popup (opened when mouse hovers over node)
-  const getEmptyPopupParams = () => {
-    return {
-      active: false,
-      longTitle: '',
-      course_no: '',
-      desc: '',
-      eli: '',
-      prereqFull: '',
-      locked: false,
-    } as CourseInfoPopupParams;
-  };
-  const initialPopupParams = getEmptyPopupParams();
-  const [courseInfoPopupParams, setCourseInfoPopupParams] =
-    useState<CourseInfoPopupParams>(initialPopupParams);
-  // Track mouse position
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (courseInfoPopupParams.locked) return;
-      setCoords({ x: e.pageX, y: e.pageY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [coords, courseInfoPopupParams.locked]);
-
-  function CourseInfoPopup() {
-    const cipp = courseInfoPopupParams;
-    return (
-      <div
-        className="m-5 max-w-lg rounded-lg bg-gray-900/80 text-white backdrop-blur"
-        style={{
-          display: cipp.active ? 'block' : 'none',
-          position: 'absolute',
-          left: coords.x, // If there isn't enough margin/offset, nodeUnhoverCallback will trigger once this opens because the cursor will be over this popup instead of the node
-          top: coords.y - 35,
-          transform: 'translate(0, -100%)',
-          zIndex: 100,
-        }}
-      >
-        <p className="ml-2 mr-2 mt-2 text-xl font-bold">
-          {cipp.longTitle}{' '}
-          {cipp.course_no != 'PEA000' ? ' · ' + cipp.course_no : ''}
-        </p>
-        <p className="ml-2 mr-2 text-sm">{cipp.desc}</p>
-        <p className="ml-2 mr-2 text-sm italic">{cipp.eli}</p>
-        <p className="ml-2 mr-2 mb-2 text-sm italic">
-          {cipp.prereqFull == '' ? '' : `Prerequisite(s): ${cipp.prereqFull}`}
-        </p>
-      </div>
-    );
-  }
-  // Callbacks for when user moves cursors on/off nodes or clicks on nodes
-  interface flowNode {
-    id: string;
-  }
-
-  const nodeHoverCallback = (event: React.MouseEvent, node: flowNode) => {
-    setCurrentlyHoveredId(node.id);
-    if (courseInfoPopupParams.locked) return;
-    const popupParams = {
-      active: true,
-      longTitle: titles[node.id],
-      course_no: node.id,
-      desc: descriptions[node.id],
-      eli: eliReqs[node.id],
-      prereqFull: prereqsFull[node.id],
-      locked: false,
-    } as CourseInfoPopupParams;
-
-    setCourseInfoPopupParams(popupParams);
-  };
-  const nodeUnhoverCallback = () => {
-    setCurrentlyHoveredId('');
-    if (courseInfoPopupParams.locked) return;
-    setCourseInfoPopupParams(getEmptyPopupParams());
-  };
-  // Lock/unlock course info popup when right click on popup
-  const nodeRightClickCallback = (event: React.MouseEvent) => {
-    event.preventDefault();
-    const popupParams = courseInfoPopupParams;
-    popupParams.locked = !popupParams.locked;
-    setCourseInfoPopupParams(popupParams);
-  };
-  // Unlock course info popup when click on canvas
-  const paneClickCallback = () => {
-    console.log('pane clicked');
-    setCourseInfoPopupParams(getEmptyPopupParams());
-  };
-  // Open the course page associated with this course
-  const nodeClickCallback = (event: React.MouseEvent, element: flowNode) => {
-    event.preventDefault();
-    // check if element is an edge
-    if (element.id.startsWith('pe') || element.id.startsWith('ce')) return;
-    if (event.metaKey || event.ctrlKey) {
-      window.open(`/course/${element.id}`);
-    } else window.open(`/course/${element.id}`, '_self');
-  };
+  const {
+    nodeHoverCallback,
+    nodeUnhoverCallback,
+    nodeRightClickCallback,
+    paneClickCallback,
+    nodeClickCallback,
+    courseInfoPopupParams,
+    coords,
+    CourseInfoPopup,
+  } = CourseInfoPopupObject({
+    setCurrentlyHoveredId,
+    titles,
+    descriptions,
+    eliReqs,
+    prereqsFull,
+  });
 
   // Style for ReactFlow component
   const reactFlowStyle = {
@@ -192,7 +102,7 @@ const CoursePage = ({
 
   return (
     <div>
-      <div className="bg-exeter px-8 pt-20 pb-20 lg:px-40">
+      <div className="bg-exeter px-8 pt-20 pb-20 dark:bg-neutral-800 lg:px-40">
         <h1 className="font-display text-2xl text-gray-300 md:text-3xl">
           {course.course_no}
         </h1>
@@ -203,10 +113,10 @@ const CoursePage = ({
       <div className="grid grid-cols-1 gap-16 px-8 pt-14 pb-20 md:grid-cols-5 lg:px-40">
         <div className="flex flex-col gap-8 md:col-span-2">
           <div className="flex flex-col gap-2">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Information
             </h1>
-            <div className="text-md grid grid-cols-2 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100">
+            <div className="text-md grid grid-cols-2 outline outline-1 outline-neutral-300 dark:bg-exeter dark:text-neutral-100 dark:outline-exeter-400 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 dark:[&>*:nth-child(even)]:bg-exeter-600">
               <div className="col-span-2 grid grid-cols-2">
                 <p className="flex flex-row items-center gap-2 font-mono">
                   <BsPerson />
@@ -224,24 +134,24 @@ const CoursePage = ({
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Description
             </h1>
             <ExpandableText
-              className="font-display text-lg leading-8 text-gray-900"
+              className="font-display text-lg leading-8 text-gray-900 dark:text-neutral-100"
               text={course.desc}
             />
           </div>
         </div>
         <div className="md:col-span-3">
           <div className="flex justify-between">
-            <h1 className="font-display text-3xl font-black text-gray-700">
+            <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Requirements
             </h1>
           </div>
           <div className="h-full">
             <ReactFlow
-              className="mt-4 cursor-move shadow-md"
+              className="mt-4 cursor-move rounded-lg shadow-md"
               nodesDraggable={false}
               nodesConnectable={false}
               elementsSelectable={false}
@@ -258,7 +168,12 @@ const CoursePage = ({
               <Background color="#858585" />
             </ReactFlow>
           </div>
-          <CourseInfoPopup />
+          <TransitionWrapper
+            courseInfoPopupParams={courseInfoPopupParams}
+            coords={coords}
+          >
+            <CourseInfoPopup />
+          </TransitionWrapper>
         </div>
       </div>
     </div>

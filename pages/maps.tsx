@@ -13,14 +13,14 @@ const MapLink = ({
   return (
     <Link href={`maps/${href}`}>
       <a>
-        <div className="group relative flex h-24 flex-col items-center justify-center overflow-hidden rounded-md outline outline-1 outline-neutral-300 drop-shadow-xl">
+        <div className="group relative flex h-24 flex-col items-center justify-center overflow-hidden rounded-md outline outline-1 outline-neutral-300 drop-shadow-xl hover:outline-neutral-200 dark:outline-neutral-500 dark:hover:outline-exeter-200">
           <Image
             src={imageSrc}
             alt={`Thumbnail for ${name}`}
             layout="fill"
-            className="rounded-md object-cover saturate-0 transition-all ease-out group-hover:scale-105 group-hover:saturate-100"
+            className="rounded-md object-cover saturate-0 transition-all ease-out group-hover:scale-105 group-hover:saturate-100 dark:group-hover:saturate-0"
           />
-          <div className="absolute top-0 bottom-0 left-0 right-0 rounded-md bg-black opacity-70 transition-all ease-out group-hover:bg-exeter"></div>
+          <div className="absolute top-0 bottom-0 left-0 right-0 rounded-md bg-black opacity-70 transition-all ease-out group-hover:bg-exeter dark:bg-neutral-900"></div>
           <h1 className="absolute text-center font-display text-2xl font-bold text-white drop-shadow-2xl">
             {name}
           </h1>
@@ -33,7 +33,7 @@ const MapLink = ({
 const Maps = () => {
   return (
     <div>
-      <div className="bg-exeter px-8 py-16 lg:px-40">
+      <div className="bg-exeter px-8 py-16 dark:bg-neutral-800 lg:px-40">
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Maps
         </h1>

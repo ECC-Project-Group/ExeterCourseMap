@@ -26,7 +26,7 @@ const ExpandableText = ({
           }}
         >
           <div
-            className="absolute left-0 right-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-white"
+            className="absolute left-0 right-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-white dark:to-neutral-700"
             style={{
               display: showingMore ? 'none' : 'block',
             }}
@@ -37,7 +37,7 @@ const ExpandableText = ({
           onClick={() => {
             setShowingMore(!showingMore);
           }}
-          className="text-md mt-1 font-display font-bold text-neutral-600"
+          className="text-md mt-1 font-display font-bold text-neutral-600 dark:text-exeter-200"
         >
           {showingMore ? 'Show less' : '...more'}
         </button>

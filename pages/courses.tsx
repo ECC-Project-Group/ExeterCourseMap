@@ -71,21 +71,21 @@ const Courses = ({
 
   return (
     <div>
-      <div className="bg-exeter py-16 px-8 lg:px-40">
+      <div className="bg-exeter py-16 px-8 dark:bg-neutral-800 lg:px-40">
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           Courses
         </h1>
       </div>
       <div className="px-8 pt-14 pb-20 lg:px-40">
-        <div className="group relative mx-auto mb-8 flex h-14 w-full flex-row items-center justify-start gap-2 overflow-hidden rounded-xl pl-5 font-display text-lg font-semibold shadow-sm outline outline-1 outline-neutral-200">
-          <AiOutlineSearch className="text-neutral-600" />
+        <div className="group relative mx-auto mb-8 flex h-14 w-full flex-row items-center justify-start gap-2 overflow-hidden rounded-xl pl-5 font-display text-lg font-semibold shadow-sm outline outline-1 outline-neutral-200 dark:outline-neutral-500">
+          <AiOutlineSearch className="text-neutral-600 dark:text-white" />
           <input
             type="text"
             placeholder="Search for a course..."
             onChange={onChange}
-            className="peer h-full w-full bg-transparent outline-none"
+            className="peer h-full w-full bg-transparent outline-none dark:text-white"
           />
-          <div className="pointer-events-none absolute top-0 bottom-0 right-0 left-0 -z-10 bg-neutral-100 transition-all ease-out peer-hover:bg-neutral-50 peer-focus:bg-neutral-50"></div>
+          <div className="pointer-events-none absolute top-0 bottom-0 right-0 left-0 -z-10 bg-neutral-100 transition-all ease-out peer-hover:bg-neutral-50 peer-focus:bg-neutral-50 dark:bg-neutral-600 dark:peer-hover:bg-neutral-500 dark:peer-focus:bg-neutral-500"></div>
         </div>
         <div className="absolute top-24 -left-[200px] -z-20 -mt-12 rotate-[190deg] opacity-20">
           <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
@@ -100,11 +100,11 @@ const Courses = ({
                   key={course.course_no}
                 >
                   <a>
-                    <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 shadow-md outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter hover:shadow-none md:m-4">
-                      <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100">
+                    <div className="group m-0 my-3 cursor-pointer rounded-lg bg-neutral-50 p-4 shadow-md outline outline-1 outline-neutral-200 transition-all ease-out hover:bg-exeter hover:shadow-none dark:bg-neutral-600 dark:outline-neutral-500 dark:hover:bg-neutral-500 md:m-4">
+                      <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100 dark:text-white">
                         {course.course_no}
                       </h2>
-                      <h1 className="font-display text-lg group-hover:text-white">
+                      <h1 className="font-display text-lg group-hover:text-white dark:text-neutral-100">
                         {course.lt}
                       </h1>
                     </div>
