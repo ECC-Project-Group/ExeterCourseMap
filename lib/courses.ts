@@ -67,7 +67,7 @@ export function getCourse(courseNo: string) {
   return course;
 }
 
-// Returns all prerequisites of a given course.
+// Returns all prerequisites and corequisites of a given course.
 // Return two arrays - first array is prerequisites, second array is corequisites
 export function getCourseRequirements(courseNo: string) {
   const reqs: ICourse[][] = [[], []];
