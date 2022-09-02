@@ -30,11 +30,11 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="group relative h-6 w-12 rounded-full border-2 border-white bg-white transition-all duration-500 ease-out dark:bg-neutral-600"
+      className="group relative h-6 w-12 rounded-full border-2 border-white bg-white transition-all duration-300 ease-out dark:bg-neutral-600"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
-      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all duration-500 ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
-        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black duration-500 dark:bg-neutral-800/40 dark:text-white">
+      <div className="absolute top-0 left-0 h-full w-1/2 origin-left p-0.5 transition-all duration-300 ease-out group-active:scale-x-[1.3] dark:left-1/2 dark:origin-right">
+        <div className="flex h-full w-full flex-row items-center justify-center rounded-full bg-neutral-600/30 text-black duration-300 dark:bg-neutral-800/40 dark:text-white">
           {
             {
               dark: <HiMoon className="text-lg group-active:scale-x-[0.769]" />,
