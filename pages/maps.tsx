@@ -38,7 +38,7 @@ const Maps = () => {
           Maps
         </h1>
       </div>
-      <div className="absolute -left-[300px] -z-20 -mt-12 hidden rotate-1 opacity-20 lg:block">
+      <div className="absolute -left-[300px] -z-20 -mt-12 rotate-1 opacity-20">
         <Image alt="Decal" src="/decal2.svg" width={2000} height={1000} />
       </div>
       <div className="grid grid-cols-1 gap-8 px-8 py-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:py-20 lg:px-40">

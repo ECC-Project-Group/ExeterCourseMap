@@ -8,6 +8,7 @@ import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { pageview } from '../lib/gtag';
 import Footer from '../components/footer';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Google Tag Manager allows us to integrate with Google Analytics
@@ -33,27 +34,32 @@ function MyApp({ Component, pageProps }: AppProps) {
   // <Component /> represents the actual page content
   return (
     <SessionProvider session={pageProps.session} refetchInterval={0}>
-      <div className="min-h-[calc(100vh-316px)]">
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+      <ThemeProvider attribute="class">
+        <div className="min-h-[calc(100vh-316px)]">
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GA_TRACKING_ID}');
           `}
-        </Script>
-        <Head>
-          <title>Exeter Course Map</title>
-          <meta title="description" content="The better way to pick courses" />
-        </Head>
-        <Header />
-        <Component {...pageProps} key={router.route} />
-      </div>
-      <Footer />
+          </Script>
+          <Head>
+            <title>Exeter Course Map</title>
+            <meta
+              title="description"
+              content="The better way to pick courses"
+            />
+          </Head>
+          <Header />
+          <Component {...pageProps} key={router.route} />
+        </div>
+        <Footer />
+      </ThemeProvider>
     </SessionProvider>
   );
 }
