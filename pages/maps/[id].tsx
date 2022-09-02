@@ -22,10 +22,6 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
     });
   }, [name]);
 
-  // Remember courses whose requirements have already been loaded - avoid re-loading to be more efficient
-  const initialReqsLoaded = new Set<string>();
-  useState<Set<string>>(initialReqsLoaded);
-
   const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
 

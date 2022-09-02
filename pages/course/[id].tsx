@@ -10,7 +10,6 @@ import {
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
-import { server } from '../../lib/server';
 import { MdChecklist } from 'react-icons/md';
 import { BsPerson } from 'react-icons/bs';
 import ExpandableText from '../../components/expandableText';
@@ -18,27 +17,27 @@ import ExpandableText from '../../components/expandableText';
 const CoursePage = ({
   params,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  // initialPrereqs maps each course id to its prereqs
-  // initialDescriptions maps each course id to its description
-  // initialTitles maps each course id to its full title
-  // initialEli maps each course id to its eligibility requirements
-  // initialPrereqFull maps each course id to its COI description
+  // prereqs maps each course id to its prereqs
+  // descriptions maps each course id to its description
+  // titles maps each course id to its full title
+  // eliReqs maps each course id to its eligibility requirements
+  // prereqsFull maps each course id to its COI prereq description
   const {
     course,
-    initialPrereqs,
-    initialCoreqs,
-    initialDescriptions,
-    initialTitles,
-    initialEli,
-    initialPrereqFull,
+    prereqs,
+    coreqs,
+    descriptions,
+    titles,
+    eliReqs,
+    prereqsFull,
   }: {
     course: ICourse;
-    initialPrereqs: Record<string, ICourse[]>;
-    initialCoreqs: Record<string, ICourse[]>;
-    initialDescriptions: Record<string, string | undefined>;
-    initialTitles: Record<string, string | undefined>;
-    initialEli: Record<string, string | undefined>;
-    initialPrereqFull: Record<string, string | undefined>;
+    prereqs: Record<string, ICourse[]>;
+    coreqs: Record<string, ICourse[]>;
+    descriptions: Record<string, string | undefined>;
+    titles: Record<string, string | undefined>;
+    eliReqs: Record<string, string | undefined>;
+    prereqsFull: Record<string, string | undefined>;
   } = params;
 
   // GA event for when a course is viewed
@@ -50,24 +49,6 @@ const CoursePage = ({
       value: 1,
     });
   }, [course.course_no]);
-
-  // Courses whose requirements have already been loaded
-  const initialReqsLoaded = new Set<string>();
-  initialReqsLoaded.add(course.course_no);
-  const [reqsLoaded, setReqsLoaded] = useState<Set<string>>(initialReqsLoaded);
-
-  const [prereqs, setPrereqs] =
-    useState<Record<string, ICourse[]>>(initialPrereqs);
-  const [coreqs, setCoreqs] =
-    useState<Record<string, ICourse[]>>(initialCoreqs);
-  const [titles, setTitles] =
-    useState<Record<string, string | undefined>>(initialTitles);
-  const [descriptions, setDescriptions] =
-    useState<Record<string, string | undefined>>(initialDescriptions);
-  const [eli, setEli] =
-    useState<Record<string, string | undefined>>(initialEli);
-  const [prereqFull, setPrereqFull] =
-    useState<Record<string, string | undefined>>(initialPrereqFull);
 
   const [graph, setGraph] = useState<ElkNode>();
   const [elements, setElements] = useState<Elements>([]);
@@ -169,8 +150,8 @@ const CoursePage = ({
       longTitle: titles[node.id],
       course_no: node.id,
       desc: descriptions[node.id],
-      eli: eli[node.id],
-      prereqFull: prereqFull[node.id],
+      eli: eliReqs[node.id],
+      prereqFull: prereqsFull[node.id],
       locked: false,
     } as CourseInfoPopupParams;
 
@@ -201,90 +182,6 @@ const CoursePage = ({
     if (event.metaKey || event.ctrlKey) {
       window.open(`/course/${element.id}`);
     } else window.open(`/course/${element.id}`, '_self');
-  };
-
-  // Advances to the next level of requirements - called when "More Prereqs" is clicked
-  const getMoreReqs = async () => {
-    // Get the requirements for the last layers of prereqs and coreqs
-    const prereqsToWrite: Record<string, ICourse[]> = { ...prereqs };
-    const coreqsToWrite: Record<string, ICourse[]> = { ...coreqs };
-
-    // Don't load requirements for courses whose requirements have already been loaded
-    const currReqsLoaded = reqsLoaded;
-
-    // Keep track of newly-added courses
-    const newCourses: Set<string> = new Set<string>();
-
-    // Add both the prereqs and coreqs of the last layer of prereqs
-    for (const [base] of Object.entries(prereqs)) {
-      if (currReqsLoaded.has(base)) continue; // That means base isn't in the last layer of prereqs
-      const res = await fetch(`${server}/api/prereqs/${base}`);
-      const newReqs: ICourse[][] = await res.json();
-      prereqsToWrite[base] = newReqs[0]; // Prereqs of prereqs
-
-      for (const newPrereq of newReqs[0]) {
-        // Avoids issues when two branches lead to the same requirements
-        if (!(newPrereq.course_no in prereqsToWrite)) {
-          prereqsToWrite[newPrereq.course_no] = [];
-          newCourses.add(newPrereq.course_no);
-        }
-      }
-      coreqsToWrite[base] = newReqs[1]; // Coreqs of prereqs
-      for (const newCoreq of newReqs[1]) {
-        if (!(newCoreq.course_no in coreqsToWrite)) {
-          coreqsToWrite[newCoreq.course_no] = [];
-          newCourses.add(newCoreq.course_no);
-        }
-      }
-      currReqsLoaded.add(base);
-    }
-    // Do the same for the coreqs
-    for (const [base] of Object.entries(coreqs)) {
-      if (currReqsLoaded.has(base)) continue;
-      const res = await fetch(`${server}/api/prereqs/${base}`);
-      const newReqs: ICourse[][] = await res.json();
-      prereqsToWrite[base] = newReqs[0]; // Prereqs of coreqs
-      for (const newPrereq of newReqs[0]) {
-        if (!(newPrereq.course_no in prereqsToWrite)) {
-          prereqsToWrite[newPrereq.course_no] = [];
-          newCourses.add(newPrereq.course_no);
-        }
-      }
-      coreqsToWrite[base] = newReqs[1]; // Coreqs of coreqs
-      for (const newCoreq of newReqs[1]) {
-        if (!(newCoreq.course_no in coreqsToWrite)) {
-          coreqsToWrite[newCoreq.course_no] = [];
-          newCourses.add(newCoreq.course_no);
-        }
-      }
-      currReqsLoaded.add(base);
-    }
-    setPrereqs(prereqsToWrite);
-    setCoreqs(coreqsToWrite);
-    setReqsLoaded(currReqsLoaded);
-
-    // Load course info for all new courses
-    const titlesToWrite: Record<string, string | undefined> = { ...titles };
-    const descriptionsToWrite: Record<string, string | undefined> = {
-      ...descriptions,
-    };
-    const eliToWrite: Record<string, string | undefined> = { ...eli };
-    const prereqFullToWrite: Record<string, string | undefined> = {
-      ...prereqFull,
-    };
-
-    for (const courseNo of newCourses) {
-      const res = await fetch(`${server}/api/course_info/${courseNo}`);
-      const course: ICourse = await res.json();
-      titlesToWrite[courseNo] = course.lt;
-      descriptionsToWrite[courseNo] = course.desc;
-      eliToWrite[courseNo] = course.eli;
-      prereqFullToWrite[courseNo] = course.prereq_full;
-    }
-    setTitles(titlesToWrite);
-    setDescriptions(descriptionsToWrite);
-    setEli(eliToWrite);
-    setPrereqFull(prereqFullToWrite);
   };
 
   // Style for ReactFlow component
@@ -341,12 +238,6 @@ const CoursePage = ({
             <h1 className="font-display text-3xl font-black text-gray-700">
               Requirements
             </h1>
-            <button
-              className="z-10 m-2 rounded-md bg-gray-700 p-2 font-display text-sm font-bold text-white shadow-lg transition duration-150 ease-out active:translate-y-1"
-              onClick={getMoreReqs}
-            >
-              More Requirements
-            </button>
           </div>
           <div className="h-full">
             <ReactFlow
@@ -392,59 +283,56 @@ export async function getStaticPaths() {
 // Grab all necessary information for each course page at build-time
 // (Eliminates the need for doing a database lookup on page load)
 export async function getStaticProps({ params }: { params: { id: string } }) {
+  /*
+  Load all prereqs/coreqs via recursive depth-first-search
+  Start by fetching all prereqs/coreqs for the root course
+  Recursively fetch all prereqs/coreqs for the latest layer of prereqs/coreqs
+  Keep track of all courses whose requirements we've fetched in a Set
+  */
+  const visited = new Set<string>(); // Courses whose reqs we've loaded (AKA courses we've visited in the DFS)
+  const prereqs: Record<string, ICourse[]> = {};
+  const coreqs: Record<string, ICourse[]> = {};
+  const titles: Record<string, string | undefined> = {}; // Long titles
+  const descriptions: Record<string, string | undefined> = {}; // Descriptions
+  const eliReqs: Record<string, string | undefined> = {}; // Eligibility requirements
+  const prereqsFull: Record<string, string | undefined> = {}; // Full prereq desc. as in COI
+
+  // DFS loop which fetches all info (including prereqs/coreqs for a course)
+  function DFS(courseId: string) {
+    if (visited.has(courseId)) return; // Don't fetch information on a course we've already visited
+    visited.add(courseId);
+    const course = getCourse(courseId);
+    if (course == undefined) return;
+    // Load popup information for this course
+    titles[courseId] = course.lt;
+    descriptions[courseId] = course.desc;
+    eliReqs[courseId] = course.eli;
+    prereqsFull[courseId] = course.prereq_full;
+    // Load prereqs/coreqs
+    const reqs = getCourseRequirements(courseId);
+    prereqs[courseId] = reqs[0];
+    coreqs[courseId] = reqs[1];
+    // Base case: if the only requirement for this course is PEA000 prereq, we've reached the bottom
+    if (reqs[0].length == 1 && reqs[0][0].course_no == 'PEA000') return;
+    // Run DFS on the prereqs/coreqs
+    for (const reqCourse of reqs[0].concat(reqs[1])) {
+      DFS(reqCourse.course_no);
+    }
+  }
+  DFS(params.id);
+
   const course = getCourse(params.id);
-
-  // Load prereqs/coreqs
-  const firstReqs = getCourseRequirements(params.id);
-  const initialPrereqs: Record<string, ICourse[]> = {};
-  const initialCoreqs: Record<string, ICourse[]> = {};
-
-  initialPrereqs[params.id] = firstReqs[0];
-  initialCoreqs[params.id] = firstReqs[1];
-
-  for (const prereq of firstReqs[0]) {
-    initialPrereqs[prereq.course_no] = [];
-    initialCoreqs[prereq.course_no] = [];
-  }
-  for (const coreq of firstReqs[1]) {
-    initialPrereqs[coreq.course_no] = [];
-    initialCoreqs[coreq.course_no] = [];
-  }
-
-  // Load detailed course info
-  const initialTitles: Record<string, string | undefined> = {}; // Long titles
-  const initialDescriptions: Record<string, string | undefined> = {}; // Descriptions
-  const initialEli: Record<string, string | undefined> = {}; // Eligibility requirements
-  const initialPrereqFull: Record<string, string | undefined> = {}; // COI description
-  initialDescriptions[params.id] = course?.desc;
-  initialTitles[params.id] = course?.lt;
-  initialEli[params.id] = course?.eli;
-  initialPrereqFull[params.id] = course?.prereq_full;
-  for (const prereq of firstReqs[0]) {
-    // Load this data for each prereq
-    initialDescriptions[prereq.course_no] = prereq.desc;
-    initialTitles[prereq.course_no] = prereq.lt;
-    initialEli[prereq.course_no] = prereq.eli;
-    initialPrereqFull[prereq.course_no] = prereq.prereq_full;
-  }
-  for (const coreq of firstReqs[1]) {
-    // Load this data for each coreq
-    initialDescriptions[coreq.course_no] = coreq.desc;
-    initialTitles[coreq.course_no] = coreq.lt;
-    initialEli[coreq.course_no] = coreq.eli;
-    initialPrereqFull[coreq.course_no] = coreq.prereq_full;
-  }
 
   return {
     props: {
       params: {
         course: course,
-        initialPrereqs: initialPrereqs,
-        initialCoreqs: initialCoreqs,
-        initialDescriptions: initialDescriptions,
-        initialTitles: initialTitles,
-        initialEli: initialEli,
-        initialPrereqFull: initialPrereqFull,
+        prereqs: prereqs,
+        coreqs: coreqs,
+        descriptions: descriptions,
+        titles: titles,
+        eliReqs: eliReqs,
+        prereqsFull: prereqsFull,
       },
     },
   };
