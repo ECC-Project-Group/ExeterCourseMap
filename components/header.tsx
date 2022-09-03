@@ -3,7 +3,6 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { FaMoon, FaSun } from 'react-icons/fa';
 import { HiSun, HiMoon } from 'react-icons/hi';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {

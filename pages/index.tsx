@@ -102,7 +102,7 @@ const Home: NextPage = () => {
           </h1>
         </div>
       </div>
-      <div className="absolute -right-[550px] -z-20 -mt-12 rotate-1 opacity-20">
+      <div className="absolute -right-[550px] -z-20 -mt-12 rotate-1 opacity-20 dark:opacity-80">
         <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
@@ -110,8 +110,8 @@ const Home: NextPage = () => {
           <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent dark:from-red-200 dark:to-exeter-100 md:text-6xl">
             Find the perfect course.
           </p>
-          <p className="py-8 text-2xl font-semibold text-gray-700 md:text-3xl">
-            <span className="text-gray-500">
+          <p className="py-8 text-2xl font-semibold text-gray-700 dark:text-white md:text-3xl">
+            <span className="text-gray-500 dark:text-neutral-200">
               No more scrolling through the Courses of Instruction PDF.
             </span>{' '}
             &nbsp;Easily find the information and requirements on any PEA
