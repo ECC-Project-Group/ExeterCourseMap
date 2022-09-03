@@ -55,8 +55,8 @@ const Home: NextPage = () => {
     challengingThings[Math.floor(Math.random() * challengingThings.length)];
   return (
     <div className="overflow-x-hidden">
-      <div className="flex-column flex h-[70vh] min-h-[500px] justify-center">
-        <div className="absolute -z-10 h-[70vh] min-h-[500px] w-full bg-exeter dark:bg-neutral-800">
+      <div className="flex-column flex h-[55vh] min-h-[200px] justify-center sm:h-[70vh]">
+        <div className="absolute -z-10 h-[55vh] min-h-[200px] w-full bg-exeter dark:bg-neutral-800 sm:h-[70vh]">
           {/* Declarative representation of the campus model */}
           <Canvas
             camera={{ fov: 50, position: [0, 0, 10] }}
@@ -102,8 +102,10 @@ const Home: NextPage = () => {
           </h1>
         </div>
       </div>
-      <div className="absolute -right-[550px] -z-20 -mt-12 rotate-1 opacity-20 dark:opacity-80">
-        <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
+      <div className="absolute -z-10 h-full w-screen overflow-hidden">
+        <div className="absolute -right-[550px] -z-10 -mt-12 rotate-1 opacity-20">
+          <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
+        </div>
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
         <div className="w-full lg:w-3/5">
