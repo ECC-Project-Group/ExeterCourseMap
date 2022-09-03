@@ -5,7 +5,7 @@ const About: NextPage = () => {
   const answerStyle = 'text-lg mt-3 mb-5 md:text-xl';
   return (
     <div>
-      <div className="bg-exeter py-16 px-8 lg:px-40">
+      <div className="bg-exeter py-16 px-8 dark:bg-neutral-800 lg:px-40">
         <h1 className="font-display text-4xl font-black text-white md:text-5xl ">
           About
         </h1>
@@ -83,14 +83,14 @@ const About: NextPage = () => {
           <span>Reach out to either Michael Chen </span>
           <a
             href="mailto: mqchen@exeter.edu"
-            className="text-blue-600 underline"
+            className="text-blue-600 underline dark:text-blue-300"
           >
             (mqchen@exeter.edu)
           </a>
           <span> or Nathan Khuu </span>
           <a
             href="mailto: nkhuu@exeter.edu"
-            className="text-blue-600 underline"
+            className="text-blue-600 underline dark:text-blue-300"
           >
             (nkhuu@exeter.edu)
           </a>
