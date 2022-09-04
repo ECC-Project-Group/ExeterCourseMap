@@ -82,8 +82,8 @@ const Home: NextPage = () => {
             />
           </h1>
         </div>
-        <div className="absolute bottom-0 flex w-full flex-col gap-8 overflow-hidden bg-gradient-to-b from-transparent to-exeter px-8 py-8 lg:px-40">
-          <div className="gradient-mask-b-100 absolute -top-24 bottom-0 left-0 right-0 -z-10 backdrop-blur-lg gradient-mask-t-0"></div>
+        <div className="absolute bottom-0 flex w-full flex-col gap-8 overflow-hidden bg-gradient-to-b from-transparent to-exeter/30 px-8 py-8 lg:px-40">
+          <div className="absolute top-0 bottom-0 left-0 right-0 -z-10 backdrop-blur-3xl backdrop-brightness-90 gradient-mask-t-0"></div>
           <div className="top-0 h-[0.05rem] w-full place-self-start bg-white bg-opacity-50"></div>
           <div className="absolute right-8 top-12 hidden aspect-[857/928] w-60 sm:block lg:right-40">
             <Image src="/lion.png" layout="fill" alt="Exeter lion" />

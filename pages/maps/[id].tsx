@@ -1,7 +1,7 @@
-import { ElkNode } from 'elkjs';
+import { ElkNode } from 'elkjs/lib/main';
 import type { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Elements } from 'react-flow-renderer';
+import ReactFlow, { Edge, Node } from 'react-flow-renderer';
 import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
@@ -26,15 +26,19 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   }, [name]);
 
   const [graph, setGraph] = useState<ElkNode>();
-  const [elements, setElements] = useState<Elements>([]);
+  // const [elements, setElements] = useState<Element[]>([]);
+  const [nodes, setNodes] = useState<Node[]>([]);
+  const [edges, setEdges] = useState<Edge[]>([]);
 
   // Compute layout of chart
   useEffect(() => {
     async function main() {
       const parsedGraph = await layoutElements(prereqs, coreqs, true);
-      const newElements = await renderElements(parsedGraph, true);
+      const { nodes, edges } = await renderElements(parsedGraph, true);
       setGraph(parsedGraph);
-      setElements(newElements);
+      // setElements(newElements);
+      setNodes(nodes);
+      setEdges(edges);
     }
     main();
   }, [prereqs, coreqs]);
@@ -43,8 +47,10 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // Re-render chart
   useEffect(() => {
     if (graph) {
-      const newElements = renderElements(graph, true, currentlyHoveredId);
-      setElements(newElements);
+      const { nodes, edges } = renderElements(graph, true, currentlyHoveredId);
+      // setElements(newElements);
+      setNodes(nodes);
+      setEdges(edges);
     }
   }, [graph, currentlyHoveredId]);
 
@@ -70,7 +76,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   });
 
   return (
-    <div className="relative -z-10">
+    <div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
           className="cursor-move shadow-md"
@@ -78,10 +84,12 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           nodesConnectable={false}
           elementsSelectable={false}
           selectNodesOnDrag={false}
-          elements={elements}
+          // elements={elements}
+          nodes={nodes}
+          edges={edges}
           onNodeMouseEnter={nodeHoverCallback}
           onNodeMouseLeave={nodeUnhoverCallback}
-          onElementClick={nodeClickCallback}
+          onNodeClick={nodeClickCallback}
           onNodeContextMenu={nodeRightClickCallback}
           onPaneClick={paneClickCallback}
           zoomOnPinch={true}
