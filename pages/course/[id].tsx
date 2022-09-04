@@ -116,7 +116,7 @@ const CoursePage = ({
             <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Information
             </h1>
-            <div className="text-md grid grid-cols-2 outline outline-1 outline-neutral-300 dark:bg-exeter dark:text-neutral-100 dark:outline-exeter-400 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 dark:[&>*:nth-child(even)]:bg-exeter-600">
+            <div className="text-md border-1 grid grid-cols-2 border border-neutral-300 dark:border-exeter-400 dark:bg-exeter dark:text-neutral-100 [&>*]:p-3 [&>div>p:nth-child(1)]:font-bold [&>*:nth-child(even)]:bg-neutral-100 dark:[&>*:nth-child(even)]:bg-exeter-600">
               <div className="col-span-2 grid grid-cols-2">
                 <p className="flex flex-row items-center gap-2 font-mono">
                   <BsPerson />
