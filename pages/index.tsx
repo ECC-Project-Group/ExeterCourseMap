@@ -41,8 +41,8 @@ const Home: NextPage = () => {
   useGLTF.preload('/models/campus.glb');
   return (
     <div className="overflow-x-hidden">
-      <div className="flex-column flex h-[55vh] min-h-[200px] justify-center sm:h-[70vh]">
-        <div className="absolute -z-10 h-[55vh] min-h-[200px] w-full bg-exeter dark:bg-neutral-800 sm:h-[70vh]">
+      <div className="flex-column relative flex h-[65vh] min-h-[200px] justify-center sm:h-[80vh]">
+        <div className="absolute -z-10 h-[65vh] min-h-[200px] w-full bg-exeter dark:bg-neutral-800 sm:h-[80vh]">
           {/* Declarative representation of the campus model */}
           <Canvas
             camera={{ fov: 50, position: [0, 0, 10] }}
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
             </Suspense>
           </Canvas>
         </div>
-        <div className="pointer-events-none my-auto w-full select-none px-8 lg:px-40">
+        <div className="pointer-events-none my-auto w-full select-none px-8 pb-40 sm:pb-0 lg:px-40">
           <h1 className="font-display text-4xl font-black text-white md:text-5xl">
             <Typewriter
               options={{
@@ -82,6 +82,33 @@ const Home: NextPage = () => {
             />
           </h1>
         </div>
+        <div className="absolute bottom-0 flex w-full flex-col gap-8 overflow-hidden bg-gradient-to-b from-transparent to-exeter px-8 py-8 lg:px-40">
+          <div className="gradient-mask-b-100 absolute -top-24 bottom-0 left-0 right-0 -z-10 backdrop-blur-lg gradient-mask-t-0"></div>
+          <div className="top-0 h-[0.05rem] w-full place-self-start bg-white bg-opacity-50"></div>
+          <div className="absolute right-8 top-12 hidden aspect-[857/928] w-60 sm:block lg:right-40">
+            <Image src="/lion.png" layout="fill" alt="Exeter lion" />
+          </div>
+          <div className="flex flex-row gap-8 md:gap-24">
+            <div className="flex flex-col items-start">
+              <h1 className="font-display text-2xl font-bold text-white md:text-3xl">
+                450<span className="text-neutral-400">+</span>
+              </h1>
+              <p className="font-mono text-lg text-neutral-300">Courses</p>
+            </div>
+            <div className="flex flex-col items-start">
+              <h1 className="font-display text-2xl font-bold text-white md:text-3xl">
+                19
+              </h1>
+              <p className="font-mono text-lg text-neutral-300">Sub-maps</p>
+            </div>
+            <div className="flex flex-col items-start">
+              <h1 className="font-display text-2xl font-bold text-white md:text-3xl">
+                1000<span className="text-neutral-400">%</span>
+              </h1>
+              <p className="font-mono text-lg text-neutral-300">Awesome</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="absolute -z-50 h-full w-screen overflow-hidden">
         <div className="absolute -right-[550px] -z-50 -mt-12 rotate-1 opacity-20">
@@ -89,23 +116,23 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-20">
-        <div className="relative p-6">
+        <div className="relative p-4 md:p-6">
           <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
-            <div className="absolute top-1/2 right-12 bottom-0 h-3/4 w-2/3 -translate-y-1/2">
+            <div className="absolute top-0 left-1/2 right-12 bottom-0 h-1/2 w-2/3 -translate-x-1/2 md:left-auto md:top-1/2 md:h-3/4 md:translate-x-0 md:-translate-y-1/2">
               <Image layout="fill" src="/graph.svg" alt="Course map graphic" />
             </div>
           </div>
-          <div className="absolute top-0 bottom-0 left-1/4 -z-10 w-3/4 bg-gradient-to-r from-exeter to-transparent"></div>
-          <div className="border-1 flex flex-col gap-6 border border-white px-16 py-32">
-            <h1 className="w-1/2 font-display text-6xl font-black text-white">
+          <div className="absolute bottom-0 left-0 right-0 -z-10 h-1/2 w-full bg-gradient-to-t from-exeter to-transparent md:top-0 md:left-1/4 md:right-auto md:h-auto md:w-3/4 md:bg-gradient-to-r"></div>
+          <div className="border-1 flex flex-col justify-end gap-3 border border-white px-8 pb-8 pt-48 md:h-auto md:justify-center md:gap-6 md:px-16 md:py-32">
+            <h1 className="font-display text-4xl font-black text-white md:w-1/2 md:text-5xl">
               Find the perfect course.
             </h1>
-            <p className="w-1/2 font-display text-2xl text-neutral-200">
+            <p className="font-display text-2xl text-neutral-200 md:w-1/2">
               Easily search for courses based on your interests and criteria.
             </p>
             <Link href="/courses">
               <a className="group">
-                <div className="flex flex-row items-center gap-3 px-1 py-4 text-white">
+                <div className="flex flex-row items-center gap-3 text-white">
                   <div className="relative">
                     <BsFillArrowRightSquareFill className="absolute text-2xl group-hover:animate-ping" />
                     <BsFillArrowRightSquareFill className="text-2xl" />
