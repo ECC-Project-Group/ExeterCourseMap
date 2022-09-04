@@ -70,7 +70,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   });
 
   return (
-    <div className="relative">
+    <div>
       <div className="overflow-x-contain h-screen w-screen">
         <ReactFlow
           className="cursor-move shadow-md"
