@@ -17,14 +17,6 @@ import { Mesh } from 'three';
 import Link from 'next/link';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
-// One of these strings will be placed onto the homepage
-const challengingThings = [
-  'landing a rover on Mars',
-  'writing an eighty page essay',
-  'solving a Millennium problem',
-  "solving a 10x10 Rubik's cube",
-];
-
 // The campus three.js element
 const Campus = () => {
   const group = useRef();
@@ -47,8 +39,6 @@ const Campus = () => {
 const Home: NextPage = () => {
   // Load the model immediately
   useGLTF.preload('/models/campus.glb');
-  const challengingThing =
-    challengingThings[Math.floor(Math.random() * challengingThings.length)];
   return (
     <div className="overflow-x-hidden">
       <div className="flex-column flex h-[55vh] min-h-[200px] justify-center sm:h-[70vh]">
@@ -83,16 +73,11 @@ const Home: NextPage = () => {
             <Typewriter
               options={{
                 autoStart: true,
-                delay: 60,
+                delay: 30,
+                cursor: '',
               }}
               onInit={(typewriter) => {
-                typewriter
-                  .typeString(
-                    "Course planning shouldn't be like " +
-                      challengingThing +
-                      '.'
-                  )
-                  .start();
+                typewriter.typeString('Course planning, made simple.').start();
               }}
             />
           </h1>
