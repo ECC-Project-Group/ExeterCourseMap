@@ -10,17 +10,11 @@ import { Canvas } from '@react-three/fiber';
 // Helper functions and abstractions built using fiber
 import { OrbitControls, useGLTF } from '@react-three/drei';
 // Classes directly imported from the original three library
-import { Material, Mesh } from 'three';
+import { Mesh } from 'three';
 // Typedefs for the GLTF class are inconsistent across three and react-three-fiber
 // Mainly used to prevent the TypeScript compiler from complaining about nonexistent props
-import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
+// import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
 import Link from 'next/link';
-declare module 'three-stdlib' {
-  export interface GLTF extends GLTFThree {
-    nodes: Record<string, Mesh>;
-    materials: Record<string, Material>;
-  }
-}
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 // One of these strings will be placed onto the homepage
