@@ -114,7 +114,7 @@ const CourseInfoPopupObject = ({
     coords,
     CourseInfoPopup: () => (
       <div
-        className="m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200 dark:bg-neutral-700/80 dark:outline dark:outline-1 dark:outline-neutral-400"
+        className="dark:border-1 m-5 max-w-lg rounded-lg bg-white/80 backdrop-blur-lg backdrop-brightness-200 dark:border dark:border-neutral-400 dark:bg-neutral-700/80"
         style={{
           display: cipp.active ? 'block' : 'none',
           position: 'absolute',
