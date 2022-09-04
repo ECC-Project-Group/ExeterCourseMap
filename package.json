@@ -16,7 +16,6 @@
     "@prisma/client": "^3.9.2",
     "@react-three/drei": "^8.8.1",
     "@react-three/fiber": "^7.0.26",
-    "@types/googletag": "^2.2.3",
     "elkjs": "^0.7.1",
     "framer-motion": "^6.2.4",
     "next": "^12.2.5",
@@ -28,13 +27,12 @@
     "react-flow-renderer": "^9.7.4",
     "react-gtm-module": "^2.0.11",
     "react-icons": "^4.4.0",
-    "react-tooltip": "^4.2.21",
-    "reactjs-popup": "^2.0.5",
     "tailwind-gradient-mask-image": "^1.0.0",
     "three": "^0.137.5",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
+    "@types/googletag": "^2.2.3",
     "@types/gtag.js": "^0.0.10",
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
