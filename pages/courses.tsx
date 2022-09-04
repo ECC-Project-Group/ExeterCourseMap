@@ -77,7 +77,7 @@ const Courses = ({
         </h1>
       </div>
       <div className="px-8 pt-14 pb-20 lg:px-40">
-        <div className="group border-1 relative mx-auto mb-8 flex h-14 w-full flex-row items-center justify-start gap-2 overflow-hidden rounded-xl border border-neutral-200 pl-5 font-display text-lg font-semibold shadow-sm dark:border-neutral-500">
+        <div className="border-1 group relative mx-auto mb-8 flex h-14 w-full flex-row items-center justify-start gap-2 overflow-hidden rounded-xl border border-neutral-200 pl-5 font-display text-lg font-semibold shadow-sm dark:border-neutral-500">
           <AiOutlineSearch className="text-neutral-600 dark:text-white" />
           <input
             type="text"
@@ -100,7 +100,7 @@ const Courses = ({
                   key={course.course_no}
                 >
                   <a>
-                    <div className="group border-1 m-0 my-3 cursor-pointer rounded-lg border border-neutral-200 bg-neutral-50 p-4 shadow-md transition-all ease-out hover:bg-exeter hover:shadow-none dark:border-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 md:m-4">
+                    <div className="border-1 group m-0 my-3 cursor-pointer rounded-lg border border-neutral-200 bg-neutral-50 p-4 shadow-md transition-all ease-out hover:bg-exeter hover:shadow-none dark:border-neutral-500 dark:bg-neutral-600 dark:hover:bg-neutral-500 md:m-4">
                       <h2 className="font-display font-bold text-gray-700 group-hover:text-neutral-100 dark:text-white">
                         {course.course_no}
                       </h2>
