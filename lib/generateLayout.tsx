@@ -1,5 +1,5 @@
-import ELK, { ElkNode, ElkPrimitiveEdge } from 'elkjs/lib/elk.bundled.js';
-import { Elements, Position } from 'react-flow-renderer';
+import ELK, { ElkNode, ElkExtendedEdge } from 'elkjs/lib/main';
+import { Edge, Node, Position } from 'react-flow-renderer';
 import { ICourse } from '../types';
 import { getCourseColor, getCourseImage } from './course_colors';
 
@@ -43,10 +43,10 @@ export const layoutElements = async (
     if (prereqs.length === 0) return;
     for (const index of prereqs.keys()) {
       if (hidePea000 && prereqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
+      (graph.edges as ElkExtendedEdge[]).push({
         id: `pe-${base}-${prereqs[index].course_no}`, // pe = "prereq edge"
-        target: isMap ? base : prereqs[index].course_no,
-        source: isMap ? prereqs[index].course_no : base,
+        targets: [isMap ? base : prereqs[index].course_no],
+        sources: [isMap ? prereqs[index].course_no : base],
       });
     }
   });
@@ -54,10 +54,10 @@ export const layoutElements = async (
     if (coreqs.length === 0) return;
     for (const index of coreqs.keys()) {
       if (hidePea000 && coreqs[index].course_no == 'PEA000') continue;
-      (graph.edges as ElkPrimitiveEdge[]).push({
+      (graph.edges as ElkExtendedEdge[]).push({
         id: `ce-${base}-${coreqs[index].course_no}`, // ce = "coreq edge"
-        target: isMap ? base : coreqs[index].course_no,
-        source: isMap ? coreqs[index].course_no : base,
+        targets: [isMap ? base : coreqs[index].course_no],
+        sources: [isMap ? coreqs[index].course_no : base],
       });
     }
   });
@@ -75,20 +75,22 @@ export const renderElements = (
   currentlyHoveredId?: string
 ) => {
   // Add everything to a React Flow graph
-  const elements: Elements = [];
+  // const elements: Element[] = [];
+  const nodes: Node[] = [];
+  const edges: Edge[] = [];
   const prereqs: Set<string> = new Set<string>();
 
   // Add non-prereq edges first so they'll appear behind prereq edges
   if (parsedGraph.edges) {
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
+    (parsedGraph.edges as ElkExtendedEdge[]).forEach((edge) => {
       if (edge.id.substring(3, 9) != currentlyHoveredId) {
-        elements.push({
+        edges.push({
           id: edge.id,
           // Flip tree direction for courses page because for some reason bottom-up layout is worse than top-down layout when one course is at root (ex: PHY640)
-          source: edge.source,
-          target: edge.target,
-          sourcePosition: Position.Top,
-          targetPosition: Position.Bottom,
+          source: edge.sources[0],
+          target: edge.targets[0],
+          sourceHandle: Position.Top,
+          targetHandle: Position.Bottom,
           type: 'smoothstep',
           animated: false,
           style: {
@@ -99,15 +101,15 @@ export const renderElements = (
         });
       }
     });
-    (parsedGraph.edges as ElkPrimitiveEdge[]).forEach((edge) => {
+    (parsedGraph.edges as ElkExtendedEdge[]).forEach((edge) => {
       if (edge.id.substring(3, 9) == currentlyHoveredId) {
         prereqs.add(edge.id.substring(10, 16));
-        elements.push({
+        edges.push({
           id: edge.id,
-          source: edge.source,
-          target: edge.target,
-          sourcePosition: Position.Top,
-          targetPosition: Position.Bottom,
+          source: edge.sources[0],
+          target: edge.targets[0],
+          sourceHandle: Position.Top,
+          targetHandle: Position.Bottom,
           type: 'smoothstep',
           animated: false,
           style: {
@@ -132,7 +134,7 @@ export const renderElements = (
         boxShadow = '0 0 25px ' + getCourseColor(currentlyHoveredId);
         borderColor = 'white';
       }
-      elements.push({
+      nodes.push({
         id: node.id,
         type: 'default',
         data: {
@@ -165,5 +167,5 @@ export const renderElements = (
       });
     });
   }
-  return elements;
+  return { nodes, edges };
 };

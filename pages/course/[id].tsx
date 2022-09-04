@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import React, { useEffect, useState } from 'react';
-import ReactFlow, { Background, Elements } from 'react-flow-renderer';
-import { ElkNode } from 'elkjs';
+import ReactFlow, { Background, Node, Edge } from 'react-flow-renderer';
+import { ElkNode } from 'elkjs/lib/main';
 import {
   getAllCourses,
   getCourse,
@@ -55,15 +55,19 @@ const CoursePage = ({
   }, [course.course_no]);
 
   const [graph, setGraph] = useState<ElkNode>();
-  const [elements, setElements] = useState<Elements>([]);
+  // const [elements, setElements] = useState<Elements>([]);
+  const [nodes, setNodes] = useState<Node[]>([]);
+  const [edges, setEdges] = useState<Edge[]>([]);
 
   // Relayout the chart when prereqs changes
   useEffect(() => {
     async function main() {
       const parsedGraph = await layoutElements(prereqs, coreqs, false);
-      const elements = renderElements(parsedGraph, false);
+      const { nodes, edges } = await renderElements(parsedGraph, true);
       setGraph(parsedGraph);
-      setElements(elements);
+      // setElements(newElements);
+      setNodes(nodes);
+      setEdges(edges);
     }
     main();
   }, [prereqs, coreqs]);
@@ -72,8 +76,10 @@ const CoursePage = ({
   // Re-render chart
   useEffect(() => {
     if (graph) {
-      const elements = renderElements(graph, false, currentlyHoveredId);
-      setElements(elements);
+      const { nodes, edges } = renderElements(graph, true, currentlyHoveredId);
+      // setElements(newElements);
+      setNodes(nodes);
+      setEdges(edges);
     }
   }, [graph, currentlyHoveredId]);
 
@@ -156,12 +162,14 @@ const CoursePage = ({
               nodesConnectable={false}
               elementsSelectable={false}
               selectNodesOnDrag={false}
-              elements={elements}
+              // elements={elements}
+              nodes={nodes}
+              edges={edges}
               style={reactFlowStyle}
               onNodeMouseEnter={nodeHoverCallback}
               onNodeMouseLeave={nodeUnhoverCallback}
               onNodeContextMenu={nodeRightClickCallback}
-              onElementClick={nodeClickCallback}
+              onNodeClick={nodeClickCallback}
               onPaneClick={paneClickCallback}
               panOnScroll={true}
             >
