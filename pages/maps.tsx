@@ -13,7 +13,7 @@ const MapLink = ({
   return (
     <Link href={`maps/${href}`}>
       <a>
-        <div className="group border-1 relative flex h-24 flex-col items-center justify-center overflow-hidden rounded-md border border-neutral-300 drop-shadow-xl hover:border-neutral-200 dark:border-neutral-500 dark:hover:border-exeter-200">
+        <div className="border-1 group relative flex h-24 flex-col items-center justify-center overflow-hidden rounded-md border border-neutral-300 drop-shadow-xl hover:border-neutral-200 dark:border-neutral-500 dark:hover:border-exeter-200">
           <Image
             src={imageSrc}
             alt={`Thumbnail for ${name}`}
