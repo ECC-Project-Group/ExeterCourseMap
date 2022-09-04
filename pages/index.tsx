@@ -14,12 +14,14 @@ import { Material, Mesh } from 'three';
 // Typedefs for the GLTF class are inconsistent across three and react-three-fiber
 // Mainly used to prevent the TypeScript compiler from complaining about nonexistent props
 import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
+import Link from 'next/link';
 declare module 'three-stdlib' {
   export interface GLTF extends GLTFThree {
     nodes: Record<string, Mesh>;
     materials: Record<string, Material>;
   }
 }
+import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 // One of these strings will be placed onto the homepage
 const challengingThings = [
@@ -102,24 +104,41 @@ const Home: NextPage = () => {
           </h1>
         </div>
       </div>
-      <div className="absolute -z-10 h-full w-screen overflow-hidden">
-        <div className="absolute -right-[550px] -z-10 -mt-12 rotate-1 opacity-20">
+      <div className="absolute -z-50 h-full w-screen overflow-hidden">
+        <div className="absolute -right-[550px] -z-50 -mt-12 rotate-1 opacity-20">
           <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
         </div>
       </div>
-      <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
-        <div className="w-full lg:w-3/5">
-          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent dark:from-red-200 dark:to-exeter-100 md:text-6xl">
-            Find the perfect course.
-          </p>
-          <p className="py-8 text-2xl font-semibold text-gray-700 dark:text-white md:text-3xl">
-            <span className="text-gray-500 dark:text-neutral-200">
-              No more scrolling through the Courses of Instruction PDF.
-            </span>{' '}
-            &nbsp;Easily find the information and requirements on any PEA
-            course.
-          </p>
-          <CTAButton href="/courses">Find a course</CTAButton>
+      <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-20">
+        <div className="relative p-6">
+          <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
+            <div className="absolute top-1/2 right-12 bottom-0 h-3/4 w-2/3 -translate-y-1/2">
+              <Image layout="fill" src="/graph.svg" alt="Course map graphic" />
+            </div>
+          </div>
+          <div className="absolute top-0 bottom-0 left-1/4 -z-10 w-3/4 bg-gradient-to-r from-exeter to-transparent"></div>
+          <div className="border-1 flex flex-col gap-6 border border-white px-16 py-32">
+            <h1 className="w-1/2 font-display text-6xl font-black text-white">
+              Find the perfect course.
+            </h1>
+            <p className="w-1/2 font-display text-2xl text-neutral-200">
+              Easily search for courses based on your interests and criteria.
+            </p>
+            <Link href="/courses">
+              <a className="group">
+                <div className="flex flex-row items-center gap-3 px-1 py-4 text-white">
+                  <div className="relative">
+                    <BsFillArrowRightSquareFill className="absolute text-2xl group-hover:animate-ping" />
+                    <BsFillArrowRightSquareFill className="text-2xl" />
+                  </div>
+                  <span className="relative flex flex-col items-start justify-start gap-1 font-display text-xl font-bold leading-none">
+                    Browse courses
+                    <div className="absolute top-full h-0.5 w-0 bg-white transition-all duration-300 ease-out group-hover:w-full"></div>
+                  </span>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
