@@ -70,7 +70,7 @@ const Header = () => {
   }, [accountVisible, signInVisible, allowScroll, blockScroll]);
 
   return (
-    <header className="relative flex w-full flex-col justify-between gap-2 overflow-visible bg-gradient-to-b from-exeter-400 to-exeter py-4 px-8 dark:from-transparent dark:to-transparent sm:flex-row sm:gap-0 lg:px-40">
+    <header className="relative z-50 flex w-full flex-col justify-between gap-2 overflow-visible bg-gradient-to-b from-exeter-400 to-exeter py-4 px-8 dark:from-transparent dark:to-transparent sm:flex-row sm:gap-0 lg:px-40">
       <div className="absolute top-0 bottom-0 left-0 right-0 hidden origin-top scale-y-150 bg-gradient-to-b from-exeter to-neutral-800 dark:block"></div>
       <Link href="/" passHref={true}>
         <a className="z-10 font-display text-lg font-black text-white">
