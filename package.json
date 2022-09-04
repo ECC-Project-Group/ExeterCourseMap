@@ -30,6 +30,7 @@
     "react-icons": "^4.4.0",
     "react-tooltip": "^4.2.21",
     "reactjs-popup": "^2.0.5",
+    "tailwind-gradient-mask-image": "^1.0.0",
     "three": "^0.137.5",
     "typewriter-effect": "^2.19.0"
   },
