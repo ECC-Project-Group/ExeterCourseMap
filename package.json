@@ -29,7 +29,8 @@
     "react-icons": "^4.4.0",
     "tailwind-gradient-mask-image": "^1.0.0",
     "three": "^0.137.5",
-    "typewriter-effect": "^2.19.0"
+    "typewriter-effect": "^2.19.0",
+    "web-worker": "^1.2.0"
   },
   "devDependencies": {
     "@types/googletag": "^2.2.3",
