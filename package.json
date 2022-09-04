@@ -16,7 +16,7 @@
     "@prisma/client": "^3.9.2",
     "@react-three/drei": "^8.8.1",
     "@react-three/fiber": "^7.0.26",
-    "elkjs": "^0.7.1",
+    "elkjs": "^0.8.2",
     "framer-motion": "^6.5.1",
     "next": "^12.2.5",
     "next-auth": "^4.3.1",
