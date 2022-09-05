@@ -22,6 +22,7 @@ import { Mesh, PCFSoftShadowMap } from 'three';
 import Link from 'next/link';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useTheme } from 'next-themes';
 
 // The campus three.js element
 const Campus = () => {
@@ -50,6 +51,9 @@ const Campus = () => {
 const Home: NextPage = () => {
   // Load the model immediately
   useGLTF.preload('/models/campus.glb');
+
+  const { resolvedTheme } = useTheme();
+
   return (
     <div className="overflow-x-hidden">
       <div className="flex-column relative flex h-[65vh] min-h-[200px] justify-center sm:h-[80vh]">
@@ -90,7 +94,14 @@ const Home: NextPage = () => {
                 alphaWrite={false}
               />
             </mesh>
-            <fog attach="fog" args={['#9A1D2E', 100, 500]} />
+            <fog
+              attach="fog"
+              args={[
+                resolvedTheme === 'light' ? '#9A1D2E' : '#262626',
+                100,
+                500,
+              ]}
+            />
             {/* Does not render the campus model until it is completely loaded */}
             <Suspense fallback={null}>
               <Campus />
@@ -122,7 +133,7 @@ const Home: NextPage = () => {
             />
           </h1>
         </div>
-        <div className="absolute bottom-0 flex w-full flex-col gap-8 overflow-hidden bg-gradient-to-b from-transparent to-exeter/30 px-8 py-8 lg:px-40">
+        <div className="absolute bottom-0 flex w-full flex-col gap-8 overflow-hidden bg-gradient-to-b from-transparent to-exeter/30 px-8 py-8 dark:to-neutral-800/30 lg:px-40">
           <div className="absolute top-0 bottom-0 left-0 right-0 -z-10 backdrop-blur-3xl backdrop-brightness-90 gradient-mask-t-0"></div>
           <div className="top-0 h-[0.05rem] w-full place-self-start bg-white bg-opacity-50"></div>
           <div className="absolute right-8 top-12 hidden aspect-[857/928] w-60 sm:block lg:right-40">
