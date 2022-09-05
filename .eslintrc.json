@@ -10,6 +10,7 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "require-jsdoc": "off",
-    "new-cap": "off"
+    "new-cap": "off",
+    "react/no-unknown-property": "off"
   }
 }
