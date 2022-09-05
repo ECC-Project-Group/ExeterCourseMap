@@ -16,11 +16,17 @@ import { Mesh } from 'three';
 // import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
 import Link from 'next/link';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 // The campus three.js element
 const Campus = () => {
   const group = useRef();
-  const { nodes } = useGLTF('/models/campus.glb');
+  const { nodes } = useGLTF('/models/campus.glb') as unknown as GLTF & {
+    nodes: {
+      Campus: THREE.Mesh;
+    };
+  };
+
   return (
     <group ref={group} dispose={null}>
       <mesh
