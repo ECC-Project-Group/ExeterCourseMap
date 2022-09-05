@@ -11,8 +11,7 @@
     "pre": null,
     "st": "Get into PEA",
     "subj": "PEA",
-    "prereq_full": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "unedited": "true"
+    "prereq_full": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     "course_no": "ANT500",
@@ -325,7 +324,7 @@
   {
     "course_no": "BIO440",
     "dept": "SC",
-    "desc": "This course will explore agricultural practices that aim to have positive environmental impacts, such as improving soil heath, increasing native species diversity and sequestering carbon. It will also explore agricultural practices that aim to have positive social impacts, such as reducing food insecurity, honoring ancestral farming practices and promoting economic wellbeing of local communities. Scientific topics such as conventional versus organic systems, seed banks, closed loop food production, permaculture, soil science, nitrogen cycles and plant physiology will be investigated. Emphasis will be placed on experiential learning on local farms and campus. The course includes a service learning component and potential for research projects.",
+    "desc": "This course will explore agricultural practices that aim to have positive environmental impacts, such as improving soil heath, increasing native species diversity and sequestering carbon. It will also explore agricultural practices that aim to have positive social impacts, such as reducing food insecurity, honoring ancestral farming practices and promoting economic wellbeing of local communities. Scientific topics such as conventional versus organic systems, seed banks, closed loop food production, permaculture, soil science, nitrogen cycles and plant physiology will be investigated. Emphasis will be placed on experiential learning on local farms and campus. The course includes a service learning component and potential for research projects. Prerequisite: One year of introductory biology. Open to uppers and seniors (lowers with departmental permission). This course meets during a reserve format in order to create a double-format meeting time for weekly labs. Offered: spring term.",
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors (lowers with departmental permission)",
     "fixed": true,
@@ -334,8 +333,7 @@
     "pre": "BIO330|BIO230",
     "st": "Regenerative Agriculture",
     "subj": "BIO",
-    "prereq_full": "TAG:NO_COURSE",
-    "unedited": "true"
+    "prereq_full": "TAG:NO_COURSE"
   },
   {
     "course_no": "BIO450",
@@ -844,7 +842,7 @@
   {
     "course_no": "CHI310",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). In this, course stream students step beyond the basic phase, of language acquisition and come to realize their, autonomy in self-expression. Students use, higher-level grammar and vocabulary to engage in, readings, writings and discussions on varied, social and cultural topics such as education, internet use and relationships. Both text and, supplementary readers provide the student with, more colorful means to communicate. Additionally, authentic video clips, songs, and proverbial, sayings add to the student's cultural grasp of, Mandarin.",
+    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). Students step beyond the basic phase of language acquisition and come to realize their autonomy in self- expression. While the tools of language become more involved, the courses provide the student with more space to explore deeper sociocultural issues, such as the importance of education, the social role of the internet and issues pertaining to adult life (i.e., matters of part-time work and relationships). Role-play activities, Harkness discussions and individual oral presentations allow students to compare their own experiences with those of their contemporaries in the Chinese-speaking world. The courses are designed to develop another layer of understanding regarding relevant social issues and more time for individual expression at the table.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -853,13 +851,12 @@
     "pre": "CHI230|CHI231",
     "st": "Advanced Chinese",
     "subj": "CHI",
-    "prereq_full": "CHI230",
-    "unedited": "true"
+    "prereq_full": "CHI230"
   },
   {
     "course_no": "CHI311",
     "dept": "ML",
-    "desc": "These courses cover the material of CHI310/320/400, in greater depth and at an accelerated pace.",
+    "desc": "This sequence of courses is offered fall (CHI311), winter (CHI321) and spring (CHI411). It helps students who already possess a strong oral proficiency use more sophisticated vocabulary and sentence structures to engage in readings, writing, oral presentations and discussions on various cultural and social topics. Focal points of the course include traditional Chinese holidays, Chinese health and lifestyle, gender equality, environmental issues and other recent social changes in China. Students gain insight into social position and hierarchical standards within Chinese society and their relationship to the inner workings of Chinese society. A variety of authentic materials such as video/music clips, television programs and stories are used to deepen students’ linguistic competency and cultural understanding. Prerequisite: CHI231, placement test and permission of the department.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -868,13 +865,12 @@
     "pre": "CHI231",
     "st": "Advanced Chinese - Accelerated",
     "subj": "CHI",
-    "prereq_full": "CHI231",
-    "unedited": "true"
+    "prereq_full": "CHI231"
   },
   {
     "course_no": "CHI320",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). In this, course stream students step beyond the basic phase, of language acquisition and come to realize their, autonomy in self-expression. Students use, higher-level grammar and vocabulary to engage in, readings, writings and discussions on varied, social and cultural topics such as education, internet use and relationships. Both text and, supplementary readers provide the student with, more colorful means to communicate. Additionally, authentic video clips, songs, and proverbial, sayings add to the student's cultural grasp of, Mandarin.",
+    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). Students step beyond the basic phase of language acquisition and come to realize their autonomy in self- expression. While the tools of language become more involved, the courses provide the student with more space to explore deeper sociocultural issues, such as the importance of education, the social role of the internet and issues pertaining to adult life (i.e., matters of part-time work and relationships). Role-play activities, Harkness discussions and individual oral presentations allow students to compare their own experiences with those of their contemporaries in the Chinese-speaking world. The courses are designed to develop another layer of understanding regarding relevant social issues and more time for individual expression at the table.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -883,13 +879,12 @@
     "pre": "CHI310",
     "st": "Advanced Chinese",
     "subj": "CHI",
-    "prereq_full": "CHI310",
-    "unedited": "true"
+    "prereq_full": "CHI310"
   },
   {
     "course_no": "CHI321",
     "dept": "ML",
-    "desc": "These courses cover the material of CHI310/320/400, in greater depth and at an accelerated pace.",
+    "desc": "This sequence of courses is offered fall (CHI311), winter (CHI321) and spring (CHI411). It helps students who already possess a strong oral proficiency use more sophisticated vocabulary and sentence structures to engage in readings, writing, oral presentations and discussions on various cultural and social topics. Focal points of the course include traditional Chinese holidays, Chinese health and lifestyle, gender equality, environmental issues and other recent social changes in China. Students gain insight into social position and hierarchical standards within Chinese society and their relationship to the inner workings of Chinese society. A variety of authentic materials such as video/music clips, television programs and stories are used to deepen students’ linguistic competency and cultural understanding. Prerequisite: CHI231, placement test and permission of the department.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -898,13 +893,12 @@
     "pre": "CHI311",
     "st": "Adv Chinese Accelerated",
     "subj": "CHI",
-    "prereq_full": "CHI311",
-    "unedited": "true"
+    "prereq_full": "CHI311"
   },
   {
     "course_no": "CHI400",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). In this course stream students step beyond the basic phase of language acquisition and come to realize their autonomy in self-expression. Students use higher-level grammar and vocabulary to engage in readings, writings and discussions on varied social and cultural topics such as education, internet use and relationships. Both text and supplementary readers provide the student with more colorful means to communicate. Additionally, authentic video clips, songs, and proverbial sayings add to the student's cultural grasp of Mandarin.",
+    "desc": "This sequence of courses is offered fall (CHI310), winter (CHI320) and spring (CHI400). Students step beyond the basic phase of language acquisition and come to realize their autonomy in self- expression. While the tools of language become more involved, the courses provide the student with more space to explore deeper sociocultural issues, such as the importance of education, the social role of the internet and issues pertaining to adult life (i.e., matters of part-time work and relationships). Role-play activities, Harkness discussions and individual oral presentations allow students to compare their own experiences with those of their contemporaries in the Chinese-speaking world. The courses are designed to develop another layer of understanding regarding relevant social issues and more time for individual expression at the table.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -918,7 +912,7 @@
   {
     "course_no": "CHI411",
     "dept": "ML",
-    "desc": "These courses cover the material of CHI310/320/400 in greater depth and at an accelerated pace.",
+    "desc": "This sequence of courses is offered fall (CHI311), winter (CHI321) and spring (CHI411). It helps students who already possess a strong oral proficiency use more sophisticated vocabulary and sentence structures to engage in readings, writing, oral presentations and discussions on various cultural and social topics. Focal points of the course include traditional Chinese holidays, Chinese health and lifestyle, gender equality, environmental issues and other recent social changes in China. Students gain insight into social position and hierarchical standards within Chinese society and their relationship to the inner workings of Chinese society. A variety of authentic materials such as video/music clips, television programs and stories are used to deepen students’ linguistic competency and cultural understanding. Prerequisite: CHI231, placement test and permission of the department.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -1170,7 +1164,7 @@
   {
     "course_no": "DAN010",
     "dept": "TH",
-    "desc": null,
+    "desc": "Pointe dancing is a 200-year-old component of ballet that requires much strength, skill and artistry. This course provides instruction in pointe for students in the form of one 50-minute class per week, with a class of four to 12 students at similar levels of technical proficiency. Class will consist of warm-up and strength-building exercises at the barre, followed by center floor combinations that focus on balance, traveling steps and turns. Advanced pointe dancers will learn classical variations and contemporary repertoire. Students will gain a more thorough understanding of ballet history and basic anatomy. Permission from the director of dance and a placement class/audition is required. Students must be enrolled in a dance technique class (Dance 250, 300 or 400) during the first term of pointe instruction. Provides 1/3 credit per term toward the studio/performance arts requirement; credit is granted upon completion of three terms of study. Students normally receive 10 lessons per term. At least eight lessons are required to pass this course.",
     "editor": "",
     "eli": "",
     "fixed": true,
@@ -1179,8 +1173,7 @@
     "pre": "PEA000",
     "st": "Pointe Instruction",
     "subj": "DAN",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "DAN100",
@@ -1771,6 +1764,20 @@
     "prereq_full": ""
   },
   {
+    "course_no": "ENG566",
+    "dept": "EN",
+    "desc": "In this course we will explore the burgeoning literary phenomenon often called the “graphic novel.” What happens to narrative when it unfolds in a hybrid form that joins image to text? What can this verbal-visual medium do that other literary media can’t? Is the form better suited to certain topics and modes of expression than to others? How do we read a text in which two narrative tracks (one verbal, the other visual) interact? Our readings will be drawn from the work of such artists as Will Eisner (A Contract with God), Art Spiegelman (Maus; In the Shadow of No Towers), Chris Ware (Jimmy Corrigan), Joe Sacco (Palestine; Safe Area Gorazde), Marjane Satrapi (Persepolis), Daniel Clowes (Ghost World), Alison Bechdel (Fun Home) and Julie Doucet (My New York Diary). Students will write short weekly papers and complete a substantial project of their own design.",
+    "editor": "Byran Huang",
+    "eli": "Open to seniors only",
+    "fixed": true,
+    "lt": "Graphic Narrative And Literary Comics ",
+    "lvl": "500",
+    "pre": "ENG500",
+    "st": "Graphic Narrative ",
+    "subj": "ENG",
+    "prereq_full": ""
+  },
+  {
     "course_no": "ENG567",
     "dept": "EN",
     "desc": "What do we value? The pursuit of profit, surges in wealth and the suspect principles of the financier have intrigued authors since the 19th century. How do language, narrative style, structure and literary production transform with shifts in the marketplace? Through a careful investigation of literature, film and illustration, we will discuss how art imagines and redefines social and economic relations. We will supplement the literary works with historical documents or articles that shed light on the economic climate at the time of publication. We might consider how the imagined space of the novel presents the mystery of the financial market, which seems shrouded in a haze. We might also ponder how authors imagine worlds where money has no practical use and nothing has any purchasing power. Over the course of the term, students will write short analytical pieces and complete a creative independent project of their own design.",
@@ -2053,7 +2060,7 @@
   {
     "course_no": "EPS450",
     "dept": "SC",
-    "desc": "This course will study the complex interconnected, systems (e.g., lithosphere, hydrosphere, atmosphere and biosphere)of our planet Earth., Students will develop an understanding?of the, basic workings of the Earth from its origin to the, present, and will investigate the scientific basis, for some of today's most pressing challenges, such, as global climate change and the search for newer, and safer energy resources. Selected topics will, include plate tectonics, the rock cycle, geologic, time,the formation of the Appalachians, natural, hazards (such as earthquakes, volcanoes and, tsunamis), global climate change, and the, challenge of finding and managing energy, resources. Laboratory work, including local field, trips and inquiry-based exercises using authentic, maps and databases (such as NOAA and USGS), will, complement classroom discussion.",
+    "desc": "This course explores (1) the dynamic and complex interconnected systems of our planet and (2) the current global climate crisis. In the first part of the course, students survey the basic workings of planet Earth, from plate tectonics, the rock cycle, geologic time, mountain formation, and natural hazards such as earthquakes and volcanoes. The second part of the course is devoted to the study of Earth’s climate system and the current global climate crisis. Students will study Earth’s energy budget and the effects of various natural and anthropogenic factors that control the climate, such as solar radiation, greenhouse gases, aerosols, ocean circulation, Milankovitch cycles, El Niño events and volcanic eruptions. The study of positive and negative feedback loops helps students understand past climates and predict future climates. Students use global computer models to predict the effects of increasing atmospheric CO2 to surface air temperature, ice cover, global albedo, precipitation, etc. These models help students quantitatively assess the effects of natural and anthropogenic causes on the current climate crisis. A final project focuses on our ever-growing energy needs in the context of the global climate crisis. Local field trips complement classroom discussion. Prerequisite: One year of physics or chemistry. Open to uppers and seniors. This course meets during a reserve format in order to create a double-format meeting time for field trips. Offered: fall term.",
     "editor": "Byran Huang",
     "eli": "Open to uppers and seniors",
     "fixed": true,
@@ -2062,8 +2069,7 @@
     "pre": "PHY330|PHY231|PHY230|CHE330|CHI431",
     "st": "Earth Systems ",
     "subj": "EPS",
-    "prereq_full": "One year of introductory chemistry or physics",
-    "unedited": "true"
+    "prereq_full": "One year of introductory chemistry or physics"
   },
   {
     "course_no": "EXI309",
@@ -3944,7 +3950,7 @@
   {
     "course_no": "JPN310",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). In this, sequence of courses, students consolidate the, previously learned material and build new, vocabulary and grammar. Various cultural and, social topics, such as environmental issues and, gender issues, are provided to deepen students', knowledge of Japan and its people through, authentic material such as short stories, internet, materials, video clips, movies and comic books.",
+    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). Students acquire depth and breadth for intercultural conversations. Various cultural and social topics — environmental issues and gender issues, compassion for others, the beauty of hard work, power structure, issues with vanity and self-image — are provided to deepen students’ knowledge of Japan and its people through authentic material such as short stories, internet materials, video clips, movies and comic books.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -3953,13 +3959,12 @@
     "pre": "JPN230",
     "st": "Advanced Japanese",
     "subj": "JPN",
-    "prereq_full": "JPN230",
-    "unedited": "true"
+    "prereq_full": "JPN230"
   },
   {
     "course_no": "JPN320",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). In this, sequence of courses, students consolidate the, previously learned material and build new, vocabulary and grammar. Various cultural and, social topics, such as environmental issues and, gender issues, are provided to deepen students', knowledge of Japan and its people through, authentic material such as short stories, internet, materials, video clips, movies and comic books.",
+    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). Students acquire depth and breadth for intercultural conversations. Various cultural and social topics — environmental issues and gender issues, compassion for others, the beauty of hard work, power structure, issues with vanity and self-image — are provided to deepen students’ knowledge of Japan and its people through authentic material such as short stories, internet materials, video clips, movies and comic books.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -3968,13 +3973,12 @@
     "pre": "JPN310",
     "st": "Advanced Japanese",
     "subj": "JPN",
-    "prereq_full": "JPN310",
-    "unedited": "true"
+    "prereq_full": "JPN310"
   },
   {
     "course_no": "JPN400",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). In this sequence of courses, students consolidate the previously learned material and build new vocabulary and grammar. Various cultural and social topics, such as environmental issues and gender issues, are provided to deepen students' knowledge of Japan and its people through authentic material such as short stories, internet materials, video clips, movies and comic books.",
+    "desc": "This sequence of courses is offered fall (JPN310), winter (JPN320) and spring (JPN400). Students acquire depth and breadth for intercultural conversations. Various cultural and social topics — environmental issues and gender issues, compassion for others, the beauty of hard work, power structure, issues with vanity and self-image — are provided to deepen students’ knowledge of Japan and its people through authentic material such as short stories, internet materials, video clips, movies and comic books.",
     "editor": "Byran Huang",
     "eli": "",
     "fixed": true,
@@ -4450,7 +4454,7 @@
   {
     "course_no": "LAT791",
     "dept": "CL",
-    "desc": "The readings for this course vary from year to, year and are dependent upon the interests of the, students.",
+    "desc": "The readings for this course vary from year to year and are dependent upon the interests of the students.",
     "editor": "",
     "eli": "",
     "fixed": true,
@@ -4459,8 +4463,7 @@
     "pre": "LAT631",
     "st": "Special Readings ",
     "subj": "LAT",
-    "prereq_full": "LAT631",
-    "unedited": "true"
+    "prereq_full": "LAT631"
   },
   {
     "course_no": "LATTR1",
@@ -4647,7 +4650,7 @@
   {
     "course_no": "MAT310",
     "dept": "MA",
-    "desc": "The purpose of the 300-level courses is to enable, students to expand their view of algebra and, geometry to include nonlinear motion and nonlinear, functions. The investigation encompasses circular, motion and the functions that describe it, ellipses and hyperbolas, exponential and, logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In, particular, logarithms are used to straighten, nonlinear data; and matrices are used to describe, geometric transformations and various patterns of, growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics, and recursion, leading to the binomial theorem;, second, approximation behavior, especially, instantaneous rates of change and slopes of, nonlinear graphs",
+    "desc": "The purpose of the 300-level courses is to enable students to expand their view of algebra and geometry to include nonlinear motion and nonlinear functions. The investigation encompasses circular motion and the functions that describe it, ellipses and hyperbolas, exponential and logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In particular, logarithms are used to straighten nonlinear data; and matrices are used to describe geometric transformations and various patterns of growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics and recursion, leading to the binomial theorem; second, approximation behavior, especially instantaneous rates of change and slopes of nonlinear graphs. MAT310 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4656,13 +4659,12 @@
     "pre": "MAT22T|MAT23X|MAT230",
     "st": "Adv Integrated Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT311",
     "dept": "MA",
-    "desc": "These courses cover the material of, MAT310/320/330/400 in greater depth and at an, accelerated pace.",
+    "desc": "These courses cover the material of MAT310/320/330/400 in greater depth and at an accelerated pace. Prerequisite: Permission of the department. MAT311 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4671,13 +4673,12 @@
     "pre": "MAT230|MAT22T|MAT23X",
     "st": "Adv Integrated Math (enriched)",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT31T",
     "dept": "MA",
-    "desc": "This option provides a two- or three-term, transition for students with three full years of, high school mathematics. MAT31T and MAT34T are, primarily for entering uppers., MAT31T/32T provides a two-term transition into our, 300-level courses (advanced integrated, mathematics) in the fall and winter, respectively, and normally promotes to MAT330 in the spring. , MAT34T/41T provides a two-term transition as a, bridge between our 300- and 400-level courses, (calculus) in the fall and winter, respectively, and normally promotes to MAT420 in the spring. , Meets during the reserve format.",
+    "desc": "This option provides a two-term transition into our 300-level courses (advanced integrated mathematics) in the fall and winter, respectively, and normally promotes to MAT330 in the spring. Meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4686,13 +4687,12 @@
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT31X",
     "dept": "MA",
-    "desc": "This option provides a two- or three-term, transition for students with three full years of, high school mathematics. MAT31X/40X/41X or, MAT31X/32X/40X, each a, three-term, highly accelerated, course, covers a vast breadth of precalculus, topics and ends with an introduction to, differential calculus. The pace is demanding and, the problems that students will encounter are, challenging. For students who have completed a, study of precalculus mathematics, some topics will, be familiar, though likely presented in novel, contexts; other ideas and techniques will be new., Open to 9th and 10th graders only, through strong, performance on placement tests and approval of the, department. Meets during the reserve format.",
+    "desc": "This option provides a three-term, highly accelerated course, covers a vast breadth of Algebra II and precalculus topics. The pace is demanding, and the problems that students will encounter are challenging. For students who have completed a study of Algebra II and precalculus mathematics, some topics will be familiar, though likely presented in novel contexts; other ideas and techniques will be new. Open to 9th and 10th graders only, through strong performance on placement tests and approval of the department. Meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "Open to preps and lowers",
     "fixed": true,
@@ -4701,13 +4701,12 @@
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT320",
     "dept": "MA",
-    "desc": "The purpose of the 300-level courses is to enable, students to expand their view of algebra and, geometry to include nonlinear motion and nonlinear, functions. The investigation encompasses circular, motion and the functions that describe it, ellipses and hyperbolas, exponential and, logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In, particular, logarithms are used to straighten, nonlinear data; and matrices are used to describe, geometric transformations and various patterns of, growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics, and recursion, leading to the binomial theorem;, second, approximation behavior, especially, instantaneous rates of change and slopes of, nonlinear graphs",
+    "desc": "The purpose of the 300-level courses is to enable students to expand their view of algebra and geometry to include nonlinear motion and nonlinear functions. The investigation encompasses circular motion and the functions that describe it, ellipses and hyperbolas, exponential and logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In particular, logarithms are used to straighten nonlinear data; and matrices are used to describe geometric transformations and various patterns of growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics and recursion, leading to the binomial theorem; second, approximation behavior, especially instantaneous rates of change and slopes of nonlinear graphs. MAT310 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4716,13 +4715,12 @@
     "pre": "MAT310",
     "st": "Adv Integrated Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT321",
     "dept": "MA",
-    "desc": "These courses cover the material of, MAT310/320/330/400 in greater depth and at an, accelerated pace.",
+    "desc": "These courses cover the material of MAT310/320/330/400 in greater depth and at an accelerated pace. Prerequisite: Permission of the department. MAT311 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4731,13 +4729,12 @@
     "pre": "MAT311",
     "st": "Adv Integrated Math (enriched)",
     "subj": "MAT",
-    "prereq_full": "MAT311",
-    "unedited": "true"
+    "prereq_full": "MAT311"
   },
   {
     "course_no": "MAT32T",
     "dept": "MA",
-    "desc": "This option provides a two- or three-term, transition for students with three full years of, high school mathematics. MAT31T and MAT34T are, primarily for entering uppers., MAT31T/32T provides a two-term transition into our, 300-level courses (advanced integrated, mathematics) in the fall and winter, respectively, and normally promotes to MAT330 in the spring. , MAT34T/41T provides a two-term transition as a, bridge between our 300- and 400-level courses, (calculus) in the fall and winter, respectively, and normally promotes to MAT420 in the spring. , Meets during the reserve format.",
+    "desc": "This option provides a two-term transition into our 300-level courses (advanced integrated mathematics) in the fall and winter, respectively, and normally promotes to MAT330 in the spring. Meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4746,13 +4743,12 @@
     "pre": "MAT31T",
     "st": "Transition 3 Mathematics",
     "subj": "MAT",
-    "prereq_full": "MAT31T",
-    "unedited": "true"
+    "prereq_full": "MAT31T"
   },
   {
     "course_no": "MAT32X",
     "dept": "MA",
-    "desc": "This option provides a two- or three-term, transition for students with three full years of, high school mathematics. MAT31X/32X/40X, a, three-term, highly accelerated, course, covers a vast breadth of precalculus, topics and ends with an introduction to, differential calculus. The pace is demanding and, the problems that students will encounter are, challenging. For students who have completed a, study of precalculus mathematics, some topics will, be familiar, though likely presented in novel, contexts; other ideas and techniques will be new., Open to 9th and 10th graders only, through strong, performance on placement tests and approval of the, department. Meets during the reserve format.",
+    "desc": "This option provides a three-term, highly accelerated course, covers a vast breadth of Algebra II and precalculus topics. The pace is demanding, and the problems that students will encounter are challenging. For students who have completed a study of Algebra II and precalculus mathematics, some topics will be familiar, though likely presented in novel contexts; other ideas and techniques will be new. Open to 9th and 10th graders only, through strong performance on placement tests and approval of the department. Meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4761,13 +4757,12 @@
     "pre": "MAT31X",
     "st": "Transition 3 Mathematics",
     "subj": "MAT",
-    "prereq_full": "MAT31X",
-    "unedited": "true"
+    "prereq_full": "MAT31X"
   },
   {
     "course_no": "MAT330",
     "dept": "MA",
-    "desc": "The purpose of the 300-level courses is to enable, students to expand their view of algebra and, geometry to include nonlinear motion and nonlinear, functions. The investigation encompasses circular, motion and the functions that describe it, ellipses and hyperbolas, exponential and, logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In, particular, logarithms are used to straighten, nonlinear data; and matrices are used to describe, geometric transformations and various patterns of, growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics, and recursion, leading to the binomial theorem;, second, approximation behavior, especially, instantaneous rates of change and slopes of, nonlinear graphs",
+    "desc": "The purpose of the 300-level courses is to enable students to expand their view of algebra and geometry to include nonlinear motion and nonlinear functions. The investigation encompasses circular motion and the functions that describe it, ellipses and hyperbolas, exponential and logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In particular, logarithms are used to straighten nonlinear data; and matrices are used to describe geometric transformations and various patterns of growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics and recursion, leading to the binomial theorem; second, approximation behavior, especially instantaneous rates of change and slopes of nonlinear graphs. MAT310 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4776,13 +4771,12 @@
     "pre": "MAT32T|MAT320",
     "st": "Adv Integrated Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT34T",
     "dept": "MA",
-    "desc": "This option provides a two- or three-term, transition for students with three full years of, high school mathematics. MAT31T and MAT34T are, primarily for entering uppers., MAT31T/32T provides a two-term transition into our, 300-level courses (advanced integrated, mathematics) in the fall and winter, respectively, and normally promotes to MAT330 in the spring. , MAT34T/41T provides a two-term transition as a, bridge between our 300- and 400-level courses, (calculus) in the fall and winter, respectively, and normally promotes to MAT420 in the spring. , Meets during the reserve format.",
+    "desc": "This option provides a two-term transition as a bridge between our 300- and 400-level courses (calculus) in the fall and winter, respectively, and normally promotes to MAT420 in the spring. Meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4791,13 +4785,12 @@
     "pre": "PEA000",
     "st": "Transition 3 Mathematics",
     "subj": "MAT",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "MAT400",
     "dept": "MA",
-    "desc": "The purpose of the 300-level courses is to enable students to expand their view of algebra and geometry to include nonlinear motion and nonlinear functions. The investigation encompasses circular motion and the functions that describe it, ellipses and hyperbolas, exponential and logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In particular, logarithms are used to straighten nonlinear data; and matrices are used to describe geometric transformations and various patterns of growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics and recursion, leading to the binomial theorem; second, approximation behavior, especially instantaneous rates of change and slopes of nonlinear graphs",
+    "desc": "The purpose of the 300-level courses is to enable students to expand their view of algebra and geometry to include nonlinear motion and nonlinear functions. The investigation encompasses circular motion and the functions that describe it, ellipses and hyperbolas, exponential and logarithmic functions, dot products and matrices, and geometry on the surface of the Earth. In particular, logarithms are used to straighten nonlinear data; and matrices are used to describe geometric transformations and various patterns of growth. In preparation for 400-level mathematics, two strands are introduced: first, combinatorics and recursion, leading to the binomial theorem; second, approximation behavior, especially instantaneous rates of change and slopes of nonlinear graphs. MAT310 meets during the reserve format.",
     "editor": "Avaninder",
     "eli": "",
     "fixed": true,
@@ -4811,7 +4804,7 @@
   {
     "course_no": "MAT401",
     "dept": "MA",
-    "desc": "These courses cover the material of MAT310/320/330/400 in greater depth and at an accelerated pace.",
+    "desc": "These courses cover the material of MAT310/320/330/400 in greater depth and at an accelerated pace. Prerequisite: Permission of the department. MAT311 meets during the reserve format.",
     "editor": "Eric",
     "eli": "",
     "fixed": true,
@@ -5819,7 +5812,7 @@
   {
     "course_no": "PSY550",
     "dept": "RE",
-    "desc": "Students in this course study a range of, explanations for human thought, behavior and, emotion. Readings, projects, demonstrations and, class discussions facilitate exploration of the, biological basis of human behavior, human, development, cognition, social interaction, personality, psychopathology and the treatment of, mental illness.  Readings focusing on historical, and contemporary figures in psychology, such as, Freud, Piaget, Erickson, Milgram, Ainsworth and, Gilligan, as well as students' observations of, themselves enrich discussions focused on the self, and its experience of development, identity, cognition and group dynamics. Independent research, may allow students to focus on a specific topic of, interest.",
+    "desc": "Students in this course study a range of explanations for human thought, behavior and emotion. Readings, projects, demonstrations and class discussions facilitate exploration of this fascinating and evolving field. Specific areas of focus include: the nervous system and brain functions; human development; emotion; learning and memory; social psychology; and addiction. Case studies of psychopathology, as well as the diagnosis and treatment of mental illness, round out the course. Independent research and projects allow students to focus on specific topics of interest. Open to seniors. Note: This course does not provide credit toward the religion requirement.",
     "editor": "Eric",
     "eli": "Open to seniors only",
     "fixed": true,
@@ -5828,8 +5821,7 @@
     "pre": "PEA000",
     "st": "Introduction to Psychology ",
     "subj": "PSY",
-    "prereq_full": "",
-    "unedited": "true"
+    "prereq_full": ""
   },
   {
     "course_no": "REL250",
@@ -6296,7 +6288,7 @@
   {
     "course_no": "RUS310",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this, sequence of courses students consolidate their, knowledge of grammar and continue to acquire new, vocabulary by reading and discussing pieces of, classical and contemporary Russian literature, historical essays, fairy tales and internet, materials. They state opinions, persuade, and, analyze texts both verbally and in writing.",
+    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this sequence of courses, students consolidate their knowledge and continue to acquire new vocabulary by reading and discussing selected works of Russian classical and contemporary literature, including the works of L. Tolstoy and F. Dostoevsky, historical essays, fairy tales and internet materials. As part of the sequence, students study “Cinema for Russian Conversation.” They state opinions, persuade, and analyze texts and movies both verbally and in writing. Culture continues to be an integral part of the sequence. Students watch, read and discuss news, current events, television shows, performances, social media and more.",
     "editor": "Eric",
     "eli": "",
     "fixed": true,
@@ -6305,13 +6297,12 @@
     "pre": "RUS230|RUS231",
     "st": "Advanced Russian",
     "subj": "RUS",
-    "prereq_full": "RUS230",
-    "unedited": "true"
+    "prereq_full": "RUS230"
   },
   {
     "course_no": "RUS320",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this, sequence of courses students consolidate their, knowledge of grammar and continue to acquire new, vocabulary by reading and discussing pieces of, classical and contemporary Russian literature, historical essays, fairy tales and internet, materials. They state opinions, persuade, and, analyze texts both verbally and in writing.",
+    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this sequence of courses, students consolidate their knowledge and continue to acquire new vocabulary by reading and discussing selected works of Russian classical and contemporary literature, including the works of L. Tolstoy and F. Dostoevsky, historical essays, fairy tales and internet materials. As part of the sequence, students study “Cinema for Russian Conversation.” They state opinions, persuade, and analyze texts and movies both verbally and in writing. Culture continues to be an integral part of the sequence. Students watch, read and discuss news, current events, television shows, performances, social media and more.",
     "editor": "Eric",
     "eli": "",
     "fixed": true,
@@ -6320,13 +6311,12 @@
     "pre": "RUS310",
     "st": "Advanced Russian",
     "subj": "RUS",
-    "prereq_full": "RUS310",
-    "unedited": "true"
+    "prereq_full": "RUS310"
   },
   {
     "course_no": "RUS400",
     "dept": "ML",
-    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this sequence of courses students consolidate their knowledge of grammar and continue to acquire new vocabulary by reading and discussing pieces of classical and contemporary Russian literature, historical essays, fairy tales and internet materials. They state opinions, persuade, and analyze texts both verbally and in writing.",
+    "desc": "This sequence of courses is offered fall (RUS310), winter (RUS320) and spring (RUS400). In this sequence of courses, students consolidate their knowledge and continue to acquire new vocabulary by reading and discussing selected works of Russian classical and contemporary literature, including the works of L. Tolstoy and F. Dostoevsky, historical essays, fairy tales and internet materials. As part of the sequence, students study “Cinema for Russian Conversation.” They state opinions, persuade, and analyze texts and movies both verbally and in writing. Culture continues to be an integral part of the sequence. Students watch, read and discuss news, current events, television shows, performances, social media and more.",
     "editor": "Eric",
     "eli": "",
     "fixed": true,
