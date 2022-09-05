@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { ChangeEventHandler, useCallback, useState } from 'react';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
 import { InferGetStaticPropsType } from 'next';
@@ -14,7 +14,7 @@ const Courses = ({
   const [results, setResults] = useState<ICoursePartial[]>(courses);
 
   // Update the course list when the text input is changed
-  const onChange = useCallback(
+  const onChange: ChangeEventHandler<HTMLInputElement> = useCallback(
     (event) => {
       const subjAbbreviations = new Map<string, string>([
         ['ANT', 'anthropology'],
