@@ -23,7 +23,7 @@ const Campus = () => {
   const group = useRef();
   const { nodes } = useGLTF('/models/campus.glb') as unknown as GLTF & {
     nodes: {
-      Campus: THREE.Mesh;
+      Campus166: THREE.Mesh;
     };
   };
 
@@ -32,7 +32,7 @@ const Campus = () => {
       <mesh
         castShadow
         receiveShadow
-        geometry={(nodes.Campus as Mesh).geometry}
+        geometry={(nodes.Campus166 as Mesh).geometry}
         rotation={[Math.PI / 2, 0, 0]}
         scale={0.06}
       >
