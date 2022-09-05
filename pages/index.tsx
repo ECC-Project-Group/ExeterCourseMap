@@ -8,9 +8,14 @@ import Typewriter from 'typewriter-effect';
 // React implementation of three.js
 import { Canvas } from '@react-three/fiber';
 // Helper functions and abstractions built using fiber
-import { OrbitControls, useGLTF } from '@react-three/drei';
+import {
+  BakeShadows,
+  MeshReflectorMaterial,
+  OrbitControls,
+  useGLTF,
+} from '@react-three/drei';
 // Classes directly imported from the original three library
-import { Mesh } from 'three';
+import { Mesh, PCFSoftShadowMap } from 'three';
 // Typedefs for the GLTF class are inconsistent across three and react-three-fiber
 // Mainly used to prevent the TypeScript compiler from complaining about nonexistent props
 // import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -34,7 +39,7 @@ const Campus = () => {
         receiveShadow
         geometry={(nodes.Campus166 as Mesh).geometry}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.06}
+        scale={1}
       >
         <meshPhongMaterial color="white" />
       </mesh>
@@ -51,23 +56,52 @@ const Home: NextPage = () => {
         <div className="absolute -z-10 h-[65vh] min-h-[200px] w-full bg-exeter dark:bg-neutral-800 sm:h-[80vh]">
           {/* Declarative representation of the campus model */}
           <Canvas
-            camera={{ fov: 50, position: [0, 0, 10] }}
+            camera={{ fov: 50, position: [0, 0, 180] }}
+            dpr={[1.5, 1]}
+            shadows={{ type: PCFSoftShadowMap }}
+            gl={{ antialias: true }}
             className="opacity-20"
           >
             <pointLight
               intensity={1.5}
               castShadow={true}
-              position={[0, 10, 0]}
+              shadow-mapSize={[1024, 2048]}
+              position={[0, 200, 0]}
             />
+            <ambientLight intensity={0.15} />
+            <mesh
+              position={[0, -0.15, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              receiveShadow
+            >
+              <planeGeometry args={[1200, 1200]} />
+              <MeshReflectorMaterial
+                blur={[400, 100]}
+                resolution={1024}
+                mixBlur={1}
+                mixStrength={15}
+                depthScale={1}
+                minDepthThreshold={0.85}
+                color="#1f1f1f"
+                metalness={0.6}
+                roughness={1}
+                refractionRatio={0.95}
+                mirror={1}
+                alphaWrite={false}
+              />
+            </mesh>
+            <fog attach="fog" args={['#9A1D2E', 100, 500]} />
             {/* Does not render the campus model until it is completely loaded */}
             <Suspense fallback={null}>
               <Campus />
+              <BakeShadows />
               <OrbitControls
                 makeDefault
                 autoRotate
                 autoRotateSpeed={0.4}
                 maxPolarAngle={Math.PI / 2.8}
                 minPolarAngle={Math.PI / 2.8}
+                // position={[0, 0, 200]}
                 enableZoom={false}
                 enablePan={false}
               />
