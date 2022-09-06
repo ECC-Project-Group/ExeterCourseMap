@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Suspense, useRef } from 'react';
+import { Suspense } from 'react';
 
 import CTAButton from '../components/callToActionButton';
 // Typing animation for tagline
@@ -26,7 +26,6 @@ import { useTheme } from 'next-themes';
 
 // The campus three.js element
 const Campus = () => {
-  const group = useRef();
   const { nodes } = useGLTF('/models/campus.glb') as unknown as GLTF & {
     nodes: {
       Campus166: THREE.Mesh;
@@ -34,17 +33,15 @@ const Campus = () => {
   };
 
   return (
-    <group ref={group} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={(nodes.Campus166 as Mesh).geometry}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={1}
-      >
-        <meshPhongMaterial color="white" />
-      </mesh>
-    </group>
+    <mesh
+      castShadow
+      receiveShadow
+      geometry={(nodes.Campus166 as Mesh).geometry}
+      rotation={[Math.PI / 2, 0, 0]}
+      scale={1}
+    >
+      <meshPhongMaterial color="white" />
+    </mesh>
   );
 };
 
@@ -64,6 +61,7 @@ const Home: NextPage = () => {
             dpr={[1.5, 1]}
             shadows={{ type: PCFSoftShadowMap }}
             gl={{ antialias: true }}
+            legacy={true}
             className="opacity-20"
           >
             <pointLight
@@ -86,12 +84,10 @@ const Home: NextPage = () => {
                 mixStrength={15}
                 depthScale={1}
                 minDepthThreshold={0.85}
-                color="#1f1f1f"
+                color="#030303"
                 metalness={0.6}
                 roughness={1}
-                refractionRatio={0.95}
                 mirror={1}
-                alphaWrite={false}
               />
             </mesh>
             <fog
