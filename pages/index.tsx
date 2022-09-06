@@ -58,7 +58,6 @@ const Home: NextPage = () => {
           {/* Declarative representation of the campus model */}
           <Canvas
             camera={{ fov: 50, position: [0, 0, 180] }}
-            dpr={[1.5, 1]}
             shadows={{ type: PCFSoftShadowMap }}
             gl={{ antialias: true }}
             legacy={true}
