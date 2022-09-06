@@ -163,6 +163,7 @@ export const renderElements = (
           borderColor: borderColor,
           transitionDuration: '0.2s',
           transitionTimingFunction: 'ease-out',
+          cursor: 'pointer',
         },
       });
     });
