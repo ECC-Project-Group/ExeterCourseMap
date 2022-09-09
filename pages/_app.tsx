@@ -1,14 +1,14 @@
-import '../styles/globals.css';
+import { SessionProvider } from 'next-auth/react';
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Header from '../components/header';
-import { SessionProvider } from 'next-auth/react';
-import { useEffect } from 'react';
-import Script from 'next/script';
 import { useRouter } from 'next/router';
-import { pageview } from '../lib/gtag';
+import Script from 'next/script';
+import { useEffect } from 'react';
 import Footer from '../components/footer';
-import { ThemeProvider } from 'next-themes';
+import Header from '../components/header';
+import { pageview } from '../lib/gtag';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Google Tag Manager allows us to integrate with Google Analytics
