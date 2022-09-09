@@ -14,7 +14,7 @@
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.1",
     "@prisma/client": "^4.3.1",
-    "@react-three/drei": "^9.28.2",
+    "@react-three/drei": "^9.29.1",
     "@react-three/fiber": "^8.7.2",
     "elkjs": "^0.8.2",
     "framer-motion": "^7.2.1",
