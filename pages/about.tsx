@@ -20,15 +20,6 @@ const About: NextPage = () => {
           prerequisite relationships between different courses.
         </p>
         <p className={questionStyle}>
-          How can I get all the requirements for a course?
-        </p>
-        <p className={answerStyle}>
-          First find your course in the &quot;Courses&quot; page. Then, click
-          the &quot;More Requirements&quot; button until the tree stops growing.
-          This will show you every level of prereqs/coreqs required to take the
-          course.
-        </p>
-        <p className={questionStyle}>
           How can I see all the classes I can take in a subject?
         </p>
         <p className={answerStyle}>
