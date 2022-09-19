@@ -1,8 +1,8 @@
 // Each provider represents a way for the user to log in
 import nextAuth from 'next-auth';
 import azureADProvider from 'next-auth/providers/azure-ad';
-import googleProvider from 'next-auth/providers/google';
 import emailProvider from 'next-auth/providers/email';
+import googleProvider from 'next-auth/providers/google';
 // Adapters give NextAuth a way to communicate with the database
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 // Client is used to directly interface with the Prisma DB

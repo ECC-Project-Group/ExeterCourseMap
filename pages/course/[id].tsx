@@ -1,7 +1,14 @@
-import { InferGetStaticPropsType } from 'next';
-import React, { useEffect, useState } from 'react';
-import ReactFlow, { Background, Node, Edge } from 'react-flow-renderer';
 import { ElkNode } from 'elkjs/lib/main';
+import { InferGetStaticPropsType } from 'next';
+import { useEffect, useState } from 'react';
+import ReactFlow, { Background, Edge, Node } from 'react-flow-renderer';
+import { BsPerson } from 'react-icons/bs';
+import { MdChecklist } from 'react-icons/md';
+import {
+  CourseInfoPopupObject,
+  TransitionWrapper,
+} from '../../components/courseInfoPopup';
+import ExpandableText from '../../components/expandableText';
 import {
   getAllCourses,
   getCourse,
@@ -10,13 +17,6 @@ import {
 import { layoutElements, renderElements } from '../../lib/generateLayout';
 import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
-import { MdChecklist } from 'react-icons/md';
-import { BsPerson } from 'react-icons/bs';
-import ExpandableText from '../../components/expandableText';
-import {
-  CourseInfoPopupObject,
-  TransitionWrapper,
-} from '../../components/courseInfoPopup';
 
 const CoursePage = ({
   params,

@@ -19,10 +19,10 @@ import { Mesh, PCFSoftShadowMap } from 'three';
 // Typedefs for the GLTF class are inconsistent across three and react-three-fiber
 // Mainly used to prevent the TypeScript compiler from complaining about nonexistent props
 // import { GLTF as GLTFThree } from 'three/examples/jsm/loaders/GLTFLoader';
+import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
-import { useTheme } from 'next-themes';
 
 // The campus three.js element
 const Campus = () => {

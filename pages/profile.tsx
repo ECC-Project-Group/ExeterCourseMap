@@ -1,8 +1,8 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { MdExpandMore } from 'react-icons/md';
-import { AnimatePresence, motion } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image';
 
 const SubRequirement = ({
   description,
