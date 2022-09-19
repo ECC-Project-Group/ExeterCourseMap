@@ -1,10 +1,10 @@
+import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ChangeEventHandler, useCallback, useState } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { getAllCourses } from '../lib/courses';
 import { ICoursePartial } from '../types';
-import { InferGetStaticPropsType } from 'next';
-import { AiOutlineSearch } from 'react-icons/ai';
-import Image from 'next/image';
 
 const Courses = ({
   courses,
