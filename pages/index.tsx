@@ -157,7 +157,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div className="absolute -z-50 h-full w-screen overflow-hidden">
-        <div className="absolute -right-[550px] -z-50 -mt-12 rotate-1 opacity-20">
+        <div className="absolute -right-[550px] -z-50 -mt-12 rotate-1 opacity-20 dark:opacity-80">
           <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
         </div>
       </div>
