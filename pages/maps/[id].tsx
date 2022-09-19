@@ -1,15 +1,15 @@
 import { ElkNode } from 'elkjs/lib/main';
 import type { InferGetStaticPropsType } from 'next';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactFlow, { Edge, Node } from 'react-flow-renderer';
-import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
-import { layoutElements, renderElements } from '../../lib/generateLayout';
-import { event } from '../../lib/gtag';
-import { ICourse } from '../../types';
 import {
   CourseInfoPopupObject,
   TransitionWrapper,
 } from '../../components/courseInfoPopup';
+import { getAllCoursesFrom, getCourseRequirements } from '../../lib/courses';
+import { layoutElements, renderElements } from '../../lib/generateLayout';
+import { event } from '../../lib/gtag';
+import { ICourse } from '../../types';
 
 const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { name, prereqs, coreqs, descriptions, titles, eli, prereqFull } =
