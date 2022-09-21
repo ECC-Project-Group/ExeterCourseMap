@@ -161,7 +161,7 @@ const Home: NextPage = () => {
           <Image alt="Decal" src="/decal.svg" width={2800} height={1400} />
         </div>
       </div>
-      <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-20">
+      <div className="min-h-[70vh] px-8 py-12 lg:min-h-[50vh] lg:py-20 lg:px-20">
         <div className="relative p-4 md:p-6">
           <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
             <div className="absolute top-0 left-1/2 right-12 bottom-0 h-1/2 w-2/3 -translate-x-1/2 md:left-auto md:top-1/2 md:h-3/4 md:translate-x-0 md:-translate-y-1/2">
@@ -193,20 +193,42 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-[70vh] px-8 py-12 lg:py-36 lg:px-40">
-        <div className="w-full lg:w-3/5">
-          <p className="bg-gradient-to-b from-red-500 to-exeter bg-clip-text font-display text-4xl font-black text-transparent dark:from-red-200 dark:to-exeter-100 md:text-6xl">
-            Know your prereqs.
-          </p>
-          <p className="py-8 text-2xl font-semibold text-gray-700 dark:text-white md:text-3xl">
-            <span className="text-gray-500 dark:text-neutral-200">
-              Stop fiddling with LionLinks.
-            </span>
-            &nbsp;View maps of all course prerequisites and see what classes you
-            can take.
-          </p>
+      <div className="min-h-[70vh] px-8 py-12 lg:min-h-[50vh] lg:py-20 lg:px-20">
+        <div className="relative p-4 md:p-6">
+          <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
+            <div className="absolute top-0 left-1/2 right-12 bottom-0 h-1/2 w-2/3 -translate-x-1/2 md:left-auto md:top-1/2 md:h-3/4 md:translate-x-0 md:-translate-y-1/2">
+              <Image
+                layout="fill"
+                src="/magnifying-glass.svg"
+                alt="Course map graphic"
+              />
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 -z-10 h-1/2 w-full bg-gradient-to-t from-exeter to-transparent md:top-0 md:left-1/4 md:right-auto md:h-auto md:w-3/4 md:bg-gradient-to-r"></div>
+          <div className="border-1 flex flex-col justify-end gap-3 border border-white px-8 pb-8 pt-48 md:h-auto md:justify-center md:gap-6 md:px-16 md:py-32">
+            <h1 className="font-display text-4xl font-black text-white md:w-1/2 md:text-5xl">
+              Know your prereqs.
+            </h1>
+            <p className="font-display text-2xl text-neutral-200 md:w-1/2">
+              Stop fiddling with LionLinks. View maps of all course
+              prerequisites and see what classes you can take.
+            </p>
+            <Link href="/maps">
+              <a className="group">
+                <div className="flex flex-row items-center gap-3 text-white">
+                  <div className="relative">
+                    <BsFillArrowRightSquareFill className="absolute text-2xl group-hover:animate-ping" />
+                    <BsFillArrowRightSquareFill className="text-2xl" />
+                  </div>
+                  <span className="relative flex flex-col items-start justify-start gap-1 font-display text-xl font-bold leading-none">
+                    See the course maps
+                    <div className="absolute top-full h-0.5 w-0 bg-white transition-all duration-300 ease-out group-hover:w-full"></div>
+                  </span>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
-        <CTAButton href="/maps">See the course maps</CTAButton>
       </div>
     </div>
   );

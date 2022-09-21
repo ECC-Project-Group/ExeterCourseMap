@@ -87,7 +87,7 @@ const Courses = ({
           />
           <div className="pointer-events-none absolute top-0 bottom-0 right-0 left-0 -z-10 bg-neutral-100 transition-all ease-out peer-hover:bg-neutral-50 peer-focus:bg-neutral-50 dark:bg-neutral-600 dark:peer-hover:bg-neutral-500 dark:peer-focus:bg-neutral-500"></div>
         </div>
-        <div className="absolute top-24 -left-[200px] -z-20 -mt-12 rotate-[190deg] opacity-20 dark:opacity-80">
+        <div className="absolute top-24 -left-[200px] -z-20 -mt-12 opacity-20 dark:opacity-80">
           <Image alt="Decal" src="/decal2.svg" width={3000} height={2000} />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2">
