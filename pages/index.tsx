@@ -165,7 +165,11 @@ const Home: NextPage = (props) => {
         <div className="relative p-4 md:p-6">
           <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
             <div className="absolute top-0 left-1/2 right-12 bottom-0 h-1/2 w-2/3 -translate-x-1/2 md:left-auto md:top-1/2 md:h-3/4 md:translate-x-0 md:-translate-y-1/2">
-              <Image layout="fill" src="/magnifying-glass.svg" alt="Course map graphic" />
+              <Image
+                layout="fill"
+                src="/magnifying-glass.svg"
+                alt="Course map graphic"
+              />
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0 -z-10 h-1/2 w-full bg-gradient-to-t from-exeter to-transparent md:top-0 md:left-1/4 md:right-auto md:h-auto md:w-3/4 md:bg-gradient-to-r"></div>
@@ -197,11 +201,7 @@ const Home: NextPage = (props) => {
         <div className="relative p-4 md:p-6">
           <div className="absolute top-0 right-0 bottom-0 left-0 -z-20 bg-exeter">
             <div className="absolute top-0 left-1/2 right-12 bottom-0 h-1/2 w-2/3 -translate-x-1/2 md:left-auto md:top-1/2 md:h-3/4 md:translate-x-0 md:-translate-y-1/2">
-              <Image
-                layout="fill"
-                src="/graph.svg"
-                alt="Course map graphic"
-              />
+              <Image layout="fill" src="/graph.svg" alt="Course map graphic" />
             </div>
           </div>
           <div className="absolute bottom-0 left-0 right-0 -z-10 h-1/2 w-full bg-gradient-to-t from-exeter to-transparent md:top-0 md:left-1/4 md:right-auto md:h-auto md:w-3/4 md:bg-gradient-to-r"></div>
