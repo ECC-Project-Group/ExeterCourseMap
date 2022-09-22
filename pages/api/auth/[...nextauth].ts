@@ -4,11 +4,8 @@ import azureADProvider from 'next-auth/providers/azure-ad';
 import emailProvider from 'next-auth/providers/email';
 import googleProvider from 'next-auth/providers/google';
 // Adapters give NextAuth a way to communicate with the database
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
-// Client is used to directly interface with the Prisma DB
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
+import clientPromise from '../../../lib/mongodb';
 
 export default nextAuth({
   providers: [
@@ -35,5 +32,5 @@ export default nextAuth({
       return token;
     },
   },
-  adapter: PrismaAdapter(prisma),
+  adapter: MongoDBAdapter(clientPromise),
 });
