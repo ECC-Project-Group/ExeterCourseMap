@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-import CTAButton from '../components/callToActionButton';
 // Typing animation for tagline
 import Typewriter from 'typewriter-effect';
 // React implementation of three.js
@@ -45,7 +44,7 @@ const Campus = () => {
   );
 };
 
-const Home: NextPage = (props) => {
+const Home: NextPage = () => {
   // Load the model immediately
   useGLTF.preload('/models/campus.glb');
 
