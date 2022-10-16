@@ -34,7 +34,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
   useEffect(() => {
     async function main() {
       const parsedGraph = await layoutElements(prereqs, coreqs, true);
-      const { nodes, edges } = await renderElements(parsedGraph, true);
+      const { nodes, edges } = renderElements(parsedGraph, true);
       setGraph(parsedGraph);
       // setElements(newElements);
       setNodes(nodes);
@@ -98,7 +98,7 @@ const Submap = ({ params }: InferGetStaticPropsType<typeof getStaticProps>) => {
           panOnScroll={true}
           style={reactFlowStyle}
           defaultZoom={0.7}
-        ></ReactFlow>
+        />
       </div>
       <TransitionWrapper
         courseInfoPopupParams={courseInfoPopupParams}
@@ -224,14 +224,14 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   return {
     props: {
       params: {
-        name: name,
-        courses: courses,
-        prereqs: prereqs,
-        coreqs: coreqs,
-        descriptions: descriptions,
-        titles: titles,
-        eli: eli,
-        prereqFull: prereqFull,
+        name,
+        courses,
+        prereqs,
+        coreqs,
+        descriptions,
+        titles,
+        eli,
+        prereqFull,
       },
     },
   };
