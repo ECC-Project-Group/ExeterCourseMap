@@ -19,8 +19,8 @@ import { event } from '../../lib/gtag';
 import { ICourse } from '../../types';
 
 const CoursePage = ({
-  params,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+      params,
+    }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // prereqs maps each course id to its prereqs
   // descriptions maps each course id to its description
   // titles maps each course id to its full title
