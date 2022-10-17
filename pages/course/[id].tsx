@@ -249,13 +249,13 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   return {
     props: {
       params: {
-        course: course,
-        prereqs: prereqs,
-        coreqs: coreqs,
-        descriptions: descriptions,
-        titles: titles,
-        eliReqs: eliReqs,
-        prereqsFull: prereqsFull,
+        course,
+        prereqs,
+        coreqs,
+        descriptions,
+        titles,
+        eliReqs,
+        prereqsFull,
       },
     },
   };
