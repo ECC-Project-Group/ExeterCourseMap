@@ -41,7 +41,7 @@
     "@types/react": "18.0.20",
     "@types/react-gtm-module": "^2.0.1",
     "@types/three": "^0.144.0",
-    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.36.2",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.23.1",
