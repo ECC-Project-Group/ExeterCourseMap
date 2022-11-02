@@ -19,7 +19,7 @@
     "@react-three/fiber": "^8.7.4",
     "elkjs": "^0.8.2",
     "framer-motion": "^7.3.2",
-    "mongodb": "^4.10.0",
+    "mongodb": "^4.11.0",
     "next": "^12.2.5",
     "next-auth": "^4.10.3",
     "next-themes": "^0.2.1",
