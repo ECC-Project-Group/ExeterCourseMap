@@ -128,16 +128,16 @@ const Requirement = ({
   );
 
   return (
-    <div className="flex h-min flex-col gap-2 rounded-sm border border-neutral-200 bg-neutral-100 p-4 shadow-sm">
-      <h1 className="font-mono text-xl text-neutral-800">
+    <div className="flex h-min flex-col gap-2 rounded-sm border border-neutral-200 bg-neutral-100 p-4 shadow-sm dark:border-neutral-600 dark:bg-neutral-500">
+      <h1 className="font-mono text-xl text-neutral-800 dark:text-neutral-100">
         {emoji} {name.toUpperCase()}
       </h1>
-      <div className="h-4 w-full rounded-full bg-neutral-200">
+      <div className="h-4 w-full rounded-full bg-neutral-200 dark:bg-neutral-600">
         <div
           style={{
             width: `calc(100%*(${totalFulfilled}/${totalRequired}))`,
           }}
-          className={`h-full rounded-full bg-exeter-200`}
+          className={`h-full rounded-full bg-exeter-200 dark:bg-gradient-to-r dark:from-exeter-400 dark:to-exeter-200`}
         ></div>
       </div>
       <button
@@ -168,17 +168,17 @@ const Requirement = ({
 const Profile = () => {
   return (
     <div>
-      <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 sm:py-20 lg:px-40">
+      <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 dark:border-none dark:bg-neutral-800 sm:py-20 lg:px-40">
         <div className="flex flex-row gap-4">
-          <div className="aspect-square w-20 rounded-full border-2 border-black"></div>
+          <div className="aspect-square w-20 rounded-full border-2 border-black dark:border-neutral-100"></div>
           <div className="flex flex-col justify-center">
-            <h1 className="font-display text-2xl font-bold text-black">
+            <h1 className="font-display text-2xl font-bold text-black dark:text-white">
               Knoddy
             </h1>
-            <h2 className="font-display text-xl text-neutral-600">
+            <h2 className="font-display text-xl text-neutral-600 dark:text-neutral-400">
               knoddy@exeter.edu
             </h2>
-            <h3 className="text-md font-display text-neutral-400">
+            <h3 className="text-md font-display text-neutral-400 dark:text-neutral-500">
               4-year senior
             </h3>
           </div>
@@ -357,15 +357,17 @@ const Profile = () => {
         <div className="flex flex-col gap-6">
           <h1 className="font-display text-3xl font-bold">Courses</h1>
           <div className="flex w-full flex-row gap-4">
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
-              <h1 className="font-mono text-lg text-neutral-500">PREP YEAR</h1>
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
+              <h1 className="font-display text-lg font-bold text-neutral-500">
+                PREP YEAR
+              </h1>
               <div className="flex flex-col gap-1 font-display text-lg">
                 <p>CSC405 Algorithms and Software</p>
                 <p>ENG100 9th grade english</p>
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
               <h1 className="font-display text-lg font-bold text-neutral-500">
                 LOWER YEAR
               </h1>
@@ -375,7 +377,7 @@ const Profile = () => {
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
               <h1 className="font-display text-lg font-bold text-neutral-500">
                 UPPER YEAR
               </h1>
@@ -385,7 +387,7 @@ const Profile = () => {
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
               <h1 className="font-display text-lg font-bold text-neutral-500">
                 SENIOR YEAR
               </h1>
