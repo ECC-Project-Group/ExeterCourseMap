@@ -29,20 +29,22 @@ const SubRequirement = ({
 
   return (
     <div key={description} className="flex flex-col items-start gap-1">
-      <h1 className="font-display text-sm text-neutral-800">{description}</h1>
+      <h1 className="font-display text-sm text-neutral-800 dark:text-neutral-100">
+        {description}
+      </h1>
       <div className="mb-1 h-2 w-full rounded-full bg-neutral-200">
         <div
           style={{
             width: `calc(100%*(${numFulfilled}/${numRequired}))`,
           }}
-          className={`h-full rounded-full bg-exeter-50`}
+          className={`h-full rounded-full bg-exeter-50 dark:bg-gradient-to-r dark:from-exeter-400 dark:to-exeter-200`}
         ></div>
       </div>
       <span
         onMouseEnter={() => setShowFulfillments(true)}
         onClick={() => setShowFulfillments(true)}
         onMouseLeave={() => setShowFulfillments(false)}
-        className="relative cursor-pointer font-mono text-xs text-neutral-400 underline underline-offset-2 hover:text-exeter-200"
+        className="relative cursor-pointer font-mono text-xs text-neutral-400 underline underline-offset-2 hover:text-exeter-200 dark:text-neutral-200"
       >
         {numFulfilled}/{numRequired} Fulfilled
         <AnimatePresence>
@@ -130,32 +132,32 @@ const Requirement = ({
   );
 
   return (
-    <div className="flex h-min flex-col gap-2 rounded-sm border border-neutral-200 bg-neutral-100 p-4 shadow-sm">
-      <h1 className="font-mono text-xl text-neutral-800">
+    <div className="flex h-min flex-col gap-2 rounded-sm border border-neutral-200 bg-neutral-100 p-4 shadow-sm dark:border-neutral-500 dark:bg-neutral-600">
+      <h1 className="font-mono text-xl text-neutral-800 dark:text-neutral-100">
         {emoji} {name.toUpperCase()}
       </h1>
-      <div className="h-4 w-full rounded-full bg-neutral-200">
+      <div className="h-4 w-full rounded-full bg-neutral-200 dark:bg-neutral-700">
         <div
           style={{
             width: `calc(100%*(${totalFulfilled}/${totalRequired}))`,
           }}
-          className={`h-full rounded-full bg-exeter-200`}
+          className={`h-full rounded-full bg-exeter-200 dark:bg-gradient-to-r dark:from-exeter-400 dark:to-exeter-200`}
         ></div>
       </div>
       <button
         onClick={() => setShowMoreInformation(!showMoreInformation)}
-        className="flex flex-row items-center gap-1 font-display text-neutral-500"
+        className="flex flex-row items-center gap-1 font-display text-neutral-500 dark:text-neutral-200"
       >
         <MdExpandMore
           className={`${
             showMoreInformation ? 'rotate-0' : '-rotate-90'
-          } transition-all ease-out`}
+          } transition-all ease-out `}
         />{' '}
         {totalFulfilled}/{totalRequired} Fulfilled
       </button>
       {showMoreInformation && (
         <>
-          <div className="mx-auto my-1 h-px w-full bg-neutral-200"></div>
+          <div className="mx-auto my-1 h-px w-full bg-neutral-200 dark:bg-neutral-500"></div>
           <div className="flex flex-col gap-4">
             {requirements.map((requirement) => (
               <SubRequirement key={requirement.toString()} {...requirement} />
@@ -174,17 +176,17 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 sm:py-20 lg:px-40">
+      <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 dark:border-none dark:bg-neutral-800 sm:py-20 lg:px-40">
         <div className="flex flex-row gap-4">
-          <div className="aspect-square w-20 rounded-full border-2 border-black"></div>
+          <div className="aspect-square h-20 w-20 rounded-full border-2 border-neutral-300 bg-[url('/knoddy.png')] bg-center dark:border-neutral-100"></div>
           <div className="flex flex-col justify-center">
-            <h1 className="font-display text-2xl font-bold text-black">
-              {user.name}
+            <h1 className="font-display text-2xl font-bold text-black dark:text-white">
+              Knoddy
             </h1>
-            <h2 className="font-display text-xl text-neutral-600">
-              {user.email} {JSON.stringify(user.courses)}
+            <h2 className="font-display text-xl text-neutral-600 dark:text-neutral-400">
+              knoddy@exeter.edu
             </h2>
-            <h3 className="text-md font-display text-neutral-400">
+            <h3 className="text-md font-display text-neutral-400 dark:text-neutral-500">
               4-year senior
             </h3>
           </div>
@@ -363,39 +365,41 @@ const Profile = () => {
         <div className="flex flex-col gap-6">
           <h1 className="font-display text-3xl font-bold">Courses</h1>
           <div className="flex w-full flex-row gap-4">
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
-              <h1 className="font-mono text-lg text-neutral-500">PREP YEAR</h1>
-              <div className="flex flex-col gap-1 font-display text-lg">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
+              <h1 className="font-display text-lg font-bold text-neutral-400">
+                PREP YEAR
+              </h1>
+              <div className="flex flex-col gap-1 font-display text-lg dark:text-neutral-200">
                 <p>CSC405 Algorithms and Software</p>
                 <p>ENG100 9th grade english</p>
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
-              <h1 className="font-display text-lg font-bold text-neutral-500">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
+              <h1 className="font-display text-lg font-bold text-neutral-400">
                 LOWER YEAR
               </h1>
-              <div className="flex flex-col gap-1 font-display text-lg">
+              <div className="flex flex-col gap-1 font-display text-lg dark:text-neutral-200">
                 <p>CSC405 Algorithms and Software</p>
                 <p>ENG100 9th grade english</p>
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
-              <h1 className="font-display text-lg font-bold text-neutral-500">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
+              <h1 className="font-display text-lg font-bold text-neutral-400">
                 UPPER YEAR
               </h1>
-              <div className="flex flex-col gap-1 font-display text-lg">
+              <div className="flex flex-col gap-1 font-display text-lg dark:text-neutral-200">
                 <p>CSC405 Algorithms and Software</p>
                 <p>ENG100 9th grade english</p>
                 <p>REL240 Among Us and Society</p>
               </div>
             </div>
-            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm">
-              <h1 className="font-display text-lg font-bold text-neutral-500">
+            <div className="flex flex-col gap-2 rounded-sm bg-neutral-100 p-4 shadow-sm dark:bg-neutral-800">
+              <h1 className="font-display text-lg font-bold text-neutral-400">
                 SENIOR YEAR
               </h1>
-              <div className="flex flex-col gap-1 font-display text-lg">
+              <div className="flex flex-col gap-1 font-display text-lg dark:text-neutral-200">
                 <p>CSC405 Algorithms and Software</p>
                 <p>ENG100 9th grade english</p>
                 <p>REL240 Among Us and Society</p>
