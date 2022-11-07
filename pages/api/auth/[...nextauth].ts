@@ -1,13 +1,14 @@
 // Each provider represents a way for the user to log in
-import nextAuth from 'next-auth';
+import nextAuth, { NextAuthOptions, Session, User } from 'next-auth';
 import azureADProvider from 'next-auth/providers/azure-ad';
 import emailProvider from 'next-auth/providers/email';
 import googleProvider from 'next-auth/providers/google';
 // Adapters give NextAuth a way to communicate with the database
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
+import { JWT } from 'next-auth/jwt';
 import clientPromise from '../../../lib/mongodb';
 
-export default nextAuth({
+export const AuthOptions: NextAuthOptions = {
   providers: [
     azureADProvider({
       clientId: process.env.AZURE_AD_CLIENT_ID ?? '',
@@ -27,19 +28,21 @@ export default nextAuth({
     colorScheme: 'light',
   },
   callbacks: {
-    async jwt({ token }) {
+    async jwt({ token }: { token: JWT }) {
       return token;
     },
-    async session({ session, user }) {
+    async session({ session, user }: { session: Session; user: User }) {
       session.user = {
         id: user.id,
         name: user.name,
         email: user.email,
-        courses: user.courses,
+        courses: user.courses || [],
       };
 
       return session;
     },
   },
   adapter: MongoDBAdapter(clientPromise),
-});
+};
+
+export default nextAuth(AuthOptions);

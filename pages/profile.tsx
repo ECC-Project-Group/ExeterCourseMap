@@ -1,10 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
-import { getSession, useSession } from 'next-auth/react';
+// eslint-disable-next-line camelcase
+import { unstable_getServerSession } from 'next-auth';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { MdExpandMore } from 'react-icons/md';
+import { AuthOptions } from './api/auth/[...nextauth]';
 
 const SubRequirement = ({
   description,
@@ -413,7 +416,11 @@ const Profile = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
+  const session = await unstable_getServerSession(
+    context.req,
+    context.res,
+    AuthOptions
+  );
 
   if (!session) {
     return {
