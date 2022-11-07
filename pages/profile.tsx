@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { GetServerSideProps } from 'next';
+import { User } from 'next-auth';
 // eslint-disable-next-line camelcase
 import { unstable_getServerSession } from 'next-auth';
-import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -172,10 +172,8 @@ const Requirement = ({
   );
 };
 
-const Profile = () => {
-  const { data: session } = useSession();
-
-  const user = session!.user!;
+const Profile = ({ user }: { user: User }) => {
+  const courses = user.courses;
 
   return (
     <div>
@@ -184,10 +182,10 @@ const Profile = () => {
           <div className="aspect-square h-20 w-20 rounded-full border-2 border-neutral-300 bg-[url('/knoddy.png')] bg-center dark:border-neutral-100"></div>
           <div className="flex flex-col justify-center">
             <h1 className="font-display text-2xl font-bold text-black dark:text-white">
-              Knoddy
+              {user.name}
             </h1>
             <h2 className="font-display text-xl text-neutral-600 dark:text-neutral-400">
-              knoddy@exeter.edu
+              {user.email}
             </h2>
             <h3 className="text-md font-display text-neutral-400 dark:text-neutral-500">
               4-year senior
@@ -422,7 +420,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     AuthOptions
   );
 
-  if (!session) {
+  if (!session?.user) {
     return {
       redirect: {
         destination: '/',
@@ -431,11 +429,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const { user } = session;
   return {
-    props: {
-      session,
-      query: context.query,
-    },
+    props: { user },
   };
 };
 
