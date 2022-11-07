@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/react';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
-import { HiSun, HiMoon } from 'react-icons/hi';
-import useScrollBlock from './useScrollBlock';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
+import { HiMoon, HiSun } from 'react-icons/hi';
+import useScrollBlock from './useScrollBlock';
 
 const HeaderNavItem = ({ name, href }: { name: string; href: string }) => {
   return (

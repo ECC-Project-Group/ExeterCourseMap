@@ -9,7 +9,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { course } = req.body;
   const session = await unstable_getServerSession(req, res, AuthOptions);
 
   if (!session) return res.json({ error: 'No user' });
@@ -20,7 +19,5 @@ export default async function handler(
 
   if (!user) return res.json({ error: 'No user' });
 
-  await user.updateOne({ $addToSet: { courses: course } });
-
-  return res.json({ message: 'Updated' });
+  return res.json({ courses: user.courses });
 }

@@ -1,4 +1,4 @@
-import ELK, { ElkNode, ElkExtendedEdge } from 'elkjs/lib/main';
+import ELK, { ElkExtendedEdge, ElkNode } from 'elkjs/lib/main';
 import { Edge, Node, Position } from 'react-flow-renderer';
 import { ICourse } from '../types';
 import { getCourseColor, getCourseImage } from './course_colors';
