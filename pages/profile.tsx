@@ -1,4 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
+import { GetServerSideProps } from 'next';
+import { getSession, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -166,6 +168,10 @@ const Requirement = ({
 };
 
 const Profile = () => {
+  const { data: session } = useSession();
+
+  const user = session!.user!;
+
   return (
     <div>
       <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 sm:py-20 lg:px-40">
@@ -173,10 +179,10 @@ const Profile = () => {
           <div className="aspect-square w-20 rounded-full border-2 border-black"></div>
           <div className="flex flex-col justify-center">
             <h1 className="font-display text-2xl font-bold text-black">
-              Knoddy
+              {user.name}
             </h1>
             <h2 className="font-display text-xl text-neutral-600">
-              knoddy@exeter.edu
+              {user.email} {JSON.stringify(user.courses)}
             </h2>
             <h3 className="text-md font-display text-neutral-400">
               4-year senior
@@ -400,6 +406,26 @@ const Profile = () => {
       </div>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      session,
+      query: context.query,
+    },
+  };
 };
 
 export default Profile;

@@ -28,8 +28,17 @@ export default nextAuth({
   },
   callbacks: {
     async jwt({ token }) {
-      token.userRole = 'admin';
       return token;
+    },
+    async session({ session, user }) {
+      session.user = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        courses: user.courses,
+      };
+
+      return session;
     },
   },
   adapter: MongoDBAdapter(clientPromise),
