@@ -28,7 +28,7 @@
     "react-dom": "18.2.0",
     "react-flow-renderer": "^10.3.16",
     "react-gtm-module": "^2.0.11",
-    "react-icons": "^4.4.0",
+    "react-icons": "^4.6.0",
     "tailwind-gradient-mask-image": "^1.0.0",
     "three": "^0.144.0",
     "typewriter-effect": "^2.19.0",
