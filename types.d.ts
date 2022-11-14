@@ -39,7 +39,7 @@ declare module 'next-auth' {
 
   interface Session {
     user: User & {
-      courses: string[] | null | undefined;
+      courses: string[];
     };
   }
 }
