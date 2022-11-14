@@ -109,7 +109,7 @@ const CoursePage = ({
   };
 
   const changeStatus = async () => {
-    const res = await fetch('http://localhost:3000/api/changeStatus', {
+    const res = await fetch('/api/changeStatus', {
       method: 'POST',
       body: JSON.stringify({ course: course.course_no }),
     });
