@@ -173,8 +173,6 @@ const Requirement = ({
 };
 
 const Profile = ({ user }: { user: User }) => {
-  const courses = user.courses;
-
   return (
     <div>
       <div className="w-full border-b border-neutral-200 bg-neutral-100 px-8 py-12 dark:border-none dark:bg-neutral-800 sm:py-20 lg:px-40">
