@@ -21,7 +21,7 @@
     "framer-motion": "^7.3.2",
     "mongodb": "^4.10.0",
     "mongoose": "^6.7.1",
-    "next": "^12.2.5",
+    "next": "^13.0.4",
     "next-auth": "^4.10.3",
     "next-themes": "^0.2.1",
     "nodemailer": "^6.7.2",
