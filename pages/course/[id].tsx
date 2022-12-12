@@ -1,5 +1,6 @@
 import { ElkNode } from 'elkjs/lib/main';
 import { InferGetStaticPropsType } from 'next';
+import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import ReactFlow, { Background, Edge, Node } from 'react-flow-renderer';
 import { BsPerson } from 'react-icons/bs';
@@ -58,6 +59,7 @@ const CoursePage = ({
   // const [elements, setElements] = useState<Elements>([]);
   const [nodes, setNodes] = useState<Node[]>([]);
   const [edges, setEdges] = useState<Edge[]>([]);
+  const { data: session } = useSession();
 
   // Relayout the chart when prereqs changes
   useEffect(() => {
@@ -106,6 +108,38 @@ const CoursePage = ({
     minHeight: '400px',
   };
 
+  const [status, setStatus] = useState(
+    session
+      ? session.user.courses.includes(course.course_no)
+        ? 'I have taken this course'
+        : 'I have not taken this course'
+      : 'Login to see if you have taken this course'
+  );
+  useEffect(() => {
+    if (session) {
+      setStatus(
+        session.user.courses.includes(course.course_no)
+          ? 'I have taken this course'
+          : 'I have not taken this course'
+      );
+    }
+  }, [session]);
+
+  const changeStatus = async () => {
+    const res = await fetch('/api/changeStatus', {
+      method: 'POST',
+      body: JSON.stringify({ course: course.course_no }),
+    });
+
+    if (status === 'I have taken this course') {
+      setStatus('I have not taken this course');
+    } else {
+      setStatus('I have taken this course');
+    }
+
+    // Show alert, WIP
+  };
+
   return (
     <div>
       <div className="bg-exeter px-8 pt-20 pb-20 dark:bg-neutral-800 lg:px-40">
@@ -119,6 +153,29 @@ const CoursePage = ({
       <div className="grid grid-cols-1 gap-16 px-8 pt-14 pb-20 md:grid-cols-5 lg:px-40">
         <div className="flex flex-col gap-8 md:col-span-2">
           <div className="flex flex-col gap-2">
+            {session ? (
+              <label
+                htmlFor="default-toggle"
+                className="relative inline-flex cursor-pointer items-center"
+              >
+                <input
+                  type="checkbox"
+                  value=""
+                  id="default-toggle"
+                  className="peer sr-only"
+                  defaultChecked={session.user.courses.includes(
+                    course.course_no
+                  )}
+                  onClick={changeStatus}
+                />
+                <div className="peer h-6 w-11 rounded-full bg-gray-200 after:absolute after:top-[2px] after:left-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                <span className="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  {session ? status : 'Login'}
+                </span>
+              </label>
+            ) : (
+              <h1>Login to see if you took this course</h1>
+            )}
             <h1 className="font-display text-3xl font-black text-gray-700 dark:text-white">
               Information
             </h1>

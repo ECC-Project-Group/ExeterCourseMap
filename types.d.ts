@@ -1,4 +1,7 @@
 // Matches the schema Eric made
+
+import { DefaultUser } from 'next-auth';
+
 /**
  * dept: Course department
  * subj: Subject
@@ -27,6 +30,18 @@ interface ICourse {
 interface ICoursePartial {
   course_no: string;
   lt: string;
+}
+
+declare module 'next-auth' {
+  interface User extends DefaultUser {
+    courses: string[] | null | undefined;
+  }
+
+  interface Session {
+    user: User & {
+      courses: string[];
+    };
+  }
 }
 
 export type { ICourse, ICoursePartial };
