@@ -71,19 +71,19 @@ const About: NextPage = () => {
           Who do I contact?
         </p>
         <p className="mt-3 mb-8 text-xl">
-          <span>Reach out to either Michael Chen </span>
+          <span>Reach out to either Byran Huang </span>
           <a
-            href="mailto: mqchen@exeter.edu"
+            href="mailto: yhuang4@exeter.edu"
             className="text-blue-600 underline dark:text-blue-300"
           >
-            (mqchen@exeter.edu)
+            (yhuang4@exeter.edu)
           </a>
-          <span> or Nathan Khuu </span>
+          <span> or Eric Li </span>
           <a
-            href="mailto: nkhuu@exeter.edu"
+            href="mailto: xli5@exeter.edu"
             className="text-blue-600 underline dark:text-blue-300"
           >
-            (nkhuu@exeter.edu)
+            (xli5@exeter.edu)
           </a>
           <span>
             . We&rsquo;re open to beginners, so don&rsquo;t be shy! Our only
